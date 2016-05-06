@@ -1,0 +1,9 @@
+.layout-3a-links {
+  padding: 0;
+  li {
+    display: inline-block;
+    &.active a {
+      color: black;
+    }
+  }
+}

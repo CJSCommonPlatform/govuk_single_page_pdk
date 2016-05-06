@@ -1,0 +1,20 @@
+$icon-font-path: '../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+h1 {
+  font-weight: 300;
+
+  + .component-path {
+    margin-top: -6px;
+  }
+}
+
+.component-path {
+  color: $gray-light;
+  margin-bottom: 24px;
+}
+
+.main-content {
+  padding-top: 100px;
+}
