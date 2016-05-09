@@ -2,7 +2,7 @@ import {ComponentTwoOne} from './components/cmp-2.1/cmp-2.1';
 import {PageComponentTwoOne} from './page-2.1/page-cmp-2.1';
 import {filterTwoOne} from './filters/filter-2.1';
 
-const module = angular.module('ngGovExample.domain-2', [])
+const module = angular.module('govuk_single_page.domain-2', [])
 
   .component('pageComponentTwoOne', PageComponentTwoOne)
   .component('componentTwoOne', ComponentTwoOne)

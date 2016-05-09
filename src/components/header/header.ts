@@ -1,10 +1,10 @@
 import {Component} from '@govuk/angularjs-framework';
 
 @Component({
-  template: require('./navbar.html')
+  template: require('./header.html')
 })
 
-export class Navbar {
+export class Header {
    
   static $inject = ['$state'];
 

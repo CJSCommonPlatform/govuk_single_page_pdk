@@ -1,7 +1,9 @@
-import {PageComponentOneOne} from './page-cmp-1.1';
+import {pageComponentComponents} from './page-cmp-components';
+import {Header} from './header/header';
 
-const module = angular.module('ngGovExample.domain-1', [])
+const module = angular.module('govuk_single_page.components', [])
 
-  .component('pageComponentOneOne', PageComponentOneOne);
+    .component('pageComponentComponents', pageComponentComponents);
+
 
 export const components: string = module.name;

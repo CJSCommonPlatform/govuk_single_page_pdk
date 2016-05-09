@@ -29,6 +29,7 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "govuk-elements-sass": "^1.1.4",
     "gulp-ngdocs": "^0.2.13",
     "gulp-typescript": "^2.13.0",
     "html-loader": "^0.4.3",
