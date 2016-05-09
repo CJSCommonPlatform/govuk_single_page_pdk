@@ -4,4 +4,4 @@ import {Component} from '@govuk/angularjs-framework';
   template: require('./page-cmp-components.html')
 })
 
-export class pageComponentComponents {}
+export class PageComponentComponents {}

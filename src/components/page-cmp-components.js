@@ -6,15 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_framework_1 = require('@govuk/angularjs-framework');
-var pageComponentComponents = (function () {
-    function pageComponentComponents() {
+var PageComponentComponents = (function () {
+    function PageComponentComponents() {
     }
-    pageComponentComponents = __decorate([
+    PageComponentComponents = __decorate([
         angularjs_framework_1.Component({
             template: require('./page-cmp-components.html')
         })
-    ], pageComponentComponents);
-    return pageComponentComponents;
+    ], PageComponentComponents);
+    return PageComponentComponents;
 }());
-exports.pageComponentComponents = pageComponentComponents;
+exports.PageComponentComponents = PageComponentComponents;
 //# sourceMappingURL=page-cmp-components.js.map

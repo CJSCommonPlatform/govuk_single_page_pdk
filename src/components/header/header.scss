@@ -1,0 +1,45 @@
+//TODO : this is NG-GOV_UK specific, probably best to move it out of core
+header {
+  #proposition-links.proposition-links-hidden {
+    @include media(desktop){
+      display: block !important;
+    }
+    display: none !important;
+  }
+}
+
+#global-header .header-logo * {
+  @include box-sizing(content-box);
+}
+
+#global-header .header-wrapper {
+  max-width: inherit;
+  //padding-left: 0;
+  //padding-right: 0;
+  @extend .container;
+}
+
+#global-header #logo {
+  @media (min-width: $screen-sm-min) {
+    margin-left: 0;
+  }
+}
+
+#global-header-bar {
+  max-width: inherit;
+  @extend .container;
+  background-color: transparent;
+  &:after {
+    background-color: #005ea5;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+#global-header .header-wrapper .header-global .header-logo .content {
+  margin-left: 0;
+}
+
+#global-header.with-proposition .header-wrapper .header-proposition .content {
+  margin-left: 0;
+}

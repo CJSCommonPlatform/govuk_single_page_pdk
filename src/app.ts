@@ -3,7 +3,7 @@ import {config} from './config';
 import {sdk} from './sdk';
 import {components} from './components';
 
-require('./index.scss');
+require('./app.scss');
 
 const appModule = angular.module('govuk_single_page', [
   common,
