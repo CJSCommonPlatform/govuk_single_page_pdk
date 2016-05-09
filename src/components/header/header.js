@@ -6,20 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_framework_1 = require('@govuk/angularjs-framework');
-var Header = (function () {
-    function Header(_$state) {
+var HeaderCmp = (function () {
+    function HeaderCmp(_$state) {
         this._$state = _$state;
     }
-    Header.prototype.includes = function (path) {
+    HeaderCmp.prototype.includes = function (path) {
         return this._$state.includes(path);
     };
-    Header.$inject = ['$state'];
-    Header = __decorate([
+    HeaderCmp.$inject = ['$state'];
+    HeaderCmp = __decorate([
         angularjs_framework_1.Component({
             template: require('./header.html')
         })
-    ], Header);
-    return Header;
+    ], HeaderCmp);
+    return HeaderCmp;
 }());
-exports.Header = Header;
+exports.HeaderCmp = HeaderCmp;
 //# sourceMappingURL=header.js.map

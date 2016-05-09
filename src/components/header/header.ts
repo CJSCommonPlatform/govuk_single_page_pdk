@@ -4,7 +4,7 @@ import {Component} from '@govuk/angularjs-framework';
   template: require('./header.html')
 })
 
-export class Header {
+export class HeaderCmp {
    
   static $inject = ['$state'];
 
