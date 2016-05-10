@@ -1,8 +1,8 @@
-// Govuk_templates
-@import "../node_modules/govuk_template_ejs/assets/stylesheets/fonts"; //raw css that includes base64 encoded fonts
-@import "../node_modules/govuk_template_ejs/assets/stylesheets/govuk-template"; //this is a raw css file
 
-@import "../node_modules/govuk-elements-sass/node_modules/govuk_frontend_toolkit/stylesheets/colours";
-@import "../node_modules/govuk-elements-sass/node_modules/govuk_frontend_toolkit/stylesheets/typography";
 
-@import "../node_modules/govuk-elements-sass/public/sass/elements/govuk-template-base";
+
+@import "govuk_platform_toolkit/govuk/stylesheets/govuk-elements";
+@import "govuk_platform_toolkit/govuk/stylesheets/govuk-template";
+
+@import "components/components";
+
