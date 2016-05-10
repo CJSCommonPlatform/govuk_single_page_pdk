@@ -4,7 +4,7 @@ import { Component } from '@govuk/angularjs-framework';
   template: require('./header.component.html')
 })
 export class HeaderComponent {
-   
+
   static $inject = ['$state'];
 
   constructor(private _$state: angular.ui.IStateService) {}

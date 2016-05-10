@@ -12,16 +12,16 @@
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached",
     "test": "node --max-old-space-size=4096 node_modules/karma/bin/karma start"
   },
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "angular": "^1.5.5",
-    "angular-permission": "^2.3.4",
-    "angular-ui-router": "^0.2.18",
-    "lodash": "^4.11.1",
-    "oclazyload": "^1.0.9"
+    "angular-ui-router": "^0.2.18"
   },
   "devDependencies": {
     "@govuk/angularjs-framework": "^0.1.1",
+    "angular": "^1.5.5",
     "angular-mocks": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
     "assets-webpack-plugin": "^3.4.0",
     "awesome-typescript-loader": "^0.16.2",
     "bootstrap-sass": "^3.3.6",
@@ -29,7 +29,7 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "govuk-elements-sass": "^1.1.4",
+    "govuk-elements-sass": "github:alphagov/govuk_elements",
     "gulp-ngdocs": "^0.2.13",
     "gulp-typescript": "^2.13.0",
     "html-loader": "^0.4.3",
@@ -72,7 +72,6 @@
     "vinyl-fs": "^2.4.3",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.8.4",
-    "yaml-loader": "^0.1.0"
+    "webpack-merge": "^0.8.4"
   }
 }

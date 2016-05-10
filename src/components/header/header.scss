@@ -8,36 +8,36 @@ header {
   }
 }
 
-#global-header .header-logo * {
-  @include box-sizing(content-box);
-}
+#global-header {
+  .header-wrapper {
+    @extend .container;
 
-#global-header .header-wrapper {
-  max-width: inherit;
-  //padding-left: 0;
-  //padding-right: 0;
-  @extend .container;
-}
+    max-width: inherit;
 
-#global-header #logo {
-  @media (min-width: $screen-sm-min) {
-    margin-left: 0;
+    .header-global .header-logo {
+      @include box-sizing(content-box);
+    }
+    .content {
+      margin-left: 0;
+    }
+  }
+  #logo {
+    @media (min-width: $screen-sm-min) {
+      margin-left: 0;
+    }
   }
 }
 
 #global-header-bar {
-  max-width: inherit;
   @extend .container;
+  max-width: inherit;
   background-color: transparent;
+
   &:after {
     background-color: #005ea5;
     height: 100%;
     width: 100%;
   }
-}
-
-#global-header .header-wrapper .header-global .header-logo .content {
-  margin-left: 0;
 }
 
 #global-header.with-proposition .header-wrapper .header-proposition .content {

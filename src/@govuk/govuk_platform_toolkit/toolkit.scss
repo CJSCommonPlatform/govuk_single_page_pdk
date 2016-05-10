@@ -1,5 +1,4 @@
-// Gov UK
-@import "govuk/stylesheets/govuk-elements";
-@import "govuk/stylesheets/govuk-template";
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
-// Boostrap
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+@import 'govuk_template/stylesheets/govuk-template';
