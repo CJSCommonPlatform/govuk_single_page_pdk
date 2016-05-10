@@ -6,12 +6,12 @@ var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
 module.exports = {
   entry: {
-    'vendor': './src/vendor.ts',
-    'main':   './src/app.ts'
+    'vendor': './src/docs/vendor.ts',
+    'main':   './src/docs/index.ts'
   },
   resolve: {
     extensions: ['', '.ts', '.js'],
-    root: helpers.root('src'),
+    root: helpers.root('src/docs'),
     modulesDirectories: ['node_modules']
   },
   module: {
@@ -44,8 +44,7 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
     new HtmlWebpackPlugin({
-      template:  'src/index.html',
-      favicon:   'src/favicon.ico',
+      template:  'src/docs/index.html',
       chunks:   ['vendor', 'main']
     })
   ]
