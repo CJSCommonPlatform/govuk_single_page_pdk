@@ -1,6 +1,6 @@
 import { routes } from '../routes';
 
-const module = angular.module('govuk-single-page-sdk.config.routes', ['ui.router'])
+const module = angular.module('govuk-single-page-pdk.config.routes', ['ui.router'])
 
   .config(($stateProvider: angular.ui.IStateProvider,
            $urlRouterProvider: angular.ui.IUrlRouterProvider) => {

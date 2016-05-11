@@ -1,6 +1,6 @@
 import { LayoutIndexComponent } from './index/index.component';
 
-const module = angular.module('govuk-single-page-sdk.layout-docs', [])
+const module = angular.module('govuk-single-page-pdk.layout-docs', [])
 
   .component('layoutIndexPage', LayoutIndexComponent);
 

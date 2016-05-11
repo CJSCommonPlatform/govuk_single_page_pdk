@@ -11,7 +11,7 @@ import { examplesDocs } from '../examples/docs';
 import { layoutDocs } from '../layout/docs';
 import { DocsIndexComponent } from './index/index.component';
 
-angular.module('govuk-single-page-sdk.docs', [
+angular.module('govuk-single-page-pdk.docs', [
   config,
   components,
   componentsDocs,

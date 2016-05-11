@@ -1,6 +1,6 @@
 import { ExamplesIndexComponent } from './index/index.component';
 
-const module = angular.module('govuk-single-page-sdk.demos-docs', [])
+const module = angular.module('govuk-single-page-pdk.demos-docs', [])
 
   .component('examplesIndexPage', ExamplesIndexComponent);
 
