@@ -10,6 +10,7 @@ import { contentDocs } from '../content/docs';
 import { examplesDocs } from '../examples/docs';
 import { layoutDocs } from '../layout/docs';
 import { DocsIndexComponent } from './index/index.component';
+import { DocsLayoutComponent } from './layout/layout.component';
 
 angular.module('govuk-single-page-pdk.docs', [
   config,
@@ -22,4 +23,5 @@ angular.module('govuk-single-page-pdk.docs', [
   layout,
   layoutDocs
 ])
-  .component('docsIndexPage', DocsIndexComponent);
+  .component('govDocsIndexPage', DocsIndexComponent)
+  .component('govDocs', DocsLayoutComponent);

@@ -3,7 +3,7 @@ export const routes: angular.ui.IState[] = [
   {
     state: 'home',
     url:    '/',
-    template: '<docs-index-page></docs-index-page>'
+    template: '<gov-docs-index-page></gov-docs-index-page>'
   },
   {
     state: 'components',
