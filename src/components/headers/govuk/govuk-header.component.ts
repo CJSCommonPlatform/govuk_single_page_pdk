@@ -1,9 +1,9 @@
 import { Component } from '@govuk/angularjs-framework';
 
 @Component({
-  template: require('./header.govuk.component.html')
+  template: require('./govuk-header.component.html')
 })
-export class HeaderGovukComponent {
+export class GovUkHeaderComponent {
 
   static $inject = ['$state'];
 
