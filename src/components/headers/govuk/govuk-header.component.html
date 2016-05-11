@@ -1,8 +1,3 @@
-<div id="skiplink-container">
-  <div>
-    <a href="#content" class="skiplink">Skip to main content</a>
-  </div>
-</div>
 <header role="banner" id="global-header" class="with-proposition">
   <div class="header-wrapper">
     <div class="header-global">
@@ -16,10 +11,10 @@
       <div class="content">
         <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
         <nav id="proposition-menu">
-          <a href="balls" id="proposition-name">Single Page Platform Development Kit</a>
+          <a href="balls" id="proposition-name" ng-bind="$ctrl.heading"></a>
           <ul id="proposition-links">
-            <li>
-              <a href="test">Test</a>
+            <li ng-repeat="navItem in $ctrl.navItems">
+              <a ui-sref="{{navItem.state}}" ng-bind="navItem.label"></a>
             </li>
           </ul>
         </nav>
