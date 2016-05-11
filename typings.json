@@ -7,6 +7,7 @@
     "jasmine-jquery": "registry:dt/jasmine-jquery#0.0.0+20160317120654",
     "jquery": "registry:dt/jquery#1.10.0+20160417213236",
     "node": "registry:dt/node#4.0.0+20160423143914",
+    "prism": "registry:dt/prism#1.4.4+20160321233308",
     "sinon": "registry:dt/sinon#1.16.0+20160317120654"
   }
 }
