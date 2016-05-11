@@ -10,6 +10,18 @@ export class DocsLayoutComponent {
     {
       state: 'components',
       label: 'Components'
+    },
+    {
+      state: 'content',
+      label: 'Content'
+    },
+    {
+      state: 'layout',
+      label: 'Layout'
+    },
+    {
+      state: 'examples',
+      label: 'Examples'
     }
   ];
 }
