@@ -26,7 +26,8 @@ module.exports = {
         },
         exclude: [/\.e2e\.ts$/]
       },
-      {test: /\.scss$/, loader: 'raw!css!postcss!sass'},
+      {test: /\.css$/,  loader: 'raw'},
+      {test: /\.scss$/, loader: 'raw'},
       {test: /\.html$/, loader: 'html', exclude: [helpers.root('src/index.html')] },
       {test: /\.json$/, loader: 'json'},
       {test: /\.yaml$/, loader: 'json!yaml'},
