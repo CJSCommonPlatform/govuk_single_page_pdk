@@ -1,4 +1,5 @@
 require('../../node_modules/prismjs/themes/prism.css');
+require('./prism.scss');
 
 const module = angular.module('govuk-single-page-pdk.prism', [])
 
@@ -6,7 +7,7 @@ const module = angular.module('govuk-single-page-pdk.prism', [])
 
   .directive('prismify', (prism) => {
     return {
-      restrict: 'E',
+      restrict: 'EA',
       compile: (elem: ng.IAugmentedJQuery, attrs: any) => {
         let language: string = attrs.language;
         if (language === 'html') language = 'markup';
