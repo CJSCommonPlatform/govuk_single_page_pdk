@@ -1,6 +1,7 @@
 import { Component } from '@govuk/angularjs-framework';
+import { highlightHTML } from '../../util/prism';
 
 @Component({
-  template: require('./phase-banner.demo.html')
+  template: highlightHTML(require('./phase-banner.demo.html'))
 })
 export class PhaseBannerDemo {}

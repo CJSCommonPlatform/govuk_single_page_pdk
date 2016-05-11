@@ -1,6 +1,7 @@
 import { Component } from '@govuk/angularjs-framework';
+import { highlightHTML } from '../../util/prism';
 
 @Component({
-  template: require('./action-pane.demo.html')
+  template: highlightHTML(require('./action-pane.demo.html'))
 })
 export class ActionPaneDemo {}
