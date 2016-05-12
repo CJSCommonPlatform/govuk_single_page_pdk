@@ -8,4 +8,8 @@
   .gov-action-pane-heading {
     font-weight: 600;
   }
+
+  a + .gov-action-pane-heading {
+    margin-top: 20px;
+  }
 }
