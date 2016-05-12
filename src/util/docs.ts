@@ -1,7 +1,9 @@
-require('../../node_modules/prismjs/themes/prism.css');
-require('./prism.scss');
+import 'prismjs';
 
-const module = angular.module('govuk-single-page-pdk.prism', [])
+require('../../node_modules/prismjs/themes/prism.css');
+require('./docs.scss');
+
+const module = angular.module('govDocs-utils', [])
 
   .factory('prism', ['$window', ($window) => $window.Prism])
 
@@ -16,6 +18,20 @@ const module = angular.module('govuk-single-page-pdk.prism', [])
         elem.html(`<pre class="language-${language}"><code>${html}</code></pre>`);
       }
     };
+  })
+
+  .directive('docsExample', () => {
+    return {
+      compile: (tElem: ng.IAugmentedJQuery, tAttrs: any) => {
+        const html = tElem.html();
+        let tpl = `<div class="example">${html}</div>`;
+
+        if (tAttrs.hasOwnProperty('markup')) {
+          tpl += `<prismify language="html">${html}</prismify>`;
+        }
+        tElem.html(tpl);
+      }
+    };
   });
 
-export const prism: string = module.name;
+export const docsUtils = module.name; 

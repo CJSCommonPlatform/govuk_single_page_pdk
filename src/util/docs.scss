@@ -1,0 +1,55 @@
+// todo: source this from somewhere
+
+.example {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #bfc1c3;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+
+  &:before {
+    content: "EXAMPLE";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+    font-family: "nta", Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    background: #bfc1c3;
+    color: white;
+  }
+
+  .highlight {
+    font-style: normal;
+    color: #0076c0;
+  }
+
+  .list-bullet {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 641px) {
+  .example {
+    padding-top: 45px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+
+    &:before {
+      font-size: 14px;
+      line-height: 1.4285714286;
+    }
+  }
+}
+
+prismify {
+  font-size: 16px !important;
+}

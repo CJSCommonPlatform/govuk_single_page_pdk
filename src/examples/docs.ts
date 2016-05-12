@@ -1,7 +1,7 @@
-import { prism } from '../util/prism';
+import { docsUtils } from '../util/docs';
 import { ExamplesIndexComponent } from './index/index.component';
 
-const module = angular.module('govuk-single-page-pdk.demos-docs', [prism])
+const module = angular.module('govuk-single-page-pdk.demos-docs', [docsUtils])
 
   .component('govDocsExamplesPage', ExamplesIndexComponent);
 
