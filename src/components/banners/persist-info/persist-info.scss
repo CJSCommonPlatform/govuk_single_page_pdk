@@ -1,0 +1,20 @@
+@import '~govuk_frontend_toolkit/stylesheets/colours/palette';
+@import '~govuk_frontend_toolkit/stylesheets/typography';
+
+.persist-info{
+  background-color: $govuk-blue;
+  padding:20px;
+  @include core-24;
+
+  .persist-info-label{
+    color:white;
+    opacity:.6;
+    margin-right:10px;
+    font-weight: normal;
+  }
+
+  .persist-info-title{
+    color:white;
+    font-weight: bold;
+  }
+}
