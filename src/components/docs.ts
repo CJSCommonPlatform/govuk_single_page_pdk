@@ -8,6 +8,7 @@ import { PhaseBannerDemo } from './banners/phase-banner/phase-banner.demo';
 import { ActionPaneDemo } from './action-pane/action-pane.demo';
 import { PersistInfoDemo } from './banners/persist-info/persist-info.demo';
 import { PersonalDetailsDemo } from './personal-details/personal-details.demo';
+import { ContactInfoDemo} from './contact-info/contact-info.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-docs', [
   components,
@@ -17,8 +18,9 @@ const module = angular.module('govuk-single-page-pdk.components-docs', [
   .component('govActionPaneDemo', ActionPaneDemo)
   .component('govBreadcrumbsDemo', BreadcrumbsDemo)
   .component('govHeaderDemo', GovUkHeaderDemo)
-  .component('govPersistInfoBannerDemo', PersistInfoDemo)
   .component('govPersonalDetailsDemo', PersonalDetailsDemo)
-  .component('govPhaseBannerDemo', PhaseBannerDemo);
+  .component('govPhaseBannerDemo', PhaseBannerDemo)
+  .component('govContactInfoDemo', ContactInfoDemo)
+  .component('govPersistInfoBannerDemo', PersistInfoDemo);
 
 export const componentsDocs = module.name;
