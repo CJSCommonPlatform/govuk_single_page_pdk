@@ -8,16 +8,16 @@ export class DocsLayoutComponent {
   heading: string = 'Single Page Platform Development Kit';
   navItems = [
     {
-      state: 'components',
-      label: 'Components'
+      state: 'layout',
+      label: 'Layout'
     },
     {
       state: 'content',
       label: 'Content'
     },
     {
-      state: 'layout',
-      label: 'Layout'
+      state: 'components',
+      label: 'Components'
     },
     {
       state: 'examples',

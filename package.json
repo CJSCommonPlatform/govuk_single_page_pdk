@@ -12,9 +12,9 @@
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached",
     "test": "node --max-old-space-size=4096 node_modules/karma/bin/karma start"
   },
-  "dependencies": {},
   "peerDependencies": {
     "angular": "^1.5.5",
+    "angular-breadcrumb": "^0.4.1",
     "angular-ui-router": "^0.2.18"
   },
   "devDependencies": {

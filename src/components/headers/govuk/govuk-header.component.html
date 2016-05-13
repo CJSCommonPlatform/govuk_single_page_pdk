@@ -1,3 +1,11 @@
+<div id="skiplink-container">
+  <div>
+    <a href="#content" class="skiplink">Skip to main content</a>
+  </div>
+</div>
+<div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+</div>
 <header role="banner" id="global-header" class="with-proposition">
   <div class="header-wrapper">
     <div class="header-global">
@@ -11,7 +19,7 @@
       <div class="content">
         <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
         <nav id="proposition-menu">
-          <a href="balls" id="proposition-name" ng-bind="$ctrl.heading"></a>
+          <a href="/" id="proposition-name" ng-bind="$ctrl.heading"></a>
           <ul id="proposition-links">
             <li ng-repeat="navItem in $ctrl.navItems">
               <a ui-sref="{{navItem.state}}" ng-bind="navItem.label"></a>

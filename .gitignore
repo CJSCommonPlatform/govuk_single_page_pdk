@@ -40,7 +40,6 @@ npm-debug.log
 /src/typings/tsd/
 /typings/
 /tsd_typings/
-**.ts/**.js
 
 # Dist #
 /dist
@@ -58,3 +57,4 @@ npm-debug.log
 # IDE #
 .idea/
 *.swp
+**.ts/**.js
