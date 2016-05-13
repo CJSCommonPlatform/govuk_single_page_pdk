@@ -20,7 +20,6 @@ const module = angular.module('govuk-single-page-pdk.components-docs', [
   .component('govBreadcrumbsDemo', BreadcrumbsDemo)
   .component('govHeaderDemo', GovUkHeaderDemo)
   .component('govPageTitleDemo', PageTitleDemo)
-  .component('govPersistInfoBannerDemo', PersistInfoDemo)
   .component('govPersonalDetailsDemo', PersonalDetailsDemo)
   .component('govPhaseBannerDemo', PhaseBannerDemo)
   .component('govContactInfoDemo', ContactInfoDemo)
