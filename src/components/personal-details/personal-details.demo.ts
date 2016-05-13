@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-framework';
+import { Component } from '@govuk/angularjs-devtools';
 
 require('./personal-details.scss');
 
