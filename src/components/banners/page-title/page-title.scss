@@ -1,0 +1,12 @@
+@import '~govuk_frontend_toolkit/stylesheets/colours';
+@import '~govuk_frontend_toolkit/stylesheets/typography';
+
+.page-title-banner {
+  background-color: $light-blue;
+  padding: 20px;
+
+  h1 {
+    @include core-19;
+    color: $white;
+  }
+}
