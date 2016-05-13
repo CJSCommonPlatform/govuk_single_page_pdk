@@ -6,15 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_framework_1 = require('@govuk/angularjs-framework');
-require('./persist-info.scss');
-var PersistInfoDemo = (function () {
-    function PersistInfoDemo() {
+var ContactInfoComponent = (function () {
+    function ContactInfoComponent() {
     }
-    PersistInfoDemo = __decorate([
+    ContactInfoComponent = __decorate([
         angularjs_framework_1.Component({
-            template: require('./persist-info.demo.html')
+            bindings: {
+                details: '<'
+            },
+            template: require('./contact-info.component.html')
         })
-    ], PersistInfoDemo);
-    return PersistInfoDemo;
+    ], ContactInfoComponent);
+    return ContactInfoComponent;
 }());
-exports.PersistInfoDemo = PersistInfoDemo;
+exports.ContactInfoComponent = ContactInfoComponent;

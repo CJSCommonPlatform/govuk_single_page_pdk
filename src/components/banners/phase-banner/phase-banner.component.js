@@ -7,12 +7,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var angularjs_framework_1 = require('@govuk/angularjs-framework');
 var PhaseBannerComponent = (function () {
-    function PhaseBannerComponent() {
+    function PhaseBannerComponent($attrs) {
+        this.type = $attrs.hasOwnProperty('beta') ? 'beta' : $attrs.hasOwnProperty('alpha') && 'alpha';
     }
+    PhaseBannerComponent.$inject = ['$attrs'];
     PhaseBannerComponent = __decorate([
         angularjs_framework_1.Component({
             bindings: {
-                title: '<'
+                title: '@'
             },
             transclude: true,
             template: require('./phase-banner.component.html')

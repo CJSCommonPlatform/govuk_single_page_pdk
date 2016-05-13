@@ -5,8 +5,4 @@ require('./persist-info.scss');
 @Component({
   template: require('./persist-info.demo.html')
 })
-export class PersistInfoDemo {
-
-  title = 'Peter JAMES';
-  label = '352345URN';
-}
+export class PersistInfoDemo {}

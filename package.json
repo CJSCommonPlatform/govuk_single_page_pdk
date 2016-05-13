@@ -8,6 +8,7 @@
     "build_prod": "webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
     "clean": "rimraf -- dist",
     "protractor": "protractor",
+    "build_packages": "webpack",
     "serve": "http-server dist --cors",
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached",
     "test": "node --max-old-space-size=4096 node_modules/karma/bin/karma start"
@@ -29,6 +30,7 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "font-awesome": "^4.6.1",
     "govuk-elements-sass": "github:alphagov/govuk_elements",
     "govuk_frontend_toolkit": "^4.10.0",
     "gulp-ngdocs": "^0.2.13",

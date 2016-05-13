@@ -1,12 +1,9 @@
-/**
- * @author: @AngularClass
- */
 
 // Look in ./config folder for webpack.dev.js
 switch (process.env.NODE_ENV) {
   case 'prod':
   case 'production':
-    module.exports = require('./config/webpack.prod');
+    module.exports = require('./config/webpack.publish');
     break;
   case 'test':
   case 'testing':
