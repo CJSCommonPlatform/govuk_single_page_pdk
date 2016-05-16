@@ -1,2 +1,6 @@
 @import "~govuk_frontend_toolkit/stylesheets/grid_layout";
 @import '~govuk-elements-sass/public/sass/elements/layout';
+
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_type";

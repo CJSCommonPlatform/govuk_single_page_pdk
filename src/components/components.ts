@@ -6,6 +6,9 @@ import { PersistInfoComponent} from './banners/persist-info/persist-info.compone
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { ContactInfoComponent} from './contact-info/contact-info.component';
 import { PhaseBannerComponent } from './banners/phase-banner/phase-banner.component';
+import { ArrowComponent } from './navigations/arrow/arrow.component';
+import { NextPreviousNavigationComponent }
+    from './navigations/next-previous-navigation/next-previous-navigation.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -16,6 +19,8 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govPersonalDetails', PersonalDetailsComponent)
   .component('govContactInfo', ContactInfoComponent)
   .component('govPhaseBanner', PhaseBannerComponent)
-  .component('govPersistInfoBanner', PersistInfoComponent);
+  .component('govPersistInfoBanner', PersistInfoComponent)
+  .component('govArrow', ArrowComponent)
+  .component('govNextPreviousNavigation', NextPreviousNavigationComponent);
 
 export const components: string = module.name;
