@@ -1,6 +1,6 @@
 require('./action-pane.scss');
 
-import { Component } from '@govuk/angularjs-framework';
+import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {

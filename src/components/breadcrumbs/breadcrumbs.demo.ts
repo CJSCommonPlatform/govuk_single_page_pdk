@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-framework';
+import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   template: require('./breadcrumbs.demo.html')

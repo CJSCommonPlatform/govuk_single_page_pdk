@@ -19,7 +19,7 @@
     "angular-ui-router": "^0.2.18"
   },
   "devDependencies": {
-    "@govuk/angularjs-framework": "^0.1.1",
+    "@govuk/angularjs-devtools": "^0.1.0",
     "angular": "^1.5.5",
     "angular-mocks": "^1.5.5",
     "angular-ui-router": "^0.2.18",
