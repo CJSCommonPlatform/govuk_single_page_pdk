@@ -4,30 +4,21 @@ $path: "~govuk_frontend_toolkit/images/" !default;
 @function image-url($url) {
   @return url("#{$image-url-path}#{$url}");
 }
+@import 'govuk_template/stylesheets/fonts';
 
-$fa-font-path: '../../node_modules/font-awesome/fonts';
-
-@import "~font-awesome/scss/font-awesome";
 
 /* govuk_frontend_toolkit includes */
-@import "~govuk_frontend_toolkit/stylesheets/url-helpers";
-@import "~govuk_frontend_toolkit/stylesheets/colours";
-@import "~govuk_frontend_toolkit/stylesheets/conditionals";
-@import "~govuk_frontend_toolkit/stylesheets/css3";
-@import "~govuk_frontend_toolkit/stylesheets/device-pixels";
+
 @import "~govuk_frontend_toolkit/stylesheets/design-patterns/buttons";
 
 //layout
-/* govuk_template includes */
-@import 'govuk_template/stylesheets/fonts';
 @import "../../layout/layout";
 
 //content
 @import "../../content/content";
 
 @import '~govuk-elements-sass/public/sass/elements/govuk-template-base';
-// local styleguide includes
-@import "govuk_template/stylesheets/styleguide/colours";
+
 // basic styles for HTML5 and other elements
 @import "govuk_template/stylesheets/basic";
 @import "govuk_template/stylesheets/accessibility";
@@ -35,8 +26,6 @@ $fa-font-path: '../../node_modules/font-awesome/fonts';
 
 
 //@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
-
-
 
 //components
 @import "../../components/components";

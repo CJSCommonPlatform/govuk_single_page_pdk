@@ -13,7 +13,9 @@ angular.module('govuk-single-page-pdk.docs', [
   componentsDocs,
   contentDocs,
   examplesDocs,
-  layoutDocs
+  layoutDocs,
+  'ncy-angular-breadcrumb',
+  'ui.router'
 ])
   .component('govDocsIndexPage', DocsIndexComponent)
   .component('govDocs', DocsLayoutComponent);

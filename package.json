@@ -13,13 +13,13 @@
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached",
     "test": "node --max-old-space-size=4096 node_modules/karma/bin/karma start"
   },
-  "dependencies": {},
   "peerDependencies": {
     "angular": "^1.5.5",
+    "angular-breadcrumb": "^0.4.1",
     "angular-ui-router": "^0.2.18"
   },
   "devDependencies": {
-    "@govuk/angularjs-framework": "^0.1.1",
+    "@govuk/angularjs-devtools": "^0.1.0",
     "angular": "^1.5.5",
     "angular-mocks": "^1.5.5",
     "angular-ui-router": "^0.2.18",

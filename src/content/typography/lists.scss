@@ -1,0 +1,6 @@
+.list-contents {
+  list-style: none;
+  li {
+    @include core-16();
+  }
+}
