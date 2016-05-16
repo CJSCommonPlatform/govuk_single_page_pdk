@@ -8,7 +8,8 @@
     "build_prod": "webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
     "clean": "rimraf -- dist",
     "protractor": "protractor",
-    "build_packages": "webpack",
+    "build_packages": "webpack --config config/webpack.publish.js --progress --profile --colors --display-error-details --display-cached --bail",
+    "postinstall": "typings install",
     "serve": "http-server dist --cors",
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached",
     "test": "node --max-old-space-size=4096 node_modules/karma/bin/karma start"
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@govuk/angularjs-devtools": "^0.1.0",
     "angular": "^1.5.5",
+    "angular-breadcrumb": "^0.4.1",
     "angular-mocks": "^1.5.5",
     "angular-ui-router": "^0.2.18",
     "assets-webpack-plugin": "^3.4.0",
