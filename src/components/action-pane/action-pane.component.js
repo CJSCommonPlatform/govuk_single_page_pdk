@@ -6,12 +6,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 require('./action-pane.scss');
-var angularjs_framework_1 = require('@govuk/angularjs-framework');
+var angularjs_devtools_1 = require('@govuk/angularjs-devtools');
 var ActionPaneComponent = (function () {
     function ActionPaneComponent() {
     }
     ActionPaneComponent = __decorate([
-        angularjs_framework_1.Component({
+        angularjs_devtools_1.Component({
             bindings: {
                 heading: '<'
             },

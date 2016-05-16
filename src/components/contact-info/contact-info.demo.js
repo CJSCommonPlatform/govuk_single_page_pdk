@@ -5,13 +5,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var angularjs_framework_1 = require('@govuk/angularjs-framework');
+var angularjs_devtools_1 = require('@govuk/angularjs-devtools');
 require('./contact-info.scss');
 var ContactInfoDemo = (function () {
     function ContactInfoDemo() {
     }
     ContactInfoDemo = __decorate([
-        angularjs_framework_1.Component({
+        angularjs_devtools_1.Component({
             template: require('./contact-info.demo.html')
         })
     ], ContactInfoDemo);
