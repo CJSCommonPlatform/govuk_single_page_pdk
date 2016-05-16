@@ -6,14 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_framework_1 = require('@govuk/angularjs-framework');
-var UiRouterBreadcrumbsComponent = (function () {
-    function UiRouterBreadcrumbsComponent() {
+var NextPreviousNavigationComponent = (function () {
+    function NextPreviousNavigationComponent() {
     }
-    UiRouterBreadcrumbsComponent = __decorate([
+    NextPreviousNavigationComponent = __decorate([
         angularjs_framework_1.Component({
-            template: require('./ui-router-breadcrumbs.component.html')
+            bindings: {
+                navigation: '<'
+            },
+            template: require('./next-previous-navigation.component.html')
         })
-    ], UiRouterBreadcrumbsComponent);
-    return UiRouterBreadcrumbsComponent;
+    ], NextPreviousNavigationComponent);
+    return NextPreviousNavigationComponent;
 }());
-exports.UiRouterBreadcrumbsComponent = UiRouterBreadcrumbsComponent;
+exports.NextPreviousNavigationComponent = NextPreviousNavigationComponent;

@@ -7,6 +7,8 @@ var persist_info_component_1 = require('./banners/persist-info/persist-info.comp
 var personal_details_component_1 = require('./personal-details/personal-details.component');
 var contact_info_component_1 = require('./contact-info/contact-info.component');
 var phase_banner_component_1 = require('./banners/phase-banner/phase-banner.component');
+var arrow_component_1 = require('./navigations/arrow/arrow.component');
+var next_previous_navigation_component_1 = require('./navigations/next-previous-navigation/next-previous-navigation.component');
 var module = angular.module('govuk-single-page-pdk.components', [])
     .component('govActionPane', action_pane_component_1.ActionPaneComponent)
     .component('govBreadcrumbs', breadcrumbs_component_1.BreadcrumbsComponent)
@@ -15,5 +17,7 @@ var module = angular.module('govuk-single-page-pdk.components', [])
     .component('govPersonalDetails', personal_details_component_1.PersonalDetailsComponent)
     .component('govContactInfo', contact_info_component_1.ContactInfoComponent)
     .component('govPhaseBanner', phase_banner_component_1.PhaseBannerComponent)
-    .component('govPersistInfoBanner', persist_info_component_1.PersistInfoComponent);
+    .component('govPersistInfoBanner', persist_info_component_1.PersistInfoComponent)
+    .component('govArrow', arrow_component_1.ArrowComponent)
+    .component('govNextPreviousNavigation', next_previous_navigation_component_1.NextPreviousNavigationComponent);
 exports.components = module.name;

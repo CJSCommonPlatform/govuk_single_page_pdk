@@ -6,14 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_framework_1 = require('@govuk/angularjs-framework');
-var PhaseBannerDemo = (function () {
-    function PhaseBannerDemo() {
+var ArrowComponent = (function () {
+    function ArrowComponent() {
     }
-    PhaseBannerDemo = __decorate([
+    ArrowComponent = __decorate([
         angularjs_framework_1.Component({
-            template: require('./phase-banner.demo.html')
+            bindings: {
+                text: '@',
+                description: '@',
+                navigate: '<',
+                type: '@' // possible types are next and previous
+            },
+            template: require('./arrow.component.html')
         })
-    ], PhaseBannerDemo);
-    return PhaseBannerDemo;
+    ], ArrowComponent);
+    return ArrowComponent;
 }());
-exports.PhaseBannerDemo = PhaseBannerDemo;
+exports.ArrowComponent = ArrowComponent;

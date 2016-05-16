@@ -1,0 +1,23 @@
+@import '~govuk_frontend_toolkit/stylesheets/colours';
+@import '~govuk_frontend_toolkit/stylesheets/typography';
+
+.navigation-arrow{
+  color: $link-colour;
+  font-weight: normal;
+  :hover{
+    color: $link-hover-colour;
+  }
+
+  a{
+    color: $link-colour;
+    text-decoration: none;
+  }
+
+  .main{
+    @include core-36;
+  }
+
+  .description{
+    @include core-16
+  }
+}

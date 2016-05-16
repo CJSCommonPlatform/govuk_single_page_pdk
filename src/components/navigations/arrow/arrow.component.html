@@ -1,0 +1,13 @@
+<a class="navigation-arrow" ng-click="$ctrl.navigate()">
+  <div class="arrow-previous pull-left" ng-if="$ctrl.type === 'previous'">
+    <span class="fa fa-chevron-left fa-2x"></span>
+  </div>
+  <div class="arrow-previous pull-right" ng-if="$ctrl.type === 'next'">
+    <span class="fa fa-chevron-right fa-2x"></span>
+  </div>
+  <div ng-class="{'pull-left': $ctrl.type === 'previous', 'pull-right': $ctrl.type === 'next'}">
+    <div class="main" ng-class="{'text-right': $ctrl.type === 'next'}" ng-bind="$ctrl.text"></div>
+    <span class="description" ng-bind="$ctrl.description"></span>
+  </div>
+  <div class="cleafix"></div>
+</a>

@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_devtools_1 = require('@govuk/angularjs-devtools');
+require('../navigations/arrow/arrow.scss');
 var ComponentsIndexComponent = (function () {
     function ComponentsIndexComponent() {
     }
