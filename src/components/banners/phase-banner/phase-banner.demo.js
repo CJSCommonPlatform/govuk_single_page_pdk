@@ -6,14 +6,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_devtools_1 = require('@govuk/angularjs-devtools');
-var ExamplesIndexComponent = (function () {
-    function ExamplesIndexComponent() {
+var PhaseBannerDemo = (function () {
+    function PhaseBannerDemo() {
     }
-    ExamplesIndexComponent = __decorate([
+    PhaseBannerDemo = __decorate([
         angularjs_devtools_1.Component({
-            template: require('./index.component.html')
+            template: require('./phase-banner.demo.html')
         })
-    ], ExamplesIndexComponent);
-    return ExamplesIndexComponent;
+    ], PhaseBannerDemo);
+    return PhaseBannerDemo;
 }());
-exports.ExamplesIndexComponent = ExamplesIndexComponent;
+exports.PhaseBannerDemo = PhaseBannerDemo;

@@ -6,14 +6,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_devtools_1 = require('@govuk/angularjs-devtools');
-var ExamplesIndexComponent = (function () {
-    function ExamplesIndexComponent() {
+var BreadcrumbsDemo = (function () {
+    function BreadcrumbsDemo() {
     }
-    ExamplesIndexComponent = __decorate([
+    BreadcrumbsDemo = __decorate([
         angularjs_devtools_1.Component({
-            template: require('./index.component.html')
+            template: require('./breadcrumbs.demo.html')
         })
-    ], ExamplesIndexComponent);
-    return ExamplesIndexComponent;
+    ], BreadcrumbsDemo);
+    return BreadcrumbsDemo;
 }());
-exports.ExamplesIndexComponent = ExamplesIndexComponent;
+exports.BreadcrumbsDemo = BreadcrumbsDemo;

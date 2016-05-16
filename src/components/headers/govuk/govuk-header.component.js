@@ -6,14 +6,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_devtools_1 = require('@govuk/angularjs-devtools');
-var ExamplesIndexComponent = (function () {
-    function ExamplesIndexComponent() {
+var GovUkHeaderComponent = (function () {
+    function GovUkHeaderComponent() {
     }
-    ExamplesIndexComponent = __decorate([
+    GovUkHeaderComponent = __decorate([
         angularjs_devtools_1.Component({
-            template: require('./index.component.html')
+            bindings: {
+                heading: '<',
+                navItems: '<'
+            },
+            template: require('./govuk-header.component.html')
         })
-    ], ExamplesIndexComponent);
-    return ExamplesIndexComponent;
+    ], GovUkHeaderComponent);
+    return GovUkHeaderComponent;
 }());
-exports.ExamplesIndexComponent = ExamplesIndexComponent;
+exports.GovUkHeaderComponent = GovUkHeaderComponent;

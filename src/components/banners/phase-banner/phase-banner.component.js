@@ -6,14 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var angularjs_devtools_1 = require('@govuk/angularjs-devtools');
-var ExamplesIndexComponent = (function () {
-    function ExamplesIndexComponent() {
+var PhaseBannerComponent = (function () {
+    function PhaseBannerComponent($attrs) {
+        this.type = $attrs.hasOwnProperty('beta') ? 'beta' : $attrs.hasOwnProperty('alpha') && 'alpha';
     }
-    ExamplesIndexComponent = __decorate([
+    PhaseBannerComponent.$inject = ['$attrs'];
+    PhaseBannerComponent = __decorate([
         angularjs_devtools_1.Component({
-            template: require('./index.component.html')
+            bindings: {
+                title: '@'
+            },
+            transclude: true,
+            template: require('./phase-banner.component.html')
         })
-    ], ExamplesIndexComponent);
-    return ExamplesIndexComponent;
+    ], PhaseBannerComponent);
+    return PhaseBannerComponent;
 }());
-exports.ExamplesIndexComponent = ExamplesIndexComponent;
+exports.PhaseBannerComponent = PhaseBannerComponent;
