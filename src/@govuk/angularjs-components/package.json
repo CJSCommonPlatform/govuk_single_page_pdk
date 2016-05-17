@@ -1,5 +1,5 @@
 {
-  "version": "0.1.1-alpha",
+  "version": "0.1.4-alpha",
   "name": "@govuk/angularjs-components",
   "main": "./angularjs-components.js",
   "peerDependencies": {

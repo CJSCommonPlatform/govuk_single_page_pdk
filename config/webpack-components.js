@@ -1,7 +1,8 @@
 var helpers = require('./helpers');
 var webpack = require('webpack');
-var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
+var rucksack = require('rucksack-css');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 var plugins = [
   new NgAnnotatePlugin(),

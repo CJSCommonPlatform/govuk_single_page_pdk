@@ -7,13 +7,12 @@
 @import "~govuk_frontend_toolkit/stylesheets/device-pixels";
 @import "~govuk_frontend_toolkit/stylesheets/grid_layout";
 
-
 //Sass elements
 @import '~govuk-elements-sass/public/sass/elements/reset';
 @import '~govuk-elements-sass/public/sass/elements/helpers';
 @import '~govuk-elements-sass/public/sass/elements/layout';
 
 //Bootstrap elements
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_type";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_type";
