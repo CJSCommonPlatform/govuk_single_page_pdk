@@ -1,3 +1,13 @@
 {
-
+  "version": "0.1.1-alpha",
+  "name": "@govuk/platform-template",
+  "peerDependencies": {
+    "font-awesome": "^4.6.1",
+    "govuk-elements-sass": "github:alphagov/govuk_elements",
+    "govuk_frontend_toolkit": "^4.10.0"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/CJSCommonPlatform/govuk_single_page_sdk"
+  }
 }

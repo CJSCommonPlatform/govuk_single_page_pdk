@@ -23,7 +23,7 @@ module.exports = {
       {test: /\.ts$/,   loader: 'awesome-typescript', exclude: [/\.(spec|e2e)\.ts$/]},
       {test: /\.json$/, loader: 'json'},
       {test: /\.html$/, loader: 'html', exclude: [helpers.root('src/index.html')]},
-      {test: /\.(jpg|jpeg|gif|png)$/, loader:'file?name=images/[name].[ext]'},
+      {test: /\.(jpg|jpeg|gif|png)$/, loader: 'file?name=images/[name].[ext]'},
       {test: /\.(woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url?limit=1024&name=fonts/[name].[ext]'}
     ]
   },

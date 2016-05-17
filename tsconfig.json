@@ -10,7 +10,7 @@
   },
   "files": [
     "typings/main.d.ts",
-    "src/custom-typings.d.ts"
+    "custom-typings.d.ts"
   ],
   "exclude": [
     "typings/browser.d.ts",
