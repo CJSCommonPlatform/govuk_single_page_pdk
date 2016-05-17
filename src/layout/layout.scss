@@ -14,6 +14,5 @@
 @import '~govuk-elements-sass/public/sass/elements/layout';
 
 //Bootstrap elements
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_type";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
