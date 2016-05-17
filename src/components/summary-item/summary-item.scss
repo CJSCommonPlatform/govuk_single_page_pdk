@@ -1,0 +1,27 @@
+@import '~govuk_frontend_toolkit/stylesheets/colours';
+@import '~govuk_frontend_toolkit/stylesheets/typography';
+
+.summary-item{
+  @include bold-16;
+  display: table;
+  a{
+    color:$black;
+    text-decoration: none;
+  }
+
+  .summary-item-value{
+    display: table-cell;
+    max-width: 25px;
+    @include bold-36;
+  }
+
+  .summary-item-icon{
+    display: table-cell;
+    max-width: 30px;
+  }
+
+  .summary-item-item{
+    display: table-cell;
+    vertical-align: top;
+  }
+}

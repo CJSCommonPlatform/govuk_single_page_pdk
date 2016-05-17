@@ -1,0 +1,5 @@
+<div class="summary-item" ng-click="$ctrl.action()">
+  <span class="summary-item-value" ng-if="$ctrl.isNumber($ctrl.value)" ng-bind="$ctrl.value"></span>
+  <span class="fa fa-2x summary-item-icon" ng-if="$ctrl.isBoolean($ctrl.value)" ng-class="{'fa-check': $ctrl.value, 'fa-times': !$ctrl.value}"></span>
+  <span class="summary-item-item" ng-bind="$ctrl.itemDescription"></span>
+</div>

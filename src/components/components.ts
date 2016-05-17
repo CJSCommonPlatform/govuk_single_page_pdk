@@ -9,6 +9,7 @@ import { PhaseBannerComponent } from './banners/phase-banner/phase-banner.compon
 import { ArrowComponent } from './navigations/arrow/arrow.component';
 import { NextPreviousNavigationComponent }
     from './navigations/next-previous-navigation/next-previous-navigation.component';
+import { SummaryItemComponent} from './summary-item/summary-item.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -21,6 +22,7 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govPhaseBanner', PhaseBannerComponent)
   .component('govPersistInfoBanner', PersistInfoComponent)
   .component('govArrow', ArrowComponent)
-  .component('govNextPreviousNavigation', NextPreviousNavigationComponent);
+  .component('govNextPreviousNavigation', NextPreviousNavigationComponent)
+  .component('govSummaryItem', SummaryItemComponent);
 
 export const components: string = module.name;
