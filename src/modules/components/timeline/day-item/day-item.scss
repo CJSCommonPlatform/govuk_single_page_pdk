@@ -1,0 +1,60 @@
+@import '~govuk_frontend_toolkit/stylesheets/colours';
+@import '~govuk_frontend_toolkit/stylesheets/typography';
+
+.day-item{
+  a:not([href]) {
+    color: $link-colour;
+    text-decoration: underline;
+  }
+  .boxed {
+    border: 1px solid $border-colour;
+  }
+
+  .box-outer {
+    border-top:1px solid $border-colour;
+  }
+
+  .bottom-shadow {
+    border-bottom-width: 4px;
+  }
+
+  .box-it-inner {
+    display:block;
+    border-bottom:1px solid $border-colour;
+    margin-bottom:10px;
+  }
+
+  .box-black-vertical {
+    height:30px;
+    border-left: 4px solid $black;
+    margin-left:20px;
+  }
+
+  .box-padding {
+    padding:10px;
+  }
+
+  .box-margin {
+    margin-left:10px;
+    margin-right:10px;
+  }
+  .box-grey-background {
+    background-color: $grey-2;
+  }
+  .padding-box-right{
+    padding-right:10px;
+  }
+
+  .padding-box-left{
+    padding-left:10px;
+  }
+
+  .padding-box-bottom{
+    padding-bottom:10px;
+  }
+
+  .gray{
+    color: $grey-2;
+  }
+
+}

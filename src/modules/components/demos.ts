@@ -13,6 +13,7 @@ import { ArrowComponent } from './navigations/arrow/arrow.component';
 import { NextPreviousNavigationDemo }
     from './navigations/next-previous-navigation/next-previous-navigation.demo';
 import { SummaryItemDemo} from './summary-item/summary-item.demo';
+import { TimelineDemo } from './timeline/timeline/timeline.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -27,6 +28,7 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govContactInfoDemo', ContactInfoDemo)
   .component('govPersistInfoBannerDemo', PersistInfoDemo)
   .component('govNextPreviousNavigationDemo', NextPreviousNavigationDemo)
-  .component('govSummaryItemDemo', SummaryItemDemo);
+  .component('govSummaryItemDemo', SummaryItemDemo)
+  .component('govTimelineDemo', TimelineDemo);
 
 export const componentsDemos = module.name;

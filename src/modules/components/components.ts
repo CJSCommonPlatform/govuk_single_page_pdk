@@ -10,6 +10,8 @@ import { ArrowComponent } from './navigations/arrow/arrow.component';
 import { NextPreviousNavigationComponent }
     from './navigations/next-previous-navigation/next-previous-navigation.component';
 import { SummaryItemComponent} from './summary-item/summary-item.component';
+import { DayItemComponent } from './timeline/day-item/day-item.component';
+import { TimelineComponent } from './timeline/timeline/timeline.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -23,6 +25,8 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govPersistInfoBanner', PersistInfoComponent)
   .component('govArrow', ArrowComponent)
   .component('govNextPreviousNavigation', NextPreviousNavigationComponent)
-  .component('govSummaryItem', SummaryItemComponent);
+  .component('govSummaryItem', SummaryItemComponent)
+  .component('govDayItem', DayItemComponent)
+  .component('govTimeline', TimelineComponent);
 
 export const components: string = module.name;
