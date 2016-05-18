@@ -1,7 +1,8 @@
 {
-  "version": "0.1.1-alpha",
+  "version": "0.1.5-alpha",
   "name": "@govuk/platform-template",
   "peerDependencies": {
+    "bootstrap-sass": "^3.3.6",
     "font-awesome": "^4.6.1",
     "govuk-elements-sass": "github:alphagov/govuk_elements",
     "govuk_frontend_toolkit": "^4.10.0"
