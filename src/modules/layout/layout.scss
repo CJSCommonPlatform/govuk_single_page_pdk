@@ -7,7 +7,6 @@
 @import "~govuk_frontend_toolkit/stylesheets/device-pixels";
 @import "~govuk_frontend_toolkit/stylesheets/grid_layout";
 
-
 //Sass elements
 @import '~govuk-elements-sass/public/sass/elements/reset';
 @import '~govuk-elements-sass/public/sass/elements/helpers';
@@ -16,3 +15,5 @@
 //Bootstrap elements
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/_variables";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_type";
