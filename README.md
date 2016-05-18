@@ -1,1 +1,1 @@
-##Single Page Service Development Kit
+##Single Page Platform Development Kit
