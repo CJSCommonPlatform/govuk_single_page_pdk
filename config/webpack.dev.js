@@ -1,4 +1,3 @@
-/// <reference path="../typings/main.d.ts" />
 
 var helpers = require('./helpers');
 var webpack = require('webpack');
@@ -21,7 +20,7 @@ module.exports = webpackMerge(commonConfig, {
   module: {
     loaders: [
       {test: /\.css$/,  loader: 'style!css'},
-      {test: /\.scss$/, loader: 'style!css!postcss!sass'}
+      {test: /\.scss$/, loader: 'style!css!postcss!resolve-url!sass?sourceMap'}
     ]
   },
   devServer: {

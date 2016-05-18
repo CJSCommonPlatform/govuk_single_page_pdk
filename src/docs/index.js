@@ -1,20 +1,26 @@
 "use strict";
 require('index.scss');
 var config_1 = require('./config');
-var docs_1 = require('../components/docs');
-var docs_2 = require('../content/docs');
-var docs_3 = require('../examples/docs');
-var docs_4 = require('../layout/docs');
-var index_component_1 = require('./index/index.component');
-var layout_component_1 = require('./layout/layout.component');
+var demos_1 = require('../modules/components/demos');
+var demos_2 = require('../modules/content/demos');
+var demos_3 = require('../modules/layout/demos');
+var app_layout_component_1 = require('./app/app-layout.component');
+var components_component_1 = require('./app/components/components.component');
+var content_component_1 = require('./app/content/content.component');
+var examples_component_1 = require('./app/examples/examples.component');
+var home_component_1 = require('./app/home/home.component');
+var layout_component_1 = require('./app/layout/layout.component');
 angular.module('govuk-single-page-pdk.docs', [
     config_1.config,
-    docs_1.componentsDocs,
-    docs_2.contentDocs,
-    docs_3.examplesDocs,
-    docs_4.layoutDocs,
+    demos_1.componentsDemos,
+    demos_2.contentDemos,
+    demos_3.layoutDemos,
     'ncy-angular-breadcrumb',
     'ui.router'
 ])
-    .component('govDocsIndexPage', index_component_1.DocsIndexComponent)
-    .component('govDocs', layout_component_1.DocsLayoutComponent);
+    .component('govDocs', app_layout_component_1.AppLayout)
+    .component('govDocsHomePage', home_component_1.HomePage)
+    .component('govDocsComponentsPage', components_component_1.ComponentsPage)
+    .component('govDocsContentPage', content_component_1.ContentPage)
+    .component('govDocsExamplesPage', examples_component_1.ExamplesPage)
+    .component('govDocsLayoutPage', layout_component_1.LayoutPage);

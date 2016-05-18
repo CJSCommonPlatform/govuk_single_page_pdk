@@ -9,7 +9,7 @@ module.exports = webpackMerge(commonConfig, {
   debug: false,
   devtool: 'source-map',
   output: {
-    path: helpers.root('dist'),
+    path: helpers.root('dist/docs'),
     filename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].[chunkhash].map',
     chunkFilename: '[id].[chunkhash].js'
@@ -17,7 +17,7 @@ module.exports = webpackMerge(commonConfig, {
   module: {
     loaders: [
       {test: /\.css$/,  loader: ExtractText.extract('css')},
-      {test: /\.scss$/, loader: ExtractText.extract('css!postcss!sass')}
+      {test: /\.scss$/, loader: ExtractText.extract('css!postcss!resolve-url!sass')}
     ]
   },
   plugins: [
