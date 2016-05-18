@@ -5,7 +5,7 @@ const module = angular.module('govuk-single-page-pdk.config.breadcrumbs', [
   .config(($breadcrumbProvider: ncy.$breadcrumbProvider) => {
     $breadcrumbProvider.setOptions({
       prefixStateName: 'home',
-      template: require('../../modules/components/breadcrumbs/ui-router-breadcrumbs.component.html')
+      template: require('../../modules/components/navigation/breadcrumbs/ui-router-breadcrumbs.component.html')
     });
   });
 

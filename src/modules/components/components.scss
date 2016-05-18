@@ -1,12 +1,12 @@
-@import "breadcrumbs/breadcrumbs";
+@import "navigation/breadcrumbs/breadcrumbs";
 @import "action-pane/action-pane.scss";
 @import "headers/govuk/govuk-header";
 @import "banners/phase-banner/phase-banner";
-@import "contact-info/contact-info";
+@import "data-visualisation/contact-info/contact-info";
 @import "banners/page-title/page-title";
-@import "personal-details/personal-details";
+@import "data-visualisation/personal-details/personal-details";
 @import "banners/persist-info/persist-info";
-@import "navigations/arrow/arrow.scss";
-@import "summary-item/summary-item";
+@import "navigation/arrow/arrow.scss";
+@import "data-visualisation/summary-item/summary-item";
 @import "timeline/day-item/day-item.scss";
 @import "timeline/timeline/timeline.scss";
