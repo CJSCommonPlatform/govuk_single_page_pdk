@@ -3,7 +3,7 @@ export const routes: angular.ui.IState[] = [
   {
     state:    'home',
     url:      '/',
-    template: '<gov-docs-index-page></gov-docs-index-page>',
+    template: '<gov-docs-home-page></gov-docs-home-page>',
     ncyBreadcrumb: {
       label: 'Single Page Platform Development Kit'
     }

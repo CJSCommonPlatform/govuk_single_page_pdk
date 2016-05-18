@@ -20,6 +20,7 @@ $image-url-path: '/lib/govuk_template/stylesheets/' !default;
   @return url('#{$image-url-path}#{$url}');
 }
 
+
 // import variables / mixins required internally
 
 @import '~govuk_frontend_toolkit/stylesheets/colours';
@@ -37,11 +38,14 @@ $image-url-path: '/lib/govuk_template/stylesheets/' !default;
 @import 'lib/govuk_template/stylesheets/accessibility';
 @import 'lib/govuk_template/stylesheets/footer';
 
-// pdk modules
 
-@import 'modules/components/components';
-@import 'modules/content/content';
+
+// pdk modules
 @import 'modules/layout/layout';
+@import 'modules/content/content';
+@import 'modules/components/components';
+
+
 
 
 // provided by peer dependencies
