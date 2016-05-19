@@ -14,6 +14,7 @@ import { NextPreviousNavigationDemo }
     from './navigation/next-previous-navigation/next-previous-navigation.demo';
 import { SummaryItemDemo} from './data-visualisation/summary-item/summary-item.demo';
 import { TimelineDemo } from './timeline/timeline/timeline.demo';
+import { ImageDemoComponent } from './image/image.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -29,6 +30,7 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govPersistInfoBannerDemo', PersistInfoDemo)
   .component('govNextPreviousNavigationDemo', NextPreviousNavigationDemo)
   .component('govSummaryItemDemo', SummaryItemDemo)
-  .component('govTimelineDemo', TimelineDemo);
+  .component('govTimelineDemo', TimelineDemo)
+  .component('govImageDemo', ImageDemoComponent);
 
 export const componentsDemos = module.name;

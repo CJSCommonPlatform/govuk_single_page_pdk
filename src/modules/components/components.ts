@@ -12,6 +12,7 @@ import { NextPreviousNavigationComponent }
 import { SummaryItemComponent} from './data-visualisation/summary-item/summary-item.component';
 import { DayItemComponent } from './timeline/day-item/day-item.component';
 import { TimelineComponent } from './timeline/timeline/timeline.component';
+import { ImageComponent } from './image/image.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -27,6 +28,7 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govNextPreviousNavigation', NextPreviousNavigationComponent)
   .component('govSummaryItem', SummaryItemComponent)
   .component('govDayItem', DayItemComponent)
-  .component('govTimeline', TimelineComponent);
+  .component('govTimeline', TimelineComponent)
+  .component('govImage', ImageComponent);
 
 export const components: string = module.name;
