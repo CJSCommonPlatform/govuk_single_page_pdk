@@ -11,6 +11,7 @@ var personal_details_demo_1 = require('./personal-details/personal-details.demo'
 var contact_info_demo_1 = require('./contact-info/contact-info.demo');
 var next_previous_navigation_demo_1 = require('./navigations/next-previous-navigation/next-previous-navigation.demo');
 var summary_item_demo_1 = require('./summary-item/summary-item.demo');
+var timeline_demo_1 = require('./timeline/timeline/timeline.demo');
 var module = angular.module('govuk-single-page-pdk.components-demos', [
     components_1.components,
     docs_1.docsUtils
@@ -24,5 +25,6 @@ var module = angular.module('govuk-single-page-pdk.components-demos', [
     .component('govContactInfoDemo', contact_info_demo_1.ContactInfoDemo)
     .component('govPersistInfoBannerDemo', persist_info_demo_1.PersistInfoDemo)
     .component('govNextPreviousNavigationDemo', next_previous_navigation_demo_1.NextPreviousNavigationDemo)
-    .component('govSummaryItemDemo', summary_item_demo_1.SummaryItemDemo);
+    .component('govSummaryItemDemo', summary_item_demo_1.SummaryItemDemo)
+    .component('govTimelineDemo', timeline_demo_1.TimelineDemo);
 exports.componentsDemos = module.name;

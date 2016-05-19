@@ -10,6 +10,8 @@ var phase_banner_component_1 = require('./banners/phase-banner/phase-banner.comp
 var arrow_component_1 = require('./navigations/arrow/arrow.component');
 var next_previous_navigation_component_1 = require('./navigations/next-previous-navigation/next-previous-navigation.component');
 var summary_item_component_1 = require('./summary-item/summary-item.component');
+var day_item_component_1 = require('./timeline/day-item/day-item.component');
+var timeline_component_1 = require('./timeline/timeline/timeline.component');
 var module = angular.module('govuk-single-page-pdk.components', [])
     .component('govActionPane', action_pane_component_1.ActionPaneComponent)
     .component('govBreadcrumbs', breadcrumbs_component_1.BreadcrumbsComponent)
@@ -21,5 +23,7 @@ var module = angular.module('govuk-single-page-pdk.components', [])
     .component('govPersistInfoBanner', persist_info_component_1.PersistInfoComponent)
     .component('govArrow', arrow_component_1.ArrowComponent)
     .component('govNextPreviousNavigation', next_previous_navigation_component_1.NextPreviousNavigationComponent)
-    .component('govSummaryItem', summary_item_component_1.SummaryItemComponent);
+    .component('govSummaryItem', summary_item_component_1.SummaryItemComponent)
+    .component('govDayItem', day_item_component_1.DayItemComponent)
+    .component('govTimeline', timeline_component_1.TimelineComponent);
 exports.components = module.name;
