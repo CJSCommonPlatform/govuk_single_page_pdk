@@ -1,5 +1,4 @@
 import { Component } from '@govuk/angularjs-devtools';
-require('./next-previous-navigation.scss');
 
 @Component({
   template: require('./next-previous-navigation.demo.html')

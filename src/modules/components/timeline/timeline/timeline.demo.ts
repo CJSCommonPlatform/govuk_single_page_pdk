@@ -1,7 +1,5 @@
 import { Component } from '@govuk/angularjs-devtools';
 
-require('./timeline.scss');
-
 @Component({
   template: require('./timeline.demo.html')
 })

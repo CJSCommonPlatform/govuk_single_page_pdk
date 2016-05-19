@@ -1,7 +1,5 @@
 import { Component } from '@govuk/angularjs-devtools';
 
-require('./statement.scss');
-
 @Component({
   template: require('./statement.demo.html')
 })
