@@ -13,8 +13,17 @@ import { SummaryItemComponent} from './data-visualisation/summary-item/summary-i
 import { DayItemComponent } from './timeline/day-item/day-item.component';
 import { TimelineComponent } from './timeline/timeline/timeline.component';
 import { ImageComponent } from './image/image.component';
+import { StatementComponent } from './media/statement/statement.component';
+import { MediaIconComponent } from './media/media-icon/media-icon.component';
+import { toBytes } from './media/filters/toBytes.filter';
+import { noFileType } from './media/filters/noFileType.filter';
+import { toFileType } from './media/filters/toFileType.filter';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
+
+  .filter('toBytes', toBytes)
+  .filter('noFileType', noFileType)
+  .filter('toFileType', toFileType)
 
   .component('govActionPane', ActionPaneComponent)
   .component('govBreadcrumbs', BreadcrumbsComponent)
@@ -22,6 +31,7 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govPageTitle', PageTitleComponent)
   .component('govPersonalDetails', PersonalDetailsComponent)
   .component('govContactInfo', ContactInfoComponent)
+  .component('govMediaIcon', MediaIconComponent)
   .component('govPhaseBanner', PhaseBannerComponent)
   .component('govPersistInfoBanner', PersistInfoComponent)
   .component('govArrow', ArrowComponent)
@@ -29,6 +39,8 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govSummaryItem', SummaryItemComponent)
   .component('govDayItem', DayItemComponent)
   .component('govTimeline', TimelineComponent)
-  .component('govImage', ImageComponent);
+  .component('govImage', ImageComponent)
+  .component('govStatement', StatementComponent)
+  .component('govSummaryItem', SummaryItemComponent);
 
 export const components: string = module.name;
