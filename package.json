@@ -35,7 +35,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "font-awesome": "^4.6.1",
-    "govuk-elements-sass": "github:alphagov/govuk_elements",
+    "govuk-elements-sass": "^1.1.4",
     "govuk_frontend_toolkit": "^4.10.0",
     "gulp": "^3.9.1",
     "html-loader": "^0.4.3",
