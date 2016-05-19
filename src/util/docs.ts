@@ -3,7 +3,10 @@ import 'prismjs';
 require('../../node_modules/prismjs/themes/prism.css');
 require('./docs.scss');
 
+import { DiscussComponent } from './discuss.component';
+
 const module = angular.module('govDocs-utils', [])
+  .component('discussComponent', DiscussComponent)
 
   .factory('prism', ['$window', ($window) => $window.Prism])
 
