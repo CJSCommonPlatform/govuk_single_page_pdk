@@ -1,3 +1,5 @@
+/* tslint:disable:max-line-length */
+
 import { ActionPaneComponent } from './action-pane/action-pane.component';
 import { BreadcrumbsComponent } from './navigation/breadcrumbs/breadcrumbs.component';
 import { GovUkHeaderComponent } from './headers/govuk/govuk-header.component';

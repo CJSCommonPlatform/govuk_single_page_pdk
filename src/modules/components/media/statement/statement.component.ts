@@ -18,7 +18,7 @@ export class StatementComponent {
   fileName: string;
   fileSize: number | string;
   onSelect: Function;
-  
+
   onClick() {
     this.onSelect({$event: this.fileName});
   }

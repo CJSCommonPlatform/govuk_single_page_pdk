@@ -6,7 +6,8 @@ require('./timeline.scss');
   template: require('./timeline.demo.html')
 })
 export class TimelineDemo {
-  timeline = {
+
+  timeline: any  = {
     title: 'Timeline',
     elements: [
       {
@@ -15,8 +16,8 @@ export class TimelineDemo {
         timestamp: '09:15AM',
         actions: [
           {title: 'Assign to me'},
-          {title: 'Review case', action: function(){console.log('Review case')}, active: true},
-          {title: 'Enter your analysis and charging decision'},
+          {title: 'Review case', action: () => { console.log('Review case'); }, active: true},
+          {title: 'Enter your analysis and charging decision'}
         ]
       },
       {
@@ -24,11 +25,11 @@ export class TimelineDemo {
         description: 'Recorded analysis',
         timestamp: '08:15AM',
         actions: [
-          {title: 'Assign to me', action: function(){console.log('Assign to me')}, active: true},
+          {title: 'Assign to me', action: () => { console.log('Assign to me'); }, active: true},
           {title: 'Review case'},
-          {title: 'Enter your analysis and charging decision'},
+          {title: 'Enter your analysis and charging decision'}
         ]
-      },
+      }
     ]
   };
 }

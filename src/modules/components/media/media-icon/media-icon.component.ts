@@ -13,8 +13,7 @@ export class MediaIconComponent {
 
   $onChanges(changes: any) {
     if (changes.fileName) {
-      
-      console.log(this.fileName)
+
       const parts = this.fileName.split('.');
       const extname = parts[parts.length - 1];
 
