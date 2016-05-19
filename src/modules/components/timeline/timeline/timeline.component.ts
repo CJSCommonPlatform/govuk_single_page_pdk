@@ -8,5 +8,5 @@ import { Component } from '@govuk/angularjs-devtools';
   template: require('./timeline.component.html')
 })
 export class TimelineComponent {
-
+  name = 'Ben';
 }
