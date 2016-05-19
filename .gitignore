@@ -57,4 +57,3 @@ npm-debug.log
 # IDE #
 .idea/
 *.swp
-**.ts/**.js
