@@ -1,0 +1,39 @@
+.gov-media.statement {
+  display: table;
+  table-layout: fixed;
+
+  i {
+    font-size: 65px;
+    vertical-align: text-top;
+  }
+
+
+
+  img.gov-media-preview {
+    vertical-align: top;
+  }
+
+  .gov-media-info {
+    display: table-cell;
+    padding-left: 15px;
+    width: 100%;
+    @include core-16;
+    a {
+      @include core-24;
+    }
+
+    .gov-media-metadata {
+      margin-top: 2px;
+      +.gov-media-metadata {
+        margin-top: 20px;
+      }
+      list-style: none;
+      li {
+        &:not(:last-child):after {
+          content: ", "
+        }
+        display: inline-block;
+      }
+    }
+  }
+}

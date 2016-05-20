@@ -1,0 +1,11 @@
+<div>
+    <h2 class="heading-large">{{$ctrl.image.title}}</h2>
+    <div class="gov-image-container">
+        <div class="gov-image">
+            <img ng-src="{{$ctrl.image.src}}" alt="{{$ctrl.image.title}}">
+            <div class="gov-image-metadata" ng-repeat="metadataEntry in $ctrl.image.metadata">
+                <strong ng-bind="metadataEntry.key"></strong>:&nbsp;<span ng-bind="metadataEntry.value"></span>
+            </div>
+        </div>
+    </div>
+</div>

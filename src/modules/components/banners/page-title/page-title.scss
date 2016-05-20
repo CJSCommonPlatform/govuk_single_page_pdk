@@ -1,8 +1,7 @@
-@import '~govuk_frontend_toolkit/stylesheets/colours';
-@import '~govuk_frontend_toolkit/stylesheets/typography';
-
 .page-title-banner {
   background-color: $light-blue;
+  color: $white;
+  font-weight: bold;
   padding: 20px;
 
   h1 {

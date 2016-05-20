@@ -5,15 +5,17 @@ import { BreadcrumbsDemo } from './navigation/breadcrumbs/breadcrumbs.demo';
 import { GovUkHeaderDemo } from './headers/govuk/govuk-header.demo';
 import { PhaseBannerDemo } from './banners/phase-banner/phase-banner.demo';
 import { PageTitleDemo } from './banners/page-title/page-title.demo';
-import { ActionPaneDemo } from './action-pane/action-pane.demo';
+import { ActionPaneDemo } from './navigation/action-pane/action-pane.demo';
 import { PersistInfoDemo } from './banners/persist-info/persist-info.demo';
 import { PersonalDetailsDemo } from './data-visualisation/personal-details/personal-details.demo';
 import { ContactInfoDemo} from './data-visualisation/contact-info/contact-info.demo';
-import { ArrowComponent } from './navigation/arrow/arrow.component';
 import { NextPreviousNavigationDemo }
     from './navigation/next-previous-navigation/next-previous-navigation.demo';
 import { SummaryItemDemo} from './data-visualisation/summary-item/summary-item.demo';
 import { TimelineDemo } from './timeline/timeline/timeline.demo';
+import { ImageDemoComponent } from './image/image.demo';
+import { StatementDemo } from './media/statement/statement.demo';
+
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -29,6 +31,8 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govPersistInfoBannerDemo', PersistInfoDemo)
   .component('govNextPreviousNavigationDemo', NextPreviousNavigationDemo)
   .component('govSummaryItemDemo', SummaryItemDemo)
-  .component('govTimelineDemo', TimelineDemo);
+  .component('govTimelineDemo', TimelineDemo)
+  .component('govImageDemo', ImageDemoComponent)
+  .component('govStatementDemo', StatementDemo);
 
 export const componentsDemos = module.name;

@@ -1,3 +1,4 @@
+/* tslint:disable:max-line-length */
 
 const module = angular.module('govuk-single-page-pdk.config.breadcrumbs', [
   'ncy-angular-breadcrumb'

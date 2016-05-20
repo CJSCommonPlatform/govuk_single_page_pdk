@@ -1,0 +1,12 @@
+.gov-image-container {
+  text-align: center;
+  .gov-image {
+    display: inline-block;
+    &-metadata {
+      text-align: left;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
