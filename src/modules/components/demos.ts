@@ -13,7 +13,7 @@ import { NextPreviousNavigationDemo }
     from './navigation/next-previous-navigation/next-previous-navigation.demo';
 import { SummaryItemDemo} from './data-visualisation/summary-item/summary-item.demo';
 import { TimelineDemo } from './timeline/timeline/timeline.demo';
-import { ImageDemoComponent } from './image/image.demo';
+import { ImageDemoComponent } from './media/image/image.demo';
 import { StatementDemo } from './media/statement/statement.demo';
 
 

@@ -81,5 +81,8 @@
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.8.4"
+  },
+  "dependencies": {
+    "angular-sanitize": "^1.5.5"
   }
 }
