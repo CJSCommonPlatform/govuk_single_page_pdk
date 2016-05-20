@@ -1,4 +1,5 @@
 <div class="gov-action-pane">
-  <h3 class="gov-action-pane-heading" ng-bind="heading"></h3>
-  <ng-transclude></ng-transclude>
+  <p ng-transclude="links"></p>
+  <div class="gov-action-pane-heading" ng-bind="$ctrl.heading"></div>
+  <span ng-transclude="tasks"></span>
 </div>

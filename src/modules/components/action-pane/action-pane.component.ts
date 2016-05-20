@@ -1,10 +1,13 @@
 import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
-  bindings: {
+  bindings:{
     heading: '<'
   },
-  transclude: true,
+  transclude: {
+    links: '?links',
+    tasks: '?tasks'
+  },
   template: require('./action-pane.component.html')
 })
 export class ActionPaneComponent {}
