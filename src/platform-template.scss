@@ -21,7 +21,7 @@ $image-url-path: '/lib/govuk_template/stylesheets/' !default;
 }
 
 
-// import variables / mixins required internally
+/* import variables / mixins required internally
 
 @import '~govuk_frontend_toolkit/stylesheets/colours';
 @import '~govuk_frontend_toolkit/stylesheets/grid_layout';
@@ -38,7 +38,10 @@ $image-url-path: '/lib/govuk_template/stylesheets/' !default;
 @import 'lib/govuk_template/stylesheets/accessibility';
 @import 'lib/govuk_template/stylesheets/footer';
 
+*/
 
+
+$govuk-blue: #444;
 
 // pdk modules
 @import 'modules/layout/layout';
