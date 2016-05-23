@@ -39,5 +39,13 @@ export const routes: angular.ui.IState[] = [
     ncyBreadcrumb: {
       label: 'Layout'
     }
+  },
+  {
+    state:    'colours',
+    url:      '/colours',
+    template: '<gov-docs-colours-page></gov-docs-colours-page>',
+    ncyBreadcrumb: {
+      label: 'Colours'
+    }
   }
 ];

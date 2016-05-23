@@ -1,7 +1,7 @@
 import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
-  bindings:{
+  bindings: {
     heading: '<'
   },
   transclude: {
