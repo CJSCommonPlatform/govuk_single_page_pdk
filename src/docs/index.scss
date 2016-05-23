@@ -10,3 +10,8 @@ section.docs-section {
     margin-top: 60px;
   }
 }
+
+// override for default component style, just for docs display
+.gov-highlight-text {
+  margin: 10px 0 15px;
+}

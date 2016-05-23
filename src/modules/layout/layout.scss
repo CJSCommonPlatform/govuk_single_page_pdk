@@ -7,7 +7,12 @@
 @import "~govuk_frontend_toolkit/stylesheets/device-pixels";
 @import "~govuk_frontend_toolkit/stylesheets/grid_layout";
 
+
+@import '~govuk_frontend_toolkit/stylesheets/colours';
+@import '~govuk_frontend_toolkit/stylesheets/typography';
+
 //Sass elements
+
 @import '~govuk-elements-sass/public/sass/elements/reset';
 @import '~govuk-elements-sass/public/sass/elements/helpers';
 @import '~govuk-elements-sass/public/sass/elements/layout';

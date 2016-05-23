@@ -20,6 +20,8 @@ import { MediaIconComponent } from './media/media-icon/media-icon.component';
 import { toBytes } from './media/filters/toBytes.filter';
 import { noFileType } from './media/filters/noFileType.filter';
 import { toFileType } from './media/filters/toFileType.filter';
+import { DigitBoxComponent } from './data-visualisation/digit-box/digit-box.component';
+import { HighlightTextComponent } from './banners/highlight-text/highlight-text.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -43,6 +45,8 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govTimeline', TimelineComponent)
   .component('govImage', ImageComponent)
   .component('govStatement', StatementComponent)
-  .component('govSummaryItem', SummaryItemComponent);
+  .component('govSummaryItem', SummaryItemComponent)
+  .component('govDigitBox', DigitBoxComponent)
+  .component('govHighlightText', HighlightTextComponent);
 
 export const components: string = module.name;
