@@ -1,0 +1,32 @@
+<h1 class="heading-xlarge">
+  <span class="heading-secondary">Single Page Platform Development Kit</span>
+  Components
+</h1>
+<div class="text">
+  <p class="lede">
+    Provides a set of elements organised by domain, those elements are commonly used for business and public facing services.
+  </p>
+</div>
+<div ng-repeat="domain in $ctrl.domains">
+  <div class="grid-row" ng-if="$index % 3 === 0">
+    <div class="column-one-third">
+      <h2 class="heading-medium"><a ui-sref="{{$ctrl.domains[$index].state}}" ng-bind="$ctrl.domains[$index].name"></a></h2>
+      <p>
+        {{$ctrl.domains[$index].components.join(', ')}}.
+      </p>
+    </div>
+    <div class="column-one-third">
+      <h2 class="heading-medium"><a ui-sref="{{$ctrl.domains[$index + 1].state}}" ng-bind="$ctrl.domains[$index + 1].name"></a></h2>
+      <p>
+        {{$ctrl.domains[$index + 1].components.join(', ')}}.
+      </p>
+    </div>
+    <div class="column-one-third">
+      <h2 class="heading-medium"><a ui-sref="{{$ctrl.domains[$index + 2].state}}" ng-bind="$ctrl.domains[$index + 2].name"></a></h2>
+      <p>
+        {{$ctrl.domains[$index + 2].components.join(', ')}}.
+      </p>
+    </div>
+  </div>
+</div>
+

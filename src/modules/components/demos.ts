@@ -13,9 +13,11 @@ import { NextPreviousNavigationDemo }
     from './navigation/next-previous-navigation/next-previous-navigation.demo';
 import { SummaryItemDemo} from './data-visualisation/summary-item/summary-item.demo';
 import { TimelineDemo } from './timeline/timeline/timeline.demo';
-import { ImageDemoComponent } from './image/image.demo';
+import { ImageDemoComponent } from './media/image/image.demo';
 import { StatementDemo } from './media/statement/statement.demo';
-
+import { DigitBoxDemo } from './data-visualisation/digit-box/digit-box.demo';
+import { HighlightTextDemo } from './banners/highlight-text/highlight-text.demo';
+import { AlertDemo } from './banners/alert/alert.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -33,6 +35,9 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govSummaryItemDemo', SummaryItemDemo)
   .component('govTimelineDemo', TimelineDemo)
   .component('govImageDemo', ImageDemoComponent)
-  .component('govStatementDemo', StatementDemo);
+  .component('govStatementDemo', StatementDemo)
+  .component('govDigitBoxDemo', DigitBoxDemo)
+  .component('govHighlightTextDemo', HighlightTextDemo)
+  .component('govAlertDemo', AlertDemo);
 
 export const componentsDemos = module.name;

@@ -16,7 +16,7 @@ export class AppLayout {
       label: 'Content'
     },
     {
-      state: 'components',
+      state: 'components.index',
       label: 'Components'
     },
     {

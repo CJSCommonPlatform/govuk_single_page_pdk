@@ -1,0 +1,9 @@
+.gov-digit-box {
+  display: inline-block;
+  background: $grey-1;
+  color: $white;
+  padding: 15px 20px 10px;
+  margin: 10px 0;
+  @include core-36;
+  font-weight: 600;
+}

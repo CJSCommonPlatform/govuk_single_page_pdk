@@ -1,0 +1,8 @@
+.gov-alert {
+  margin: 20px 0;
+  border-left: 5px solid $orange;
+  background-color: lighten($orange, 35%);
+  padding: 10px 16px;
+  @include core-24;
+  font-weight: 900;
+}

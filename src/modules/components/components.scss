@@ -8,9 +8,12 @@
 @import "banners/persist-info/persist-info";
 @import "navigation/arrow/arrow";
 @import "data-visualisation/summary-item/summary-item";
+@import "data-visualisation/digit-box/digit-box";
 @import "timeline/day-item/day-item.scss";
 @import "timeline/timeline/timeline.scss";
-@import "image/image.scss";
+@import "media/image/image.scss";
 @import "timeline/day-item/day-item";
 @import "media/statement/statement";
 @import "timeline/timeline/timeline";
+@import "banners/highlight-text/highlight-text";
+@import "banners/alert/alert";
