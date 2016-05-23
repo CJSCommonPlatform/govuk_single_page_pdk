@@ -11,54 +11,54 @@ export const routes: angular.ui.IState[] = [
   {
     state:    'components',
     url:      '/components',
-    template: '<gov-docs-components-page></gov-docs-components-page>',
+    template: '<ui-view><gov-docs-components-page></gov-docs-components-page></ui-view>',
     ncyBreadcrumb: {
       label: 'Components'
     }
   },
   {
-    state:    'banners',
-    url:      '/components/banners',
+    state:    'components.banners',
+    url:      '/banners',
     template: '<gov-docs-components-banners-page></gov-docs-components-banners-page>',
     ncyBreadcrumb: {
       label: 'Banners'
     }
   },
   {
-    state:    'data-visualisation',
-    url:      '/components/data-visualisation',
+    state:    'components.data-visualisation',
+    url:      '/data-visualisation',
     template: '<gov-docs-components-data-visualisation-page></gov-docs-components-data-visualisation-page>',
     ncyBreadcrumb: {
       label: 'Data-Visualisation'
     }
   },
   {
-    state:    'headers',
-    url:      '/components/headers',
+    state:    'components.headers',
+    url:      '/headers',
     template: '<gov-docs-components-headers-page></gov-docs-components-headers-page>',
     ncyBreadcrumb: {
       label: 'Headers'
     }
   },
   {
-    state:    'media',
-    url:      '/components/media',
+    state:    'components.media',
+    url:      '/media',
     template: '<gov-docs-components-media-page></gov-docs-components-media-page>',
     ncyBreadcrumb: {
       label: 'Media'
     }
   },
   {
-    state:    'navigation',
-    url:      '/components/navigation',
+    state:    'components.navigation',
+    url:      '/navigation',
     template: '<gov-docs-components-navigation-page></gov-docs-components-navigation-page>',
     ncyBreadcrumb: {
       label: 'Components'
     }
   },
   {
-    state:    'timeline',
-    url:      '/components/timeline',
+    state:    'components.timeline',
+    url:      '/timeline',
     template: '<gov-docs-components-timeline-page></gov-docs-components-timeline-page>',
     ncyBreadcrumb: {
       label: 'Timeline'

@@ -5,7 +5,7 @@ import { componentsDemos } from '../modules/components/demos';
 import { contentDemos } from '../modules/content/demos';
 import { layoutDemos } from '../modules/layout/demos';
 import { AppLayout } from './app/app-layout.component';
-import { ComponentsPage } from './app/components/components.component';
+import { ComponentsPage } from './app/components/index.component';
 import { BannersPage } from './app/components/banners.component';
 import { DataVisualisationPage } from './app/components/data-visualisation.component';
 import { HeadersPage } from './app/components/headers.component';
