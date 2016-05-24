@@ -4,12 +4,12 @@ import { components } from './modules/components/components';
 import { content } from './modules/content/content';
 import { examples } from './modules/examples/examples';
 import { layout } from './modules/layout/layout';
-import { colour } from './modules/content/colour/colour';
+import { colours} from './modules/content/colours';
 
 angular.module('@govuk/angularjs-components', [
   components,
   content,
   examples,
   layout,
-  colour
+  colours
 ]);

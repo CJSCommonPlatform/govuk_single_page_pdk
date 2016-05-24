@@ -65,14 +65,6 @@ export const routes: angular.ui.IState[] = [
     }
   },
   {
-    state:    'content',
-    url:      '/content',
-    template: '<gov-docs-content-page></gov-docs-content-page>',
-    ncyBreadcrumb: {
-      label: 'Content'
-    }
-  },
-  {
     state:    'examples',
     url:      '/examples',
     template: '<gov-docs-examples-page></gov-docs-examples-page>',
@@ -89,11 +81,27 @@ export const routes: angular.ui.IState[] = [
     }
   },
   {
-    state:    'colours',
+    state:    'content',
+    url:      '/content',
+    template: '<ui-view><gov-docs-content-page></gov-docs-content-page></ui-view>',
+    ncyBreadcrumb: {
+      label: 'Content'
+    }
+  },
+  {
+    state:    'content.colours',
     url:      '/colours',
-    template: '<gov-docs-colours-page></gov-docs-colours-page>',
+    template: '<gov-docs-content-colours-page></gov-docs-content-colours-page>',
     ncyBreadcrumb: {
       label: 'Colours'
+    }
+  },
+  {
+    state:    'content.typography',
+    url:      '/typography',
+    template: '<gov-docs-content-typography-page></gov-docs-content-typography-page>',
+    ncyBreadcrumb: {
+      label: 'Typography'
     }
   }
 ];
