@@ -6,19 +6,18 @@ import { contentDemos } from '../modules/content/demos';
 import { layoutDemos } from '../modules/layout/demos';
 import { AppLayout } from './app/app-layout.component';
 import { ComponentsPage } from './app/components/index.component';
-import { BannersPage } from './app/components/banners.component';
-import { DataVisualisationPage } from './app/components/data-visualisation.component';
-import { HeadersPage } from './app/components/headers.component';
-import { MediaPage } from './app/components/media.component';
-import { NavigationPage } from './app/components/navigation.component';
-import { TimelinePage } from './app/components/timeline.component';
+import { BannersPage } from './app/components/banners/banners.component.ts';
+import { DataVisualisationPage } from './app/components/data-visualisation/data-visualisation.component.ts';
+import { HeadersPage } from './app/components/headers/headers.component.ts';
+import { MediaPage } from './app/components/media/media.component.ts';
+import { NavigationPage } from './app/components/navigation/navigation.component.ts';
+import { TimelinePage } from './app/components/timeline/timeline.component.ts';
 import { ContentPage } from './app/content/content.component';
 import { ExamplesPage } from './app/examples/examples.component';
-import { TypographyPage } from './app/content/typography.component';
-
 import { ColoursPage } from './app/content/colours.component';
 import { HomePage } from './app/home/home.component';
 import { LayoutPage } from './app/layout/layout.component';
+import { FormElementsPage } from './app/content/form-elements/form-elements.component';
 
 angular.module('govuk-single-page-pdk.docs', [
   config,
@@ -41,5 +40,5 @@ angular.module('govuk-single-page-pdk.docs', [
   .component('govDocsContentPage', ContentPage)
   .component('govDocsExamplesPage', ExamplesPage)
   .component('govDocsLayoutPage', LayoutPage)
-  .component('govDocsContentTypographyPage', TypographyPage)
-  .component('govDocsContentColoursPage', ColoursPage);
+  .component('govDocsContentColoursPage', ColoursPage)
+  .component('govDocsFormElementsPage', FormElementsPage);

@@ -1,4 +1,3 @@
-
 export const routes: angular.ui.IState[] = [
   {
     state:    'home',
@@ -97,11 +96,11 @@ export const routes: angular.ui.IState[] = [
     }
   },
   {
-    state:    'content.typography',
-    url:      '/typography',
-    template: '<gov-docs-content-typography-page></gov-docs-content-typography-page>',
+    state:     'content.form-elements',
+    url:       '/form-elements',
+    template: '<gov-docs-form-elements-page></gov-docs-form-elements-page>',
     ncyBreadcrumb: {
-      label: 'Typography'
+      label: 'Form Elements'
     }
   }
 ];

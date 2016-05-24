@@ -1,0 +1,54 @@
+@mixin gov-focus() {
+  outline: none;
+  box-shadow: none !important;
+  border: 3px solid $focus-colour;
+}
+
+.gov-search-group {
+  display: table;
+  width: 100%;
+
+  > input {
+    @extend .form-control;
+    width: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    display: table-cell;
+    height: 40px;
+    vertical-align: top;
+    padding-left: 12px;
+    padding-right: 12px;
+    &:focus {
+      padding-left: 11px;
+      @include gov-focus;
+    }
+  }
+
+  .gov-search-button {
+    width: 40px;
+    display: table-cell;
+    height: 40px;
+    vertical-align: top;
+
+    button {
+      @extend .btn;
+      box-sizing: border-box;
+      height: 40px;
+      padding: 6px 0 7px;
+      background: $secondary-text-colour;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      width: 100%;
+      &:after {
+        font-family: FontAwesome, sans-serif;
+        content: '\f002';
+        color: $white;
+        font-size: 18px;
+      }
+      &:focus {
+        @include gov-focus;
+        padding-top: 4px;
+      }
+    }
+  }
+}

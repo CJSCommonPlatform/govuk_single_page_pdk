@@ -15,10 +15,11 @@
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached",
     "test": "node --max-old-space-size=4096 node_modules/karma/bin/karma start"
   },
-  "peerDependencies": {
+  "dependencies": {
     "angular": "^1.5.5",
     "angular-breadcrumb": "^0.4.1",
-    "angular-ui-router": "^0.2.18"
+    "angular-ui-router": "^0.2.18",
+    "angular-sanitize": "^1.5.5"
   },
   "devDependencies": {
     "@govuk/angularjs-devtools": "^0.1.0",
@@ -81,8 +82,5 @@
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.8.4"
-  },
-  "dependencies": {
-    "angular-sanitize": "^1.5.5"
   }
 }

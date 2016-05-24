@@ -1,0 +1,32 @@
+@import '~govuk_frontend_toolkit/stylesheets/conditionals';
+
+.gov-notification {
+  @include bold-24;
+  box-sizing: border-box;
+  padding: 22px;
+  display: table;
+  width: 100%;
+  color: $white;
+
+  @include media(tablet) {
+    padding: 30px;
+  }
+
+  i.gov-notification-icon {
+    @extend .fa;
+    @extend .fa-exclamation-circle;
+    display: table-cell;
+  }
+
+  &.active   { background: $green; }
+  &.inactive { background: $red; }
+  &.success  { background: $turquoise; }
+  &.pending  { background: $orange; }
+  &.invalid  { background: $red; }
+
+  .gov-notification-body {
+    display: table-cell;
+    padding-left: 8px;
+    width: 100%;
+  }
+}
