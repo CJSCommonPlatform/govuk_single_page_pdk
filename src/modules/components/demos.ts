@@ -18,6 +18,7 @@ import { StatementDemo } from './media/statement/statement.demo';
 import { DigitBoxDemo } from './data-visualisation/digit-box/digit-box.demo';
 import { HighlightTextDemo } from './banners/highlight-text/highlight-text.demo';
 import { AlertDemo } from './banners/alert/alert.demo';
+import { NotificationDemo } from './banners/notification/notification.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -38,6 +39,7 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govStatementDemo', StatementDemo)
   .component('govDigitBoxDemo', DigitBoxDemo)
   .component('govHighlightTextDemo', HighlightTextDemo)
-  .component('govAlertDemo', AlertDemo);
+  .component('govAlertDemo', AlertDemo)
+  .component('govNotificationDemo', NotificationDemo);
 
 export const componentsDemos = module.name;
