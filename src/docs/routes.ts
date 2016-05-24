@@ -67,9 +67,17 @@ export const routes: angular.ui.IState[] = [
   {
     state:    'content',
     url:      '/content',
-    template: '<gov-docs-content-page></gov-docs-content-page>',
+    template: '<ui-view><gov-docs-content-page></gov-docs-content-page></ui-view>',
     ncyBreadcrumb: {
       label: 'Content'
+    }
+  },
+  {
+    state:     'content.form-elements',
+    url:       '/form-elements',
+    template: '<gov-docs-form-elements-page></gov-docs-form-elements-page>',
+    ncyBreadcrumb: {
+      label: 'Form Elements'
     }
   },
   {

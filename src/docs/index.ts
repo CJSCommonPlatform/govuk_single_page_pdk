@@ -17,6 +17,7 @@ import { ExamplesPage } from './app/examples/examples.component';
 import { ColoursPage } from './app/content/colours/colours.component';
 import { HomePage } from './app/home/home.component';
 import { LayoutPage } from './app/layout/layout.component';
+import { FormElementsPage } from './app/content/form-elements/form-elements.component';
 
 angular.module('govuk-single-page-pdk.docs', [
   config,
@@ -39,4 +40,5 @@ angular.module('govuk-single-page-pdk.docs', [
   .component('govDocsContentPage', ContentPage)
   .component('govDocsExamplesPage', ExamplesPage)
   .component('govDocsLayoutPage', LayoutPage)
-  .component('govDocsColoursPage', ColoursPage);
+  .component('govDocsColoursPage', ColoursPage)
+  .component('govDocsFormElementsPage', FormElementsPage);
