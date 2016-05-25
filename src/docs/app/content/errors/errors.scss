@@ -1,0 +1,86 @@
+.error {
+	margin-right: 15px;
+	border-left: 4px solid $red;
+	padding-left: 10px;
+	legend {
+		.form-label {
+			padding-bottom: 0;
+		}
+		.form-label-bold {
+			padding-bottom: 0;
+		}
+	}
+	.error-message {
+		color: $red;
+		font-weight: bold;
+	}
+	.form-control {
+		border: 4px solid $red;
+	}
+	.form-hint {
+		margin-bottom: 0;
+	}
+}
+.error-summary {
+	border-left: 4px solid $red;
+	padding-left: 10px;
+	border: 4px solid $red;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 15px 10px;
+	&:focus {
+		outline: 3px solid $yellow;
+	}
+	.error-summary-heading {
+		margin-top: 0;
+	}
+	p {
+		margin-bottom: 10px;
+	}
+	.error-summary-list {
+		padding-left: 0;
+		a {
+			color: $red;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+	}
+}
+@media(min-width: 641px) {
+	.error {
+		border-left: 5px solid $red;
+		padding-left: 15px;
+	}
+	.error-summary {
+		border-left: 5px solid $red;
+		padding-left: 15px;
+		border: 5px solid $red;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		padding: 20px 15px 15px;
+		.error-summary-list li {
+			margin-bottom: 5px;
+		}
+	}
+	.error-message {
+		font-size: 19px;
+		line-height: 1.3157894737;
+	}
+}
+.error-message {
+	font-size: 16px;
+	line-height: 1.25;
+	font-weight: 400;
+	text-transform: none;
+	font-size-adjust: 0.5;
+	display: block;
+	clear: both;
+	margin: 0;
+	padding: 5px 0 7px;
+}
+ul {
+	list-style-type: none;
+}
+ol {
+	list-style-type: none;
+}
