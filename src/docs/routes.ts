@@ -110,5 +110,13 @@ export const routes: angular.ui.IState[] = [
     ncyBreadcrumb: {
       label: 'Icons and Media'
     }
+  },
+  {
+    state:     'content.errors',
+    url:       '/errors',
+    template: '<gov-docs-content-errors-page></gov-docs-content-errors-page>',
+    ncyBreadcrumb: {
+      label: 'Errors'
+    }
   }
 ];
