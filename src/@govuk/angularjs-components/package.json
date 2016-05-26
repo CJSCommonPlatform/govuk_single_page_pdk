@@ -1,10 +1,10 @@
 {
-  "version": "0.1.7-alpha",
+  "version": "0.1.10-alpha",
   "name": "@govuk/angularjs-components",
   "main": "./angularjs-components.js",
   "peerDependencies": {
     "angular": "^1.5.0",
-    "@govuk/platform-template": "0.1.7-alpha"
+    "@govuk/platform-template": "0.1.10-alpha"
   },
   "repository" : {
     "type" : "git",
