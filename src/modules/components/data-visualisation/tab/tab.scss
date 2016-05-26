@@ -1,0 +1,11 @@
+.contact-info{
+  .contact-info-position{
+    @include core-19;
+    font-weight: bold;
+  }
+
+  .contact-info-name{
+    @include core-16;
+    font-weight: bold;
+  }
+}

@@ -41,16 +41,11 @@ $image-url-path: '/lib/govuk_template/stylesheets/' !default;
 */
 
 
-$govuk-blue: #444;
-
 // pdk modules
 @import 'modules/layout/layout';
 @import 'modules/content/content';
 @import 'modules/components/components';
 
-
-
-
 // provided by peer dependencies
-
 @import '~govuk-elements-sass/public/sass/elements/govuk-template-base';
+@import '~govuk-elements-sass/public/sass/govuk-elements';
