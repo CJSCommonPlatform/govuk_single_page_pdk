@@ -8,10 +8,9 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class VideoComponent {
 
+    static $inject = ['$element'];
     private url: string;
     private config: any;
-
-    static $inject = ['$element'];
 
     constructor(private $element: ng.IAugmentedJQuery, private $window: any/*ng.IWindowService*/) {
         this.config = {
@@ -23,7 +22,6 @@ export class VideoComponent {
     }
 
     $onInit() {
-
         const holder: any = angular.element('<span></span>');
         this.$element.append(holder);
         holder.player(this.config, this.$window.jwconfig);

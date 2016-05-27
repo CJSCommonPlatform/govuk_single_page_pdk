@@ -23,6 +23,8 @@ import { toFileType } from './media/filters/toFileType.filter';
 import { DigitBoxComponent } from './data-visualisation/digit-box/digit-box.component';
 import { HighlightTextComponent } from './banners/highlight-text/highlight-text.component';
 import { VideoComponent} from './media/video/video.component';
+import { TabComponent } from './data-visualisation/tab/tab.component';
+import { TabsetComponent} from './data-visualisation/tab/tabset.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -49,6 +51,8 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govSummaryItem', SummaryItemComponent)
   .component('govDigitBox', DigitBoxComponent)
   .component('govHighlightText', HighlightTextComponent)
-  .component('govVideo', VideoComponent);
+  .component('govVideo', VideoComponent)
+  .component('govTab', TabComponent)
+  .component('govTabset', TabsetComponent);
 
 export const components: string = module.name;

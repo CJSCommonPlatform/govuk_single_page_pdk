@@ -1,11 +1,93 @@
-.contact-info{
-  .contact-info-position{
-    @include core-19;
-    font-weight: bold;
+// ==========================================================================
+// Tabs
+// ==========================================================================
+
+$module: 'tabs';
+
+.#{$module} {
+  margin-bottom: 1.05263em; // 20px
+
+  // Tab list
+  [role="tablist"] {
+    border-top: 1px solid $grey-2;
+    margin: 0;
+
+    @include media(tablet) {
+      border-top: 0 none;
+    }
+
+    li {
+      @include core-19;
+      border-bottom: 1px solid $grey-2;
+      margin: 0;
+      list-style: none;
+
+      @include media(tablet) {
+        border-bottom: 0 none;
+        float: left;
+        margin: 0 0 -1px;
+        padding: 0;
+      }
+
+      a {
+        background-color: $white;
+        display: block;
+        padding: em(9);
+        text-decoration: none;
+
+        &:focus {
+          outline: 3px;
+        }
+
+        @include media(tablet) {
+          background-color: $grey-3;
+          border: 0 none;
+          float: left;
+          margin: em(5) em(5) em(5) 0;
+          padding: em(9) em(19);
+          text-align: center;
+        }
+      }
+
+      // Active tab
+      [aria-selected="true"] {
+        background-color: $white;
+        color: $text-colour;
+        cursor: default;
+        text-decoration: none;
+
+        @include media(tablet) {
+          border: 1px solid $grey-2;
+          border-bottom: 1px solid transparent;
+          margin-top: 0;
+          margin-bottom: 0;
+          padding: em(13) em(18) em(14);
+        }
+      }
+    }
   }
 
-  .contact-info-name{
-    @include core-16;
-    font-weight: bold;
+  // Tab content
+  &-content {
+    clear: both;
+
+    [role="tabpanel"] {
+      @include media(tablet) {
+        border-top: 1px solid $grey-2;
+      }
+      &[aria-hidden="true"] {
+        display: none;
+      }
+    }
   }
+
+  // Tab panel inner
+  &-panel-inner {
+    &:focus {
+      border: 0;
+      outline: 0;
+    }
+  }
+
+
 }

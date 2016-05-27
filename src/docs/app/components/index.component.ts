@@ -9,7 +9,7 @@ export class ComponentsPage {
         {
             name: 'Data-Visualisation',
             state: 'components.data-visualisation',
-            components: ['Contact-info', 'Personal-details', 'Summary-item']
+            components: ['Contact-info', 'Personal-details', 'Summary-item', 'Tab']
         },
         {name: 'Headers', state: 'components.headers', components: ['Govuk']},
         {name: 'Media', state: 'components.media', components: ['Image', 'statement']},
