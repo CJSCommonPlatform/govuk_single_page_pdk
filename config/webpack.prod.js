@@ -2,8 +2,6 @@ var helpers = require('./helpers');
 var webpackMerge = require('webpack-merge');
 var commonConfig = require('./webpack.common');
 var webpack = require('webpack');
-var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
-var ExtractText = require('extract-text-webpack-plugin');
 
 module.exports = webpackMerge(commonConfig, {
   debug: false,
@@ -14,15 +12,8 @@ module.exports = webpackMerge(commonConfig, {
     sourceMapFilename: '[name].[chunkhash].map',
     chunkFilename: '[id].[chunkhash].js'
   },
-  module: {
-    loaders: [
-      {test: /\.css$/,  loader: ExtractText.extract('css')},
-      {test: /\.scss$/, loader: ExtractText.extract('css!postcss!resolve-url!sass')}
-    ]
-  },
   plugins: [
     new webpack.optimize.DedupePlugin(),
-    new NgAnnotatePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,
       compress: {
@@ -34,8 +25,7 @@ module.exports = webpackMerge(commonConfig, {
         screw_ie8 : true,
         keep_fnames: true
       }
-    }),
-    new ExtractText('main.[hash].css', {allChunks: true})
+    })
   ],
   tslint: {
     emitErrors: true,
