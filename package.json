@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.1.10-alpha",
+  "version": "0.0.12",
   "scripts": {
     "build": "npm run build:dev",
     "prebuild_dev": "npm run clean",
@@ -10,7 +10,6 @@
     "build_prod": "webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
     "clean": "rimraf -- dist",
     "prebuild_components": "rimraf -- dist/@govuk/angularjs-components",
-    "build_packages": "npm run build_components && gulp copy-platform-template",
     "postinstall": "typings install",
     "serve": "http-server dist/docs --cors",
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached",
@@ -39,6 +38,9 @@
     "govuk-elements-sass": "^1.1.4",
     "govuk_frontend_toolkit": "^4.10.0",
     "gulp": "^3.9.1",
+    "gulp-bump": "^2.1.0",
+    "gulp-git": "^1.7.2",
+    "gulp-replace": "^0.5.4",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
     "http-server": "^0.9.0",
@@ -58,6 +60,7 @@
     "karma-sinon": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "1.7.0",
+    "ng-annotate-webpack-plugin": "^0.1.2",
     "node-sass": "^3.5.3",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss-loader": "^0.8.2",
@@ -68,6 +71,7 @@
     "resolve-url-loader": "^1.4.3",
     "rimraf": "^2.5.2",
     "rucksack-css": "^0.8.6",
+    "run-sequence": "^1.2.1",
     "sass-loader": "^3.2.0",
     "sinon": "^1.17.3",
     "source-map-loader": "^0.1.5",
@@ -80,6 +84,7 @@
     "vinyl-fs": "^2.4.3",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
-    "webpack-merge": "^0.8.4"
+    "webpack-merge": "^0.8.4",
+    "yargs": "^4.7.1"
   }
 }
