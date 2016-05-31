@@ -16,8 +16,8 @@ module.exports = webpackMerge(commonConfig, {
   },
   module: {
     loaders: [
-      {test: /\.css$/,  loader: ExtractText.extract('css')},
-      {test: /\.scss$/, loader: ExtractText.extract('css!postcss!resolve-url!sass')}
+      {test: /\.css$/,  loader: 'style!css'},
+      {test: /\.scss$/, loader: 'style!css!postcss!resolve-url!sass?sourceMap'}
     ]
   },
   plugins: [
@@ -35,7 +35,7 @@ module.exports = webpackMerge(commonConfig, {
         keep_fnames: true
       }
     }),
-    new ExtractText('main.[hash].css', {allChunks: true})
+    // new ExtractText('main.[hash].css', {allChunks: true})
   ],
   tslint: {
     emitErrors: true,

@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '4.0'
+install:
+- npm install
+- npm install -g gulp
+script:
+- npm run build_prod
+deploy:
+  provider: npm
+  email: fabiotisci@gmail.com
+  api_key: bfd10801-7609-4c54-8684-f3bc3e6cad2c
+  on:
+    tags: true
+    branch: master
+after_deploy:
+- bash ./deploy_gh_pages.sh
+env:
+  global:
+  - GH_REF: github.com/CJSCommonPlatform/govuk_single_page_pdk.git
+  - secure: zFl6bY5pZwj9haO01AhP07TpPvkJlh7M1/hGsCa/sVDOJgb11Qn67aRLC/WxmEdJumVte5GtaF95V3H5T6BuaCfEEMIFQqFQM5sm9Mdvuz+NFjNHKHpW6uhbqlIIriqU7Gn7GyhNliVOvBCsuuq8W7RuxWyIyR7v7NecZZz2gT18TwhFh9rnTiQfDdZDnTl258qqxru+MvrkO+hdObsGXcjvwf+HZ3566WwklgXYgXiS7ZwAiuDmm866qh5oHqcfskLUb9DiGZbLjKDLIfC6wTjnHfrD/VrfgzYEqDmuAxzByGEDFX9oOtOPznxbnNUHyAS0UeAyXLzP3GbUulHV2DLytkdnyQ7QUsJEPS04vmC3hw7/SdM6gJqerYARjFnWdid+YqabaRxVD6d0dhGVDTbQwKmXYX35exmsosNGeDQAgw+S+OpD2s0aUn2Jnyq5Q/uav9iVdSfOklGUVY1Qbr9/HLOYJZJozkbiueweAI4rgLXocPCzh0emTZZR54wvKr8AeTaZZ+414nUVP14mgjJPW7a45xqJxiDbiEpPyR+o2/6aAuQeVJyS8/uYeNkqAwmv2D17UWZTvllRAORS2RgYEw2aTsnK3AUIA5dVUBlyE9Ysz4OOkA2XTtMR9YkTnR+B3WYONPO6bObtmcoCB1Fnj4k2/8Lmc7H8oJ640/U=

@@ -10,7 +10,7 @@ const module = angular.module('govDocs-utils', [])
 
   .factory('prism', ['$window', ($window) => $window.Prism])
 
-  .directive('prismify', (prism) => {
+  .directive('prismify', ['prism', (prism) => {
     return {
       restrict: 'EA',
       compile: (elem: ng.IAugmentedJQuery, attrs: any) => {
@@ -21,7 +21,7 @@ const module = angular.module('govDocs-utils', [])
         elem.html(`<pre class="language-${language}"><code>${html}</code></pre>`);
       }
     };
-  })
+  }])
 
   .directive('docsExample', () => {
     return {
