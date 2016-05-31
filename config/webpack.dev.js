@@ -17,12 +17,6 @@ module.exports = webpackMerge(commonConfig, {
     failOnHint: false,
     resourcePath: 'src'
   },
-  module: {
-    loaders: [
-      {test: /\.css$/,  loader: 'style!css'},
-      {test: /\.scss$/, loader: 'style!css!postcss!resolve-url!sass?sourceMap'}
-    ]
-  },
   devServer: {
     host: 'localhost',
     port: 9030,
