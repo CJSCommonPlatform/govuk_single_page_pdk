@@ -1,6 +1,7 @@
 <h3 class="heading-medium">Personal Details</h3>
-
-<docs-example markup>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
 
 <div class="gov-personal-details">
   <h2 class="heading-large">Peter JAMES</h2>
@@ -13,5 +14,24 @@
   </ul>
 </div>
 
-</docs-example>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Example">
+    <docs-example markup>
+    <gov-personal-details title="$ctrl.title" info="$ctrl.info"></gov-personal-details>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Data">
+    <docs-example>
+      title = 'Peter JAMES';<br>
+      info = [<br>
+      &nbsp;&nbsp;'30 years old',<br>
+      &nbsp;&nbsp;'Born 8 June 1985',<br>
+      &nbsp;&nbsp;'British',<br>
+      &nbsp;&nbsp;'Self-defined as White British',<br>
+      &nbsp;&nbsp;'14 Tottenham Court Road, London W1T 1JY'<br>
+      ];
+    </docs-example>
+  </gov-tab>
+</gov-tabset>
 <discuss-component issue="6"></discuss-component>

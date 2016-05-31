@@ -5,8 +5,9 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class PersonalDetailsDemo {
 
-  title: 'Peter JAMES';
-  info: [
+  private title = 'Peter JAMES';
+
+  private info = [
     '30 years old',
     'Born 8 June 1985',
     'British',

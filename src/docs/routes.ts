@@ -34,7 +34,7 @@ export const routes: angular.ui.IState[] = [
   {
     state:    'components.headers',
     url:      '/headers',
-    template: '<gov-docs-components-headers-page></gov-docs-components-headers-page>',
+    template: '<gov-docs-components-header-page></gov-docs-components-header-page>',
     ncyBreadcrumb: {
       label: 'Headers'
     }

@@ -1,4 +1,53 @@
-<docs-example>
+<h2>Gov Header</h2>
 
-</docs-example>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
+<div id="skiplink-container">
+  <div>
+    <a href="#content" class="skiplink">Skip to main content</a>
+  </div>
+</div>
+<div id="global-cookie-message">
+  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+</div>
+<header role="banner" id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">GOV.UK</a>
+      </div>
+    </div>
+    <div class="header-proposition">
+      <div class="content">
+        <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+        <nav id="proposition-menu">
+          <a href="/" id="proposition-name">Single Page Platform Development Kit</a>
+          <ul id="proposition-links">
+            <li>
+              <a href="">Layout</a>
+              <a href="">Content</a>
+              <a href="">Components</a>
+              <a href="">Examples</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Example">
+    <docs-example markup>
+      <gov-header heading="$ctrl.heading" nav-items="$ctrl.navItems"></gov-header>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Data">
+    <docs-example>
+      heading = {{$ctrl.heading | json:2}}<br>
+      navItems = {{$ctrl.navItems | json:2}}
+    </docs-example>
+  </gov-tab>
+</gov-tabset>
 <discuss-component issue="8"></discuss-component>

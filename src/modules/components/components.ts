@@ -25,6 +25,7 @@ import { HighlightTextComponent } from './banners/highlight-text/highlight-text.
 import { VideoComponent} from './media/video/video.component';
 import { TabComponent } from './data-visualisation/tab/tab.component';
 import { TabsetComponent} from './data-visualisation/tab/tabset.component';
+import { NotificationComponent } from './banners/notification/notification.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -48,11 +49,11 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govTimeline', TimelineComponent)
   .component('govImage', ImageComponent)
   .component('govStatement', StatementComponent)
-  .component('govSummaryItem', SummaryItemComponent)
   .component('govDigitBox', DigitBoxComponent)
   .component('govHighlightText', HighlightTextComponent)
   .component('govVideo', VideoComponent)
   .component('govTab', TabComponent)
-  .component('govTabset', TabsetComponent);
+  .component('govTabset', TabsetComponent)
+  .component('govNotification', NotificationComponent);
 
 export const components: string = module.name;

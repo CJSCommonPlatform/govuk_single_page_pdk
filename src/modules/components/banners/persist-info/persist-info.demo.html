@@ -4,14 +4,27 @@
   This banner is the highlighted heading for the page.
 </p>
 
-<docs-example markup>
-
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
 <div class="persist-info">
   <div>
     <span class="persist-info-label">55DP0028116</span>
     <span class="persist-info-title">Peter James</span>
   </div>
 </div>
-
-</docs-example>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Markup">
+    <docs-example markup>
+<gov-persist-info-banner label="$ctrl.label" title="$ctrl.title"></gov-persist-info-banner>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Data">
+    <docs-example>
+      label = '55DP0028116';<br>
+      title = 'Peter JAMES';
+    </docs-example>
+  </gov-tab>
+</gov-tabset>
 <discuss-component issue="3"></discuss-component>

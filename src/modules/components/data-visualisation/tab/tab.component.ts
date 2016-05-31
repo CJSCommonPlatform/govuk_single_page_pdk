@@ -12,7 +12,7 @@ import { Component } from '@govuk/angularjs-devtools';
         </div>  
   `,
   require: {
-    tabsetCtrl: '^govTabset',
+    tabsetCtrl: '^govTabset'
   }
 })
 export class TabComponent {

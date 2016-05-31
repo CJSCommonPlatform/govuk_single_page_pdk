@@ -4,9 +4,10 @@
   Displays position, title + full name, phone number and email address
 </p>
 
-<!-- we need a templating engine, as this  duplication will become the norm -->
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
 
-<docs-example markup>
 <div class="contact-info">
   <div class="contact-info-position">Supervisor officer</div>
   <div class="contact-info-name">DS Amelia Hicks</div>
@@ -15,5 +16,24 @@
     <a href="mailto:hicksa@liverpool.police.uk" class="font-xsmall">hicksa@liverpool.police.uk</a>
   </div>
 </div>
-</docs-example>
+
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Markup">
+    <docs-example markup>
+      <gov-contact-info details="$ctrl.person"></gov-contact-info>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Data">
+    <docs-example>
+      person = {<br>
+      &nbsp;&nbsp;position: 'Supervisor officer',<br>
+      &nbsp;&nbsp;name: 'DS Amelia Hicks',<br>
+      &nbsp;&nbsp;phone: '0151 123 4567',<br>
+      &nbsp;&nbsp;email: 'hicksa@liverpool.police.uk'<br>
+      };<br>
+    </docs-example>
+  </gov-tab>
+</gov-tabset>
+
 <discuss-component issue="5"></discuss-component>
