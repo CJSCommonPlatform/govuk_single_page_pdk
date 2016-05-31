@@ -1,5 +1,7 @@
 <h2 class="heading-medium">Image</h2>
-<docs-example markup>
+<gov-tabset>
+    <gov-tab heading="HTML Example">
+        <docs-example markup>
 <div>
     <div class="heading-large">Test image title</div>
     <div class="gov-image-container">
@@ -14,9 +16,19 @@
         </div>
     </div>
 </div>
-</docs-example>
-<!--to be uncommented when we have a doc for angular files-->
-<!--gov-image image="$ctrl.image"></gov-image-->
+        </docs-example>
+    </gov-tab>
+    <gov-tab heading="Angular Markup">
+        <docs-example markup>
+            <gov-image image="$ctrl.image"></gov-image>
+        </docs-example>
+    </gov-tab>
+    <gov-tab heading="Data">
+        <docs-example>
+            image = {{ $ctrl.image | json:4 }}
+        </docs-example>
+    </gov-tab>
+</gov-tabset>
 <discuss-component issue="13"></discuss-component>
 
 

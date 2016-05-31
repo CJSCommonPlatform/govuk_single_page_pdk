@@ -5,7 +5,7 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class StatementDemo {
 
-  stmt: any = {
+  statement: any = {
     fileSize: 576441,
     filename: 'Statement 1 from Linda Thomas.pdf',
     created:  Date.now(),

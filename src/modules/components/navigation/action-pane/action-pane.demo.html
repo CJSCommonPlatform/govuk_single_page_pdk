@@ -1,6 +1,7 @@
 <h2 class="heading-medium">Action Pane</h2>
-
-<docs-example markup>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
 
 <div class="gov-action-pane">
   <a href="#">Go to timeline and summary</a>
@@ -8,5 +9,24 @@
   <a href="#">Enter your analysis and charging decision</a>
 </div>
 
-</docs-example>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Markup">
+    <docs-example markup>
+<gov-action-pane heading="$ctrl.title">
+  <links>
+    <a href="http://www.google.com" link="Visit Google">Visit Google</a>
+  </links>
+  <tasks>
+    <a href="#" link="Review your application">Review your application</a>
+  </tasks>
+</gov-action-pane>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Data">
+    <docs-example>
+      title = "Next tasks";
+    </docs-example>
+  </gov-tab>
+</gov-tabset>
 <discuss-component issue="2"></discuss-component>

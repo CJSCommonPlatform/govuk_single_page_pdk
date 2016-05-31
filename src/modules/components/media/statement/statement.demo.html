@@ -1,5 +1,7 @@
 <h2 class="heading-medium">Statement</h2>
-<docs-example markup>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
 
 <div class="gov-media statement">
   <i class="fa fa-file-pdf-o"></i>
@@ -16,4 +18,25 @@
   </div>
 </div>
 
-</docs-example>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Markup">
+    <docs-example markup>
+<gov-statement
+  statement-date="$ctrl.statement.created | date:'medium'"
+  statement-length="$ctrl.statement.length"
+  file-size="$ctrl.statement.fileSize"
+  file-name="$ctrl.statement.filename"
+  on-select="$ctrl.onClick()">
+</gov-statement>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Data">
+    <docs-example>
+      statement = {{ $ctrl.statement | json:4}};<br>
+      function onSelect(){<br>
+      &nbsp;&nbsp;alert(filename);<br>
+      }
+    </docs-example>
+  </gov-tab>
+</gov-tabset>

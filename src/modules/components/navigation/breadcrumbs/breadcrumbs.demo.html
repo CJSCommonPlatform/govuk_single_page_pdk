@@ -1,10 +1,21 @@
 <h2 class="heading-medium">Breadcrumbs</h2>
-<demo-example markup>
+<p>This component is using angular-breadcrumb (<span ng-bind-html="'https://github.com/ncuillery/angular-breadcrumb' | linky:'_blank'"></span>), please refer to the link for more information about how to use breadcrumbs.</p>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
 <div class="breadcrumbs">
   <ol>
     <li><a href="#">Single Page Platform Development Kit</a></li>
     <li>Layout</li>
   </ol>
 </div>
-</demo-example>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Markup">
+    <docs-example markup>
+      <ncy-breadcrumb></ncy-breadcrumb>
+    </docs-example>
+  </gov-tab>
+
+</gov-tabset>
 <discuss-component issue="9"></discuss-component>

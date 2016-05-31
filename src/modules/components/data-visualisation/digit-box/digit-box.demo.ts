@@ -11,7 +11,7 @@ import { Component } from '@govuk/angularjs-devtools';
 </div>
       </docs-example>
     </gov-tab>
-    <gov-tab heading="Angular Example">
+    <gov-tab heading="Angular Markup">
       <docs-example markup>
         <gov-digit-box digit="$ctrl.digit"></gov-digit-box>
       </docs-example>

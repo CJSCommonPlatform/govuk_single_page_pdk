@@ -3,8 +3,9 @@
 <p class="text">
   Shows a timeline with information day by day
 </p>
-
-<docs-example markup>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
 <div class="timeline">
   <div class="top-thick-blue-rule ">
     <div class="bold-medium">Timeline</div>
@@ -33,7 +34,41 @@
     </div>
   </div>
 </div>
-</docs-example>
-<!--to be uncommented when we have a doc for angular files-->
-<!--<gov-timeline title="$ctrl.timeline.title" elements="$ctrl.timeline.elements"></gov-timeline>-->
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Markup">
+    <docs-example markup>
+      <gov-timeline title="$ctrl.timeline.title" elements="$ctrl.timeline.elements"></gov-timeline>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Data">
+    <docs-example>
+      timeline: any  = {<br>
+      &nbsp;&nbsp;title: 'Timeline',<br>
+      &nbsp;&nbsp;elements: [<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dateTitle: 'Today',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description: 'Charging advice requested',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timestamp: '09:15AM',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actions: [<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{title: 'Assign to me'},<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{title: 'Review case', action: () => { console.log('Review case'); }, active: true},<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{title: 'Enter your analysis and charging decision'}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;},<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dateTitle: 'Yesterday',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description: 'Recorded analysis',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timestamp: '08:15AM',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actions: [<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{title: 'Assign to me', action: () => { console.log('Assign to me'); }, active: true},<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&nbsp;&nbsp;&nbsp;{title: 'Review case'},<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{title: 'Enter your analysis and charging decision'}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;]<br>
+      };
+    </docs-example>
+  </gov-tab>
+</gov-tabset>
 <discuss-component issue="11"></discuss-component>

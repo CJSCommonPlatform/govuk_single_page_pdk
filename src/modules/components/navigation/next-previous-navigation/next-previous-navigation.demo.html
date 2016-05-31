@@ -4,7 +4,9 @@
   Provides Next and Previous links with a title and description
 </p>
 
-<docs-example markup>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example markup>
 
 <div class="grid-row">
   <div class="column-two-half">
@@ -31,9 +33,35 @@
       <div class="clearfix"></div>
     </a>
   </div>
-
 </div>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Angular Markup">
+    <docs-example markup>
+      <gov-next-previous-navigation navigation="$ctrl.navigation"></gov-next-previous-navigation>
+    </docs-example>
+  </gov-tab>
+  <gov-tab heading="Data">
+    <docs-example>
+      navigation = {<br>
+      &nbsp;&nbsp;previous: {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;name: 'Previous',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;description: 'Some Description',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;navigate: function(){<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Previous');<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;},<br>
+      <br>
+      &nbsp;&nbsp;next: {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;name: 'Next',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;description: 'Some Description',<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;navigate: function(){<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Next');<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;}<br>
+      };
+    </docs-example>
+  </gov-tab>
+</gov-tabset>
 
-</docs-example>
-<!--<gov-next-previous-navigation navigation="$ctrl.navigation"></gov-next-previous-navigation>-->
 <discuss-component issue="10"></discuss-component>
