@@ -96,9 +96,25 @@ export const routes: angular.ui.IState[] = [
     }
   },
   {
+    state:    'content.typography',
+    url:      '/typography',
+    template: '<gov-docs-content-typography-page></gov-docs-content-typography-page>',
+    ncyBreadcrumb: {
+      label: 'Typography'
+    }
+  },
+  {
+    state:    'content.buttons',
+    url:      '/buttons',
+    template: '<gov-docs-content-buttons-page></gov-docs-content-buttons-page>',
+    ncyBreadcrumb: {
+      label: 'Buttons'
+    }
+  },
+  {
     state:     'content.form-elements',
     url:       '/form-elements',
-    template: '<gov-docs-form-elements-page></gov-docs-form-elements-page>',
+    template: '<gov-docs-content-form-elements-page></gov-docs-content-form-elements-page>',
     ncyBreadcrumb: {
       label: 'Form Elements'
     }
