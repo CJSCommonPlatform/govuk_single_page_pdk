@@ -1,36 +1,41 @@
 <h2>Notification</h2>
 
 <gov-tabset>
+
   <gov-tab heading="HTML Example">
-    <docs-example markup>
 
-<div class="gov-notification success">
-  <i class="gov-notification-icon"></i>
-  <div class="gov-notification-body">
-    Accepted case management information
-  </div>
-</div>
-
+    <docs-example language="markup">
+      <div class="gov-notification success">
+        <i class="gov-notification-icon"></i>
+        <div class="gov-notification-body">
+          Accepted case management information
+        </div>
+      </div>
     </docs-example>
+
   </gov-tab>
+
   <gov-tab heading="Angular Markup">
-    <docs-example markup>
-<gov-notification style="$ctrl.examples[0].style" show-icon="$ctrl.examples[0].showIcon">
-  Some notification to display
-</gov-notification>
-<gov-notification style="$ctrl.examples[1].style" show-icon="$ctrl.examples[1].showIcon">
-  Another example without icon
-</gov-notification>
+    <docs-example language="markup">
+      <gov-notification style="$ctrl.examples[0].style" show-icon="$ctrl.examples[0].showIcon">
+        Some notification to display
+      </gov-notification>
+      <gov-notification style="$ctrl.examples[1].style" show-icon="$ctrl.examples[1].showIcon">
+        Another example without icon
+      </gov-notification>
     </docs-example>
   </gov-tab>
+
   <gov-tab heading="Data">
-    <docs-example>
-    examples = [<br>
-    &nbsp;&nbsp;{showIcon:true, style: 'success'},<br>
-    &nbsp;&nbsp;{showIcon:false, style: 'invalid'}<br>
-    ];<br>
+    <docs-example language="javascript">
+
+      examples = [
+        {showIcon: true,  style: 'success'},
+        {showIcon: false, style: 'invalid'}
+      ];
     </docs-example>
   </gov-tab>
+
 </gov-tabset>
 
 <discuss-component issue="20"></discuss-component>

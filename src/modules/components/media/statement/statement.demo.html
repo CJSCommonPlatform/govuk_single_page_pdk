@@ -1,42 +1,44 @@
 <h2 class="heading-medium">Statement</h2>
 <gov-tabset>
+
   <gov-tab heading="HTML Example">
-    <docs-example markup>
-
-<div class="gov-media statement">
-  <i class="fa fa-file-pdf-o"></i>
-  <div class="gov-media-info">
-    <a href="#">Statement 1 from Linda Thomas</a>
-    <ul class="gov-media-metadata">
-      <li>Taken: 13 April 2016</li>
-    </ul>
-    <ul class="gov-media-metadata">
-      <li>PDF</li>
-      <li>570KB</li>
-      <li>2 pages</li>
-    </ul>
-  </div>
-</div>
-
+    <docs-example language="markup">
+      <div class="gov-media statement">
+        <i class="fa fa-file-pdf-o"></i>
+        <div class="gov-media-info">
+          <a href="#">Statement 1 from Linda Thomas</a>
+          <ul class="gov-media-metadata">
+            <li>Taken: 13 April 2016</li>
+          </ul>
+          <ul class="gov-media-metadata">
+            <li>PDF</li>
+            <li>570KB</li>
+            <li>2 pages</li>
+          </ul>
+        </div>
+      </div>
     </docs-example>
   </gov-tab>
+
   <gov-tab heading="Angular Markup">
-    <docs-example markup>
-<gov-statement
-  statement-date="$ctrl.statement.created | date:'medium'"
-  statement-length="$ctrl.statement.length"
-  file-size="$ctrl.statement.fileSize"
-  file-name="$ctrl.statement.filename"
-  on-select="$ctrl.onClick()">
-</gov-statement>
+    <docs-example language="markup">
+      <gov-statement
+          statement-date="$ctrl.statement.created | date:'medium'"
+          statement-length="$ctrl.statement.length"
+          file-size="$ctrl.statement.fileSize"
+          file-name="$ctrl.statement.filename"
+          on-select="$ctrl.onClick()">
+      </gov-statement>
     </docs-example>
   </gov-tab>
+
   <gov-tab heading="Data">
-    <docs-example>
-      statement = {{ $ctrl.statement | json:4}};<br>
-      function onSelect(){<br>
-      &nbsp;&nbsp;alert(filename);<br>
+    <prismify language="javascript">
+      statement = {{$ctrl.statement | json: 4}};
+      function onSelect() {
+        alert(filename);
       }
-    </docs-example>
+    </prismify>
   </gov-tab>
+
 </gov-tabset>

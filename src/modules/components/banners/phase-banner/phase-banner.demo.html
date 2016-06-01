@@ -1,25 +1,31 @@
-<h2 class="heading-medium">Phase</h2>
+<h2 class="heading-medium">Phase Banner</h2>
+
 <gov-tabset>
+
   <gov-tab heading="HTML Example">
-    <docs-example markup>
-<div class="phase-banner-beta">
-  <p>
-    <strong class="phase-tag">Beta</strong>
-    Welcome to our beta service
-  </p>
-</div>
+
+    <docs-example language="markup">
+      <div class="phase-banner-beta">
+        <p>
+          <strong class="phase-tag">Beta</strong>
+          Welcome to our beta service
+        </p>
+      </div>
     </docs-example>
   </gov-tab>
+
   <gov-tab heading="Angular Markup">
-    <docs-example markup>
-<gov-phase-banner title="{{$ctrl.title}}" alpha>
-  This is the content of an alpha banner
-</gov-phase-banner>
-<gov-phase-banner title="{{$ctrl.title}}" beta>
-  This is the content of an beta banner
-</gov-phase-banner>
+
+    <docs-example language="markup">
+      <gov-phase-banner title="{{$ctrl.title}}" alpha>
+        This is the content of an alpha banner
+      </gov-phase-banner>
+      <gov-phase-banner title="{{$ctrl.title}}" beta>
+        This is the content of an beta banner
+      </gov-phase-banner>
     </docs-example>
   </gov-tab>
+
 </gov-tabset>
 
 <discuss-component issue="4"></discuss-component>

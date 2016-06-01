@@ -6,37 +6,39 @@
 </p>
 
 <gov-tabset>
+
   <gov-tab heading="HTML Example">
-    <docs-example markup>
-
-<div class="summary-item">
-  <span class="summary-item-value">3</span>
-  <span class="summary-item-item">statements</span>
-</div>
-
+    <docs-example language="markup">
+      <div class="summary-item">
+        <span class="summary-item-value">3</span>
+        <span class="summary-item-item">statements</span>
+      </div>
     </docs-example>
-
   </gov-tab>
+
   <gov-tab heading="Angular Markup">
-    <docs-example markup>
-<gov-summary-item item-description="$ctrl.item.description" value="$ctrl.item.value" action="$ctrl.item.action()"></gov-summary-item>
-<gov-summary-item item-description="$ctrl.item2.description" value="$ctrl.item2.value" action="$ctrl.item2.action()"></gov-summary-item>
+    <docs-example language="markup">
+      <gov-summary-item item-description="$ctrl.item.description" value="$ctrl.item.value" action="$ctrl.item.action()"></gov-summary-item>
+      <gov-summary-item item-description="$ctrl.item2.description" value="$ctrl.item2.value" action="$ctrl.item2.action()"></gov-summary-item>
     </docs-example>
   </gov-tab>
+
   <gov-tab heading="Data">
-    <docs-example>
-      item = {<br>
-      &nbsp;&nbsp;value: 3,<br>
-      &nbsp;&nbsp;description: 'statement',<br>
-      &nbsp;&nbsp;action: function(){console.log('hello'); }<br>
-      };<br>
-      item2 = {<br>
-      &nbsp;&nbsp;value: true,<br>
-      &nbsp;&nbsp;description: 'Supervisor comments provided',<br>
-      &nbsp;&nbsp;action: function(){console.log('hello'); }<br>
+    <prismify language="javascript">
+      item = {
+        value: 3,
+        description: 'Statements',
+        action: function(){console.log('hello'); }
       };
-    </docs-example>
+      item2 = {
+        value: true,
+        description: 'Supervisor comments provided',
+        action: function(){console.log('hello'); }
+      };
+    </prismify>
   </gov-tab>
+
 </gov-tabset>
+
 <discuss-component issue="7"></discuss-component>
 

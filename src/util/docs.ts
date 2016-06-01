@@ -1,4 +1,5 @@
 import 'prismjs';
+import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 
 require('../../node_modules/prismjs/themes/prism.css');
 require('./docs.scss');
@@ -15,9 +16,18 @@ const module = angular.module('govDocs-utils', [])
       restrict: 'EA',
       compile: (elem: ng.IAugmentedJQuery, attrs: any) => {
         let language: string = attrs.language;
+        let html   = elem.html();
+        let indent = Array(html.search(/\S|$/)).join(' ');
+
+        if (indent.length > 1) {
+          let parts = html.split('\n');
+          html = parts
+            .map((part: string) => part.replace(indent, ''))
+            .join('\n');
+        }
         if (language === 'html') language = 'markup';
 
-        const html = prism.highlight(elem.html(), prism.languages[language]).trim();
+        html = prism.highlight(html, prism.languages[language]).trim();
         elem.html(`<pre class="language-${language}"><code>${html}</code></pre>`);
       }
     };
@@ -27,14 +37,16 @@ const module = angular.module('govDocs-utils', [])
     return {
       compile: (tElem: ng.IAugmentedJQuery, tAttrs: any) => {
         const html = tElem.html();
-        let tpl = `<div class="example">${html}</div>`;
+        const lang = tAttrs.language;
+        let tpl = '';
 
-        if (tAttrs.hasOwnProperty('markup')) {
-          tpl += `<prismify language="html">${html}</prismify>`;
+        if (['markup', 'html'].indexOf(lang) > -1) {
+          tpl += `<div class="example">${html}</div>`;
         }
+        tpl += `<prismify language="${lang}">${html}</prismify>`;
         tElem.html(tpl);
       }
     };
   });
 
-export const docsUtils = module.name; 
+export const docsUtils = module.name;

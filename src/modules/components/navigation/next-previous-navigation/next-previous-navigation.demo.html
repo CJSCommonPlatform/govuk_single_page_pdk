@@ -6,61 +6,61 @@
 
 <gov-tabset>
   <gov-tab heading="HTML Example">
-    <docs-example markup>
-
-<div class="grid-row">
-  <div class="column-two-half">
-    <a class="navigation-arrow">
-      <div class="arrow-previous pull-left">
-        <span class="fa fa-chevron-left fa-2x"></span>
+    <docs-example language="markup">
+      <div class="grid-row">
+        <div class="column-two-half">
+          <a class="navigation-arrow">
+            <div class="arrow-previous pull-left">
+              <span class="fa fa-chevron-left fa-2x"></span>
+            </div>
+            <div class="pull-left">
+              <div class="main text">Previous</div>
+              <span class="description">Some Description</span>
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </div>
+        <div class="column-two-half">
+          <a class="navigation-arrow">
+            <div class="arrow-previous pull-right">
+              <span class="fa fa-chevron-right fa-2x"></span>
+            </div>
+            <div class="pull-right">
+              <div class="main text-right">Next</div>
+              <span class="description">Some Description</span>
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </div>
       </div>
-      <div class="pull-left">
-        <div class="main text">Previous</div>
-        <span class="description">Some Description</span>
-      </div>
-      <div class="clearfix"></div>
-    </a>
-  </div>
-  <div class="column-two-half">
-    <a class="navigation-arrow">
-      <div class="arrow-previous pull-right">
-        <span class="fa fa-chevron-right fa-2x"></span>
-      </div>
-      <div class="pull-right">
-        <div class="main text-right">Next</div>
-        <span class="description">Some Description</span>
-      </div>
-      <div class="clearfix"></div>
-    </a>
-  </div>
-</div>
     </docs-example>
   </gov-tab>
+
   <gov-tab heading="Angular Markup">
-    <docs-example markup>
+    <docs-example language="markup">
       <gov-next-previous-navigation navigation="$ctrl.navigation"></gov-next-previous-navigation>
     </docs-example>
   </gov-tab>
+
   <gov-tab heading="Data">
-    <docs-example>
-      navigation = {<br>
-      &nbsp;&nbsp;previous: {<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;name: 'Previous',<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;description: 'Some Description',<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;navigate: function(){<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Previous');<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-      &nbsp;&nbsp;},<br>
-      <br>
-      &nbsp;&nbsp;next: {<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;name: 'Next',<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;description: 'Some Description',<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;navigate: function(){<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('Next');<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-      &nbsp;&nbsp;}<br>
+    <primsmify language="javascript">
+      navigation = {
+        previous: {
+          name: 'Previous',
+          description: 'Some Description',
+          navigate: function() {
+            console.log('Previous');
+          }
+        },
+        next: {
+          name: 'Next',
+          description: 'Some Description',
+          navigate: function() {
+            console.log('Next');
+          }
+        }
       };
-    </docs-example>
+    </primsmify>
   </gov-tab>
 </gov-tabset>
 
