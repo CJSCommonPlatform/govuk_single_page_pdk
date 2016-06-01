@@ -17,3 +17,27 @@ section.docs-section {
 .gov-highlight-text {
   margin: 10px 0 15px;
 }
+
+/* Make skiplinks visible when they are tabbed to */
+.skiplink {
+  position: absolute;
+  left: -9999em;
+  &:focus {
+    left: 0;
+    z-index: 1;
+  }
+}
+#skiplink-container {
+  text-align: center;
+  background: #0b0c0c;
+  div {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 1020px;
+  }
+  .skiplink {
+    display: -moz-inline-stack;
+    display: inline-block;
+    margin: 0.75em 0 0 30px;
+  }
+}
