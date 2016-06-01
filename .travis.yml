@@ -6,14 +6,8 @@ install:
 - npm install -g gulp
 script:
 - npm run build_prod
-deploy:
-  provider: npm
-  email: fabiotisci@gmail.com
-  api_key: bfd10801-7609-4c54-8684-f3bc3e6cad2c
-  on:
-    branch: master
-after_deploy:
-- bash ./deploy_gh_pages.sh
+after_success:
+- bash ./deploy_gh_pages_on_tag.sh
 env:
   global:
   - GH_REF: github.com/CJSCommonPlatform/govuk_single_page_pdk.git
