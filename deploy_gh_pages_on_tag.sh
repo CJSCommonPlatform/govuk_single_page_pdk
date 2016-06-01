@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ev
-if [ -n "TRAVIS_TAG" ]; then
+if [ "$TRAVIS_TAG" != "" ]; then
     cd dist/docs
     git init
 
