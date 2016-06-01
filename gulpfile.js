@@ -68,7 +68,7 @@ gulp.task('commit-changes', function () {
 gulp.task('create-new-tag', function (done) {
   git.tag(version, 'Created Tag for version: ' + getVersion(), function (error) {
     if (error) {
-      return cb(error);
+      return done(error);
     }
     git.push('origin', 'master', {args: '--tags'}, done);
   });
