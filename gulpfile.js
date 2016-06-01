@@ -12,14 +12,16 @@ function getVersion() {
   return JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
 }
 
-gulp.task('publish', function() {
+gulp.task('release', function() {
   run([
       'build-components',
       'copy-platform-template'
     ],
     'bump-repo',
     'bump-packages',
-    'commit-changes');
+    'commit-changes',
+    'publish'
+  );
 });
 
 gulp.task('clean', function() {
@@ -72,6 +74,6 @@ gulp.task('create-new-tag', function (done) {
   });
 });
 
-gulp.task('publish-to-npm', function(done) {
+gulp.task('publish', function(done) {
   spawn('npm', ['publish'], { stdio: 'inherit' }).on('close', done);
 });

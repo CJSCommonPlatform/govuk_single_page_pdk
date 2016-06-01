@@ -2,6 +2,7 @@ var helpers = require('./helpers');
 var webpackMerge = require('webpack-merge');
 var commonConfig = require('./webpack.common');
 var webpack = require('webpack');
+var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 module.exports = webpackMerge(commonConfig, {
   debug: false,
@@ -14,6 +15,7 @@ module.exports = webpackMerge(commonConfig, {
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
+    new NgAnnotatePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,
       compress: {
