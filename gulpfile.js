@@ -20,6 +20,7 @@ gulp.task('release', function() {
     'bump-repo',
     'bump-packages',
     'commit-changes',
+    'create-new-tag',
     'publish'
   );
 });
