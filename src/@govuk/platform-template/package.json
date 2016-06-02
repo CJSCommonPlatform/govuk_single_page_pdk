@@ -1,5 +1,5 @@
 {
-  "version": "0.1.10-alpha",
+  "version": "0.0.0-PLACEHOLDER",
   "name": "@govuk/platform-template",
   "peerDependencies": {
     "bootstrap-sass": "^3.3.6",

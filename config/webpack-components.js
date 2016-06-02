@@ -1,36 +1,23 @@
 var helpers = require('./helpers');
 var webpack = require('webpack');
 var rucksack = require('rucksack-css');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
-var plugins = [
-  new NgAnnotatePlugin(),
-  new CopyWebpackPlugin([
-    {
-      from: {
-        glob: 'src/@govuk/angularjs-components/package.json'
-      },
-      dot: true
-    }
-  ])
-];
-
-if (process.env.NODE_ENV === 'production') {
-  var uglify = new webpack.optimize.UglifyJsPlugin({
-    beautify: false,
-    compress: {
-      screw_ie8: true,
-      warnings: false
-    },
-    comments: false,
-    mangle: {
-      screw_ie8 : true,
-      keep_fnames: true
-    }
-  });
-  plugins.push(uglify);
-}
+// if (process.env.NODE_ENV === 'production') {
+//   var uglify = new webpack.optimize.UglifyJsPlugin({
+//     beautify: false,
+//     compress: {
+//       screw_ie8: true,
+//       warnings: false
+//     },
+//     comments: false,
+//     mangle: {
+//       screw_ie8 : true,
+//       keep_fnames: true
+//     }
+//   });
+//   plugins.push(uglify);
+// }
 
 module.exports = {
   debug: false,
@@ -60,7 +47,9 @@ module.exports = {
       {test: /\.ts$/,   loader: 'awesome-typescript', exclude: [/\.(spec|e2e)\.ts$/]}
     ]
   },
-  plugins: plugins,
+  plugins: [
+    new NgAnnotatePlugin()
+  ],
   tslint: {
     emitErrors: true,
     failOnHint: true,
