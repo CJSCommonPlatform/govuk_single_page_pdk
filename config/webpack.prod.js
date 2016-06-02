@@ -12,7 +12,7 @@ module.exports = webpackMerge(commonConfig, {
     filename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].[chunkhash].map',
     chunkFilename: '[id].[chunkhash].js',
-    publicPath: '/govuk_single_page_pdk'
+    publicPath: '/govuk_single_page_pdk/'
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
