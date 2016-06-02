@@ -2,13 +2,14 @@ var helpers = require('./helpers');
 var webpackMerge = require('webpack-merge');
 var commonConfig = require('./webpack.common');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 module.exports = webpackMerge(commonConfig, {
   debug: false,
   devtool: 'source-map',
   output: {
-    path: helpers.root('dist/docs'),
+    path: helpers.root('dist/govuk_single_page_pdk'),
     filename: '[name].[chunkhash].js',
     sourceMapFilename: '[name].[chunkhash].map',
     chunkFilename: '[id].[chunkhash].js',
@@ -28,6 +29,11 @@ module.exports = webpackMerge(commonConfig, {
         screw_ie8 : true,
         keep_fnames: true
       }
+    }),
+    new HtmlWebpackPlugin({
+      template:  'src/docs/index.ejs',
+      chunks:   ['vendor', 'main'],
+      baseUrl:   '/govuk_single_page_pdk/'
     })
   ],
   tslint: {
