@@ -12,10 +12,12 @@
     padding: 30px;
   }
 
-  i.gov-notification-icon {
-    @extend .fa;
-    @extend .fa-exclamation-circle;
-    display: table-cell;
+  i.gov-icon {
+    &.gov-icon-important {
+      @extend .fa;
+      @extend .fa-exclamation-circle;
+      display: table-cell;
+    }
   }
 
   &.active   { background: $green; }
