@@ -39,12 +39,12 @@
       font-size: 0;
       height: 40px;
       padding: 6px 0 7px;
-      background: $secondary-text-colour;
+      background: $black;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       width: 100%;
       &:hover {
-        background: $secondary-text-colour;
+        background: $black;
       }
       &:after {
         font-family: FontAwesome, sans-serif;
