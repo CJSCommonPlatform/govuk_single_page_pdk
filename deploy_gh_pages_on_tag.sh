@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ev
 if [ "$TRAVIS_TAG" != "" ]; then
-    cd dist/docs
+    cd dist/govuk_single_page_pdk
     git init
 
     # inside this git repo create Travis user
