@@ -7,8 +7,10 @@
     @include bold-19;
   }
 
-  .gov-action-pane-links a:last-of-type {
+  .gov-action-pane-links a {
     display: block;
-    margin-bottom: 20px;
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
   }
 }
