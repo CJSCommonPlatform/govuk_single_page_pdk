@@ -5,10 +5,12 @@
 
   .gov-action-pane-heading {
     @include bold-19;
-    display: block;
   }
 
-  a + .gov-action-pane-heading {
-    margin-top: 20px;
+  .gov-action-pane-links a {
+    display: block;
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
   }
 }

@@ -67,7 +67,7 @@ gulp.task('commit-changes', function () {
 
 
 gulp.task('create-new-tag', function (done) {
-  git.tag(version, 'Created Tag for version: ' + getVersion(), function (error) {
+  git.tag(getVersion(), 'Created Tag for version: ' + getVersion(), function (error) {
     if (error) {
       return done(error);
     }
@@ -75,6 +75,7 @@ gulp.task('create-new-tag', function (done) {
   });
 });
 
-gulp.task('publish', function(done) {
-  spawn('npm', ['publish'], { stdio: 'inherit' }).on('close', done);
+gulp.task('publish', function() {
+  spawn('npm', ['publish', 'dist/@govuk/platform-template'],    {stdio: 'inherit'});
+  spawn('npm', ['publish', 'dist/@govuk/angularjs-components'], {stdio: 'inherit'});
 });

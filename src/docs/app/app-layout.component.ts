@@ -5,10 +5,6 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class AppLayout {
 
-  static $inject = ['$location', '$anchorScroll'];
-
-  constructor(private $location: ng.ILocationService, private $anchorScroll: ng.IAnchorScrollService){}
-
   // header values
   heading: string = 'Single Page Platform Development Kit';
   navItems = [

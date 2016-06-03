@@ -29,9 +29,7 @@ angular.module('govuk-single-page-pdk.docs', [
   'ncy-angular-breadcrumb',
   'ui.router',
   'ngSanitize'
-  ]).config(function($locationProvider){
-    $locationProvider.html5Mode(true);
-  })
+  ])
   .component('govDocs', AppLayout)
   .component('govDocsHomePage', HomePage)
   .component('govDocsComponentsPage', ComponentsPage)

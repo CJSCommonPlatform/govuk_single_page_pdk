@@ -5,40 +5,47 @@
 }
 
 .gov-search-group {
-  display: table;
-  width: 100%;
+  position: relative;
+
+  @include media(tablet) {
+    width: 50%;
+  }
 
   > input {
     @extend .form-control;
-    width: 100%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    display: table-cell;
+    // prevent form-control from overriding these
+    padding-left: 12px !important;;
+    padding-right: 52px !important;
+    width: 100% !important;
     height: 40px;
-    vertical-align: top;
-    padding-left: 12px;
-    padding-right: 12px;
+
     &:focus {
-      padding-left: 11px;
-      @include gov-focus;
+      padding-left: 11px !important;
+      @include focus-input;
     }
   }
 
   .gov-search-button {
     width: 40px;
-    display: table-cell;
+    position: absolute;
     height: 40px;
-    vertical-align: top;
+    right: 0;
+    top: 0;
 
     button {
       @extend .btn;
       box-sizing: border-box;
+      box-shadow: none;
+      font-size: 0;
       height: 40px;
       padding: 6px 0 7px;
-      background: $secondary-text-colour;
+      background: $black;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       width: 100%;
+      &:hover {
+        background: $black;
+      }
       &:after {
         font-family: FontAwesome, sans-serif;
         content: '\f002';
@@ -46,7 +53,7 @@
         font-size: 18px;
       }
       &:focus {
-        @include gov-focus;
+        @include focus-input;
         padding-top: 4px;
       }
     }
