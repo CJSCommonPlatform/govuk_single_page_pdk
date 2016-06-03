@@ -1,7 +1,7 @@
 import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
-  template: require('./govuk-header.demo.html')
+  template: require('./header.demo.html')
 })
 export class GovUkHeaderDemo {
   heading: string = 'Single Page Platform Development Kit';
@@ -23,4 +23,6 @@ export class GovUkHeaderDemo {
       label: 'Examples'
     }
   ];
+  showCookie = false;
+  isBusiness = false;
 }

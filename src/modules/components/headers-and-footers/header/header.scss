@@ -1,0 +1,31 @@
+@import "../../../../lib/govuk_template/stylesheets/header";
+
+#global-header {
+
+  .header-wrapper{
+    &.business{
+      max-width: 1170px;
+    }
+  }
+  #logo{
+    float: left;
+    position: relative;
+    padding-left: 47px;
+    background: url(../../../../lib/govuk_template/stylesheets/images/gov.uk_logotype_crown.png) no-repeat;
+    background-size: 35px 31px;
+    background-position: 0 0;
+  }
+}
+
+
+#skiplink-container {
+  text-align: center;
+  background: $text-colour;
+  display: block;
+
+  .skiplink {
+    display: inline-block;
+    margin: 0.75em 0 0 30px;
+    position: absolute;
+  }
+}

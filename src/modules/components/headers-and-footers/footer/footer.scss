@@ -1,0 +1,303 @@
+#footer {
+  background-color: $panel-colour;
+  border-top: 10px solid $govuk-blue;
+  .footer-wrapper {
+    margin: 0 auto;
+    width: auto;
+    max-width: 1020px;
+    padding-top: 20px;
+    background-color: $panel-colour;
+    margin: 0 auto;
+
+    &.business{
+      max-width: 1200px;
+    }
+  }
+  a {
+    color: $antracite;
+    &:hover {
+      color: $black-midnight;
+    }
+  }
+  h2 {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: bold;
+    color: $black-midnight;
+    margin: 0;
+    a {
+      color: inherit;
+    }
+  }
+  .footer-meta {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 60px;
+    clear: both;
+    font-size: 0;
+    color: $antracite;
+    .footer-meta-inner {
+      display: inline-block;
+      vertical-align: bottom;
+      width: 100%;
+      ul {
+        font-family: "nta", Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 400;
+        text-transform: none;
+        display: inline-block;
+        list-style: none;
+        margin: 0 0 1.5em 0;
+        padding: 0;
+        li {
+          display: inline-block;
+          margin: 0 15px 0 0;
+        }
+      }
+      .open-government-licence {
+        clear: left;
+        position: relative;
+        .logo {
+          margin-bottom: 1em;
+          padding-top: 0;
+          a {
+            display: block;
+            width: 41px;
+            height: 17px;
+            overflow: hidden;
+            text-indent: -999em;
+            background: url(../../../../lib/govuk_template/stylesheets/images/open-government-licence.png) 0 0 no-repeat;
+          }
+        }
+        p {
+          font-family: "nta", Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.25;
+          font-weight: 400;
+          text-transform: none;
+          margin: 0;
+          padding-top: 0.1em;
+        }
+      }
+    }
+    .copyright {
+      font-family: "nta", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 400;
+      text-transform: none;
+      margin: 30px 0 0 0;
+      width: 100%;
+      display: block;
+      a {
+        display: block;
+        background-image: url(../../../../lib/govuk_template/stylesheets/images/govuk-crest.png);
+        background-repeat: no-repeat;
+        background-position: 50% 0%;
+        text-align: center;
+        text-decoration: none;
+        padding: 115px 0 0 0;
+      }
+    }
+  }
+}
+@media (min-width: 641px) {
+  #footer {
+    .footer-wrapper {
+      padding-top: 60px;
+    }
+    .footer-meta {
+      padding-left: 30px;
+      padding-right: 30px;
+      .footer-meta-inner {
+        width: 75%;
+        ul {
+          margin: 0 0 1em 0;
+        }
+        .open-government-licence {
+          padding-left: 53px;
+          .logo {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 41px;
+            height: 100%;
+          }
+        }
+      }
+      .copyright {
+        display: inline-block;
+        text-align: inherit;
+        width: 25%;
+        padding-top: 15px;
+        margin-top: 0;
+        a {
+          background-position: 100% 0%;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 640px) {
+  #footer {
+    h2 {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .footer-meta {
+      .footer-meta-inner {
+        ul {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+        .open-government-licence {
+          p {
+            font-size: 14px;
+            line-height: 1.14286;
+          }
+        }
+      }
+      .copyright {
+        font-size: 14px;
+        line-height: 1.14286;
+      }
+    }
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  #footer {
+    .footer-meta {
+      .footer-meta-inner {
+        .open-government-licence {
+          .logo {
+            a {
+              background-image: url(../../../../lib/govuk_template/stylesheets/images/open-government-licence_2x.png);
+              background-size: 41px 17px;
+            }
+          }
+        }
+      }
+      .copyright {
+        a {
+          background-image: url(../../../../lib/govuk_template/stylesheets/images/govuk-crest-2x.png);
+          background-size: 125px 102px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min--moz-device-pixel-ratio: 2) {
+  #footer {
+    .footer-meta {
+      .footer-meta-inner {
+        .open-government-licence {
+          .logo {
+            a {
+              background-image: url(../../../../lib/govuk_template/stylesheets/images/open-government-licence_2x.png);
+              background-size: 41px 17px;
+            }
+          }
+        }
+      }
+      .copyright {
+        a {
+          background-image: url(../../../../lib/govuk_template/stylesheets/images/govuk-crest-2x.png);
+          background-size: 125px 102px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (-o-min-device-pixel-ratio: 20 / 10) {
+  #footer {
+    .footer-meta {
+      .footer-meta-inner {
+        .open-government-licence {
+          .logo {
+            a {
+              background-image: url(../../../../lib/govuk_template/stylesheets/images/open-government-licence_2x.png);
+              background-size: 41px 17px;
+            }
+          }
+        }
+      }
+      .copyright {
+        a {
+          background-image: url(../../../../lib/govuk_template/stylesheets/images/govuk-crest-2x.png);
+          background-size: 125px 102px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-device-pixel-ratio: 2) {
+  #footer {
+    .footer-meta {
+      .footer-meta-inner {
+        .open-government-licence {
+          .logo {
+            a {
+              background-image: url(../../../../lib/govuk_template/stylesheets/images/open-government-licence_2x.png);
+              background-size: 41px 17px;
+            }
+          }
+        }
+      }
+      .copyright {
+        a {
+          background-image: url(../../../../lib/govuk_template/stylesheets/images/govuk-crest-2x.png);
+          background-size: 125px 102px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-resolution: 192dpi) {
+  #footer {
+    .footer-meta {
+      .footer-meta-inner {
+        .open-government-licence {
+          .logo {
+            a {
+              background-image: url(../../../../lib/govuk_template/stylesheets/images/open-government-licence_2x.png);
+              background-size: 41px 17px;
+            }
+          }
+        }
+      }
+      .copyright {
+        a {
+          background-image: url(../../../../lib/govuk_template/stylesheets/images/govuk-crest-2x.png);
+          background-size: 125px 102px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-resolution: 2dppx) {
+  #footer {
+    .footer-meta {
+      .footer-meta-inner {
+        .open-government-licence {
+          .logo {
+            a {
+              background-image: url(../../../../lib/govuk_template/stylesheets/images/open-government-licence_2x.png);
+              background-size: 41px 17px;
+            }
+          }
+        }
+      }
+      .copyright {
+        a {
+          background-image: url(../../../../lib/govuk_template/stylesheets/images/govuk-crest-2x.png);
+          background-size: 125px 102px;
+        }
+      }
+    }
+  }
+}

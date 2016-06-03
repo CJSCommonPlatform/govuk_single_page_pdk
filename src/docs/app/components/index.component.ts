@@ -11,7 +11,7 @@ export class ComponentsPage {
             state: 'components.data-visualisation',
             components: ['Contact-info', 'Personal-details', 'Summary-item', 'Tab']
         },
-        {name: 'Headers', state: 'components.headers', components: ['Govuk']},
+        {name: 'Headers and Footers', state: 'components.headers', components: ['Govuk header', 'Govuk footer']},
         {name: 'Media', state: 'components.media', components: ['Image', 'statement']},
         {
             name: 'Navigation',

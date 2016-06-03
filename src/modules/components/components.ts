@@ -2,7 +2,7 @@
 
 import { ActionPaneComponent } from './navigation/action-pane/action-pane.component';
 import { BreadcrumbsComponent } from './navigation/breadcrumbs/breadcrumbs.component';
-import { GovUkHeaderComponent } from './headers/govuk/govuk-header.component';
+import { GovUkHeaderComponent } from './headers-and-footers/header/header.component.ts';
 import { PageTitleComponent } from './banners/page-title/page-title.component';
 import { PersistInfoComponent} from './banners/persist-info/persist-info.component';
 import { PersonalDetailsComponent } from './data-visualisation/personal-details/personal-details.component';
@@ -26,6 +26,7 @@ import { VideoComponent} from './media/video/video.component';
 import { TabComponent } from './data-visualisation/tab/tab.component';
 import { TabsetComponent} from './data-visualisation/tab/tabset.component';
 import { NotificationComponent } from './banners/notification/notification.component';
+import { FooterComponent } from './headers-and-footers/footer/footer.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -54,6 +55,7 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govVideo', VideoComponent)
   .component('govTab', TabComponent)
   .component('govTabset', TabsetComponent)
-  .component('govNotification', NotificationComponent);
+  .component('govNotification', NotificationComponent)
+  .component('govFooter', FooterComponent);
 
 export const components: string = module.name;

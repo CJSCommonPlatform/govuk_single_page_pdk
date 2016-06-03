@@ -1,0 +1,60 @@
+<h2 class="heading-medium">Footer</h2>
+
+<p class="text">
+  This is the footer used across Gov websites.
+</p>
+
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <footer class="group js-footer" id="footer">
+      <div class="footer-wrapper">
+        <div class="footer-meta">
+          <div class="footer-meta-inner">
+            <ul>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Cymraeg</a></li>
+              <li>Built by <a href="#">Defra</a></li>
+            </ul>
+            <div class="open-government-licence">
+              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
+              <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
+            </div>
+          </div>
+          <div class="copyright">
+            <a href="https://www.nationalarchives.gov.uk/information-management/our-services/crown-copyright.htm">© Crown copyright</a>
+          </div>
+        </div>
+      </div>
+        </footer>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <gov-footer links="$ctrl.myLinks" built-by="$ctrl.builtBy" is-business="$ctrl.isBusiness"></gov-footer>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      myLinks = [
+        {name: 'Help', url: '#'},
+        {name: 'Cookies', url: '#'},
+        {name: 'Contact', url: '#'}
+      ];
+
+      builtBy: any = {
+        name: 'Common Platform',
+        url: '#'
+      };
+
+      isBusiness = false; // if true max-width will be 1200 px
+    </docs-example>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="25"></discuss-component>

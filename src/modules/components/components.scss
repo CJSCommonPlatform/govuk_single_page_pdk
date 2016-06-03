@@ -1,6 +1,6 @@
 @import "navigation/breadcrumbs/breadcrumbs";
 @import "navigation/action-pane/action-pane";
-@import "headers/govuk/govuk-header";
+@import "headers-and-footers/header/header";
 @import "banners/phase-banner/phase-banner";
 @import "data-visualisation/contact-info/contact-info";
 @import "banners/page-title/page-title";
@@ -19,3 +19,4 @@
 @import "banners/alert/alert";
 @import "banners/notification/notification";
 @import "data-visualisation/tab/tab";
+@import "headers-and-footers/footer/footer";

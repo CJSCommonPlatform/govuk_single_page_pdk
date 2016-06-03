@@ -8,7 +8,7 @@ import { AppLayout } from './app/app-layout.component';
 import { ComponentsPage } from './app/components/index.component';
 import { BannersPage } from './app/components/banners/banners.component.ts';
 import { DataVisualisationPage } from './app/components/data-visualisation/data-visualisation.component.ts';
-import { HeadersPage } from './app/components/headers/headers.component.ts';
+import { HeadersPage } from 'app/components/headers-and-footers/headers.component.ts';
 import { MediaPage } from './app/components/media/media.component.ts';
 import { NavigationPage } from './app/components/navigation/navigation.component.ts';
 import { TimelinePage } from './app/components/timeline/timeline.component.ts';

@@ -2,7 +2,7 @@ import { components } from './components';
 import { docsUtils } from '../../util/docs';
 
 import { BreadcrumbsDemo } from './navigation/breadcrumbs/breadcrumbs.demo';
-import { GovUkHeaderDemo } from './headers/govuk/govuk-header.demo';
+import { GovUkHeaderDemo } from './headers-and-footers/header/header.demo.ts';
 import { PhaseBannerDemo } from './banners/phase-banner/phase-banner.demo';
 import { PageTitleDemo } from './banners/page-title/page-title.demo';
 import { ActionPaneDemo } from './navigation/action-pane/action-pane.demo';
@@ -20,6 +20,7 @@ import { HighlightTextDemo } from './banners/highlight-text/highlight-text.demo'
 import { AlertDemo } from './banners/alert/alert.demo';
 import { NotificationDemo } from './banners/notification/notification.demo';
 import { TabDemo } from './data-visualisation/tab/tab.demo';
+import { FooterDemo } from './headers-and-footers/footer/footer.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -42,6 +43,7 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govHighlightTextDemo', HighlightTextDemo)
   .component('govAlertDemo', AlertDemo)
   .component('govNotificationDemo', NotificationDemo)
-  .component('govTabDemo', TabDemo);
+  .component('govTabDemo', TabDemo)
+  .component('govFooterDemo', FooterDemo);
 
 export const componentsDemos = module.name;
