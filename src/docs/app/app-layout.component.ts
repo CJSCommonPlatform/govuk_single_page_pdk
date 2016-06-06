@@ -33,5 +33,8 @@ export class AppLayout {
     {name: 'Contact', url: 'https://www.gov.uk/contact'}
   ];
 
-  builtBy: any = {name: 'Common Platform', url: 'https://www.gov.uk/government/organisations/government-digital-service'};
+  builtBy: any = {
+    name: 'Common Platform',
+    url:  'https://www.gov.uk/government/organisations/government-digital-service'
+  };
 }
