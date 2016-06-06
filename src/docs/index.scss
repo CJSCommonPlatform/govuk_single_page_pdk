@@ -5,6 +5,10 @@ $path: '../../node_modules/govuk_frontend_toolkit/images/';
 @import './app/content/icons-media/icons-media';
 @import './app/content/errors/errors';
 
+html, body {
+  height: 100%;
+}
+
 section.docs-section {
   margin: 30px 0;
 
@@ -40,4 +44,21 @@ section.docs-section {
     display: inline-block;
     margin: 0.75em 0 0 30px;
   }
+}
+
+.docs--wrapper {
+  min-height: 100%;
+}
+
+.docs--inner-wrapper {
+  overflow: auto;
+  padding-bottom: 280px;
+}
+
+gov-footer {
+  display: block;
+  position: relative;
+  margin-top: -280px;
+  height: 280px;
+  clear: both;
 }
