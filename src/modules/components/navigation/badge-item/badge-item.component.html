@@ -1,0 +1,11 @@
+<div class="badge-item" ng-class="{'selected': $ctrl.item.selected}" ng-click="$ctrl.item.click()">
+  <span class="badge-item-link">
+  <span ng-bind="$ctrl.item.description"></span>
+  <span class="pull-right">
+    <span class="badge-item-badge">
+      <span ng-bind="$ctrl.item.count"></span>
+    </span>
+    <span class="arrow"></span>
+  </span>
+  </span>
+</div>

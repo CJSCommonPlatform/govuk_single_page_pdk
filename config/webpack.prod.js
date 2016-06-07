@@ -42,7 +42,7 @@ module.exports = webpackMerge(commonConfig, {
     resourcePath: 'src'
   },
   htmlLoader: {
-    minimize: true,
+    minimize: false,
     removeAttributeQuotes: false,
     caseSensitive: true,
     customAttrSurround: [

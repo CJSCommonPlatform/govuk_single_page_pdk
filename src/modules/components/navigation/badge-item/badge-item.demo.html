@@ -1,0 +1,57 @@
+<h2 class="heading-medium">Badge Item</h2>
+
+<gov-tabset>
+
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <div class="badge-item">
+        <span class="badge-item-link">
+          <span>test</span>
+          <span class="pull-right">
+            <span class="badge-item-badge">
+              <span>3</span>
+            </span>
+            <span class="fa fa-chevron-right fa-chevron-right-gray"></span>
+          </span>
+        </span>
+      </div>
+      <div class="badge-item selected">
+        <span class="badge-item-link">
+          <span>test</span>
+          <span class="pull-right">
+            <span class="badge-item-badge">
+              <span>3</span>
+            </span>
+            <span class="arrow"></span>
+          </span>
+        </span>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <gov-badge-item ng-repeat="item in $ctrl.items" item="item"></gov-badge-item>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      items = [
+        {
+          description: 'Test 1', count: 5, click: function () {
+            console.log('clicked');
+          }
+        },
+        {
+          description: 'Test 2', count: 3, selected: true, click: function () {
+            console.log('clicked');
+          }
+        }
+      ]
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="2"></discuss-component>
