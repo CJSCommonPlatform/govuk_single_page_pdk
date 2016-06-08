@@ -15,5 +15,5 @@ export class BadgeItemDemo {
         console.log('clicked');
     }
     }
-  ]
+  ];
 }

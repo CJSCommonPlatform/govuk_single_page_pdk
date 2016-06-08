@@ -21,6 +21,7 @@ import { AlertDemo } from './banners/alert/alert.demo';
 import { NotificationDemo } from './banners/notification/notification.demo';
 import { TabDemo } from './data-visualisation/tab/tab.demo';
 import { FooterDemo } from './headers-and-footers/footer/footer.demo';
+import { BadgeItemDemo} from './navigation/badge-item/badge-item.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -44,6 +45,7 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govAlertDemo', AlertDemo)
   .component('govNotificationDemo', NotificationDemo)
   .component('govTabDemo', TabDemo)
-  .component('govFooterDemo', FooterDemo);
+  .component('govFooterDemo', FooterDemo)
+  .component('govBadgeItemDemo', BadgeItemDemo);
 
 export const componentsDemos = module.name;
