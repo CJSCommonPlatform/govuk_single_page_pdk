@@ -1,10 +1,12 @@
 @import "../../../../lib/govuk_template/stylesheets/header";
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/variables';
+
 
 #global-header {
 
-  .header-wrapper{
-    &.business{
-      max-width: 1170px;
+  .header-wrapper {
+    &.business {
+      max-width: $container-large-desktop;
     }
   }
   #logo{
@@ -17,6 +19,9 @@
   }
 }
 
+#global-header-bar.business {
+  max-width: $container-large-desktop;
+}
 
 #skiplink-container {
   text-align: center;
@@ -28,4 +33,9 @@
     margin: 0.75em 0 0 30px;
     position: absolute;
   }
+}
+
+// temporary
+#skiplink-container {
+  opacity: 0;
 }
