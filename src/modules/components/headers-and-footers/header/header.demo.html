@@ -59,8 +59,25 @@
 
   <gov-tab heading="Data">
     <prismify language="javascript">
-      heading  = {{$ctrl.heading | json: 2}};
-      navItems = {{$ctrl.navItems | json: 2}};
+      heading: string = 'Single Page Platform Development Kit';
+      navItems = [
+        {
+          state: 'layout',
+          label: 'Layout'
+        },
+        {
+          state: 'content',
+          label: 'Content'
+        },
+        {
+          state: 'components',
+          label: 'Components'
+        },
+        {
+          state: 'examples',
+          label: 'Examples'
+        }
+      ];
       showCookie = false; // if true will display the cookie message over the header
       isBusiness = false; // if true the width will expand to 1170px
     </prismify>
