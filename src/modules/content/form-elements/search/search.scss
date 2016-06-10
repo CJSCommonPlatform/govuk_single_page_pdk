@@ -1,9 +1,3 @@
-@mixin gov-focus() {
-  outline: none;
-  box-shadow: none !important;
-  border: 3px solid $focus-colour;
-}
-
 .gov-search-group {
   position: relative;
 
@@ -13,16 +7,8 @@
 
   > input {
     @extend .form-control;
-    // prevent form-control from overriding these
-    padding-left: 12px !important;;
-    padding-right: 52px !important;
     width: 100% !important;
     height: 40px;
-
-    &:focus {
-      padding-left: 11px !important;
-      @include focus-input;
-    }
   }
 
   .gov-search-button {
@@ -33,19 +19,14 @@
     top: 0;
 
     button {
-      @extend .btn;
       box-sizing: border-box;
       box-shadow: none;
       font-size: 0;
       height: 40px;
       padding: 6px 0 7px;
       background: $black;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+      border: 1px solid $black;
       width: 100%;
-      &:hover {
-        background: $black;
-      }
       &:after {
         font-family: FontAwesome, sans-serif;
         content: '\f002';
@@ -53,8 +34,7 @@
         font-size: 18px;
       }
       &:focus {
-        @include focus-input;
-        padding-top: 4px;
+        padding-top: 5px;
       }
     }
   }
