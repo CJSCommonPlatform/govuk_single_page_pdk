@@ -2,9 +2,11 @@
   "version": "0.0.0-PLACEHOLDER",
   "name": "@govuk/angularjs-components",
   "main": "./angularjs-components.js",
-  "peerDependencies": {
-    "angular": "^1.5.0",
+  "dependencies": {
     "@govuk/platform-template": "0.0.0-PLACEHOLDER"
+  },
+  "peerDependencies": {
+    "angular": "^1.5.0"
   },
   "repository" : {
     "type" : "git",
