@@ -15,6 +15,8 @@ import { TimelinePage } from './app/components/timeline/timeline.component.ts';
 import { ContentPage } from './app/content/content.component';
 import { ExamplesPage } from './app/examples/examples.component';
 import { ColoursPage } from './app/content/colours/colours.component';
+import { ButtonsPage } from './app/content/buttons/buttons.component';
+import { TypographyPage } from './app/content/typography/typography.component';
 import { HomePage } from './app/home/home.component';
 import { LayoutPage } from './app/layout/layout.component';
 import { FormElementsPage } from './app/content/form-elements/form-elements.component';
@@ -43,6 +45,8 @@ angular.module('govuk-single-page-pdk.docs', [
   .component('govDocsExamplesPage', ExamplesPage)
   .component('govDocsLayoutPage', LayoutPage)
   .component('govDocsContentColoursPage', ColoursPage)
+  .component('govDocsContentButtonsPage', ButtonsPage)
   .component('govDocsFormElementsPage', FormElementsPage)
   .component('govDocsContentIconsMediaPage', IconsMediaPage)
-  .component('govDocsContentErrorsPage', ErrorsPage);
+  .component('govDocsContentErrorsPage', ErrorsPage)
+  .component('govDocsContentTypographyPage', TypographyPage);

@@ -52,7 +52,7 @@ export const routes: angular.ui.IState[] = [
     url:      '/navigation',
     template: '<gov-docs-components-navigation-page></gov-docs-components-navigation-page>',
     ncyBreadcrumb: {
-      label: 'Components'
+      label: 'Navigation'
     }
   },
   {
@@ -93,6 +93,22 @@ export const routes: angular.ui.IState[] = [
     template: '<gov-docs-content-colours-page></gov-docs-content-colours-page>',
     ncyBreadcrumb: {
       label: 'Colours'
+    }
+  },
+  {
+    state:    'content.typography',
+    url:      '/typography',
+    template: '<gov-docs-content-typography-page></gov-docs-content-typography-page>',
+    ncyBreadcrumb: {
+      label: 'Typography'
+    }
+  },
+  {
+    state:    'content.buttons',
+    url:      '/buttons',
+    template: '<gov-docs-content-buttons-page></gov-docs-content-buttons-page>',
+    ncyBreadcrumb: {
+      label: 'Buttons'
     }
   },
   {

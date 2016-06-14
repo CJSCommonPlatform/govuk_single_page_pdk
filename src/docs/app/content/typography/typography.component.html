@@ -1,0 +1,349 @@
+<main id="content" role="main" tabindex="-1">
+
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Content</span>
+    Typography
+  </h1>
+
+  <div class="text">
+    <p class="lede">
+      For GOV.UK domains, always use the GDS Transport Website font in Light and Bold.
+    </p>
+  </div>
+
+  <h2 class="heading-small heading-contents">Contents:</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <ul class="list list-contents">
+        <li><a ui-sref="content.typography({'#':'typography-font'})">Font</a></li>
+        <li><a ui-sref="content.typography({'#':'typography-headings'})">Headings</a></li>
+        <li><a ui-sref="content.typography({'#':'typography-lead-paragraph'})">Lead paragraph</a></li>
+        <li><a ui-sref="content.typography({'#':'typography-body-copy'})">Body copy</a></li>
+        <li><a ui-sref="content.typography({'#':'typography-links'})">Links</a></li>
+        <li><a ui-sref="content.typography({'#':'typography-lists'})">Lists</a></li>
+        <li><a ui-sref="content.typography({'#':'typography-inset-text'})">Inset text</a></li>
+        <li><a ui-sref="content.typography({'#':'typography-legal-text'})">Legal text</a></li>
+        <li><a ui-sref="content.typography({'#':'typography-hidden-text'})">Hidden text</a></li>
+        <li><a ui-sref="content.typography({'#':'examples'})">Examples</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="heading-medium" id="typography-font">Font</h3>
+  <div class="text">
+    <p>
+      Use the GDS Transport Website font in Light and Bold. It's licensed for use on the GOV.UK domains only.
+    </p>
+    <p>
+      For services publicly available on different domains, use an alternative typeface like Arial.
+    </p>
+  </div>
+
+  <h3 class="heading-medium" id="typography-headings">
+    Headings
+  </h3>
+
+  <ul class="list list-bullet text">
+    <li>use GDS Transport Website Bold</li>
+    <li>use sentence case for headings</li>
+    <li>use headings consistently to create a clear hierarchy</li>
+  </ul>
+
+  <div class="example">
+    <h1 class="heading-xlarge">A <em class="highlight">48px Bold</em> heading</h1>
+
+    <h2 class="heading-large">A <em class="highlight">36px Bold</em> heading</h2>
+
+    <h3 class="heading-medium">A <em class="highlight">24px Bold</em> heading</h3>
+
+    <h4 class="heading-small">A <em class="highlight">19px Bold</em> heading</h4>
+  </div>
+
+  <prismify language="markup">
+    <h1 class="heading-xlarge">A 48px Bold heading</h1>
+
+    <h2 class="heading-large">A 36px Bold heading</h2>
+
+    <h3 class="heading-medium">A 24px Bold heading</h3>
+
+    <h4 class="heading-small">A 19px Bold heading</h4>
+  </prismify>
+
+  <h3 class="heading-medium" id="typography-lead-paragraph">
+    Lead paragraph
+  </h3>
+
+  <ul class="list list-bullet">
+    <li>use 24px for a lead paragraph</li>
+    <li>there should only be one lead paragraph per page</li>
+  </ul>
+
+  <div class="example">
+    <div class="text">
+      <p class="lede">
+        A <em class="highlight">24px</em> lead paragraph, maecenas sed diam eget risus varius blandit sit amet non
+        magna.
+      </p>
+
+      <p>
+        A <em class="highlight">19px</em> body copy paragraph, maecenas sed diam eget risus varius blandit sit amet non
+        magna.
+      </p>
+    </div>
+  </div>
+
+  <prismify language="markup">
+    <p class="lede">
+      A 24px lead paragraph, maecenas sed diam eget risus varius blandit sit amet non magna.
+    </p>
+
+    <p>
+      A 19px body copy paragraph, maecenas sed diam eget risus varius blandit sit amet non magna.
+    </p>
+  </prismify>
+
+  <h3 class="heading-medium" id="typography-body-copy">
+    Body copy
+  </h3>
+
+  <ul class="list list-bullet text">
+    <li>use GDS Transport Website Light</li>
+    <li>avoid using bold and italics</li>
+    <li>use 19px for body copy &ndash; 16px for smaller screens</li>
+    <li>use smaller sizes only if there's a user need (eg 16px, 14px, 12px)</li>
+    <li>make sure lines of text don't exceed 75 characters, as they become harder to read beyond that point</li>
+  </ul>
+
+  <div class="example">
+    <div class="text">
+      <p>
+        A <em class="highlight">19px</em> body copy paragraph. Maecenas sed diam eget risus varius blandit sit amet non
+        magna. Donec ullamcorper nulla non metus auctor fringilla.
+      </p>
+
+      <p class="font-xsmall">
+        A <em class="highlight">16px</em> supporting text paragraph. Maecenas sed diam eget risus varius blandit sit
+        amet non magna. Donec ullamcorper nulla non metus auctor fringilla.
+      </p>
+    </div>
+  </div>
+
+  <prismify language="markup">
+    <code class="language-markup">
+      <p>
+        A 19px body copy paragraph, maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper
+        nulla non metus auctor fringilla.
+      </p>
+
+      <p class="font-xsmall">
+        A 16px supporting text paragraph, maecenas sed diam eget risus varius blandit sit amet non magna. Donec
+        ullamcorper nulla non metus auctor fringilla.
+      </p>
+    </code>
+  </prismify>
+
+  <h3 class="heading-medium" id="typography-links">Links</h3>
+  <ul class="list list-bullet text">
+    <li>links within body copy should be blue and underlined</li>
+    <li>links without surrounding text should not have a full stop at the end</li>
+    <li>link colours can be found in the <a href="/colour">colour palette</a></li>
+  </ul>
+
+  <div class="example">
+    <div class="text">
+      <p>
+        <a ui-sref="content.typography">A 19px link without surrounding text</a>
+      </p>
+
+      <p>
+        <a ui-sref="content.typography">A 19px body copy link</a>. Fusce dapibus, tellus ac cursus commodo, tortor
+        mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      </p>
+
+      <p>
+        <a ui-sref="content.typography" rel="external">A 19px body copy external link.</a> Fusce dapibus, tellus ac
+        cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      </p>
+
+
+      <a ui-sref="content.typography" class="link-back">Back</a></div>
+  </div>
+
+  <prismify language="markup">
+    <code class="language-markup">
+      <p>
+        <a ui-sref="content.typography">A 19px link without surrounding text</a>
+      </p>
+
+      <p>
+        <a ui-sref="content.typography">A 19px body copy link</a>. Fusce dapibus, tellus ac cursus commodo, tortor
+        mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      </p>
+
+      <p>
+        <a ui-sref="content.typography" rel="external">A 19px body copy external link.</a> Fusce dapibus, tellus ac
+        cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      </p>
+
+
+      <a ui-sref="content.typography" class="link-back">Back</a></code>
+  </prismify>
+
+  <h3 class="heading-medium" id="typography-lists">Lists</h3>
+  <p class="text">
+    List items start with a lowercase letter and have no full stop at the end.
+  </p>
+
+  <div class="example">
+    <ul class="list list-bullet">
+      <li>here is a bulleted list</li>
+      <li>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor</li>
+      <li>vestibulum id ligula porta felis euismod semper</li>
+      <li>integer posuere erat a ante venenatis dapibus posuere velit aliquet</li>
+    </ul>
+
+    <ol class="list list-number">
+      <li>here is a numbered list</li>
+      <li>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor</li>
+      <li>vestibulum id ligula porta felis euismod semper</li>
+      <li>integer posuere erat a ante venenatis dapibus posuere velit aliquet</li>
+    </ol>
+
+    <ul class="list">
+      <li><a ui-sref="content.typography">Related link</a></li>
+      <li><a ui-sref="content.typography">Related link</a></li>
+      <li><a ui-sref="content.typography">Related link</a></li>
+      <li><a ui-sref="content.typography" class="bold-xsmall">More</a></li>
+    </ul>
+  </div>
+
+  <prismify language="markup">
+    <code class="language-markup">
+      <ul class="list list-bullet">
+        <li>here is a bulleted list</li>
+        <li>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor</li>
+        <li>vestibulum id ligula porta felis euismod semper</li>
+        <li>integer posuere erat a ante venenatis dapibus posuere velit aliquet</li>
+      </ul>
+
+      <ol class="list list-number">
+        <li>here is a numbered list</li>
+        <li>vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor</li>
+        <li>vestibulum id ligula porta felis euismod semper</li>
+        <li>integer posuere erat a ante venenatis dapibus posuere velit aliquet</li>
+      </ol>
+
+      <ul class="list">
+        <li><a ui-sref="content.typography">Related link</a></li>
+        <li><a ui-sref="content.typography">Related link</a></li>
+        <li><a ui-sref="content.typography">Related link</a></li>
+        <li><a ui-sref="content.typography" class="bold-xsmall">More</a></li>
+      </ul>
+    </code>
+  </prismify>
+
+  <h3 class="heading-medium" id="typography-inset-text">Inset text</h3>
+  <p class="text">
+    Use bordered inset text to draw attention to important content on the page.
+  </p>
+
+  <div class="example">
+    <div class="text">
+      <div class="panel panel-border-wide">
+        <p>
+          It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <prismify language="markup">
+    <div class="panel panel-border-wide">
+      <p>
+        It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.
+      </p>
+    </div>
+  </prismify>
+
+  <h3 class="heading-medium" id="typography-legal-text">Legal text</h3>
+  <p class="text">
+    Use bold text with an exclamation icon if there are legal consequences - for example, a fine or prison sentence.
+  </p>
+
+  <div class="example">
+    <div class="text">
+      <div class="notice">
+        <i class="icon icon-important">
+          <span class="visuallyhidden">Warning</span>
+        </i>
+        <strong class="bold-small">
+          You can be fined up to £5,000 if you don’t register.
+        </strong>
+      </div>
+    </div>
+  </div>
+
+  <prismify language="markup">
+    <div class="notice">
+      <i class="icon icon-important">
+        <span class="visuallyhidden">Warning</span>
+      </i>
+      <strong class="bold-small">
+        You can be fined up to £5,000 if you don’t register.
+      </strong>
+    </div>
+  </prismify>
+
+  <h3 class="heading-medium" id="typography-hidden-text">Hidden text (progressive disclosure)</h3>
+  <p class="text">
+    Use this to make your page easier to scan,
+    only showing contextual information when required.
+  </p>
+  <p class="text">
+    Click on "Help with nationality" to see how this works.
+  </p>
+
+  <div class="example">
+    <details>
+
+      <summary><span class="summary">Help with nationality</span></summary>
+
+      <div class="panel panel-border-narrow">
+
+        <p>
+          If you’re not sure about your nationality, try to find out from an official document like a passport or
+          national ID card.
+        </p>
+
+        <p>
+          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t
+          provide your nationality, you’ll have to send copies of identity documents through the post.
+        </p>
+
+      </div>
+
+    </details>
+  </div>
+
+  <prismify language="markup">
+    <details>
+
+      <summary><span class="summary">Help with nationality</span></summary>
+
+      <div class="panel panel-border-narrow">
+
+        <p>
+          If you’re not sure about your nationality, try to find out from an official document like a passport or
+          national ID card.
+        </p>
+
+        <p>
+          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t
+          provide your nationality, you’ll have to send copies of identity documents through the post.
+        </p>
+
+      </div>
+
+    </details>
+  </prismify>
+</main><!-- / #content -->

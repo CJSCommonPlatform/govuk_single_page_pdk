@@ -17,6 +17,7 @@
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
+      <h2>Example 1 (With links, Tasks and heading)</h2>
       <gov-action-pane heading="$ctrl.title">
         <links>
           <a href="http://www.google.com" link="Visit Google">Visit Google</a>
@@ -24,6 +25,13 @@
         <tasks>
           <a href="#" link="Review your application">Review your application</a>
         </tasks>
+      </gov-action-pane>
+      <h2>Example 2 (With just links)</h2>
+      <gov-action-pane>
+        <links>
+          <div><a href="http://www.google.com" link="Visit Google">Visit Google</a></div>
+          <div><a href="http://www.yahoo.com" link="Visit Yahoo">Visit Yahoo</a></div>
+        </links>
       </gov-action-pane>
     </docs-example>
   </gov-tab>
