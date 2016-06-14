@@ -19,10 +19,6 @@ export class AppLayout {
     {
       state: 'components',
       label: 'Components'
-    },
-    {
-      state: 'examples',
-      label: 'Examples'
     }
   ];
 
