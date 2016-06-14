@@ -1,9 +1,9 @@
 <div class="grid-row">
-  <div class="column-two-half" ng-if="$ctrl.navigation.previous">
+  <div class="column-one-half" ng-if="$ctrl.navigation.previous">
     <gov-arrow type="previous" text="{{$ctrl.navigation.previous.name}}" description="{{$ctrl.navigation.previous.description}}" navigate="$ctrl.navigation.previous.navigate"></gov-arrow>
   </div>
 
-  <div class="column-two-half" ng-if="$ctrl.navigation.next">
+  <div class="column-one-half" ng-if="$ctrl.navigation.next">
     <gov-arrow type="next" text="{{$ctrl.navigation.next.name}}" description="{{$ctrl.navigation.next.description}}" navigate="$ctrl.navigation.next.navigate"></gov-arrow>
   </div>
 </div>
