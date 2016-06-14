@@ -1,12 +1,12 @@
 <div class="grid-row">
-  <div ng-style="{'hidden': $ctrl.navigation.previous}" class="column-one-half">
+  <div ng-style="{'hidden': !$ctrl.navigation.previous}" class="column-one-half">
     <gov-arrow ng-if="$ctrl.navigation.previous" type="previous"
                text="{{$ctrl.navigation.previous.name}}"
                description="{{$ctrl.navigation.previous.description}}"
                navigate="$ctrl.navigation.previous.navigate"></gov-arrow>
   </div>
 
-  <div ng-style="{'hidden': $ctrl.navigation.next}" class="column-one-half">
+  <div ng-style="{'hidden': !$ctrl.navigation.next}" class="column-one-half">
     <gov-arrow ng-if="$ctrl.navigation.next" type="next"
                text="{{$ctrl.navigation.next.name}}"
                description="{{$ctrl.navigation.next.description}}"
