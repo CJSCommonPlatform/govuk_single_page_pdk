@@ -12,19 +12,43 @@
     padding: 30px;
   }
 
-  i.gov-icon {
-    &.gov-icon-important {
-      @extend .fa;
-      @extend .fa-exclamation-circle;
-      display: table-cell;
-    }
+  // todo: determine icons for those types without them
+
+  > i {
+    @extend .fa;
+    display: table-cell;
   }
 
-  &.active   { background: $green; }
-  &.inactive { background: $red; }
-  &.success  { background: $turquoise; }
-  &.pending  { background: $orange; }
-  &.invalid  { background: $red; }
+  &.active   {
+    background: $green;
+    > i {
+      display: none;
+    }
+  }
+  &.inactive {
+    background: $red;
+    > i {
+      display: none;
+    }
+  }
+  &.success  {
+    background: $turquoise;
+    > i {
+      @extend .fa-check-circle;
+    }
+  }
+  &.pending  {
+    background: $orange;
+    > i {
+      display: none;
+    }
+  }
+  &.invalid, &.error {
+    background: $red;
+    > i {
+      @extend .fa-exclamation-circle;
+    }
+  }
 
   .gov-notification-body {
     display: table-cell;
