@@ -3,7 +3,8 @@
 .gov-notification {
   @include bold-24;
   box-sizing: border-box;
-  padding: 22px;
+  padding: 1em;
+  margin-bottom: 1em;
   display: table;
   width: 100%;
   color: $white;
@@ -26,9 +27,15 @@
     }
   }
   &.inactive {
-    background: $red;
+    background: $grey-2;
     > i {
       display: none;
+    }
+  }
+  &.locked {
+    background: $grey-2;
+    > i {
+      @extend .fa-lock;
     }
   }
   &.success  {
