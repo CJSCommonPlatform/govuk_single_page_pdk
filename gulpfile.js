@@ -2,6 +2,7 @@ var gulp    = require('gulp');
 var bump    = require('gulp-bump');
 var git     = require('gulp-git');
 var replace = require('gulp-replace');
+var merge   = require('merge-stream');
 var del     = require('del');
 var fs      = require('fs');
 var run     = require('run-sequence');
@@ -36,11 +37,14 @@ gulp.task('build-components', function(done) {
 
 
 gulp.task('copy-platform-template', function() {
-  return gulp.src([
-    'platform-template.scss',
-    'modules/**/*.scss',
-    'lib/**'
-  ], {base: 'src', cwd: 'src'})
+  return merge(
+    gulp.src([
+      'platform-template.scss',
+      'modules/**/*.scss'
+    ], {base: 'src', cwd: 'src'}),
+    gulp.src('lib/**', {base: 'src', cwd: 'src'}),
+    gulp.src('fonts/**', {base: 'src', cwd: 'src/assets'})
+  )
     .pipe(gulp.dest('dist/@govuk/platform-template'));
 });
 
