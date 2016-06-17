@@ -28,6 +28,7 @@ import { TabsetComponent} from './data-visualisation/tab/tabset.component';
 import { NotificationComponent } from './banners/notification/notification.component';
 import { FooterComponent } from './headers-and-footers/footer/footer.component';
 import { BadgeItemComponent} from './navigation/badge-item/badge-item.component';
+import { SideMenuComponent} from './navigation/menus/side-menu/side-menu.component';
 
 const module = angular.module('govuk-single-page-pdk.components', [])
 
@@ -58,6 +59,7 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govTabset', TabsetComponent)
   .component('govNotification', NotificationComponent)
   .component('govFooter', FooterComponent)
-  .component('govBadgeItem', BadgeItemComponent);
+  .component('govBadgeItem', BadgeItemComponent)
+  .component('govSideMenu', SideMenuComponent);
 
 export const components: string = module.name;

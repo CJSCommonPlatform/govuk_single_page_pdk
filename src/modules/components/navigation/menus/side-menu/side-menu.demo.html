@@ -1,0 +1,79 @@
+<h2 class="heading-medium">Side Nav Item</h2>
+
+<gov-tabset>
+
+  <!--<gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <div class="badge-item">
+        <span class="badge-item-link">
+          <span>test</span>
+          <span class="pull-right">
+            <span class="badge-item-badge">
+              <span>3</span>
+            </span>
+            <span class="fa fa-chevron-right fa-chevron-right-gray"></span>
+          </span>
+        </span>
+      </div>
+      <div class="badge-item selected">
+        <span class="badge-item-link">
+          <span>test</span>
+          <span class="pull-right">
+            <span class="badge-item-badge">
+              <span>3</span>
+            </span>
+            <span class="arrow"></span>
+          </span>
+        </span>
+      </div>
+    </docs-example>
+  </gov-tab>-->
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <div class="row">
+        <div class="col-xs-4">
+          <gov-side-menu menu-group="$ctrl.menuGroup" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
+        </div>
+        <div class="col-xs-4 col-xs-offset-2">
+          <gov-side-menu menu-group="$ctrl.menuGroup2" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-4">
+          <gov-side-menu menu-group="$ctrl.menuGroup3" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
+        </div>
+        <div class="col-xs-4 col-xs-offset-2">
+          <gov-side-menu menu-group="$ctrl.menuGroup4" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-4">
+          <gov-side-menu menu-group="$ctrl.menuGroup5" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
+        </div>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <!--<gov-tab heading="Data">
+    <prismify language="javascript">
+      items = [
+        {
+          description: 'Test 1', count: 5, click: function () {
+            console.log('clicked');
+          }
+        },
+        {
+          description: 'Test 2', count: 3, selected: true, click: function () {
+            console.log('clicked');
+          }
+        }
+      ]
+    </prismify>
+  </gov-tab>-->
+
+</gov-tabset>
+
+<!--<discuss-component issue="2"></discuss-component>-->
