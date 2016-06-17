@@ -1,0 +1,242 @@
+<main id="content" role="main" tabindex="-1">
+
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Layout</span>
+    Citizen
+  </h1>
+
+  <div class="text">
+    <p class="lede">
+      Use white space to create a visual hierarchy on the page.
+    </p>
+  </div>
+
+  <h2 class="heading-small heading-contents">Contents:</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <ul class="list list-contents">
+        <li><a ui-sref="layout.citizen({'#':'page-width'})">Page width</a></li>
+        <li><a ui-sref="layout.citizen({'#':'screen-size'})">Screen size</a></li>
+        <li><a ui-sref="layout.citizen({'#':'layout-spacing'})">Spacing</a></li>
+        <li><a ui-sref="layout.citizen({'#':'layout-grid-unit-proportions'})">Grid unit proportions</a></li>
+        <li><a ui-sref="layout.citizen({'#':'examples'})">Examples</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="heading-medium" id="page-width">Page width</h3>
+  <div class="text">
+    <p>
+      The default maximum page width is 1020px, but go wider if the content requires it.
+    </p>
+    <p>
+      <a href="#layout-grid-unit-proportions">Use a grid</a> to lay out your content. To prevent long lines of text, content should sit in a column which is two-thirds of the page width.
+    </p>
+    <p>
+      Long lines reduce legibility, so all lines of text should be no longer than 70 to 80 characters.
+    </p>
+  </div>
+
+  <h3 class="heading-medium" id="screen-size">Screen size</h3>
+  <div class="text">
+    <p>
+      Design for small screens first using a single column layout.
+    </p>
+    <p>
+      Optimise for different screen sizes, but don’t make assumptions about what devices people are using.
+    </p>
+  </div>
+
+  <h3 class="heading-medium" id="layout-spacing">Spacing</h3>
+  <ul class="list list-bullet text">
+    <li>spacing between elements is usually 5px, 10px, 15px or multiples of 15px</li>
+    <li>gutters are 15px for smaller screens and 30px for larger screens</li>
+  </ul>
+
+
+  <div class="example example-images">
+    <div class="grid-row">
+      <div class="column-one-half">
+        <img src="http://govuk-elements.herokuapp.com/public/images/examples/15px-gutter-example.png" alt="15px gutter example">
+      </div>
+      <div class="column-one-half">
+        <img src="http://govuk-elements.herokuapp.com/public/images/examples/30px-gutter-example.png" alt="30px gutter example">
+      </div>
+    </div>
+  </div>
+
+  <h3 class="heading-medium" id="layout-grid-unit-proportions">Grid unit proportions</h3>
+  <ul class="list list-bullet text">
+    <li>introduce columns as the content requires it – base column ratios on halves, thirds or quarters of the page width</li>
+    <li>for screen breakpoints use media queries &ndash; find these in the GOV.UK frontend toolkit <a href="https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_conditionals.scss">_conditionals.scss</a> file</li>
+  </ul>
+
+  <h4 class="heading-medium">Halves</h4>
+  <div class="example example-grid">
+    <div class="grid-row">
+
+      <div class="column-one-half">
+        <p>Content</p>
+      </div>
+
+      <div class="column-one-half">
+        <p>Content</p>
+      </div>
+
+    </div>
+  </div>
+
+<prismify language="markup">
+  <div class="grid-row">
+
+    <div class="column-one-half">
+      <p>Content</p>
+    </div>
+
+    <div class="column-one-half">
+      <p>Content</p>
+    </div>
+
+  </div>
+</prismify language="markup">
+
+  <h4 class="heading-medium">Thirds</h4>
+  <div class="example example-grid">
+    <div class="grid-row">
+
+      <div class="column-one-third">
+        <p>Content</p>
+      </div>
+
+      <div class="column-one-third">
+        <p>Content</p>
+      </div>
+
+      <div class="column-one-third">
+        <p>Content</p>
+      </div>
+
+    </div>
+  </div>
+
+<prismify language="markup">
+  <div class="grid-row">
+
+    <div class="column-one-third">
+      <p>Content</p>
+    </div>
+
+    <div class="column-one-third">
+      <p>Content</p>
+    </div>
+
+    <div class="column-one-third">
+      <p>Content</p>
+    </div>
+
+  </div>
+</prismify language="markup">
+
+  <h4 class="heading-medium">Two thirds / One third</h4>
+  <div class="example example-grid">
+    <div class="grid-row">
+
+      <div class="column-two-thirds">
+        <p>Content</p>
+      </div>
+
+      <div class="column-one-third">
+        <p>Content</p>
+      </div>
+
+    </div>
+  </div>
+
+<prismify language="markup">
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <p>Content</p>
+    </div>
+
+    <div class="column-one-third">
+      <p>Content</p>
+    </div>
+
+  </div>
+</prismify language="markup">
+
+  <h4 class="heading-medium">One third / Two thirds</h4>
+  <div class="example example-grid">
+    <div class="grid-row">
+
+      <div class="column-one-third">
+        <p>Content</p>
+      </div>
+
+      <div class="column-two-thirds">
+        <p>Content</p>
+      </div>
+
+    </div>
+  </div>
+
+<prismify language="markup">
+  <div class="grid-row">
+
+    <div class="column-one-third">
+      <p>Content</p>
+    </div>
+
+    <div class="column-two-thirds">
+      <p>Content</p>
+    </div>
+
+  </div>
+</prismify language="markup">
+
+  <h4 class="heading-medium">Quarters</h4>
+  <div class="example example-grid">
+    <div class="grid-row">
+
+      <div class="column-one-quarter">
+        <p>Content</p>
+      </div>
+
+      <div class="column-one-quarter">
+        <p>Content</p>
+      </div>
+
+      <div class="column-one-quarter">
+        <p>Content</p>
+      </div>
+
+      <div class="column-one-quarter">
+        <p>Content</p>
+      </div>
+
+    </div>
+  </div>
+
+<prismify language="markup">
+  <div class="grid-row">
+
+    <div class="column-one-quarter">
+      <p>Content</p>
+    </div>
+
+    <div class="column-one-quarter">
+      <p>Content</p>
+    </div>
+
+    <div class="column-one-quarter">
+      <p>Content</p>
+    </div>
+
+    <div class="column-one-quarter">
+      <p>Content</p>
+    </div>
+
+  </div>
+</prismify language="markup">
+</main><!-- / #content -->

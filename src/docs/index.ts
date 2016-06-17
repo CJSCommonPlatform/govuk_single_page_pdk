@@ -19,6 +19,8 @@ import { ButtonsPage } from './app/content/buttons/buttons.component';
 import { TypographyPage } from './app/content/typography/typography.component';
 import { HomePage } from './app/home/home.component';
 import { LayoutPage } from './app/layout/layout.component';
+import { CitizenLayoutPage } from './app/layout/citizen/citizen-layout.component.ts';
+import { BusinessLayoutPage } from './app/layout/business/business-layout.component.ts';
 import { FormElementsPage } from './app/content/form-elements/form-elements.component';
 import { IconsMediaPage } from './app/content/icons-media/icons-media.component';
 import { ErrorsPage } from './app/content/errors/errors.component';
@@ -44,6 +46,8 @@ angular.module('govuk-single-page-pdk.docs', [
   .component('govDocsContentPage', ContentPage)
   .component('govDocsExamplesPage', ExamplesPage)
   .component('govDocsLayoutPage', LayoutPage)
+  .component('govDocsCitizenLayoutPage', CitizenLayoutPage)
+  .component('govDocsBusinessLayoutPage', BusinessLayoutPage)
   .component('govDocsContentColoursPage', ColoursPage)
   .component('govDocsContentButtonsPage', ButtonsPage)
   .component('govDocsFormElementsPage', FormElementsPage)

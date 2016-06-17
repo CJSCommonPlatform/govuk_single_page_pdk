@@ -74,9 +74,25 @@ export const routes: angular.ui.IState[] = [
   {
     state:    'layout',
     url:      '/layout',
-    template: '<gov-docs-layout-page></gov-docs-layout-page>',
+    template: '<ui-view><gov-docs-layout-page></gov-docs-layout-page></ui-view>',
     ncyBreadcrumb: {
       label: 'Layout'
+    }
+  },
+  {
+    state:    'layout.citizen',
+    url:      '/citizen',
+    template: '<gov-docs-citizen-layout-page></gov-docs-citizen-layout-page>',
+    ncyBreadcrumb: {
+      label: 'Citizen Layout'
+    }
+  },
+  {
+    state:    'layout.business',
+    url:      '/business',
+    template: '<gov-docs-business-layout-page></gov-docs-business-layout-page>',
+    ncyBreadcrumb: {
+      label: 'Business Layout'
     }
   },
   {
