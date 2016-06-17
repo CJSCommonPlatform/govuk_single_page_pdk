@@ -14,6 +14,7 @@
 */
 
 $image-url-path: '/lib/govuk_template/stylesheets/' !default;
+$nta-font-path:  '/assets/fonts/' !default;
 
 // override for deprecated image importer
 @function image-url($url) {

@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var rucksack = require('rucksack-css');
 var helpers = require('./helpers');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
 module.exports = {
@@ -47,6 +48,12 @@ module.exports = {
       }
     }),
     new ForkCheckerPlugin(),
+    new CopyWebpackPlugin([
+      {
+        context: './src',
+        from:    'assets/**'
+      }
+    ]),
     new webpack.optimize.OccurenceOrderPlugin(true),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'})
   ]
