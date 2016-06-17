@@ -1,79 +1,181 @@
-<h2 class="heading-medium">Side Nav Item</h2>
+<h2 class="heading-medium">Side Menu Item</h2>
 
 <gov-tabset>
-
-  <!--<gov-tab heading="HTML Example">
-    <docs-example language="markup">
-      <div class="badge-item">
-        <span class="badge-item-link">
-          <span>test</span>
-          <span class="pull-right">
-            <span class="badge-item-badge">
-              <span>3</span>
-            </span>
-            <span class="fa fa-chevron-right fa-chevron-right-gray"></span>
-          </span>
-        </span>
-      </div>
-      <div class="badge-item selected">
-        <span class="badge-item-link">
-          <span>test</span>
-          <span class="pull-right">
-            <span class="badge-item-badge">
-              <span>3</span>
-            </span>
-            <span class="arrow"></span>
-          </span>
-        </span>
-      </div>
-    </docs-example>
-  </gov-tab>-->
-
-  <gov-tab heading="Angular Markup">
+  <gov-tab heading="HTML Example">
     <docs-example language="markup">
       <div class="row">
-        <div class="col-xs-4">
-          <gov-side-menu menu-group="$ctrl.menuGroup" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
-        </div>
-        <div class="col-xs-4 col-xs-offset-2">
-          <gov-side-menu menu-group="$ctrl.menuGroup2" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-xs-4">
-          <gov-side-menu menu-group="$ctrl.menuGroup3" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
-        </div>
-        <div class="col-xs-4 col-xs-offset-2">
-          <gov-side-menu menu-group="$ctrl.menuGroup4" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-xs-4">
-          <gov-side-menu menu-group="$ctrl.menuGroup5" on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"></gov-side-menu>
+        <div class="col-xs-offset-3 col-xs-6">
+          <div class="side-menu">
+            <div class="side-menu__group-heading">
+              <div>Menu Group Heading</div>
+              <div class="side-menu__group-subheading">Menu Group Subheading</div>
+            </div>
+            <div class="side-menu__heading">Menu of items with arrows</div>
+            <div class="side-menu__item side-menu__item--active side-menu__item--arrow-mode">
+              <div class="side-menu__item__title">Active item title</div>
+              <div>Active item text</div>
+              <span class="side-menu__item__arrow">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </div>
+            <div class="side-menu__item side-menu__item--arrow-mode">
+              <div class="side-menu__item__title">Inactive item title</div>
+              <div>Inactive item text line 1</div>
+              <div>Inactive item text line 2</div>
+              <span class="side-menu__item__arrow">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </div>
+            <div class="side-menu__item side-menu__item--arrow-mode side-menu__item--disabled">
+              <div class="side-menu__item__title">Disabled item</div>
+              <div>Disabled item text</div>
+              <span class="side-menu__item__arrow">
+                <i class="fa fa-angle-right"></i>
+              </span>
+            </div>
+            <div class="side-menu__heading">Menu of items with titles only, no arrows</div>
+            <div class="side-menu__item">
+              <div class="side-menu__item__title">Item 1</div>
+            </div>
+            <div class="side-menu__item side-menu__item--active">
+              <div class="side-menu__item__title">Item 2</div>
+            </div>
+            <div class="side-menu__item">
+              <div class="side-menu__item__title">Item 3</div>
+            </div>
+            <div class="side-menu__heading">Menu of items with images</div>
+            <div class="side-menu__item side-menu__item--image-mode side-menu__item--active">
+              <div class="side-menu__item__image-wrapper">
+                <img class="side-menu__item__image" src="../../../../../docs/images/justice.jpg">
+              </div>
+              <div class="side-menu__item__content-wrapper">
+                <div class="side-menu__item__title">Item 1</div>
+                <div>Text and label centred vertically. Image scales to 40% width.</div>
+              </div>
+            </div>
+            <div class="side-menu__item side-menu__item--image-mode">
+              <div class="side-menu__item__image-wrapper">
+                <img class="side-menu__item__image" src="../../../../../docs/images/justice.jpg">
+              </div>
+              <div class="side-menu__item__content-wrapper">
+                <div class="side-menu__item__title">
+                  When the text is taller than the image,
+                  the image is centred vertically.
+                </div>
+                <div>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat.
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </docs-example>
   </gov-tab>
 
-  <!--<gov-tab heading="Data">
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <div class="row">
+        <div class="col-xs-offset-3 col-xs-6">
+          <gov-side-menu menu-group="$ctrl.menuGroup"
+            on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)">
+          </gov-side-menu>
+        </div>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
     <prismify language="javascript">
-      items = [
-        {
-          description: 'Test 1', count: 5, click: function () {
-            console.log('clicked');
-          }
-        },
-        {
-          description: 'Test 2', count: 3, selected: true, click: function () {
-            console.log('clicked');
-          }
+      menuGroup = {
+        heading: 'Menu Group Heading',
+        subheading: 'Clicking on an item will activate it, deactivate all other items, and ' +
+        'log a \'did you know\' message with the ' +
+        'fact property of the current menu item, unless it is already active or disabled.',
+        menus: [
+          {
+            heading: 'Items with arrows',
+            showArrowsOnItems: true,
+            items: [
+              {
+                text: 'Item 1',
+                fact: 'stewardesses is the longest word that is typed with only the left hand',
+                isActive: true
+              },
+              {
+                text: 'Item 2',
+                fact: 'M&M\'s chocolate stands for the initials for its inventors Mars and Murrie'
+              },
+              {
+                text: 'Item 3',
+                fact: 'Koalas sleep around 18 hours a day',
+                isDisabled: true
+              }
+            ]
+          },
+          {
+            heading: 'Items with content, without arrows',
+            items: [
+              {
+                title: 'Item 1 title',
+                fact: 'elephants are the only mammal that can\'t jump',
+                text: 'Single line string'
+              },
+              {
+                title: 'Item 2 title',
+                fact: 'on your birthday you share it with 9 million others',
+                text: ['Multiline text', 'array of strings']
+              }
+            ]
+          },
+          {
+            heading: 'Item with an image',
+            items: [
+              {
+                title: 'Image title',
+                text: 'Image 1 text',
+                image: 'images/justice.jpg',
+                fact: 'hummingbirds are the only bird that can fly backwards'
+              }
+            ]
+          },
+        ]
+      };
+
+      /*the component has no internal logic but allows a number of actions on the controller/service
+      level by exposing both the entire menuGroup object, and the currently clicked menuItem object,
+      on the onMenuItem click attribute.
+      Note that in the html, the naming of the arguments is important:
+        on-menu-item-click="$ctrl.onMenuItemClick(menuGroup, menuItem)"
+      Also, since the menuGroup object is passed by reference, it is possible to access and modify it
+      from other contexts, eg. passing it to a function which activates the next/previous item, and
+      attaching the function on pagination components.
+      */
+
+      onMenuItemClick = function (menuGroup, menuItem) {
+        if (!(menuItem.isDisabled || menuItem.isActive)) {
+          this.logFact(menuItem.fact);
+          this.activateItem(menuGroup, menuItem);
         }
-      ]
+      };
+
+      activateItem = function (menuGroup, menuItem) {
+        menuGroup.menus.forEach(function (menu) {
+          menu.items.forEach(function (item) {
+            item.isActive = item === menuItem;
+          });
+        });
+      };
+
+      logFact = function (fact) {
+        console.log('Did you know that ' + fact + '?');
+      }
     </prismify>
-  </gov-tab>-->
+  </gov-tab>
 
 </gov-tabset>
 
-<!--<discuss-component issue="2"></discuss-component>-->
+<discuss-component issue="27"></discuss-component>
