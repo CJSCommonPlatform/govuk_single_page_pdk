@@ -56,7 +56,7 @@ export class SideMenuDemo {
             fact: 'hummingbirds are the only bird that can fly backwards'
           }
         ]
-      },
+      }
     ]
   };
 
@@ -86,6 +86,6 @@ export class SideMenuDemo {
 
   logFact = function (fact) {
     console.log('Did you know that ' + fact + '?');
-  }
-  
+  };
+
 };
