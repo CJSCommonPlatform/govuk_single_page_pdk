@@ -1,0 +1,44 @@
+<h2 class="heading-medium">Start Action Bar</h2>
+
+<p class="text">
+  Provides start action links with a description of the action
+</p>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <div class="start-action">
+          <span>Give remand advice</span>
+          <span class="pull-right">
+            <span class="action-type">
+              <span>Start</span>
+            </span>
+            <span class="arrow"></span>
+          </span>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+    <gov-start-bar ng-repeat="item in $ctrl.items" item="item">
+    </gov-start-bar>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      items = [
+        {
+          description: 'Give remand advice',
+          action: 'Start',
+          click: function () {
+            console.log('clicked');
+          }
+        }
+      ]
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="10"></discuss-component>
