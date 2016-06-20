@@ -1,0 +1,43 @@
+<h2 class="heading-medium">Completed Action Bar</h2>
+
+<p class="text">
+  Provides completed action with a description of the action and a link to amend the action
+</p>
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <div class="completed-action">
+          <span>Full code test met</span>
+          <span class="pull-right">
+            <span class="check"></span>
+            <span class="action-type">
+              <span>Amend</span>
+            </span>
+          </span>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+    <gov-completed-bar ng-repeat="item in $ctrl.items" item="item"></gov-completed-bar>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      items = [
+        {
+          description: 'Full code test met',
+          action: 'Amend',
+          click: function () {
+            console.log('clicked');
+          }
+        }
+      ]
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="10"></discuss-component>

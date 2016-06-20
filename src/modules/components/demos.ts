@@ -23,6 +23,8 @@ import { TabDemo } from './data-visualisation/tab/tab.demo';
 import { FooterDemo } from './headers-and-footers/footer/footer.demo';
 import { BadgeItemDemo} from './navigation/badge-item/badge-item.demo';
 import { SideMenuDemo} from './navigation/menus/side-menu/side-menu.demo';
+import { StartBarDemo} from './action-bars/start-bar/start-bar.demo';
+import { CompletedBarDemo} from './action-bars/completed-bar/completed-bar.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -48,6 +50,8 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govTabDemo', TabDemo)
   .component('govFooterDemo', FooterDemo)
   .component('govBadgeItemDemo', BadgeItemDemo)
-  .component('govSideMenuDemo', SideMenuDemo);
+  .component('govSideMenuDemo', SideMenuDemo)
+  .component('govStartBarDemo', StartBarDemo)
+  .component('govCompletedBarDemo', CompletedBarDemo);
 
 export const componentsDemos = module.name;

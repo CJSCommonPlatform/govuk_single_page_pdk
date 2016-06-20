@@ -1,0 +1,21 @@
+.completed-action{
+  height: 30px;
+  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+  @include core-16;
+
+  .action-type{
+    color: $link-colour;
+    @include core-14;
+  }
+
+  .check{
+    font-weight: normal;
+    @extend .fa;
+    @extend .fa-check;
+    color: $secondary-text-colour;
+    margin-right:15px;
+  }
+
+}
