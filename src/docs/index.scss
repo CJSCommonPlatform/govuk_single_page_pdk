@@ -1,6 +1,6 @@
 $fa-font-path: '../../node_modules/font-awesome/fonts';
 $path: '../../node_modules/govuk_frontend_toolkit/images/';
-$nta-font-path:  './assets/fonts/' !default;
+$nta-font-path:  '../assets/fonts' !default;
 
 @import '../platform-template';
 @import './app/content/icons-media/icons-media';
