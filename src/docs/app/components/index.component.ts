@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import {Component} from '@govuk/angularjs-devtools';
 
 @Component({
     template: require('./index.component.html')
@@ -16,7 +16,9 @@ export class ComponentsPage {
         {
             name: 'Navigation',
             state: 'components.navigation',
-            components: ['Action-pane', 'Breadcrumbs', 'Next/Previous Navigation', 'Side Menu', 'Start Action Bar', 'Completed Action Bar']
+            components: [
+                'Action-pane', 'Breadcrumbs', 'Next/Previous Navigation', 'Side Menu', 'Start Action Bar',
+                'Completed Action Bar']
         },
         {name: 'Timeline', state: 'components.timeline', components: ['Timeline']}
     ];
