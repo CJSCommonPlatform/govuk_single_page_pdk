@@ -34,11 +34,19 @@
 
   <gov-tab heading="Data">
     <prismify language="javascript">
-      statement = {{$ctrl.statement | json: 4}};
-      onSelect  = function () {
-        alert(filename);
+      statement: any = {
+        fileSize: 576441,
+        filename: 'Statement 1 from Linda Thomas.pdf',
+        created:  Date.now(),
+        length:   '2 pages'
+      };
+
+      onSelect(filename: string) {
+        console.log(filename);
       }
     </prismify>
   </gov-tab>
 
 </gov-tabset>
+
+<discuss-component issue="30"></discuss-component>
