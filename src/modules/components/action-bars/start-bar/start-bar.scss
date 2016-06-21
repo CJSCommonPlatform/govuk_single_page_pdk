@@ -1,10 +1,8 @@
 .start-action{
   background-color: $light-blue-25;
-  height: 30px;
+  height: 40px;
   border-bottom: 2px solid $light-blue-50;
-  padding-top:10px;
-  padding-left:10px;
-  padding-right:10px;
+  padding:10px;
   margin-bottom:10px;
   @include core-16;
 
