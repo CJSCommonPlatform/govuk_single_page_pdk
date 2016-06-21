@@ -1,7 +1,7 @@
 <div class="gov-show-hide-pane">
   <div class="pull-right toggle-button" ng-click="$ctrl.toggle()">
-    <span ng-show="$ctrl.open"><i class="fa fa-chevron-up"></i> <span ng-bind="$ctrl.hideText"></span></span>
-    <span ng-show="!$ctrl.open"><i class="fa fa-chevron-down"></i> <span ng-bind="$ctrl.showText"></span></span>
+    <span ng-if="$ctrl.open"><i class="fa fa-chevron-up"></i> <span ng-bind="$ctrl.hideText"></span></span>
+    <span ng-if="!$ctrl.open"><i class="fa fa-chevron-down"></i> <span ng-bind="$ctrl.showText"></span></span>
   </div>
   <div class="clearfix gov-show-hide-pane-content" ng-transclude="alwaysVisible">
 
