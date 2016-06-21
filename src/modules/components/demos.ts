@@ -23,6 +23,7 @@ import { TabDemo } from './data-visualisation/tab/tab.demo';
 import { FooterDemo } from './headers-and-footers/footer/footer.demo';
 import { BadgeItemDemo} from './navigation/badge-item/badge-item.demo';
 import { SideMenuDemo} from './navigation/menus/side-menu/side-menu.demo';
+import { ShowHidePaneDemo} from './data-visualisation/show-hide-pane/show-hide-pane.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -48,6 +49,7 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govTabDemo', TabDemo)
   .component('govFooterDemo', FooterDemo)
   .component('govBadgeItemDemo', BadgeItemDemo)
-  .component('govSideMenuDemo', SideMenuDemo);
+  .component('govSideMenuDemo', SideMenuDemo)
+  .component('govShowHidePaneDemo', ShowHidePaneDemo);
 
 export const componentsDemos = module.name;

@@ -29,8 +29,9 @@ import { NotificationComponent } from './banners/notification/notification.compo
 import { FooterComponent } from './headers-and-footers/footer/footer.component';
 import { BadgeItemComponent} from './navigation/badge-item/badge-item.component';
 import { SideMenuComponent} from './navigation/menus/side-menu/side-menu.component';
+import { ShowHidePaneComponent} from './data-visualisation/show-hide-pane/show-hide-pane.component';
 
-const module = angular.module('govuk-single-page-pdk.components', [])
+const module = angular.module('govuk-single-page-pdk.components', ['ngAnimate'])
 
   .filter('toBytes', toBytes)
   .filter('noFileType', noFileType)
@@ -60,6 +61,7 @@ const module = angular.module('govuk-single-page-pdk.components', [])
   .component('govNotification', NotificationComponent)
   .component('govFooter', FooterComponent)
   .component('govBadgeItem', BadgeItemComponent)
-  .component('govSideMenu', SideMenuComponent);
+  .component('govSideMenu', SideMenuComponent)
+  .component('govShowHidePane', ShowHidePaneComponent);
 
 export const components: string = module.name;
