@@ -1,0 +1,112 @@
+<main id="content" role="main" tabindex="-1">
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Content</span>
+    Utility Classes
+  </h1>
+
+  <p class="lede text">
+    Use buttons to move though a transaction, aim to use only one button per page.
+  </p>
+
+  <h2 class="heading-small heading-contents">Contents:</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <ul class="list list-contents">
+        <li><a ui-sref="content.utils({'#':'quick-floats'})">Quick floats</a></li>
+        <li><a ui-sref="content.utils({'#':'clearfix'})">Clearfix</a></li>
+        <li><a ui-sref="content.utils({'#':'showing-hiding'})">Showing and hiding content</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="heading-medium" id="quick-floats">Quick floats</h3>
+  <p>
+    Float an element to the left or right with a class. <code>!important</code> is included to avoid specificity issues. Classes can also be used as mixins.
+  </p>
+
+  <prismify language="markup">
+    <div class="pull-left">...</div>
+    <div class="pull-right">...</div>
+  </prismify>
+  <prismify language="css">
+    // Classes
+    .pull-left {
+      float: left !important;
+    }
+    .pull-right {
+      float: right !important;
+    }
+
+    // Usage as mixins
+    .element {
+      .pull-left();
+    }
+    .another-element {
+      .pull-right();
+    }
+  </prismify>
+  <h3 class="heading-medium" id="clearfix">Clearfix</h3>
+  <p>
+    Easily clear floats by adding <code>.clearfix</code> to the parent element. Utilizes the micro clearfix as popularized by Nicolas Gallagher. Can also be used as a mixin.
+  </p>
+
+  <prismify language="markup">
+    <!-- Usage as a class -->
+    <div class="clearfix">...</div>
+  </prismify>
+  <prismify language="css">
+    // Mixin itself
+    .clearfix() {
+      &:before,
+      &:after {
+        content: " ";
+        display: table;
+      }
+      &:after {
+        clear: both;
+      }
+    }
+
+    // Usage as a mixin
+    .element {
+      .clearfix();
+    }
+  </prismify>
+  <h3 class="heading-medium" id="showing-hiding">Showing and hiding content</h3>
+  <p>
+    Force an element to be shown or hidden (including for screen readers) with the use of <code>.show</code> and
+    <code>.hidden</code> classes. These classes use <code>!important</code> to avoid specificity conflicts, just like
+    the quick floats. They are only available for block level toggling. They can also be used as mixins.
+  </p>
+  <p>
+    Furthermore, <code>.invisible</code> can be used to toggle only the visibility of an element, meaning its display
+    is not modified and the element can still affect the flow of the document.
+  </p>
+
+  <prismify language="markup">
+    <div class="show">...</div>
+    <div class="hidden">...</div>
+  </prismify>
+  <prismify language="css">
+    // Classes
+    .show {
+      display: block !important;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .invisible {
+      visibility: hidden;
+    }
+
+    // Usage as mixins
+    .element {
+      .show();
+    }
+    .another-element {
+      .hidden();
+    }
+  </prismify>
+
+
+</main><!-- / #content -->

@@ -24,6 +24,7 @@ import { BusinessLayoutPage } from './app/layout/business/business-layout.compon
 import { FormElementsPage } from './app/content/form-elements/form-elements.component';
 import { IconsMediaPage } from './app/content/icons-media/icons-media.component';
 import { ErrorsPage } from './app/content/errors/errors.component';
+import { UtilsPage } from './app/content/utils/utils.component';
 
 angular.module('govuk-single-page-pdk.docs', [
   config,
@@ -53,4 +54,5 @@ angular.module('govuk-single-page-pdk.docs', [
   .component('govDocsFormElementsPage', FormElementsPage)
   .component('govDocsContentIconsMediaPage', IconsMediaPage)
   .component('govDocsContentErrorsPage', ErrorsPage)
-  .component('govDocsContentTypographyPage', TypographyPage);
+  .component('govDocsContentTypographyPage', TypographyPage)
+  .component('govDocsContentUtilsPage', UtilsPage);

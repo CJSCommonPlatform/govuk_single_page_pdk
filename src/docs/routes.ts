@@ -150,5 +150,13 @@ export const routes: angular.ui.IState[] = [
     ncyBreadcrumb: {
       label: 'Errors'
     }
+  },
+  {
+    state:     'content.utils',
+    url:       '/utils',
+    template: '<gov-docs-content-utils-page></gov-docs-content-utils-page>',
+    ncyBreadcrumb: {
+      label: 'Utility Classes'
+    }
   }
 ];
