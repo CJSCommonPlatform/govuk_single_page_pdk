@@ -1,4 +1,5 @@
 import 'prismjs';
+import 'prismjs/components/prism-scss.min';
 import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 
 require('../../node_modules/prismjs/themes/prism.css');
@@ -27,7 +28,8 @@ const module = angular.module('govDocs-utils', [])
         }
         if (language === 'html') language = 'markup';
 
-        html = prism.highlight(html, prism.languages[language]).trim();
+        // hack added to solve the problem with '&' being converted into '&amp;'
+        html = prism.highlight(html.replace(/&amp;/g, '&'), prism.languages[language]).trim();
         elem.html(`<pre class="language-${language}"><code>${html}</code></pre>`);
       }
     };
