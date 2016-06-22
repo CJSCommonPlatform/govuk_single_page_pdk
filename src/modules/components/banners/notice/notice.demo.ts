@@ -25,7 +25,7 @@ import { Component } from '@govuk/angularjs-devtools';
     
       <gov-tab heading="Angular Markup">
         <docs-example language="markup">
-          <gov-notice text="You can be fined up to £5,000 if you don’t register."></gov-notice>
+          <gov-notice>You can be fined up to £5,000 if you don’t register.</gov-notice>
         </docs-example>
       </gov-tab>
     

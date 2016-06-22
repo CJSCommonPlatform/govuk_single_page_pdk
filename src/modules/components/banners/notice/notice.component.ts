@@ -1,19 +1,14 @@
 import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
-  bindings: {
-    text: '@'
-  },
+  transclude: true,
   template: `
     <div class="notice">
       <i class="icon icon-important">
         <span class="visuallyhidden">Warning</span>
       </i>
-      <strong class="bold-small" ng-bind="$ctrl.text"></strong>
+      <strong class="bold-small" ng-transclude></strong>
     </div>
   `
 })
-export class NoticeComponent {
-
-  text: string;
-}
+export class NoticeComponent {}
