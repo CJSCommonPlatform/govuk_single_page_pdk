@@ -28,8 +28,10 @@ const module = angular.module('govDocs-utils', [])
         }
         if (language === 'html') language = 'markup';
 
-        // hack added to solve the problem with '&' being converted into '&amp;'
-        html = prism.highlight(html.replace(/&amp;/g, '&'), prism.languages[language]).trim();
+        // hack added to solve the problem with '&' being converted into '&amp;' when scss
+        if (language === 'scss') html = html.replace(/&amp;/g, '&');
+
+        html = prism.highlight(html, prism.languages[language]).trim();
         elem.html(`<pre class="language-${language}"><code>${html}</code></pre>`);
       }
     };
