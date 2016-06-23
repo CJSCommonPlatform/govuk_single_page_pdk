@@ -2,14 +2,13 @@
 @import '~govuk_frontend_toolkit/stylesheets/typography';
 
 .list-progress {
-
+  counter-reset: items;
   li {
     @include core-14;
     border: none;
     border-bottom: 1px solid $grey-2;
     color: $grey-1;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    padding: 15px 0 20px;
 
     i {
       margin-right: 5px;
@@ -22,9 +21,21 @@
       border-bottom: 3px solid $black !important;
       margin-bottom: -1px;
       color: $grey-1;
-      .heading-small {
+      .bold-small {
         color: $black;
       }
+    }
+  }
+
+  &.list-progress-number li {
+    &:before {
+      @include bold-19;
+      counter-increment: items;
+      content: counter(items) ".\00A0\00A0";
+      float: left;
+    }
+    &.active:before {
+      color: $black;
     }
   }
 }
