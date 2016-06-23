@@ -1,6 +1,6 @@
-<ul class="list list-progress">
+<ul class="list list-progress" ng-class="{'list-progress-number': $ctrl.showNumbers}">
   <li ng-repeat="item in $ctrl.steps" ng-class="{active: item.active}">
-    <div class="heading-small">{{$index + 1}}. {{item.label}}</div>
+    <div class="bold-small">{{item.label}}</div>
     <span ng-if="item.complete">
       <i class="fa fa-check"></i>Complete
     </span>
