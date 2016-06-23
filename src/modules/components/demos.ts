@@ -27,6 +27,7 @@ import { ShowHidePaneDemo} from './data-visualisation/show-hide-pane/show-hide-p
 import { StartBarDemo} from './navigation/start-bar/start-bar.demo';
 import { CompletedBarDemo} from './navigation/completed-bar/completed-bar.demo';
 import { NoticeDemo } from './banners/notice/notice.demo';
+import { ProgressListDemo } from './data-visualisation/progress-list/progress-list.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -56,7 +57,7 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govShowHidePaneDemo', ShowHidePaneDemo)
   .component('govStartBarDemo', StartBarDemo)
   .component('govCompletedBarDemo', CompletedBarDemo)
-  .component('govNoticeDemo', NoticeDemo);
-
+  .component('govNoticeDemo', NoticeDemo)
+  .component('govProgressListDemo', ProgressListDemo);
 
 export const componentsDemos = module.name;

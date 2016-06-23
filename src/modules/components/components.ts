@@ -33,6 +33,7 @@ import { ShowHidePaneComponent} from './data-visualisation/show-hide-pane/show-h
 import { StartBarComponent} from './navigation/start-bar/start-bar.component';
 import { CompletedBarComponent} from './navigation/completed-bar/completed-bar.component';
 import { NoticeComponent } from './banners/notice/notice.component';
+import { ProgressListComponent } from './data-visualisation/progress-list/progress-list.component';
 
 const module = angular.module('govuk-single-page-pdk.components', ['ngAnimate'])
 
@@ -68,6 +69,7 @@ const module = angular.module('govuk-single-page-pdk.components', ['ngAnimate'])
   .component('govShowHidePane', ShowHidePaneComponent)
   .component('govSideMenu', SideMenuComponent).component('govStartBar', StartBarComponent)
   .component('govCompletedBar', CompletedBarComponent)
-  .component('govNotice', NoticeComponent);
+  .component('govNotice', NoticeComponent)
+  .component('govProgressList', ProgressListComponent);
 
 export const components: string = module.name;
