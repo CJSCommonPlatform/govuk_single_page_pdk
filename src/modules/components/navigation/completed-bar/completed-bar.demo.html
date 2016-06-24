@@ -9,7 +9,18 @@
       <div class="completed-action">
           <span>Full code test met</span>
           <span class="pull-right">
-            <span class="check"></span>
+            <div class="check"></div>
+            <span class="action-type">
+              <span>Amend</span>
+            </span>
+          </span>
+      </div>
+      <div class="completed-action">
+          <span>Proposed charge authorised</span>
+          <span class="pull-right">
+            <span class="saved">
+              Saved <i class="fa fa-check"></i>
+            </span>
             <span class="action-type">
               <span>Amend</span>
             </span>
@@ -30,6 +41,15 @@
         {
           description: 'Full code test met',
           action: 'Amend',
+          state: '',
+          click: function () {
+            console.log('clicked');
+          }
+        },
+        {
+          description: 'Proposed authorised charge',
+          action: 'Amend',
+          state: 'Saved',
           click: function () {
             console.log('clicked');
           }
