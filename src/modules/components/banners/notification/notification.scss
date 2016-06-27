@@ -59,7 +59,10 @@
 
   .gov-notification-body {
     display: table-cell;
-    padding-left: 8px;
     width: 100%;
+  }
+
+  i + .gov-notification-body {
+    padding-left: 8px;
   }
 }
