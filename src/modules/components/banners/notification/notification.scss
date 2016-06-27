@@ -33,7 +33,7 @@
     }
   }
   &.locked {
-    background: $grey-2;
+    background: $red;
     > i {
       @extend .fa-lock;
     }

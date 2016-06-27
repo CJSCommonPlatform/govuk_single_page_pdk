@@ -5,4 +5,3 @@ import 'angular-breadcrumb';
 import 'angular-sanitize';
 import 'prismjs';
 import 'jquery';
-import 'prismjs';
