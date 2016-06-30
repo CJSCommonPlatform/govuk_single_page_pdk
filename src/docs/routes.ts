@@ -64,6 +64,14 @@ export const routes: angular.ui.IState[] = [
     }
   },
   {
+    state:    'components.forms-and-errors',
+    url:      '/forms-and-errors',
+    template: '<gov-docs-components-forms-and-errors-page></gov-docs-components-forms-and-errors-page>',
+    ncyBreadcrumb: {
+      label: 'Forms and errors'
+    }
+  },
+  {
     state:    'examples',
     url:      '/examples',
     template: '<gov-docs-examples-page></gov-docs-examples-page>',

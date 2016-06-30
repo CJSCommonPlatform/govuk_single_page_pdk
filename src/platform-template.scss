@@ -29,3 +29,8 @@ $nta-font-path:  '/assets/fonts/' !default;
 // provided by peer dependencies
 @import '~govuk-elements-sass/public/sass/govuk-elements';
 @import '~govuk-elements-sass/public/sass/elements/govuk-template-base';
+
+// getting box sizing for bootstrap grid
+* {
+  @include box-sizing(border-box);
+}

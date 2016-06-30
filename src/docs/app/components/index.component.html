@@ -15,13 +15,13 @@
         {{$ctrl.domains[$index].components.join(', ')}}.
       </p>
     </div>
-    <div class="column-one-third">
+    <div class="column-one-third" ng-if="$ctrl.domains[$index + 1]">
       <h2 class="heading-medium"><a ui-sref="{{$ctrl.domains[$index + 1].state}}" ng-bind="$ctrl.domains[$index + 1].name"></a></h2>
       <p>
         {{$ctrl.domains[$index + 1].components.join(', ')}}.
       </p>
     </div>
-    <div class="column-one-third">
+    <div class="column-one-third" ng-if="$ctrl.domains[$index + 2]">
       <h2 class="heading-medium"><a ui-sref="{{$ctrl.domains[$index + 2].state}}" ng-bind="$ctrl.domains[$index + 2].name"></a></h2>
       <p>
         {{$ctrl.domains[$index + 2].components.join(', ')}}.

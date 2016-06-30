@@ -34,6 +34,8 @@ import { StartBarComponent} from './navigation/start-bar/start-bar.component';
 import { CompletedBarComponent} from './navigation/completed-bar/completed-bar.component';
 import { NoticeComponent } from './banners/notice/notice.component';
 import { ProgressListComponent } from './data-visualisation/progress-list/progress-list.component';
+import { ErrorSummaryItemComponent } from './forms-and-errors/error-summary/error-summary-item.component';
+import { ErrorSummaryComponent } from './forms-and-errors/error-summary/error-summary.component';
 
 const module = angular.module('govuk-single-page-pdk.components', ['ngAnimate'])
 
@@ -70,6 +72,8 @@ const module = angular.module('govuk-single-page-pdk.components', ['ngAnimate'])
   .component('govSideMenu', SideMenuComponent).component('govStartBar', StartBarComponent)
   .component('govCompletedBar', CompletedBarComponent)
   .component('govNotice', NoticeComponent)
-  .component('govProgressList', ProgressListComponent);
+  .component('govProgressList', ProgressListComponent)
+  .component('errorSummaryItem', ErrorSummaryItemComponent)
+  .component('govErrorSummary', ErrorSummaryComponent);
 
 export const components: string = module.name;
