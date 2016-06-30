@@ -1,9 +1,9 @@
 require('index.scss');
 
-import { config } from './config';
-import { componentsDemos } from '../modules/components/demos';
-import { contentDemos } from '../modules/content/demos';
-import { layoutDemos } from '../modules/layout/demos';
+import componentsDemos from '../modules/components/demos';
+import contentDemos from '../modules/content/demos';
+import config from './config';
+
 import { AppLayout } from './app/app-layout.component';
 import { ComponentsPage } from './app/components/index.component';
 import { BannersPage } from './app/components/banners/banners.component.ts';
@@ -31,12 +31,11 @@ angular.module('govuk-single-page-pdk.docs', [
   config,
   componentsDemos,
   contentDemos,
-  layoutDemos,
   'ncy-angular-breadcrumb',
   'ui.router',
   'smoothScroll',
   'ngSanitize'
-  ])
+])
   .component('govDocs', AppLayout)
   .component('govDocsHomePage', HomePage)
   .component('govDocsComponentsPage', ComponentsPage)

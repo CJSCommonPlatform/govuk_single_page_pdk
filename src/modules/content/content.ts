@@ -1,12 +1,7 @@
-import { FocusDirective } from './form-elements/focus/focus.directive';
-import { LazyValidationDirective } from '../components/forms-and-errors/lazy-validation/lazy-validation.directive';
-import { LazyValidationOnClickDirective }
-    from '../components/forms-and-errors/lazy-validation/lazy-validation-on-click.directive';
+import formElements from './form-elements/form-elements';
 
-const module = angular.module('govuk-single-page-pdk.content', [])
+const module = angular.module('govuk-single-page-pdk.content', [
+  formElements
+]);
 
-  .directive('blockLabel', FocusDirective)
-  .directive('lazyValidation', LazyValidationDirective)
-  .directive('lazyValidationOnClick', LazyValidationOnClickDirective);
-
-export const content = module.name;
+export default module.name;

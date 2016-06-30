@@ -11,4 +11,4 @@ const module = angular.module('govuk-single-page-pdk.config.routes', ['ui.router
     $locationProvider.html5Mode(false);
   });
 
-export const routeConfig: string = module.name;
+export default module.name;

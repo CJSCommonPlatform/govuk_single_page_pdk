@@ -11,7 +11,7 @@ export class FocusDirective {
 
   constructor(private $element: ng.IAugmentedJQuery) {}
 
-  $postLink(): void {
+  $postLink() {
     this.input = this.$element.find('input');
     this.input.on('focus', () => this.$element.addClass('focused'));
     this.input.on('blur',  () => this.$element.removeClass('focused'));

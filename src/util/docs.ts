@@ -53,4 +53,4 @@ const module = angular.module('govDocs-utils', [])
     };
   });
 
-export const docsUtils = module.name;
+export default module.name;
