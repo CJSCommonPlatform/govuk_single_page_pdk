@@ -20,7 +20,7 @@
 }
 
 #global-header-bar.business {
-  max-width: $container-large-desktop;
+  max-width: $container-large-desktop - $grid-gutter-width;
 }
 
 #skiplink-container {
