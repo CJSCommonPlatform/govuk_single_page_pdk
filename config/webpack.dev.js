@@ -1,3 +1,4 @@
+var path = require('path');
 var helpers = require('./helpers');
 var webpack = require('webpack');
 var webpackMerge = require('webpack-merge');
@@ -21,6 +22,7 @@ module.exports = webpackMerge(commonConfig, {
     host: 'localhost',
     port: 9030,
     stats: 'minimal',
+    outputPath: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     watchOptions: {
       aggregateTimeout: 300,

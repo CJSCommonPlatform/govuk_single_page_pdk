@@ -3,22 +3,6 @@ var webpack = require('webpack');
 var rucksack = require('rucksack-css');
 var NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
-// if (process.env.NODE_ENV === 'production') {
-//   var uglify = new webpack.optimize.UglifyJsPlugin({
-//     beautify: false,
-//     compress: {
-//       screw_ie8: true,
-//       warnings: false
-//     },
-//     comments: false,
-//     mangle: {
-//       screw_ie8 : true,
-//       keep_fnames: true
-//     }
-//   });
-//   plugins.push(uglify);
-// }
-
 module.exports = {
   debug: false,
   devtool: false,
