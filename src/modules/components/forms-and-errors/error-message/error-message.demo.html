@@ -1,0 +1,60 @@
+<h3 class="bold-medium">Error Message</h3>
+
+<p class="text">This components will display the error label based on the defail validation.
+  Custom validations can be passed to override the default values.</p>
+
+<gov-tabset>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <div>
+        <gov-error-summary
+            form="$ctrl.form"
+            fields="$ctrl.fields">
+        </gov-error-summary>
+
+        <form data-lazy-validation="$ctrl.form" novalidate>
+          <h2>Your personal details</h2>
+          <div class="form-group" data-ng-class="{'error': $ctrl.form.name.$invalid }">
+
+            <label for="name" id="error-name">
+
+              <span class="form-label-bold">Full name</span>
+              <span class="form-hint">As shown on your birth certificate or passport</span>
+              <gov-error-message id="error-message-name" input-model="$ctrl.form.name" custom-validation="$ctrl.customValidation"></gov-error-message>
+
+            </label>
+
+            <input class="form-control"
+                   id="name"
+                   type="text" name="name"
+                   data-ng-model="$ctrl.name"
+                   value=""
+                   aria-describedby="error-message-name"
+                   required
+                   ng-minlength="5"
+                   ng-maxlength="10"
+            >
+          </div>
+          <input class="button" type="submit" value="Continue" data-lazy-validation-on-click="$ctrl.submitForm()">
+        </form>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      // default type is input, other accepted values are textarea, radio and checkbox
+
+      private customValidation = {
+        'en': {
+          'input': {
+            'minlength': 'The value must be at least 5 characters long',
+            'maxlength': 'The value must not have more than 10 characters long'
+          }
+        }
+      };
+    </prismify>
+  </gov-tab>
+</gov-tabset>
+<discuss-component issue="36"></discuss-component>

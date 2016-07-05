@@ -29,6 +29,7 @@ import { CompletedBarDemo} from './navigation/completed-bar/completed-bar.demo';
 import { NoticeDemo } from './banners/notice/notice.demo';
 import { ProgressListDemo } from './data-visualisation/progress-list/progress-list.demo';
 import { ErrorSummaryDemo } from './forms-and-errors/error-summary/error-summary.demo';
+import { ErrorMessageDemo } from './forms-and-errors/error-message/error-message.demo';
 
 const module = angular.module('govuk-single-page-pdk.components-demos', [
   components,
@@ -60,6 +61,7 @@ const module = angular.module('govuk-single-page-pdk.components-demos', [
   .component('govCompletedBarDemo', CompletedBarDemo)
   .component('govNoticeDemo', NoticeDemo)
   .component('govProgressListDemo', ProgressListDemo)
-  .component('govErrorSummaryDemo', ErrorSummaryDemo);
+  .component('govErrorSummaryDemo', ErrorSummaryDemo)
+  .component('govErrorMessageDemo', ErrorMessageDemo);
 
 export const componentsDemos = module.name;

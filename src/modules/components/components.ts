@@ -36,6 +36,7 @@ import { NoticeComponent } from './banners/notice/notice.component';
 import { ProgressListComponent } from './data-visualisation/progress-list/progress-list.component';
 import { ErrorSummaryItemComponent } from './forms-and-errors/error-summary/error-summary-item.component';
 import { ErrorSummaryComponent } from './forms-and-errors/error-summary/error-summary.component';
+import { ErrorMessageComponent } from './forms-and-errors/error-message/error-message.component';
 
 const module = angular.module('govuk-single-page-pdk.components', ['ngAnimate'])
 
@@ -74,6 +75,7 @@ const module = angular.module('govuk-single-page-pdk.components', ['ngAnimate'])
   .component('govNotice', NoticeComponent)
   .component('govProgressList', ProgressListComponent)
   .component('errorSummaryItem', ErrorSummaryItemComponent)
-  .component('govErrorSummary', ErrorSummaryComponent);
+  .component('govErrorSummary', ErrorSummaryComponent)
+  .component('govErrorMessage', ErrorMessageComponent);
 
 export const components: string = module.name;

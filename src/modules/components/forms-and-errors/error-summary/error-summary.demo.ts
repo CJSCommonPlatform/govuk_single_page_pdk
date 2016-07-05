@@ -5,7 +5,7 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class ErrorSummaryDemo {
   private fields = [
-    { name: 'fullname', label: 'Full name'}
+    { name: 'name', label: 'Full name'}
   ];
 
   submitForm(): void {
