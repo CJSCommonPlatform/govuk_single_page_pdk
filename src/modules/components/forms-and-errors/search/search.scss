@@ -9,9 +9,10 @@
     @extend .form-control;
     width: 100% !important;
     height: 40px;
+    padding-right: 44px !important;
   }
 
-  .gov-search-button {
+  .gov-search-button, &__button {
     width: 40px;
     position: absolute;
     height: 40px;

@@ -1,0 +1,34 @@
+<h2 class="heading-medium"></h2>
+
+<gov-tabset>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <gov-search
+          name="$ctrl.search" ng-model="$ctrl.model"
+          on-search="$ctrl.onSearch($event)" required="required"></gov-search>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <div class="gov-search-group">
+        <input type="text" placeholder="Search for...">
+        <div class="gov-search-button">
+          <button role="button" type="button"></button>
+        </div>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      onSearch(text) {
+        console.log(text);
+      }
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="30"></discuss-component>
