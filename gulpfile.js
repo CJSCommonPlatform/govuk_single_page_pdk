@@ -14,7 +14,9 @@ function getVersion() {
 }
 
 gulp.task('release', function() {
-  run([
+  run(
+    'test',
+    [
       'build-components',
       'copy-platform-template'
     ],
@@ -33,6 +35,11 @@ gulp.task('clean', function() {
 
 gulp.task('build-components', function(done) {
   spawn('npm', ['run', 'build_components'], {stdio: 'inherit'}).on('close', done);
+});
+
+
+gulp.task('test', function(done) {
+  spawn('npm', ['run', 'test'], {stdio: 'inherit'}).on('close', done);
 });
 
 

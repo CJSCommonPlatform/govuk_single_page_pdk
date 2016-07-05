@@ -3,9 +3,10 @@ import { Component } from '@govuk/angularjs-devtools';
 @Component({
   template: require('./search.component.html'),
   bindings: {
-    name:     '@',
-    ngModel:  '=',
-    onSearch: '&'
+    autocomplete: '@',
+    name:         '@',
+    ngModel:      '=',
+    onSearch:     '&'
   },
   require: {
     ngModelCtrl: 'ngModel'

@@ -1,14 +1,6 @@
-<h2 class="heading-medium"></h2>
+<h2 class="heading-medium">Search Box</h2>
 
 <gov-tabset>
-
-  <gov-tab heading="Angular Markup">
-    <docs-example language="markup">
-      <gov-search
-          name="$ctrl.search" ng-model="$ctrl.model"
-          on-search="$ctrl.onSearch($event)" required="required"></gov-search>
-    </docs-example>
-  </gov-tab>
 
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
@@ -21,9 +13,17 @@
     </docs-example>
   </gov-tab>
 
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <gov-search
+          name="$ctrl.search" ng-model="$ctrl.model"
+          on-search="$ctrl.onSearch($event)" required="required"></gov-search>
+    </docs-example>
+  </gov-tab>
+
   <gov-tab heading="Data">
     <prismify language="javascript">
-      onSearch(text) {
+      this.onSearch = function(text) {
         console.log(text);
       }
     </prismify>
