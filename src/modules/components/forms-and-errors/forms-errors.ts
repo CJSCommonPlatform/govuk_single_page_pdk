@@ -6,7 +6,7 @@ import { SearchComponent } from './search/search.component';
 
 const module = angular.module('govuk-single-page-pdk.components.forms-errors', [])
 
-  .component('govErrorMessaage', ErrorMessageComponent)
+  .component('govErrorMessage', ErrorMessageComponent)
   .component('govErrorSummary', ErrorSummaryComponent)
   .component('govSearch', SearchComponent)
   .directive('lazyValidation', LazyValidationDirective)
