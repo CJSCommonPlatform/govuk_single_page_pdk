@@ -15,11 +15,11 @@
 
   <ul
       class="error-summary-list">
-    <error-summary-item
+    <gov-error-summary-item
         data-ng-repeat="field in $ctrl.invalidFields()"
         label="{{field.label}}"
         scroll-to-id="field.scrollToId || 'error-' + field.name"
         focus-id="field.focusId || 'error-' + field.name">
-    </error-summary-item>
+    </gov-error-summary-item>
   </ul>
 </div>

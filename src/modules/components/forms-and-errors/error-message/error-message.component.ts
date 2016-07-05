@@ -17,7 +17,11 @@ export class ErrorMessageComponent {
     private errorMessages: any = {
         'en': {
             'input': {
-                'required': 'Provide this information'
+                'required': 'Provide this information',
+                'email': 'Email not valid – enter correct address'
+            },
+            'email': {
+                'email': 'Email not valid – enter correct address'
             },
             'textarea': {
                 'required': 'Provide this information'
@@ -27,7 +31,16 @@ export class ErrorMessageComponent {
             },
             'checkbox': {
                 'required': 'Choose at least one answer'
+            },
+            'date': {
+                'required': 'Provide this information',
+                'past': 'Date can\'t be in future – enter valid date',
+                'future': 'Date can\'t be in past – enter valid date',
+                'minage': 'Age too young – enter valid date of birth',
+                'incorrectdate': 'Date not recognised – use format, for example 19 8 2016',
+                'wrongdate': 'Date doesn\'t exist – enter again'
             }
+
         }
     };
 
