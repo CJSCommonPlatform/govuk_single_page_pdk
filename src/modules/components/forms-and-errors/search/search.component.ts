@@ -4,6 +4,7 @@ import { Component } from '@govuk/angularjs-devtools';
   template: require('./search.component.html'),
   bindings: {
     autocomplete: '@',
+    placeholder:  '@',
     name:         '@',
     ngModel:      '=',
     onSearch:     '&'

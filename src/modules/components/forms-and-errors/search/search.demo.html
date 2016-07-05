@@ -1,12 +1,12 @@
-<h2 class="heading-medium">Search Box</h2>
+<h2 class="heading-medium">Search Input</h2>
 
 <gov-tabset>
 
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
-      <div class="gov-search-group">
+      <div class="gov-search-input">
         <input type="text" placeholder="Search for...">
-        <div class="gov-search-button">
+        <div class="gov-search-input__button">
           <button role="button" type="button"></button>
         </div>
       </div>
@@ -16,7 +16,7 @@
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
       <gov-search
-          name="$ctrl.search" ng-model="$ctrl.model"
+          name="$ctrl.search" ng-model="$ctrl.model" placeholder="Search"
           on-search="$ctrl.onSearch($event)" required="required"></gov-search>
     </docs-example>
   </gov-tab>
@@ -31,4 +31,4 @@
 
 </gov-tabset>
 
-<discuss-component issue="30"></discuss-component>
+<discuss-component issue="38"></discuss-component>

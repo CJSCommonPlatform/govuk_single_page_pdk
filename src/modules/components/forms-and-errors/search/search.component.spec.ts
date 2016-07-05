@@ -66,8 +66,10 @@ describe('components/forms-and-errors/search', () => {
     expect(called).toBe(false);
   });
 
-  it('applies the outer `name` attribute to the inner input', () => {
-    compile(`<gov-search name="foo" ng-model="model"></gov-search>`);
+  it('applies the outer `name`, `placeholder` and `autocomplete` attributes to the inner input', () => {
+    compile(`<gov-search name="foo" placeholder="Search" autocomplete="on" ng-model="model"></gov-search>`);
     expect(element.find('input').attr('name')).toEqual('foo');
+    expect(element.find('input').attr('placeholder')).toEqual('Search');
+    expect(element.find('input').attr('autocomplete')).toEqual('on');
   });
 });
