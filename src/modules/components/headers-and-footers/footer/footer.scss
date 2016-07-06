@@ -26,6 +26,6 @@
 
 #footer .footer-wrapper {
   &.business {
-    max-width: $container-large-desktop;
+    max-width: $container-large-desktop - $grid-gutter-width;
   }
 }
