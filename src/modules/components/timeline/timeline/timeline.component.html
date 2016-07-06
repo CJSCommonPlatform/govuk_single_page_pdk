@@ -1,6 +1,6 @@
 <div class="timeline">
   <div class="top-thick-blue-rule ">
-    <div class="bold-medium" ng-bind="$ctrl.title"></div>
+    <div class="bold-small" ng-bind="$ctrl.title"></div>
   </div>
-  <gov-day-item day-item="element" ng-repeat="element in $ctrl.elements"></gov-day-item>
+  <gov-day-item day-index="$index" day-item="element" ng-repeat="element in $ctrl.elements"></gov-day-item>
 </div>
