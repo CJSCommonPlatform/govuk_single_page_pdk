@@ -23,3 +23,9 @@
     }
   }
 }
+
+#footer .footer-wrapper {
+  &.business {
+    max-width: $container-large-desktop;
+  }
+}
