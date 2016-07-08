@@ -6,7 +6,8 @@ import { Component } from '@govuk/angularjs-devtools';
 export class CompletedBarDemo {
   items = [
         {
-          description: 'Full code test met',
+          description: 'Provided plea issues',
+          subDescription: 'Acceptable for a guilty plea to s.20 wounding or inflicitng grievous bodily..',
           action: 'Amend',
           state: '',
           click: function () {
@@ -14,7 +15,8 @@ export class CompletedBarDemo {
           }
         },
         {
-          description: 'Proposed authorised charge',
+          description: 'Proposed charge authorised',
+          subDescription: '',
           action: 'Amend',
           state: 'Saved',
           click: function () {

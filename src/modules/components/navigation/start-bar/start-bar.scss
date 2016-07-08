@@ -6,6 +6,10 @@
   margin-bottom:10px;
   @include core-16;
 
+  .bold{
+    font-weight:bold;
+  }
+
   .action-type{
     color: $link-colour;
   }
@@ -18,4 +22,8 @@
     margin-left:15px;
   }
 
+}
+
+.start-action:hover {
+  cursor:pointer;
 }
