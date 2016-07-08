@@ -1,3 +1,6 @@
+
+
+
 .day-item{
   a:not([href]) {
     color: $link-colour;
@@ -5,10 +8,6 @@
   }
   .boxed {
     border: 1px solid $border-colour;
-  }
-
-  .box-outer {
-    border-top:1px solid $border-colour;
   }
 
   .bottom-shadow {
@@ -23,7 +22,12 @@
 
   .box-black-vertical {
     height:30px;
-    border-left: 4px solid $black;
+    border-left: 1px solid $border-colour;
+    margin-left:20px;
+  }
+
+  .box-no-vertical {
+    height:30px;
     margin-left:20px;
   }
 
@@ -51,7 +55,7 @@
   }
 
   .gray{
-    color: $grey-2;
+    color: $secondary-text-colour;
   }
 
 }
