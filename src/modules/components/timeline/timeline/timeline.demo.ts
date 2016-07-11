@@ -9,7 +9,7 @@ export class TimelineDemo {
     title: 'Timeline',
     elements: [
       {
-        dateTitle: 'Today',
+        dateTitle: '2016-05-19',
         description: 'Charging advice requested',
         timestamp: '09:15AM',
         actions: [
@@ -19,7 +19,7 @@ export class TimelineDemo {
         ]
       },
       {
-        dateTitle: 'Yesterday',
+        dateTitle: '2016-05-23',
         description: 'Recorded analysis',
         timestamp: '08:15AM',
         actions: [

@@ -2,7 +2,7 @@
     <div ng-class="{'box-black-vertical': $ctrl.dayIndex !== 0, 'box-no-vertical': $ctrl.dayIndex === 0}"></div>
     <div class="boxed bottom-shadow">
       <div class="box-it-inner box-padding">
-        <span class="heading-small" ng-bind="$ctrl.dayItem.dateTitle"></span>
+        <span class="heading-small" ng-bind="$ctrl.dayItem.dateTitle | date: 'd MMMM yyyy'"></span>
       </div>
       <div class="box-margin line-spacing-10">
         <div class="small" ng-bind="$ctrl.dayItem.description"></div>
