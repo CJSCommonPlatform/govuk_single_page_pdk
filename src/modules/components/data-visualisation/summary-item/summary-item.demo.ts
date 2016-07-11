@@ -15,4 +15,9 @@ export class SummaryItemDemo {
     description: 'Supervisor comments provided',
     action: function(){console.log('hello'); }
   };
+
+  item3 = {
+      value: 2,
+      description: 'Defendants'
+  };
 }
