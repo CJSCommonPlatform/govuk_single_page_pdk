@@ -2,6 +2,9 @@
   @include bold-19;
   display: table;
   color:$text-colour;
+  &.summary-item-link {
+    color:$link-color;
+  }
   a{
     color:$link-color;
     text-decoration: none;
