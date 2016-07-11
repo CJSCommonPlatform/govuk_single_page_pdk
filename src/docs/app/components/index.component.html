@@ -10,19 +10,19 @@
 <div ng-repeat="domain in $ctrl.domains">
   <div class="grid-row" ng-if="$index % 3 === 0">
     <div class="column-one-third">
-      <h2 class="heading-medium"><a ui-sref="{{$ctrl.domains[$index].state}}" ng-bind="$ctrl.domains[$index].name"></a></h2>
+      <span class="heading-medium"><a ui-sref="{{$ctrl.domains[$index].state}}" ng-bind="$ctrl.domains[$index].name"></a></span>
       <p>
-        {{$ctrl.domains[$index].components.join(', ')}}.
+        {{$ctrl.domains[$index].components.join(', ')}}.pyth
       </p>
     </div>
     <div class="column-one-third" ng-if="$ctrl.domains[$index + 1]">
-      <h2 class="heading-medium"><a ui-sref="{{$ctrl.domains[$index + 1].state}}" ng-bind="$ctrl.domains[$index + 1].name"></a></h2>
+      <span class="heading-medium"><a ui-sref="{{$ctrl.domains[$index + 1].state}}" ng-bind="$ctrl.domains[$index + 1].name"></a></span>
       <p>
         {{$ctrl.domains[$index + 1].components.join(', ')}}.
       </p>
     </div>
     <div class="column-one-third" ng-if="$ctrl.domains[$index + 2]">
-      <h2 class="heading-medium"><a ui-sref="{{$ctrl.domains[$index + 2].state}}" ng-bind="$ctrl.domains[$index + 2].name"></a></h2>
+      <span class="heading-medium"><a ui-sref="{{$ctrl.domains[$index + 2].state}}" ng-bind="$ctrl.domains[$index + 2].name"></a></span>
       <p>
         {{$ctrl.domains[$index + 2].components.join(', ')}}.
       </p>
