@@ -37,8 +37,8 @@ export class ErrorMessageComponent {
                 'past': 'Date can\'t be in future – enter valid date',
                 'future': 'Date can\'t be in past – enter valid date',
                 'minage': 'Age too young – enter valid date of birth',
-                'incorrectdate': 'Date not recognised – use format, for example 19 8 2016',
-                'wrongdate': 'Date doesn\'t exist – enter again'
+                'dateFormat': 'Date not recognised – use format, for example 19 8 2016',
+                'dateExists': 'Date doesn\'t exist – enter again'
             }
 
         }

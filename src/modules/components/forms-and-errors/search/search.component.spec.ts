@@ -39,7 +39,7 @@ describe('components/forms-and-errors/search', () => {
     compile('<gov-search ng-model="model" on-search="callback($event)"></gov-search>');
     let text = null;
     scope.model = 'foo';
-    scope.callback = (str) => text = str;
+    scope.callback = str => text = str;
     scope.$digest();
     element.find('button').click();
     expect(text).toEqual('foo');
@@ -49,7 +49,7 @@ describe('components/forms-and-errors/search', () => {
     compile('<gov-search ng-model="model" on-search="callback($event)"></gov-search>');
     let text = null;
     scope.model = 'foo';
-    scope.callback = (str) => text = str;
+    scope.callback = str => text = str;
     scope.$digest();
     const event = enterKeydown();
     expect(event.preventDefault.callCount).toEqual(1);
