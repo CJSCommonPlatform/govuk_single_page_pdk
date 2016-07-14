@@ -14,7 +14,7 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class DateInputComponent {
 
-  static $inject = ['$element', '$scope', '$timeout'];
+  static $inject = ['$element', '$scope', '$timeout', '$attrs', 'dateFilter'];
 
   DATE_FORMAT = /^\d{1,2}[\/\-]\d{1,2}[\/\-]\d{4}$/;
   DATE_EXISTS = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/; // tslint:disable-line:max-line-length
@@ -41,7 +41,9 @@ export class DateInputComponent {
   constructor(
     private $element: ng.IAugmentedJQuery,
     private $scope: ng.IScope,
-    private $timeout: ng.ITimeoutService
+    private $timeout: ng.ITimeoutService,
+    private $attrs: {dateInputFormat: string},
+    private dateFilter: ng.IFilterDate
   ) {}
 
   // getter for obtaining the composite view value from the three inner inputs
@@ -98,6 +100,10 @@ export class DateInputComponent {
     // store valid values as a date object, so that they can be universally consumed
     // and offer a predictable type for additional validators
     this.ngModelCtrl.$parsers.push(val => new Date(val.split('-').reverse().join('-')));
+
+    if (this.$attrs.dateInputFormat) {
+     this.ngModelCtrl.$parsers.push(date => this.dateFilter(date, this.$attrs.dateInputFormat));
+    }
 
     // convert model value back to the composite $viewValue (see getter above)
     this.ngModelCtrl.$formatters.push((val: Date) => {

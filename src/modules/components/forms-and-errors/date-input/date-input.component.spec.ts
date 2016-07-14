@@ -46,7 +46,7 @@ describe('components/forms-and-errors/date-input', () => {
   it('triggers a focus event when any input field receives focus', () => {
     let focused = false;
     scope.onFocus = () => focused = true;
-    const tpl = `<gov-date-input name="govDate" ng-focus="onFocus()" ng-model="model"></gov-date-input>`;
+    const tpl = `<gov-date-input ng-focus="onFocus()" ng-model="model"></gov-date-input>`;
     compile(tpl);
     dayInput.focus();
     expect(focused).toEqual(true);
@@ -63,7 +63,7 @@ describe('components/forms-and-errors/date-input', () => {
   it('does not propagate successive focus events without an intervening blur', () => {
     let focused = false;
     scope.onFocus = () => focused = true;
-    compile(`<gov-date-input name="govDate" ng-focus="onFocus()" ng-model="model"></gov-date-input>`);
+    compile(`<gov-date-input ng-focus="onFocus()" ng-model="model"></gov-date-input>`);
     dayInput.focus();
     expect(focused).toEqual(true);
     focused = false;
@@ -78,7 +78,7 @@ describe('components/forms-and-errors/date-input', () => {
   it('triggers a blur event when all input fields lose focus', () => {
     let blurred = false;
     scope.onBlur = () => blurred = true;
-    compile(`<gov-date-input name="govDate" ng-blur="onBlur()" ng-model="model"></gov-date-input>`);
+    compile(`<gov-date-input ng-blur="onBlur()" ng-model="model"></gov-date-input>`);
     dayInput.focus();
     dayInput.blur();
     monthInput.focus();
@@ -105,7 +105,7 @@ describe('components/forms-and-errors/date-input', () => {
   });
 
   it('sets the ng-model model value as a date', () => {
-    compile(`<gov-date-input name="govDate" ng-model="model"></gov-date-input>`);
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
     setDateValues({day: 10, month: 10, year: 2016});
     expect(scope.model instanceof Date).toBe(true);
     expect(scope.model.getDate()).toEqual(10);
@@ -171,7 +171,7 @@ describe('components/forms-and-errors/date-input', () => {
   });
 
   it('updates the input fields in the view when the model is changed directly', () => {
-    compile(`<gov-date-input name="govDate" ng-model="model"></gov-date-input>`);
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
     scope.model = new Date(2016, 0, 5);
     scope.$digest();
     expect(dayInput.val()).toEqual('5');
@@ -188,5 +188,12 @@ describe('components/forms-and-errors/date-input', () => {
     expect(scope.testForm.dateDay).toBeUndefined();
     expect(scope.testForm.dateMonth).toBeUndefined();
     expect(scope.testForm.dateYear).toBeUndefined();
+  });
+
+  it('formats the model value via the date-input-format property', () => {
+    compile(`<gov-date-input data-date-input-format="yyyy-MM-dd" ng-model="model"></gov-date-input>`);
+    scope.$digest();
+    setDateValues({day: 15, month: 7, year: 2016});
+    expect(scope.model).toEqual('2016-07-15');
   });
 });
