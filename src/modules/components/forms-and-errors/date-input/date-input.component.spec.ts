@@ -177,6 +177,11 @@ describe('components/forms-and-errors/date-input', () => {
     expect(dayInput.val()).toEqual('5');
     expect(monthInput.val()).toEqual('1');
     expect(yearInput.val()).toEqual('2016');
+    scope.model = '2015-10-05';
+    scope.$digest();
+    expect(dayInput.val()).toEqual('5');
+    expect(monthInput.val()).toEqual('10');
+    expect(yearInput.val()).toEqual('2015');
   });
 
   it('removes the internal input fields from consideration by an outer form', () => {

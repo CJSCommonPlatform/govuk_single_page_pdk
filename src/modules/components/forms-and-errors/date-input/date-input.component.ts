@@ -34,9 +34,9 @@ export class DateInputComponent {
   private monthInput: any;
   private yearInput:  any;
 
-  private dayModel:   string;
-  private monthModel: string;
-  private yearModel:  string;
+  private dayModel:   number | string;
+  private monthModel: number | string;
+  private yearModel:  number | string;
 
   constructor(
     private $element: ng.IAugmentedJQuery,
@@ -106,8 +106,9 @@ export class DateInputComponent {
     }
 
     // convert model value back to the composite $viewValue (see getter above)
-    this.ngModelCtrl.$formatters.push((val: Date) => {
+    this.ngModelCtrl.$formatters.push((val: any) => {
       if (val) {
+        val = new Date(val);
         return `${val.getDate()}-${val.getMonth() + 1}-${val.getFullYear()}`;
       }
     });
@@ -128,7 +129,7 @@ export class DateInputComponent {
 
     // update inner inputs when outer ng-model value is set directly
     this.ngModelCtrl.$render = () => {
-      const date = this.ngModelCtrl.$modelValue;
+      const date = new Date(this.ngModelCtrl.$modelValue);
       if (date) {
         this.dayModel   = date.getDate();
         this.monthModel = date.getMonth() + 1;
