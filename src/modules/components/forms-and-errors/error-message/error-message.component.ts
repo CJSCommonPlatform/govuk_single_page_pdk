@@ -46,10 +46,12 @@ export class ErrorMessageComponent {
 
     private language: string;
 
-    $onInit() {
-        if (this.language === undefined) this.language = 'en';
-        if (this.inputType === undefined) this.inputType = 'input';
-        if (this.customValidation) angular.merge(this.errorMessages, this.customValidation);
+    $onChanges() {
+      if (this.language === undefined) this.language = 'en';
+      if (this.inputType === undefined) this.inputType = 'input';
+      if (this.customValidation) {
+        angular.merge(this.errorMessages, this.customValidation);
+      }
     }
 
     getMessage(error: any): string {
