@@ -1,0 +1,63 @@
+<h2 class="heading-medium">Top Menu Component</h2>
+
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="top-menu">
+            <div class="top-menu__item top-menu__item--active">First page</div>
+            <div class="top-menu__item top-menu__item--separated">Second page</div>
+            <div class="top-menu__item">Third page</div>
+          </div>
+        </div>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <div class="row">
+        <div class="col-xs-12">
+          <gov-top-menu menu="$ctrl.menu"
+            on-menu-item-click="$ctrl.onMenuItemClick(items, menuItem)">
+          </gov-top-menu>
+        </div>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      menu = {
+        items: [
+          {
+            text: 'First page',
+            isActive: true
+          },
+          {
+            text: 'Second page',
+            isSeparated: true
+          },
+          {
+            text: 'Third page'
+          }
+        ]
+      };
+      
+      onMenuItemClick = function (items, menuItem) {
+        if (!menuItem.isActive) {
+          this.activateItem(items, menuItem);
+        }
+      };
+
+      activateItem = function (items, menuItem) {
+        items.forEach(function (item) {
+          item.isActive = item === menuItem;
+        });
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="55"></discuss-component>
