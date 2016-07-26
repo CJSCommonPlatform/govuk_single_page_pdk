@@ -97,6 +97,7 @@ export class DateInputComponent {
   $onChanges() {
     this.maxDate = this.dateInputMax ? new Date(this.dateInputMax) : undefined;
     this.minDate = this.dateInputMin ? new Date(this.dateInputMin) : undefined;
+    this.ngModelCtrl.$validate();
   }
 
   $postLink() {

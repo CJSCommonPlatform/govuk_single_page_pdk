@@ -182,6 +182,10 @@ describe('components/forms-and-errors/date-input', () => {
     expect(ngModelCtrl.$error.dateMin).toBeDefined();
     setDateValues({day: 15, month: 10, year: 2015});
     expect(ngModelCtrl.$error.dateMin).toBeUndefined();
+    // assert bound property changing updates $error
+    scope.val = '2015-10-16';
+    scope.$digest();
+    expect(ngModelCtrl.$error.dateMin).toBeDefined();
   });
 
   it('runs the ng-model `dateMax` validator when a date is set', () => {
@@ -206,6 +210,10 @@ describe('components/forms-and-errors/date-input', () => {
     expect(ngModelCtrl.$error.dateMax).toBeDefined();
     setDateValues({day: 15, month: 10, year: 2015});
     expect(ngModelCtrl.$error.dateMax).toBeUndefined();
+    // assert bound property changing updates $error
+    scope.val = '2015-10-14';
+    scope.$digest();
+    expect(ngModelCtrl.$error.dateMax).toBeDefined();
   });
 
   it('does not apply internal date validators when the date is empty', () => {
