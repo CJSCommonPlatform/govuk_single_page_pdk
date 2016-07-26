@@ -151,12 +151,61 @@ describe('components/forms-and-errors/date-input', () => {
       </form>
     `);
     const ngModelCtrl = scope.testForm.govDate;
+    expect(ngModelCtrl.$error.dateExists).toBeUndefined();
     setDateValues({day: 29, month: 2, year: 2017});
     expect(ngModelCtrl.$error.dateExists).toBeDefined();
     setDateValues({day: 31, month: 4, year: 2016});
     expect(ngModelCtrl.$error.dateExists).toBeDefined();
     setDateValues({day: 29, month: 2, year: 2016});
     expect(ngModelCtrl.$error.dateExists).toBeUndefined();
+  });
+
+  it('runs the ng-model `dateMin` validator when a date is set', () => {
+    compile(`
+      <form name="testForm">
+        <gov-date-input name="govDate" date-input-min="val" ng-model="model"></gov-date-input>
+      </form>
+    `);
+    const ngModelCtrl = scope.testForm.govDate;
+    // no error when no date / min value entered
+    expect(ngModelCtrl.$error.dateMin).toBeUndefined();
+    scope.val = new Date(2015, 9, 15);
+    scope.$digest();
+    setDateValues({day: 14, month: 10, year: 2015});
+    expect(ngModelCtrl.$error.dateMin).toBeDefined();
+    setDateValues({day: 15, month: 10, year: 2015});
+    expect(ngModelCtrl.$error.dateMin).toBeUndefined();
+
+    scope.val = '2015-10-15';
+    scope.$digest();
+    setDateValues({day: 14, month: 10, year: 2015});
+    expect(ngModelCtrl.$error.dateMin).toBeDefined();
+    setDateValues({day: 15, month: 10, year: 2015});
+    expect(ngModelCtrl.$error.dateMin).toBeUndefined();
+  });
+
+  it('runs the ng-model `dateMax` validator when a date is set', () => {
+    compile(`
+      <form name="testForm">
+        <gov-date-input name="govDate" date-input-max="val" ng-model="model"></gov-date-input>
+      </form>
+    `);
+    const ngModelCtrl = scope.testForm.govDate;
+    // no error when no date / max value entered
+    expect(ngModelCtrl.$error.dateMax).toBeUndefined();
+    scope.val = new Date('2015-10-15');
+    scope.$digest();
+    setDateValues({day: 16, month: 10, year: 2015});
+    expect(ngModelCtrl.$error.dateMax).toBeDefined();
+    setDateValues({day: 15, month: 10, year: 2015});
+    expect(ngModelCtrl.$error.dateMax).toBeUndefined();
+
+    scope.val = '2015-10-15';
+    scope.$digest();
+    setDateValues({day: 16, month: 10, year: 2015});
+    expect(ngModelCtrl.$error.dateMax).toBeDefined();
+    setDateValues({day: 15, month: 10, year: 2015});
+    expect(ngModelCtrl.$error.dateMax).toBeUndefined();
   });
 
   it('does not apply internal date validators when the date is empty', () => {
