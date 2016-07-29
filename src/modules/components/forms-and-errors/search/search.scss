@@ -1,4 +1,4 @@
-.gov-search-group {
+.gov-search-group, .gov-search-input {
   position: relative;
 
   @include media(tablet) {
@@ -7,11 +7,12 @@
 
   > input {
     @extend .form-control;
-    width: 100% !important;
+    width: calc(100% - 40px) !important;
     height: 40px;
+    border-right: none !important;
   }
 
-  .gov-search-button {
+  .gov-search-button, &__button {
     width: 40px;
     position: absolute;
     height: 40px;
@@ -24,9 +25,13 @@
       font-size: 0;
       height: 40px;
       padding: 6px 0 7px;
-      background: $black;
-      border: 1px solid $black;
+      background: $govuk-blue;
+      border: 1px solid $govuk-blue;
+      cursor: pointer;
       width: 100%;
+      &:hover:enabled {
+        background: #004F8C;
+      }
       &:after {
         font-family: FontAwesome, sans-serif;
         content: '\f002';

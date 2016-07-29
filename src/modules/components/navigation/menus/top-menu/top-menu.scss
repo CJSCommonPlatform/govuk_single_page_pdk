@@ -1,0 +1,34 @@
+.top-menu {
+  .top-menu {
+    &__item {
+      &:first-of-type {
+        margin-left: 0;
+      }
+      &:last-of-type {
+        margin-right: 0;
+      }
+      @include bold-19;
+      cursor: pointer;
+      padding: 10px 0 5px;
+      margin: 0 10px;
+      display: inline-block;
+      color: $link-colour;
+      &--active {
+        cursor: default;
+        color: $black;
+        border-bottom: 5px solid $black;
+      }
+      &--separated {
+        &:after {
+          content: ' ';
+          position: absolute;
+          top: 10px;
+          bottom: 10px;
+          width: 1px;
+          margin-left: 10px;
+          background-color: $border-colour;
+        }
+      }
+    }
+  }
+}

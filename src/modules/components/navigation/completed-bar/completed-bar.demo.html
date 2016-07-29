@@ -7,56 +7,60 @@
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
       <div class="completed-action">
-          <span>Full code test met</span>
-          <span class="pull-right">
-            <div class="check"></div>
-            <span class="action-type">
-              <span>Amend</span>
-            </span>
+        <span class="bold" onclick="">Provided plea issues</span>
+        <span class="pull-right">
+          <div class="check"></div>
+          <span class="action-type">
+            <span>Amend</span>
           </span>
+        </span>
+        <div class="three-quarter">
+          <span>Acceptable for a guilty plea to s.20 wounding or inflicitng grievous bodily harm instead of s.18 with intent. But s.18 if a not guilty plea.</span>
+        </div>
       </div>
       <div class="completed-action">
-          <span>Proposed charge authorised</span>
-          <span class="pull-right">
-            <span class="saved">
-              Saved <i class="fa fa-check"></i>
-            </span>
-            <span class="action-type">
-              <span>Amend</span>
-            </span>
+        <span class="bold">Proposed charge authorised</span>
+        <span class="pull-right">
+          <span class="saved">
+            Saved <i class="fa fa-check"></i>
           </span>
+          <span class="action-type">
+            <span>Amend</span>
+          </span>
+        </span>
       </div>
     </docs-example>
   </gov-tab>
-
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-    <gov-completed-bar ng-repeat="item in $ctrl.items" item="item"></gov-completed-bar>
+      <gov-completed-bar ng-repeat="item in $ctrl.items" item="item"></gov-completed-bar>
     </docs-example>
   </gov-tab>
 
   <gov-tab heading="Data">
     <prismify language="javascript">
       items = [
-        {
-          description: 'Full code test met',
-          action: 'Amend',
-          state: '',
-          click: function () {
-            console.log('clicked');
-          }
-        },
-        {
-          description: 'Proposed authorised charge',
-          action: 'Amend',
-          state: 'Saved',
-          click: function () {
-            console.log('clicked');
-          }
+      {
+        description: 'Provided plea issues',
+        subDescription: 'Acceptable for a guilty plea to s.20 wounding or inflicitng grievous bodily harm instead of s.18 with  intent. But s.18 if a not guilty plea.',
+        action: 'Amend',
+        state: '',
+        click: function () {
+          console.log('clicked');
         }
-      ]
-    </prismify>
-  </gov-tab>
+      },
+      {
+        description: 'Proposed charge authorised',
+        subDescription:'',
+        action: 'Amend',
+        state: 'Saved',
+        click: function () {
+          console.log('clicked');
+        }
+      }
+    ]
+  </prismify>
+</gov-tab>
 
 </gov-tabset>
 

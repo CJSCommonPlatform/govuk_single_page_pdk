@@ -2,23 +2,23 @@
   @govuk/platform-template
 
   This library aggregates the following libraries:
-    - bootstrap-sass
     - govuk_frontend_toolkit
     - govuk-elements-sass
+    - govuk_template
     - font-awesome
 
-  Consequently, the following variables must be set prior to importing:
+  The following paths must be set priot to importing this file:
 
-  $fa-font-path (the path to font awesome's paths)
-  $path (the path to the govuk_frontend_toolkit images)
+  $fa-font-path (path to font awesome fonts)
+  $govuk-frontend-toolkit-image-path (path to govuk_frontend_toolkit images)
+  $govuk-template-image-path (path to govuk_template images)
+  $nta-font-path (path to nta fonts)
+
 */
 
-$image-url-path: '/lib/govuk_template/stylesheets/' !default;
-$nta-font-path:  '/assets/fonts/' !default;
-
-// override for deprecated image importer
-@function image-url($url) {
-  @return url('#{$image-url-path}#{$url}');
+// image url is consumed by govuk_frontend_toolkit
+@function image-url($file) {
+  @return url('#{$govuk-frontend-toolkit-image-path}#{$file}');
 }
 
 // pdk domains

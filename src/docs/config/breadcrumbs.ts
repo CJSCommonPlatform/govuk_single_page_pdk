@@ -11,4 +11,4 @@ const module = angular.module('govuk-single-page-pdk.config.breadcrumbs', [
     });
   });
 
-export const breadcrumbConfig: string = module.name;
+export default module.name;

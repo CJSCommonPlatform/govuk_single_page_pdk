@@ -1,0 +1,54 @@
+<h3 class="bold-medium">Error Summary</h3>
+
+<p class="text">This components will display the validation errors and it will link the error to the failed validation</p>
+
+<gov-tabset>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <div>
+        <gov-error-summary
+            form="$ctrl.form"
+            fields="$ctrl.fields">
+        </gov-error-summary>
+
+        <form data-lazy-validation="$ctrl.form" novalidate>
+          <h2>Your personal details</h2>
+          <div class="form-group" data-ng-class="{'error': $ctrl.form.fullname.$invalid }">
+
+            <label for="fullname" id="error-fullname">
+
+              <span class="form-label-bold">Full name</span>
+              <span class="form-hint">As shown on your birth certificate or passport</span>
+              <span class="error-message" id="error-message-full-name-1" data-ng-if="$ctrl.form.fullname.$error.required">Full name must be entered</span>
+              <span class="error-message" id="error-message-full-name-2" data-ng-if="$ctrl.form.fullname.$error.minlength">Full name must be at least 5 characters long</span>
+
+            </label>
+
+            <input class="form-control"
+                   id="fullname"
+                   type="text" name="fullname"
+                   data-ng-model="$ctrl.fullname"
+                   value=""
+                   aria-describedby="error-message-full-name-2"
+                   required ng-minlength="5">
+          </div>
+          <input class="button" type="submit" value="Continue" data-lazy-validation-on-click="$ctrl.submitForm()">
+        </form>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      fields = [
+        { name: 'fullname', label: 'Full name'}
+      ];
+
+      function submitForm(){
+        console.log('Submit form: This gets called only when form is valid');
+      };
+    </prismify>
+  </gov-tab>
+</gov-tabset>
+<discuss-component issue="36"></discuss-component>

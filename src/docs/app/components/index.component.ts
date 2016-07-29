@@ -20,6 +20,11 @@ export class ComponentsPage {
                 'Action-pane', 'Breadcrumbs', 'Next/Previous Navigation', 'Side Menu', 'Start Action Bar',
                 'Completed Action Bar']
         },
-        {name: 'Timeline', state: 'components.timeline', components: ['Timeline']}
+        {name: 'Timeline', state: 'components.timeline', components: ['Timeline']},
+        {
+            name: 'Forms and Errors',
+            state: 'components.forms-and-errors',
+            components: ['Lazy validation', 'Summary Error']
+        }
     ];
 }
