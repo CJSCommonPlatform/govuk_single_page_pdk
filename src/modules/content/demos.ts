@@ -1,15 +1,7 @@
-import { content } from './content';
-import { docsUtils } from '../../util/docs';
-import { RadioDemo } from './form-elements/radio/radio.demo';
-import { CheckboxDemo } from './form-elements/checkbox/checkbox.demo';
-import { SearchDemo } from './form-elements/search/search.demo';
+import formElements from './form-elements/form-elements-demos';
 
 const module = angular.module('govuk-single-page-pdk.content-demos', [
-  content,
-  docsUtils
-])
-  .component('govRadioDemo', RadioDemo)
-  .component('govCheckboxDemo', CheckboxDemo)
-  .component('govSearchDemo', SearchDemo);
+  formElements
+]);
 
-export const contentDemos = module.name;
+export default module.name;

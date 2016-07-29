@@ -1,0 +1,9 @@
+<div class="gov-search-input">
+  <input type="text" placeholder="{{::$ctrl.placeholder}}" name="{{::$ctrl.name}}"
+         autocomplete="{{$ctrl.autocomplete || 'off'}}" ng-model="$ctrl.ngModel">
+
+  <div class="gov-search-input__button">
+    <button role="button" type="submit" ng-disabled="!$ctrl.ngModelCtrl.$valid"
+            ng-click="$ctrl.submit()"></button>
+  </div>
+</div>

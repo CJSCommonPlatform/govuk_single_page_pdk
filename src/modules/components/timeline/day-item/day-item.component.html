@@ -1,18 +1,16 @@
 <div class="day-item">
-  <div class="box-outer">
-    <div class="box-black-vertical"></div>
+    <div ng-class="{'box-black-vertical': $ctrl.dayIndex !== 0, 'box-no-vertical': $ctrl.dayIndex === 0}"></div>
     <div class="boxed bottom-shadow">
       <div class="box-it-inner box-padding">
-        <span class="heading-medium" ng-bind="$ctrl.dayItem.dateTitle"></span>
+        <span class="heading-small" ng-bind="$ctrl.dayItem.dateTitle"></span>
       </div>
-      <div class="box-margin box-it-inner line-spacing-10">
-        <div class="heading-medium" ng-bind="$ctrl.dayItem.description"></div>
+      <div class="box-margin line-spacing-10">
+        <div class="small" ng-bind="$ctrl.dayItem.description"></div>
         <span class="gray small" ng-bind="$ctrl.dayItem.timestamp"></span>
       </div>
-      <div class="box-margin box-it-inner line-spacing-10" ng-repeat="action in $ctrl.dayItem.actions">
+      <div class="box-margin line-spacing-10" ng-repeat="action in $ctrl.dayItem.actions">
         <span class="gray" ng-if="!action.active" ng-bind="action.title"></span>
         <a ng-if="action.active" ng-click="action.action()" ng-bind="action.title"></a>
       </div>
     </div>
-  </div>
 </div>

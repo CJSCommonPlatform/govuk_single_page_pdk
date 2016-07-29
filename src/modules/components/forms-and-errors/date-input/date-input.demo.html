@@ -1,0 +1,23 @@
+<h3 class="heading-medium">Date Input</h3>
+
+<p class="text">
+  A form input for date entry, which binds a valid date to an ng-model using a Date object.
+  This component accepts the following additional attributes:
+</p>
+<p>
+  <code class="code">date-input-format</code> A string format with which to parse the date prior to it being set as
+the model value. This uses the date notation according to the Angular
+  <a href="https://docs.angularjs.org/api/ng/filter/date">Date</a> filter.
+</p>
+<p>
+  <code class="code">date-input-max</code> A maximum date against which to validate the entered date. This
+  may be a date object or string representation of a date (for example, 2015-10-10).
+</p>
+<p>
+  <code class="code">date-input-min</code> A minimum date against which to validate the entered date. This
+  may be a date object or string representation of a date (for example, 2015-10-10).
+</p>
+
+<docs-example language="markup">
+  <gov-date-input ng-model="$ctrl.model"></gov-date-input>
+</docs-example>

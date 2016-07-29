@@ -64,6 +64,14 @@ export const routes: angular.ui.IState[] = [
     }
   },
   {
+    state:    'components.forms-and-errors',
+    url:      '/forms-and-errors',
+    template: '<gov-docs-components-forms-and-errors-page></gov-docs-components-forms-and-errors-page>',
+    ncyBreadcrumb: {
+      label: 'Forms and errors'
+    }
+  },
+  {
     state:    'examples',
     url:      '/examples',
     template: '<gov-docs-examples-page></gov-docs-examples-page>',
@@ -74,9 +82,25 @@ export const routes: angular.ui.IState[] = [
   {
     state:    'layout',
     url:      '/layout',
-    template: '<gov-docs-layout-page></gov-docs-layout-page>',
+    template: '<ui-view><gov-docs-layout-page></gov-docs-layout-page></ui-view>',
     ncyBreadcrumb: {
       label: 'Layout'
+    }
+  },
+  {
+    state:    'layout.citizen',
+    url:      '/citizen',
+    template: '<gov-docs-citizen-layout-page></gov-docs-citizen-layout-page>',
+    ncyBreadcrumb: {
+      label: 'Citizen Layout'
+    }
+  },
+  {
+    state:    'layout.business',
+    url:      '/business',
+    template: '<gov-docs-business-layout-page></gov-docs-business-layout-page>',
+    ncyBreadcrumb: {
+      label: 'Business Layout'
     }
   },
   {
@@ -133,6 +157,14 @@ export const routes: angular.ui.IState[] = [
     template: '<gov-docs-content-errors-page></gov-docs-content-errors-page>',
     ncyBreadcrumb: {
       label: 'Errors'
+    }
+  },
+  {
+    state:     'content.utils',
+    url:       '/utils',
+    template: '<gov-docs-content-utils-page></gov-docs-content-utils-page>',
+    ncyBreadcrumb: {
+      label: 'Utility Classes'
     }
   }
 ];

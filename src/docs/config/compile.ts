@@ -6,4 +6,4 @@ const module = angular.module('govuk-single-page-pdk.config.compile', [])
     $compileProvider.debugInfoEnabled(!isProd);
   });
 
-export const compileConfig: string = module.name;
+export default module.name;

@@ -1,9 +1,9 @@
 require('index.scss');
 
-import { config } from './config';
-import { componentsDemos } from '../modules/components/demos';
-import { contentDemos } from '../modules/content/demos';
-import { layoutDemos } from '../modules/layout/demos';
+import componentsDemos from '../modules/components/demos';
+import contentDemos from '../modules/content/demos';
+import config from './config';
+
 import { AppLayout } from './app/app-layout.component';
 import { ComponentsPage } from './app/components/index.component';
 import { BannersPage } from './app/components/banners/banners.component.ts';
@@ -19,19 +19,23 @@ import { ButtonsPage } from './app/content/buttons/buttons.component';
 import { TypographyPage } from './app/content/typography/typography.component';
 import { HomePage } from './app/home/home.component';
 import { LayoutPage } from './app/layout/layout.component';
+import { CitizenLayoutPage } from './app/layout/citizen/citizen-layout.component.ts';
+import { BusinessLayoutPage } from './app/layout/business/business-layout.component.ts';
 import { FormElementsPage } from './app/content/form-elements/form-elements.component';
 import { IconsMediaPage } from './app/content/icons-media/icons-media.component';
 import { ErrorsPage } from './app/content/errors/errors.component';
+import { UtilsPage } from './app/content/utils/utils.component';
+import { FormsAndErrorsPage } from './app/components/forms-and-errors/forms-and-errors.component';
 
 angular.module('govuk-single-page-pdk.docs', [
   config,
   componentsDemos,
   contentDemos,
-  layoutDemos,
   'ncy-angular-breadcrumb',
   'ui.router',
+  'smoothScroll',
   'ngSanitize'
-  ])
+])
   .component('govDocs', AppLayout)
   .component('govDocsHomePage', HomePage)
   .component('govDocsComponentsPage', ComponentsPage)
@@ -44,9 +48,13 @@ angular.module('govuk-single-page-pdk.docs', [
   .component('govDocsContentPage', ContentPage)
   .component('govDocsExamplesPage', ExamplesPage)
   .component('govDocsLayoutPage', LayoutPage)
+  .component('govDocsCitizenLayoutPage', CitizenLayoutPage)
+  .component('govDocsBusinessLayoutPage', BusinessLayoutPage)
   .component('govDocsContentColoursPage', ColoursPage)
   .component('govDocsContentButtonsPage', ButtonsPage)
   .component('govDocsFormElementsPage', FormElementsPage)
   .component('govDocsContentIconsMediaPage', IconsMediaPage)
   .component('govDocsContentErrorsPage', ErrorsPage)
-  .component('govDocsContentTypographyPage', TypographyPage);
+  .component('govDocsContentTypographyPage', TypographyPage)
+  .component('govDocsContentUtilsPage', UtilsPage)
+  .component('govDocsComponentsFormsAndErrorsPage', FormsAndErrorsPage);

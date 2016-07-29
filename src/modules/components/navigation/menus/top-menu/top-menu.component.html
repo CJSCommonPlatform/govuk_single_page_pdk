@@ -1,0 +1,11 @@
+<div class="top-menu">
+  <div class="top-menu__item"
+    ng-bind="item.text"
+    ng-class="{
+      'top-menu__item--active': item.isActive,
+      'top-menu__item--separated': item.isSeparated
+    }"
+    ng-click="$ctrl.onMenuItemClick({items: $ctrl.menu.items, menuItem:item})"
+    ng-repeat="item in $ctrl.menu.items">
+  </div>
+</div>

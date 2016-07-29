@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import {Component} from '@govuk/angularjs-devtools';
 
 @Component({
     template: require('./index.component.html')
@@ -9,15 +9,22 @@ export class ComponentsPage {
         {
             name: 'Data-Visualisation',
             state: 'components.data-visualisation',
-            components: ['Contact-info', 'Personal-details', 'Summary-item', 'Tab']
+            components: ['Contact-info', 'Personal-details', 'Summary-item', 'Tab', 'Show/Hide Pane']
         },
         {name: 'Headers and Footers', state: 'components.headers', components: ['Govuk header', 'Govuk footer']},
         {name: 'Media', state: 'components.media', components: ['Image', 'statement']},
         {
             name: 'Navigation',
             state: 'components.navigation',
-            components: ['Action-pane', 'Breadcrumbs', 'Next/Previous Navigation']
+            components: [
+                'Action-pane', 'Breadcrumbs', 'Next/Previous Navigation', 'Side Menu', 'Start Action Bar',
+                'Completed Action Bar']
         },
-        {name: 'Timeline', state: 'components.timeline', components: ['Timeline']}
+        {name: 'Timeline', state: 'components.timeline', components: ['Timeline']},
+        {
+            name: 'Forms and Errors',
+            state: 'components.forms-and-errors',
+            components: ['Lazy validation', 'Summary Error']
+        }
     ];
 }

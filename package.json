@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.0.33",
+  "version": "0.0.77",
   "scripts": {
     "build": "npm run build:dev",
     "prebuild_dev": "npm run clean",
@@ -18,9 +18,11 @@
   },
   "dependencies": {
     "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
     "angular-breadcrumb": "^0.4.1",
+    "angular-sanitize": "^1.5.5",
     "angular-ui-router": "^0.2.18",
-    "angular-sanitize": "^1.5.5"
+    "ngSmoothScroll": "^2.0.0"
   },
   "devDependencies": {
     "@govuk/angularjs-devtools": "^0.1.0",
@@ -39,6 +41,7 @@
     "gulp-bump": "^2.1.0",
     "gulp-git": "^1.7.2",
     "gulp-replace": "^0.5.4",
+    "gulp-util": "^3.0.7",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
     "http-server": "^0.9.0",
@@ -58,8 +61,11 @@
     "karma-sinon": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "1.7.0",
+    "merge-stream": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "ng-annotate-webpack-plugin": "^0.1.2",
     "node-sass": "^3.5.3",
+    "pa11y": "^4.0.0",
     "phantomjs-prebuilt": "^2.1.7",
     "postcss-loader": "^0.8.2",
     "prismjs": "^1.4.1",

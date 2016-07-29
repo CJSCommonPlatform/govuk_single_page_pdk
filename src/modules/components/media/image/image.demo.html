@@ -27,8 +27,21 @@
   </gov-tab>
 
   <gov-tab heading="Data">
-    <prismify language="javascrpt">
-      image = {{ $ctrl.image | json: 4 }}
+    <prismify language="javascript">
+      image = {
+        src: 'images/justice.jpg',
+        title: 'Test image heading',
+        metadata: [
+          {
+            key: 'date taken',
+            value: '2016 05 19'
+          },
+          {
+            key: 'copyright',
+            value: 'none'
+          }
+        ]
+      };
     </prismify>
   </gov-tab>
 

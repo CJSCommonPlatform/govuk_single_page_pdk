@@ -1,7 +1,7 @@
-import { FocusDirective } from './form-elements/focus/focus.directive';
+import formElements from './form-elements/form-elements';
 
-const module = angular.module('govuk-single-page-pdk.content', [])
+const module = angular.module('govuk-single-page-pdk.content', [
+  formElements
+]);
 
-  .directive('blockLabel', FocusDirective);
-
-export const content = module.name;
+export default module.name;

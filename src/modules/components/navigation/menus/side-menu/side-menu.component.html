@@ -1,0 +1,33 @@
+<div class="side-menu">
+  <div class="side-menu__group-heading" ng-if="$ctrl.menuGroup.heading">
+    <div ng-bind="$ctrl.menuGroup.heading"></div>
+    <div class="side-menu__group-subheading" ng-if="$ctrl.menuGroup.subheading" ng-bind="$ctrl.menuGroup.subheading"></div>
+  </div>
+  <div ng-repeat="menu in $ctrl.menuGroup.menus">
+    <div class="side-menu__heading" ng-if="menu.heading" ng-bind="menu.heading"></div>
+    <div ng-repeat="item in menu.items">
+        <div class="side-menu__item"
+          ng-class="{
+            'side-menu__item--active': item.isActive,
+            'side-menu__item--disabled': item.isDisabled,
+            'side-menu__item--image-mode': item.image,
+            'side-menu__item--arrow-mode': menu.showArrowsOnItems
+          }" 
+          ng-click="$ctrl.onMenuItemClick({menuGroup: $ctrl.menuGroup, menuItem:item})">
+          <div class="side-menu__item__image-wrapper" ng-if="item.image" >
+            <img class="side-menu__item__image" ng-src="{{item.image}}" alt="{{item.title}}">
+          </div>
+          <div class="side-menu__item__content-wrapper">
+            <div class="side-menu__item__title" ng-if="item.title" ng-bind="item.title"></div>
+            <div ng-if="item.text[0].length === 1" ng-bind="item.text"></div>
+            <div ng-if="item.text[0].length > 1 && item.text.length > 1">
+              <div ng-repeat="line in item.text" ng-bind="line"></div>
+            </div>
+            <span class="side-menu__item__arrow" ng-if="menu.showArrowsOnItems && !item.active">
+              <i class="fa fa-angle-right"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

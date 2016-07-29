@@ -33,7 +33,7 @@
     }
   }
   &.locked {
-    background: $grey-2;
+    background: $red;
     > i {
       @extend .fa-lock;
     }
@@ -41,7 +41,7 @@
   &.success  {
     background: $turquoise;
     > i {
-      @extend .fa-check-circle;
+      @extend .fa-check;
     }
   }
   &.pending  {
@@ -59,7 +59,16 @@
 
   .gov-notification-body {
     display: table-cell;
-    padding-left: 8px;
     width: 100%;
+  }
+
+  i + .gov-notification-body {
+    padding-left: 15px;
+  }
+
+  a {
+    color: $white !important;
+    font-weight: 400;
+    text-decoration: underline;
   }
 }

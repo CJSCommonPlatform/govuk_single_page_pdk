@@ -1,0 +1,16 @@
+<div class="completed-action">
+  <span class="bold" ng-bind="$ctrl.item.description"></span>
+  <span class="pull-right">
+    <span class="check" ng-show="!$ctrl.item.state"></span>
+    <span class="saved" ng-show="$ctrl.item.state">
+      <span ng-bind="$ctrl.item.state"></span> <i class="fa fa-check"></i>
+    </span>
+    <span class="action-type" ng-click="$ctrl.item.click()">
+      <span ng-bind="$ctrl.item.action"></span>
+    </span>
+  </span>
+  <div class="three-quarter">
+    <span ng-bind="$ctrl.item.subDescription"></span>
+  </div>
+</div>
+

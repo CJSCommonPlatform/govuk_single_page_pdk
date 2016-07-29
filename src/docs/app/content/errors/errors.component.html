@@ -23,12 +23,13 @@
 
   <h3 class="heading-medium" id="one-question-per-page">Ask one question per page</h3>
   <div class="text">
-  <p>
-    Recovering from errors can be hard for users, especially if a page contains multiple errors.
-  </p>
-  <p>
-    Simplify forms by rewriting and where possible, splitting long forms across multiple pages - with each page asking a single question.
-  </p>
+    <p>
+      Recovering from errors can be hard for users, especially if a page contains multiple errors.
+    </p>
+    <p>
+      Simplify forms by rewriting and where possible, splitting long forms across multiple pages - with each page asking
+      a single question.
+    </p>
   </div>
 
   <h3 class="heading-medium" id="summarise-errors">
@@ -46,98 +47,36 @@
   </ul>
 
   <h4 class="heading-small">Error message and summary box</h4>
-<div class="example example-error">
-  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-
-    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-      Message to alert the user to a problem goes here
-    </h1>
-
-    <p>
-      Optional description of the errors and how to correct them
-    </p>
-
-    <ul class="error-summary-list">
-      <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
-    </ul>
-
-  </div>
-
-  <h1 class="heading-large">
-    Check your personal details
-  </h1>
-
-  <p>
-    Look at your name, signature and other details.
-  </p>
-
-  <form>
-    <div class="form-group error">
-      <fieldset>
-
-        <legend id="example-personal-details">
-
-          <span class="form-label-bold">
-            Are your personal details correct and up-to-date?
-          </span>
-          <span class="error-message">
-            Error message about personal details goes here
-          </span>
-
-        </legend>
-
-        <label class="block-label" for="personal_details_yes">
-          <input id="personal_details_yes" type="radio" name="personal_details" value="Yes">
-          <span></span> Yes, my personal details are correct
-        </label>
-
-        <label class="block-label" for="personal_details_no">
-          <input id="personal_details_no" type="radio" name="personal_details" value="No">
-          <span></span> No, some details are wrong or have changed
-        </label>
-
-      </fieldset>
-    </div>
-
-    <input class="button" type="submit" value="Continue">
-
-  </form>
-</div>
-
-
-
-
-<docs-example markup>
-    
+  <div class="example example-error">
     <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
-    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-      Message to alert the user to a problem goes here
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        Message to alert the user to a problem goes here
+      </h1>
+
+      <p>
+        Optional description of the errors and how to correct them
+      </p>
+
+      <ul class="error-summary-list">
+        <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
+      </ul>
+
+    </div>
+
+    <h1 class="heading-large">
+      Check your personal details
     </h1>
 
     <p>
-      Optional description of the errors and how to correct them
+      Look at your name, signature and other details.
     </p>
 
-    <ul class="error-summary-list">
-      <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
-    </ul>
+    <form>
+      <div class="form-group error">
+        <fieldset>
 
-  </div>
-
-  <h1 class="heading-large">
-    Check your personal details
-  </h1>
-
-  <p>
-    Look at your name, signature and other details.
-  </p>
-
-  <form>
-    <div class="form-group error">
-      <fieldset>
-
-        <legend id="example-personal-details">
+          <legend id="example-personal-details">
 
           <span class="form-label-bold">
             Are your personal details correct and up-to-date?
@@ -146,36 +85,93 @@
             Error message about personal details goes here
           </span>
 
-        </legend>
+          </legend>
 
-        <label class="block-label" for="personal_details_yes">
-          <input id="personal_details_yes" type="radio" name="personal_details" value="Yes">
-          <span></span> Yes, my personal details are correct
-        </label>
+          <label class="block-label" for="personal_details_yes">
+            <input id="personal_details_yes" type="radio" name="personal_details" value="Yes">
+            <span></span> Yes, my personal details are correct
+          </label>
 
-        <label class="block-label" for="personal_details_no">
-          <input id="personal_details_no" type="radio" name="personal_details" value="No">
-          <span></span> No, some details are wrong or have changed
-        </label>
+          <label class="block-label" for="personal_details_no">
+            <input id="personal_details_no" type="radio" name="personal_details" value="No">
+            <span></span> No, some details are wrong or have changed
+          </label>
 
-      </fieldset>
+        </fieldset>
+      </div>
+
+      <input class="button" type="submit" value="Continue">
+
+    </form>
+  </div>
+
+
+  <docs-example language="markup">
+
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        Message to alert the user to a problem goes here
+      </h1>
+
+      <p>
+        Optional description of the errors and how to correct them
+      </p>
+
+      <ul class="error-summary-list">
+        <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
+      </ul>
+
     </div>
 
-    <input class="button" type="submit" value="Continue">
+    <h1 class="heading-large">
+      Check your personal details
+    </h1>
 
-  </form>
-    
-    
-</docs-example>
+    <p>
+      Look at your name, signature and other details.
+    </p>
+
+    <form>
+      <div class="form-group error">
+        <fieldset>
+
+          <legend id="example-personal-details">
+
+          <span class="form-label-bold">
+            Are your personal details correct and up-to-date?
+          </span>
+          <span class="error-message">
+            Error message about personal details goes here
+          </span>
+
+          </legend>
+
+          <label class="block-label" for="personal_details_yes">
+            <input id="personal_details_yes" type="radio" name="personal_details" value="Yes">
+            <span></span> Yes, my personal details are correct
+          </label>
+
+          <label class="block-label" for="personal_details_no">
+            <input id="personal_details_no" type="radio" name="personal_details" value="No">
+            <span></span> No, some details are wrong or have changed
+          </label>
+
+        </fieldset>
+      </div>
+
+      <input class="button" type="submit" value="Continue">
+
+    </form>
 
 
-
-
+  </docs-example>
 
 
   <div class="panel panel-border-narrow">
     <h3 class="heading-small">
-      The error summary must appear at the top of the page, so it is visible when the page is refreshed and is immediately read out by assistive technology.
+      The error summary must appear at the top of the page, so it is visible when the page is refreshed and is
+      immediately read out by assistive technology.
     </h3>
   </div>
 
@@ -187,56 +183,61 @@
 
   <ul class="list list-bullet text">
     <li>write a message that helps the user to understand why the error occurred and what to do about it</li>
-    <li>put the message in the <code class="code">&lt;label&gt;</code> or <code class="code">&lt;legend&gt;</code> for the question,
-    after the question text, in red</li>
+    <li>put the message in the <code class="code">&lt;label&gt;</code> or <code class="code">&lt;legend&gt;</code> for
+      the question,
+      after the question text, in red
+    </li>
     <li>use a red border to visually connect the message and the question it belongs to</li>
     <li>if the error relates to specific text fields within the question, give these a red border as well</li>
   </ul>
 
   <p class="text">
-    For red, use the <code class="code">$error-colour</code> Sass variable – find this in the GOV.UK frontend toolkit <a href="https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_colours.scss" rel="external">colours.scss</a> file.
+    For red, use the <code class="code">$error-colour</code> Sass variable – find this in the GOV.UK frontend toolkit <a
+      href="https://github.com/alphagov/govuk_frontend_toolkit/blob/master/stylesheets/_colours.scss" rel="external">colours.scss</a>
+    file.
   </p>
 
-<div class="example example-error">
-  <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+  <div class="example example-error">
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
 
-    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
-      Message to alert the user to a problem goes here
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+        Message to alert the user to a problem goes here
+      </h1>
+
+      <p>
+        Optional description of the errors and how to correct them
+      </p>
+
+      <ul class="error-summary-list">
+        <li><a href="#example-full-name">Descriptive link to the question with an error</a></li>
+        <li><a href="#example-ni-number">Descriptive link to the question with an error</a></li>
+      </ul>
+
+    </div>
+
+    <h1 class="heading-large">
+      Your personal details
     </h1>
 
-    <p>
-      Optional description of the errors and how to correct them
-    </p>
+    <div class="form-group error">
 
-    <ul class="error-summary-list">
-      <li><a href="#example-full-name">Descriptive link to the question with an error</a></li>
-      <li><a href="#example-ni-number">Descriptive link to the question with an error</a></li>
-    </ul>
+      <label for="example-full-name" id="error-full-name">
 
-  </div>
+        <span class="form-label-bold">Full name</span>
+        <span class="form-hint">As shown on your birth certificate or passport</span>
+        <span class="error-message" id="error-message-full-name">Error message about full name goes here</span>
 
-  <h1 class="heading-large">
-    Your personal details
-  </h1>
+      </label>
 
-  <div class="form-group error">
+      <input class="form-control" id="example-full-name" type="text" name="fullname" value=""
+             aria-describedby="error-message-full-name">
+    </div>
 
-    <label for="example-full-name" id="error-full-name">
+    <div class="form-group error">
 
-      <span class="form-label-bold">Full name</span>
-      <span class="form-hint">As shown on your birth certificate or passport</span>
-      <span class="error-message" id="error-message-full-name">Error message about full name goes here</span>
+      <label for="example-ni-number" id="error-ni-number">
 
-    </label>
-
-    <input class="form-control" id="example-full-name" type="text" name="fullName" value="" aria-describedby="error-message-full-name">
-  </div>
-
-  <div class="form-group error">
-
-    <label for="example-ni-number" id="error-ni-number">
-
-      <span class="form-label-bold">National Insurance number</span>
+        <span class="form-label-bold">National Insurance number</span>
       <span class="form-hint">
         It's on your National Insurance card, benefit letter, payslip or P60.
         <br>
@@ -246,55 +247,57 @@
         Error message about National Insurance number goes here
       </span>
 
-    </label>
+      </label>
 
-    <input class="form-control" id="example-ni-number" type="text" name="niNo" value="" aria-describedby="error-message-ni-number">
+      <input class="form-control" id="example-ni-number" type="text" name="niNo" value=""
+             aria-describedby="error-message-ni-number">
 
+    </div>
+
+    <input class="button" type="submit" value="Continue">
   </div>
 
-  <input class="button" type="submit" value="Continue">
-</div>
+  <docs-example language="markup">
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
 
-<docs-example markup>
-<div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
+        Message to alert the user to a problem goes here
+      </h1>
 
-    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
-      Message to alert the user to a problem goes here
+      <p>
+        Optional description of the errors and how to correct them
+      </p>
+
+      <ul class="error-summary-list">
+        <li><a href="#example-full-name">Descriptive link to the question with an error</a></li>
+        <li><a href="#example-ni-number">Descriptive link to the question with an error</a></li>
+      </ul>
+
+    </div>
+
+    <h1 class="heading-large">
+      Your personal details
     </h1>
 
-    <p>
-      Optional description of the errors and how to correct them
-    </p>
+    <div class="form-group error">
 
-    <ul class="error-summary-list">
-      <li><a href="#example-full-name">Descriptive link to the question with an error</a></li>
-      <li><a href="#example-ni-number">Descriptive link to the question with an error</a></li>
-    </ul>
+      <label for="example-full-name" id="error-full-name">
 
-  </div>
+        <span class="form-label-bold">Full name</span>
+        <span class="form-hint">As shown on your birth certificate or passport</span>
+        <span class="error-message" id="error-message-full-name">Error message about full name goes here</span>
 
-  <h1 class="heading-large">
-    Your personal details
-  </h1>
+      </label>
 
-  <div class="form-group error">
+      <input class="form-control" id="example-full-name" type="text" name="fullname" value=""
+             aria-describedby="error-message-full-name">
+    </div>
 
-    <label for="example-full-name" id="error-full-name">
+    <div class="form-group error">
 
-      <span class="form-label-bold">Full name</span>
-      <span class="form-hint">As shown on your birth certificate or passport</span>
-      <span class="error-message" id="error-message-full-name">Error message about full name goes here</span>
+      <label for="example-ni-number" id="error-ni-number">
 
-    </label>
-
-    <input class="form-control" id="example-full-name" type="text" name="fullName" value="" aria-describedby="error-message-full-name">
-  </div>
-
-  <div class="form-group error">
-
-    <label for="example-ni-number" id="error-ni-number">
-
-      <span class="form-label-bold">National Insurance number</span>
+        <span class="form-label-bold">National Insurance number</span>
       <span class="form-hint">
         It's on your National Insurance card, benefit letter, payslip or P60.
         <br>
@@ -304,12 +307,15 @@
         Error message about National Insurance number goes here
       </span>
 
-    </label>
+      </label>
 
-    <input class="form-control" id="example-ni-number" type="text" name="niNo" value="" aria-describedby="error-message-ni-number">
+      <input class="form-control" id="example-ni-number" type="text" name="niNo" value=""
+             aria-describedby="error-message-ni-number">
 
-  </div>
+    </div>
 
-  <input class="button" type="submit" value="Continue">
-</docs-example>
+    <input class="button" type="submit" value="Continue">
+  </docs-example>
+
+  <gov-error-message-demo></gov-error-message-demo>
 </main>

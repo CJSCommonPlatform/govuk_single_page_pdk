@@ -2,7 +2,8 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {
-    dayItem: '<'
+    dayItem: '<',
+    dayIndex: '<'
   },
   template: require('./day-item.component.html')
 })
