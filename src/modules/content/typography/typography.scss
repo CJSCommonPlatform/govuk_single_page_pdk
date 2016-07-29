@@ -1,49 +1,6 @@
-@import "~govuk_frontend_toolkit/stylesheets/typography";
-@import '~govuk-elements-sass/public/sass/elements/elements-typography';
-@import '~govuk-elements-sass/public/sass/elements/lists';
 @import 'lists';
 
-@font-face {
-  font-family: 'nta';
-  src: url('#{$nta-font-path}/NTA-Bold-20130221.eot');
-  src: url('#{$nta-font-path}/NTA-Bold-20130221.eot?#iefix') format('embedded-opentype'),
-  url('#{$nta-font-path}/NTA-Bold-20130221.woff2') format('woff2'),
-  url('#{$nta-font-path}/NTA-Bold-20130221.woff') format('woff'),
-  url('#{$nta-font-path}/NTA-Bold-20130221.ttf') format('truetype'),
-  url('#{$nta-font-path}/NTA-Bold-20130221.svg#svgNTA') format('svg');
-  font-weight: bold;
-}
-@font-face {
-  font-family: 'nta';
-  src: url('#{$nta-font-path}/NTA-Light-20130221.eot');
-  src: url('#{$nta-font-path}/NTA-Light-20130221.eot?#iefix') format('embedded-opentype'),
-  url('#{$nta-font-path}/NTA-Light-20130221.woff2') format('woff2'),
-  url('#{$nta-font-path}/NTA-Light-20130221.woff') format('woff'),
-  url('#{$nta-font-path}/NTA-Light-20130221.ttf') format('truetype'),
-  url('#{$nta-font-path}/NTA-Light-20130221.svg#svgNTA') format('svg');
-}
-@font-face {
-  font-family: 'ntatabular';
-  src: url('#{$nta-font-path}/NTATabularNumbers-Light.eot');
-  src: url('#{$nta-font-path}/NTATabularNumbers-Light.eot?#iefix') format('embedded-opentype'),
-  url('#{$nta-font-path}/NTATabularNumbers-Light.woff2') format('woff2'),
-  url('#{$nta-font-path}/NTATabularNumbers-Light.woff') format('woff'),
-  url('#{$nta-font-path}/NTATabularNumbers-Light.ttf') format('truetype'),
-  url('#{$nta-font-path}/NTATabularNumbers-Light.svg#svgNTATabular') format('svg');
-}
-@font-face {
-  font-family: 'ntatabular';
-  src: url('#{$nta-font-path}/NTATabularNumbers-Bold.eot');
-  src: url('#{$nta-font-path}/NTATabularNumbers-Bold.eot?#iefix') format('embedded-opentype'),
-  url('#{$nta-font-path}/NTATabularNumbers-Bold.woff2') format('woff2'),
-  url('#{$nta-font-path}/NTATabularNumbers-Bold.woff') format('woff'),
-  url('#{$nta-font-path}/NTATabularNumbers-Bold.ttf') format('truetype'),
-  url('#{$nta-font-path}/NTATabularNumbers-Bold.svg#svgNTATabular') format('svg');
-  font-weight: bold;
-}
-
-/* Headings */
-
+// Headings (This needs to be removed. GDS have defined font scale usage - TS)
 h1, .h1 { @extend .heading-large }
 h2, .h2 { @extend .heading-medium }
 h3, .h3 { @extend .heading-small }

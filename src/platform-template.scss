@@ -14,18 +14,13 @@
   $govuk-template-image-path (path to govuk_template images)
   $nta-font-path (path to nta fonts)
 
-*/
+**/	
 
-// image url is consumed by govuk_frontend_toolkit
-@function image-url($file) {
-  @return url('#{$govuk-frontend-toolkit-image-path}#{$file}');
-}
 
-// pdk domains
+// GDS
+@import 'lib/govuk/sass/govuk-elements'; 
+
+// PDK
 @import 'modules/layout/layout';
 @import 'modules/content/content';
 @import 'modules/components/components';
-
-// provided by peer dependencies
-@import '~govuk-elements-sass/public/sass/govuk-elements';
-@import '~govuk-elements-sass/public/sass/elements/govuk-template-base';
