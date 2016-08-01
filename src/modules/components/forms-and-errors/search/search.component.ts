@@ -3,11 +3,13 @@ import { Component } from '@govuk/angularjs-devtools';
 @Component({
   template: require('./search.component.html'),
   bindings: {
-    autocomplete: '@',
-    placeholder:  '@',
-    name:         '@',
-    ngModel:      '=',
-    onSearch:     '&'
+    autocomplete:    '@',
+    placeholder:     '@',
+    name:            '@',
+    id:              '@',
+    ariaDescribedby: '@',
+    ngModel:         '=',
+    onSearch:        '&'
   },
   require: {
     ngModelCtrl: 'ngModel'

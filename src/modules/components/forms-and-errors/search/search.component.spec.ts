@@ -72,4 +72,10 @@ describe('components/forms-and-errors/search', () => {
     expect(element.find('input').attr('placeholder')).toEqual('Search');
     expect(element.find('input').attr('autocomplete')).toEqual('on');
   });
+
+  it('applies the outer `id` and `ariaDescribedby` attributes to the inner input', () => {
+      compile(`<gov-search id="inputid" aria-describedby="someid" ng-model="model"></gov-search>`);
+      expect(element.find('input').attr('id')).toEqual('inputid');
+      expect(element.find('input').attr('aria-describedby')).toEqual('someid');
+  });
 });
