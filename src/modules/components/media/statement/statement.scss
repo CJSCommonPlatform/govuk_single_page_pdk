@@ -1,23 +1,30 @@
 .gov-media.statement {
-  display: table;
-  table-layout: fixed;
-
   i {
     font-size: 65px;
     vertical-align: text-top;
   }
 
+  .gov-media-thumbnail {
+    float: left;
+    height: 150px;
+    width: 100px;
+    background-image: url('#{$pdk-image-path}file_icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    outline: 5px solid rgba(11,12,12,0.1);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+  }
 
-
-  img.gov-media-preview {
-    vertical-align: top;
+  .gov-media-preview {
+    float: left;
+    max-width: 100px;
   }
 
   .gov-media-info {
-    display: table-cell;
-    padding-left: 15px;
-    width: 100%;
-    @include core-16;
+    float: left;
+    padding-left: 25px;
+    @include core-14;
     a {
       @include core-24;
     }

@@ -7,5 +7,6 @@
   .gov-personal-details-info {
     list-style: none;
     padding: 0;
+    @include core-14;
   }
 }
