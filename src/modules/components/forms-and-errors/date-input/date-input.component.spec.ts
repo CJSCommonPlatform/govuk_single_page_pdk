@@ -258,4 +258,13 @@ describe('components/forms-and-errors/date-input', () => {
     setDateValues({day: 15, month: 7, year: 2016});
     expect(scope.model).toEqual('2016-07-15');
   });
+
+  it('unsets the ng-model value for an incomplete date', () => {
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
+    setDateValues({day: 15, month: 7});
+    expect(scope.model).toBeUndefined();
+    compile(`<gov-date-input data-date-input-format="yyyy-MM-dd" ng-model="model"></gov-date-input>`);
+    setDateValues({day: 15, month: 7});
+    expect(scope.model).toEqual('');
+  });
 });

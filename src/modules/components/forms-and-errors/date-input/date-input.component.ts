@@ -61,7 +61,7 @@ export class DateInputComponent {
   // $viewValue is undefined when any of the three inner inputs are empty
   get $viewValue(): string {
     if (this.dateControl.$error.required) {
-      return undefined;
+      return this.$attrs.dateInputFormat ? '' : undefined;
     }
     return `${pad(this.dayModel)}-${pad(this.monthModel)}-${this.yearModel}`;
   }
@@ -115,10 +115,10 @@ export class DateInputComponent {
 
     // store valid values as a date object, so that they can be universally consumed
     // and offer a predictable type for additional validators
-    this.ngModelCtrl.$parsers.push(val => new Date(val.split('-').reverse().join('-')));
+    this.ngModelCtrl.$parsers.push(v => v ? new Date(v.split('-').reverse().join('-')) : v);
 
     if (this.$attrs.dateInputFormat) {
-     this.ngModelCtrl.$parsers.push(date => this.dateFilter(date, this.$attrs.dateInputFormat));
+     this.ngModelCtrl.$parsers.push(v => v ? this.dateFilter(v, this.$attrs.dateInputFormat) : v);
     }
 
     // convert model value back to the composite $viewValue (see getter above)
