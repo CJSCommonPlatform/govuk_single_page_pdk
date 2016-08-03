@@ -5,8 +5,8 @@ import {Component} from '@govuk/angularjs-devtools';
 })
 export class ImageDemoComponent {
   image = {
-    src: 'images/justice.jpg',
-    title: 'Test image heading',
+    src: 'assets/images/justice.jpg',
+    title: 'Test image title',
     metadata: [
       {
         key: 'date taken',
