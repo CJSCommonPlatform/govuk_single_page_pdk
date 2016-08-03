@@ -158,7 +158,8 @@ export class DateInputComponent {
 
     // update inner inputs when outer ng-model value is set directly
     this.ngModelCtrl.$render = () => {
-      const date = new Date(this.ngModelCtrl.$modelValue);
+      const val = this.ngModelCtrl.$modelValue === null ? undefined : this.ngModelCtrl.$modelValue;
+      const date = new Date(val);
       if (date) {
         this.dayModel   = date.getDate();
         this.monthModel = date.getMonth() + 1;

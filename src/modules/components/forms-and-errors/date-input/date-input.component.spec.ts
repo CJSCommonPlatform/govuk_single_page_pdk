@@ -267,4 +267,32 @@ describe('components/forms-and-errors/date-input', () => {
     setDateValues({day: 15, month: 7});
     expect(scope.model).toEqual('');
   });
+
+  it('renders the model value correctly when a date is set', () => {
+    scope.model = null;
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
+    expect(dayInput.val()).toEqual('');
+    expect(monthInput.val()).toEqual('');
+    expect(yearInput.val()).toEqual('');
+    scope.model = undefined;
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
+    expect(dayInput.val()).toEqual('');
+    expect(monthInput.val()).toEqual('');
+    expect(yearInput.val()).toEqual('');
+    scope.model = 0;
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
+    expect(dayInput.val()).toEqual('1');
+    expect(monthInput.val()).toEqual('1');
+    expect(yearInput.val()).toEqual('1970');
+    scope.model = '2016-08-03';
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
+    expect(dayInput.val()).toEqual('3');
+    expect(monthInput.val()).toEqual('8');
+    expect(yearInput.val()).toEqual('2016');
+    scope.model = new Date(2016, 7, 3);
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
+    expect(dayInput.val()).toEqual('3');
+    expect(monthInput.val()).toEqual('8');
+    expect(yearInput.val()).toEqual('2016');
+  });
 });
