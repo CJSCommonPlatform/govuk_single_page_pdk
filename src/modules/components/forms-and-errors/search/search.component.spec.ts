@@ -73,9 +73,34 @@ describe('components/forms-and-errors/search', () => {
     expect(element.find('input').attr('autocomplete')).toEqual('on');
   });
 
-  it('applies the outer `id` and `ariaDescribedby` attributes to the inner input', () => {
-      compile(`<gov-search id="inputid" aria-describedby="someid" ng-model="model"></gov-search>`);
-      expect(element.find('input').attr('id')).toEqual('inputid');
-      expect(element.find('input').attr('aria-describedby')).toEqual('someid');
+  it('applies the outer `input-id` and `aria-describedby` attributes to the inner input', () => {
+    compile(`<gov-search input-id="inputid" aria-describedby="someid" ng-model="model"></gov-search>`);
+    expect(element.find('input').attr('id')).toEqual('inputid');
+    expect(element.find('input').attr('aria-describedby')).toEqual('someid');
+  });
+
+  it('applies the outer `ng-minlength` attribute to the inner input', () => {
+    compile(`<gov-search ng-minlength="3" ng-model="model"></gov-search>`);
+    expect(element.find('input').attr('ng-minlength')).toEqual('3');
+  });
+
+  it('applies the gov-search-inline class when inline attribute is set', () => {
+    compile(`<gov-search inline="true" ng-model="model"></gov-search>`);
+    expect(element.find('.gov-search-input').hasClass('gov-search-inline')).toBe(true);
+  });
+
+  it(`doesn't apply the gov-search-inline class when inline attribute is not set`, () => {
+    compile(`<gov-search inline="false" ng-model="model"></gov-search>`);
+    expect(element.find('.gov-search-input').hasClass('gov-search-inline')).toBe(false);
+  });
+
+  it(`applies required attribute to the inner input when the required attribute is set`, () => {
+    compile(`<gov-search required="true" ng-model="model"></gov-search>`);
+    expect(element.find('.gov-search-input').attr('required')).toEqual('required');
+  });
+
+  it(`does not apply required attribute to the inner input when the required attribute is not set`, () => {
+    compile(`<gov-search ng-model="model"></gov-search>`);
+    expect(element.find('.gov-search-input').attr('required')).toBeUndefined();
   });
 });

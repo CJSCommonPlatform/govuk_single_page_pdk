@@ -1,7 +1,8 @@
 <div class="gov-search-input">
-  <input type="text" id="{{::$ctrl.id}}" placeholder="{{::$ctrl.placeholder}}"
+  <input type="text" id="{{::$ctrl.inputId}}" placeholder="{{::$ctrl.placeholder}}"
          name="{{::$ctrl.name}}" autocomplete="{{$ctrl.autocomplete || 'off'}}"
-         aria-describedby="{{::$ctrl.ariaDescribedby}}" ng-model="$ctrl.ngModel">
+         aria-describedby="{{::$ctrl.ariaDescribedby}}" ng-model="$ctrl.ngModel"
+         ng-minlength="{{::$ctrl.ngMinlength}}" required="{{$ctrl.ngRequired}}">
 
   <div class="gov-search-input__button">
     <button role="button" type="submit" ng-disabled="!$ctrl.ngModelCtrl.$valid"
