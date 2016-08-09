@@ -5,6 +5,10 @@
     width: 50%;
   }
 
+  &.gov-search-inline {
+    display: inline-block;
+  }
+
   > input {
     @extend .form-control;
     width: calc(100% - 40px) !important;

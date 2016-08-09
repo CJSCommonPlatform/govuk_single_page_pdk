@@ -5,6 +5,7 @@ describe('components/forms-and-errors/search', () => {
   let scope: any;
   let element: any;
   let input: any;
+  let controller: any;
 
   beforeEach(angular.mock.module(formsErrors));
 
@@ -13,6 +14,7 @@ describe('components/forms-and-errors/search', () => {
       scope = $rootScope.$new();
       element = $compile(html)(scope);
       input = element.find('input');
+      controller = element.data('$govSearchController');
       scope.$digest();
     });
   }
@@ -66,10 +68,49 @@ describe('components/forms-and-errors/search', () => {
     expect(called).toBe(false);
   });
 
+  it('calls revalidate on the lazy validation controller on submit attempt', () => {
+    compile('<gov-search ng-model="model"></gov-search>');
+    let lazyValidationCtrl = { revalidate: sinon.spy() };
+    controller.lazyValidationController = lazyValidationCtrl;
+    element.find('button').triggerHandler('click');
+    expect(lazyValidationCtrl.revalidate).toHaveBeenCalled();
+  });
+
   it('applies the outer `name`, `placeholder` and `autocomplete` attributes to the inner input', () => {
     compile(`<gov-search name="foo" placeholder="Search" autocomplete="on" ng-model="model"></gov-search>`);
     expect(element.find('input').attr('name')).toEqual('foo');
     expect(element.find('input').attr('placeholder')).toEqual('Search');
     expect(element.find('input').attr('autocomplete')).toEqual('on');
+  });
+
+  it('applies the outer `input-id` and `aria-describedby` attributes to the inner input', () => {
+    compile(`<gov-search input-id="inputid" aria-describedby="someid" ng-model="model"></gov-search>`);
+    expect(element.find('input').attr('id')).toEqual('inputid');
+    expect(element.find('input').attr('aria-describedby')).toEqual('someid');
+  });
+
+  it('applies the outer `ng-minlength` attribute to the inner input', () => {
+    compile(`<gov-search ng-minlength="3" ng-model="model"></gov-search>`);
+    expect(element.find('input').attr('ng-minlength')).toEqual('3');
+  });
+
+  it('applies the gov-search-inline class when inline attribute is set', () => {
+    compile(`<gov-search inline="true" ng-model="model"></gov-search>`);
+    expect(element.find('.gov-search-input').hasClass('gov-search-inline')).toBe(true);
+  });
+
+  it(`doesn't apply the gov-search-inline class when inline attribute is not set`, () => {
+    compile(`<gov-search inline="false" ng-model="model"></gov-search>`);
+    expect(element.find('.gov-search-input').hasClass('gov-search-inline')).toBe(false);
+  });
+
+  it(`applies ng-required attribute to the inner input when the required attribute is set`, () => {
+    compile(`<gov-search required="true" ng-model="model"></gov-search>`);
+    expect(element.find('input').attr('ng-required')).toEqual('true');
+  });
+
+  it(`does not apply required attribute to the inner input when the required attribute is not set`, () => {
+    compile(`<gov-search ng-model="model"></gov-search>`);
+    expect(element.find('input').attr('ng-required')).toEqual('');
   });
 });
