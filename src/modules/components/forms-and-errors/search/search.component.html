@@ -2,10 +2,9 @@
   <input type="text" id="{{::$ctrl.inputId}}" placeholder="{{::$ctrl.placeholder}}"
          name="{{::$ctrl.name}}" autocomplete="{{$ctrl.autocomplete || 'off'}}"
          aria-describedby="{{::$ctrl.ariaDescribedby}}" ng-model="$ctrl.ngModel"
-         ng-minlength="{{::$ctrl.ngMinlength}}" required="{{$ctrl.ngRequired}}">
+         ng-minlength="{{::$ctrl.ngMinlength}}" ng-required="{{$ctrl.required}}">
 
   <div class="gov-search-input__button">
-    <button role="button" type="submit" ng-disabled="!$ctrl.ngModelCtrl.$valid"
-            ng-click="$ctrl.submit()"></button>
+    <button role="button" type="submit" ng-click="$ctrl.submit()"></button>
   </div>
 </div>

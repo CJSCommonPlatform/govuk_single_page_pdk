@@ -1,4 +1,5 @@
 import { Component } from '@govuk/angularjs-devtools';
+import { LazyValidationDirective } from '../lazy-validation/lazy-validation.directive.ts';
 
 @Component({
   template: require('./search.component.html'),
@@ -7,15 +8,16 @@ import { Component } from '@govuk/angularjs-devtools';
     placeholder:     '@',
     name:            '@',
     inputId:         '@',
-    inline:          '=',
     ariaDescribedby: '@',
     ngModel:         '=',
-    ngMinlength:     '@',
-    required:        '=',
+    inline:          '<?',
+    ngMinlength:     '@?',
+    required:        '<?',
     onSearch:        '&'
   },
   require: {
-    ngModelCtrl: 'ngModel'
+    ngModelCtrl: 'ngModel',
+    lazyValidationController: '^^?lazyValidation'
   }
 })
 export class SearchComponent {
@@ -23,33 +25,28 @@ export class SearchComponent {
   name: string;
   ngModel: any;
   ngModelCtrl: ng.INgModelController;
+  lazyValidationController: LazyValidationDirective;
   onSearch: ($event: {$event: string}) => any;
   inline: boolean;
   required: boolean;
-  inputElement: JQuery;
 
   static $inject = ['$element', '$scope'];
 
   constructor(private $element: ng.IAugmentedJQuery, private $scope: ng.IScope) {}
 
-  $onInit(): void {
-    this.inputElement = this.$element.children().eq(0);
-  }
-
   $postLink(): void {
     this.enableSubmitOnEnter();
-
-    if (this.inline) { this.makeInline(); }
-    if (this.required) { this.makeRequired(); }
+    if (this.inline) this.makeInline();
   }
 
   submit(): void {
+    if (this.lazyValidationController) this.lazyValidationController.revalidate();
     if (this.ngModelCtrl.$valid) this.onSearch({$event: this.ngModel});
   }
 
   enableSubmitOnEnter(): void {
     this.$element.find('input').bind('keydown', e => {
-      if (e.keyCode === 13 && this.ngModelCtrl.$valid) {
+      if (e.keyCode === 13) {
         e.preventDefault();
         this.$scope.$apply(() => this.submit());
       }
@@ -57,10 +54,6 @@ export class SearchComponent {
   }
 
   makeInline(): void {
-    this.inputElement.addClass('gov-search-inline');
-  }
-
-  makeRequired(): void {
-    this.inputElement.attr('required', 'required');
+    this.$element.children().eq(0).addClass('gov-search-inline');
   }
 }
