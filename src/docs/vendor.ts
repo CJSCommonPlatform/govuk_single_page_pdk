@@ -6,3 +6,4 @@ import 'angular-sanitize';
 import 'prismjs';
 import 'jquery';
 import 'ngSmoothScroll';
+import 'ng-clamp';

@@ -50,10 +50,23 @@ export class SideMenuDemo {
         heading: 'Item with an image',
         items: [
           {
-            title: 'Image title',
-            text: 'Image 1 text',
-            image: 'images/justice.jpg',
+            title: `Image is contained and centred within a 70x70 px area`,
+            image: '../../../../../assets/images/justice.jpg',
             fact: 'hummingbirds are the only bird that can fly backwards'
+          },
+          {
+            title: `When the height of the image is smaller than the content,
+              the image container is centred vertically`,
+            image: '../../../../../assets/images/justice_landscape.jpg'
+          },
+          {
+            title: `The component has extra logic to constrain the
+              line count to 3, so that max height of the item is 90px:
+              Lorem ipsum dolor sit amet consectetur adipiscing elit
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam quis nostrud exercitation ullamco laboris 
+              nisi ut aliquip ex ea commodo consequat.`,
+            image: '../../../../../assets/images/justice_landscape.jpg'
           }
         ]
       }

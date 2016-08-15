@@ -34,7 +34,8 @@ angular.module('govuk-single-page-pdk.docs', [
   'ncy-angular-breadcrumb',
   'ui.router',
   'smoothScroll',
-  'ngSanitize'
+  'ngSanitize',
+  'ng-clamp'
 ])
   .component('govDocs', AppLayout)
   .component('govDocsHomePage', HomePage)

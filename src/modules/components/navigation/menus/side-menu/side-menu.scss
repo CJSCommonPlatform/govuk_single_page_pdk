@@ -1,18 +1,18 @@
 .side-menu {
   .side-menu {
+    
     &__group-heading {
-      @include bold-24();
+      @include bold-19();
       padding: 0 0 10px 10px;
     }
     &__group-subheading {
       padding-top: 5px;
-      @include core-19;;
     }
     &__heading {
-      @include bold-19();
+      @include bold-16();
+      margin: 20px 5px 0 0;
       padding: 10px 0 10px 10px;
       border-top: 1px solid $border-colour;
-      margin-top: 20px;
     }
     &__item {
       cursor: pointer;
@@ -20,8 +20,9 @@
       position: relative;
       padding: 10px;
       color: $link-colour;
+      @include core-16();
       &__title {
-        @include bold-19();
+        @include bold-16();
       }
       &__arrow {
         display: table;
@@ -32,25 +33,28 @@
         bottom: 0;
       }
       &__image-wrapper {
+        width: 70px;
+        height: 70px;
         display: table-cell;
         vertical-align: middle;
-        width: 40%;
+        text-align: center;
       }
       &__image {
-        max-width: 100%
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
       }
       &--image-mode {
         display: table;
+        width: 100%;
         .side-menu__item__content-wrapper {
           display: table-cell;
           vertical-align: middle;
-          width: 60%;
           & > * {
             padding-left: 10px;
           }
         }
       }
-
       &--arrow-mode {
         padding-right: 30px;
       }

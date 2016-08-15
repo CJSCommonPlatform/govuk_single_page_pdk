@@ -22,6 +22,7 @@
     "angular-breadcrumb": "^0.4.1",
     "angular-sanitize": "^1.5.5",
     "angular-ui-router": "^0.2.18",
+    "ng-clamp": "^1.0.2",
     "ngSmoothScroll": "^2.0.0"
   },
   "devDependencies": {
