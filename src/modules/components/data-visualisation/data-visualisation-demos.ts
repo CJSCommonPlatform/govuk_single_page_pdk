@@ -8,6 +8,7 @@ import { ProgressListDemo } from './progress-list/progress-list.demo';
 import { ShowHidePaneDemo} from './show-hide-pane/show-hide-pane.demo';
 import { SummaryItemDemo} from './summary-item/summary-item.demo';
 import { TabDemo } from './tab/tab.demo';
+import { DatasetDemo } from './dataset/dataset.demo';
 
 const module = angular.module('govuk-single-page-pdk.component-demos.data-visualisation', [
   dataVisualisation,
@@ -19,6 +20,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.data-visual
   .component('govProgressListDemo', ProgressListDemo)
   .component('govShowHidePaneDemo', ShowHidePaneDemo)
   .component('govSummaryItemDemo', SummaryItemDemo)
-  .component('govTabDemo', TabDemo);
+  .component('govTabDemo', TabDemo)
+  .component('govDatasetDemo', DatasetDemo);
 
 export default module.name;

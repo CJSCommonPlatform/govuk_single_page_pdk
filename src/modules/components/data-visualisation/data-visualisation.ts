@@ -6,6 +6,7 @@ import { TabComponent } from './tab/tab.component';
 import { TabsetComponent} from './tab/tabset.component';
 import { ShowHidePaneComponent} from './show-hide-pane/show-hide-pane.component';
 import { ProgressListComponent } from './progress-list/progress-list.component';
+import { DatasetComponent } from './dataset/dataset.component';
 
 const module = angular.module('govuk-single-page-pdk.components.data-visualisation', ['ngAnimate'])
 
@@ -16,6 +17,7 @@ const module = angular.module('govuk-single-page-pdk.components.data-visualisati
   .component('govTab', TabComponent)
   .component('govTabset', TabsetComponent)
   .component('govShowHidePane', ShowHidePaneComponent)
-  .component('govProgressList', ProgressListComponent);
+  .component('govProgressList', ProgressListComponent)
+  .component('govDataset', DatasetComponent);
 
 export default module.name;
