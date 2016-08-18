@@ -5,15 +5,13 @@
     <docs-example language="markup">
       <div>
         <div class="heading-large">Test image title</div>
-        <div class="gov-image-container">
-          <div class="gov-image">
-            <img src="../../../../docs/images/justice.jpg" alt="Test image title">
-            <div class="gov-image-metadata">
-              <strong>Date taken</strong>: <span>2016 05 19</span>
-            </div>
-            <div class="gov-image-metadata">
-              <strong>Copyright</strong>: <span>none</span>
-            </div>
+        <div class="gov-image">
+          <img src="../../../../docs/images/justice.jpg" alt="Test image title">
+          <div class="gov-image-metadata">
+            <strong>Date taken</strong>: <span>2016 05 19</span>
+          </div>
+          <div class="gov-image-metadata">
+            <strong>Copyright</strong>: <span>none</span>
           </div>
         </div>
       </div>
@@ -21,7 +19,7 @@
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
-    <docs-example language="javascript">
+    <docs-example language="markup">
       <gov-image image="$ctrl.image"></gov-image>
     </docs-example>
   </gov-tab>
@@ -30,7 +28,7 @@
     <prismify language="javascript">
       image = {
         src: 'images/justice.jpg',
-        title: 'Test image heading',
+        title: 'Test image title',
         metadata: [
           {
             key: 'date taken',

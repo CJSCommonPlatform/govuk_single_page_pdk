@@ -18,7 +18,8 @@
             <img class="side-menu__item__image" ng-src="{{item.image}}" alt="{{item.title}}">
           </div>
           <div class="side-menu__item__content-wrapper">
-            <div class="side-menu__item__title" ng-if="item.title" ng-bind="item.title"></div>
+            <div class="side-menu__item__title" ng-if="item.title && !item.image" ng-bind="item.title"></div>
+            <div clamp class="side-menu__item__title" ng-if="item.title && item.image" ng-bind="item.title"></div>
             <div ng-if="item.text[0].length === 1" ng-bind="item.text"></div>
             <div ng-if="item.text[0].length > 1 && item.text.length > 1">
               <div ng-repeat="line in item.text" ng-bind="line"></div>

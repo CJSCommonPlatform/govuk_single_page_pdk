@@ -57,7 +57,8 @@ gulp.task('copy-platform-template', function() {
       'modules/**/*.scss'
     ], {base: 'src', cwd: 'src'}),
     gulp.src('lib/**', {base: 'src', cwd: 'src'}),
-    gulp.src('fonts/**', {base: 'src', cwd: 'src/assets'})
+    gulp.src('fonts/**', {base: 'src', cwd: 'src/assets'}),
+    gulp.src('images/**', {base: 'src', cwd: 'src/assets'})
   )
     .pipe(gulp.dest('dist/@govuk/platform-template'));
 });

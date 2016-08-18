@@ -1,15 +1,18 @@
 <div class="gov-media statement">
   <img ng-if="$ctrl.preview" class="gov-media-preview" ng-src="{{$ctrl.preview}}" width="70">
-  <gov-media-icon ng-if="!$ctrl.preview" file-name="$ctrl.fileName"></gov-media-icon>
+  <div class="gov-media-thumbnail" aria-hidden="true"
+     ng-if="!$ctrl.preview"
+     ng-click="$ctrl.onClick()"></div>
   <div class="gov-media-info">
     <a href="" ng-click="$ctrl.onClick()" ng-bind="$ctrl.fileName | noFileType"></a>
     <ul class="gov-media-metadata">
       <li ng-bind="$ctrl.statementDate"></li>
     </ul>
     <ul class="gov-media-metadata">
-      <li ng-bind="$ctrl.fileName | toFileType"></li>
-      <li ng-bind="$ctrl.fileSize | toBytes"></li>
-      <li ng-bind="$ctrl.statementLength"></li>
+      <li ng-if="$ctrl.fileName" ng-bind="$ctrl.fileName | toFileType"></li>
+      <li ng-if="$ctrl.fileSize" ng-bind="$ctrl.fileSize | toBytes"></li>
+      <li ng-if="$ctrl.statementLength" ng-bind="$ctrl.statementLength"></li>
     </ul>
   </div>
+  <div class="clearfix"></div>
 </div>

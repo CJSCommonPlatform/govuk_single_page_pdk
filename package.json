@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.0.71",
+  "version": "0.0.88",
   "scripts": {
     "build": "npm run build:dev",
     "prebuild_dev": "npm run clean",
@@ -22,6 +22,7 @@
     "angular-breadcrumb": "^0.4.1",
     "angular-sanitize": "^1.5.5",
     "angular-ui-router": "^0.2.18",
+    "ng-clamp": "^1.0.2",
     "ngSmoothScroll": "^2.0.0"
   },
   "devDependencies": {
@@ -62,6 +63,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "1.7.0",
     "merge-stream": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "ng-annotate-webpack-plugin": "^0.1.2",
     "node-sass": "^3.5.3",
     "pa11y": "^4.0.0",

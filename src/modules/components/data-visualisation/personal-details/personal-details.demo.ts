@@ -7,6 +7,8 @@ export class PersonalDetailsDemo {
 
   private title = 'Peter JAMES';
 
+  private subtitle = 'Suspect';
+
   private info = [
     '30 years old',
     'Born 8 June 1985',

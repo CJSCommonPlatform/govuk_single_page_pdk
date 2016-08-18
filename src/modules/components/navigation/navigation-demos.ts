@@ -7,6 +7,7 @@ import { BreadcrumbsDemo } from './breadcrumbs/breadcrumbs.demo';
 import { CompletedBarDemo} from './completed-bar/completed-bar.demo';
 import { NextPreviousNavigationDemo } from './next-previous-navigation/next-previous-navigation.demo';
 import { SideMenuDemo } from './menus/side-menu/side-menu.demo';
+import { TopMenuDemo } from './menus/top-menu/top-menu.demo';
 import { StartBarDemo } from './start-bar/start-bar.demo';
 
 const module = angular.module('govuk-single-page-pdk.component-demos.navigation', [
@@ -19,6 +20,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.navigation'
   .component('govCompletedBarDemo', CompletedBarDemo)
   .component('govNextPreviousNavigationDemo', NextPreviousNavigationDemo)
   .component('govSideMenuDemo', SideMenuDemo)
+  .component('govTopMenuDemo', TopMenuDemo)
   .component('govStartBarDemo', StartBarDemo);
 
 export default module.name;

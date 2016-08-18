@@ -1,5 +1,8 @@
 <div class="gov-personal-details">
-  <h2 class="heading-large" ng-bind="$ctrl.title"></h2>
+  <h1 class="heading-large">
+    <span ng-if="$ctrl.subtitle" class="heading-secondary" ng-bind="$ctrl.subtitle"></span>
+    {{$ctrl.title}}
+  </h1>
   <ul class="gov-personal-details-info">
     <li ng-repeat="item in $ctrl.info" ng-bind="item"></li>
   </ul>
