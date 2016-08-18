@@ -7,6 +7,7 @@
     }
     &__group-subheading {
       padding-top: 5px;
+      @include core-14();
     }
     &__heading {
       @include bold-16();
@@ -19,10 +20,10 @@
       display: block;
       position: relative;
       padding: 10px;
-      color: $link-colour;
       @include core-16();
       &__title {
         @include bold-16();
+        color: $link-colour;
       }
       &__arrow {
         display: table;
@@ -62,10 +63,16 @@
         background-color: $link-colour;
         cursor: default;
         color: $white;
+        .side-menu__item__title {
+          color: $white;
+        }
       }
       &--disabled {
         color: $secondary-text-colour;
         cursor: default;
+        .side-menu__item__title {
+          color: $secondary-text-colour;
+        }
       }
     }
   }
