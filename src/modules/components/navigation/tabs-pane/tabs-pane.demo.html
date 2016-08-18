@@ -1,0 +1,67 @@
+<h2 class="heading-medium">Tabs Pane</h2>
+
+<gov-tabset>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <gov-tabs-pane elements="$ctrl.demoElements" selected-data="$ctrl.selectedData" default-index="1">
+        <div>
+          <h3 class="heading-medium" ng-bind="$ctrl.selectedData.fistName + ' ' + $ctrl.selectedData.lastName"></h3>
+          <p>
+            <span>Born </span><span ng-bind="$ctrl.selectedData.dateOfBirth | date: 'd MMMM yyyy'"></span>
+            <span ng-bind="' (age ' + $ctrl.selectedData.age + ')'"></span>
+          </p>
+          <p><span ng-bind="$ctrl.selectedData.bailStatus"></span></p>
+          <p>Extra paragraph 1</p><p>Extra paragraph 2</p><p>Extra paragraph 3</p>
+          <p>Extra paragraph 4</p><p>Extra paragraph 5</p><p>Extra paragraph 6</p>
+        </div>
+      </gov-tabs-pane>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      demoElements = [
+      {
+        title: 'Ronald',
+        title2: 'LENNON',
+        subtitle: 'age 29',
+        data: {
+          fistName: 'Ronald',
+          lastName: 'LENNON',
+          dateOfBirth: '1987-06-06',
+          age: 29,
+          bailStatus: 'In custody'
+        }
+      },
+      {
+        title: 'Edward',
+        title2: 'HARRISON',
+        subtitle: 'age 39',
+        data: {
+          fistName: 'Edward',
+          lastName: 'HARRISON',
+          dateOfBirth: '1979-02-14',
+          age: 39,
+          bailStatus: 'Not in custody'
+        }
+      },
+      {
+        title: 'William',
+        title2: 'DONALDSON',
+        subtitle: 'age 33',
+        data: {
+          fistName: 'William',
+          lastName: 'DONALDSON',
+          dateOfBirth: '1983-01-07',
+          age: 33,
+          bailStatus: 'In custody'
+        }
+      }
+      ];
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="2"></discuss-component>

@@ -1,0 +1,19 @@
+<div class="tabs">
+  <table>
+    <tr>
+      <td class="tabs-header">
+        <ul>
+          <li ng-click="$ctrl.selectElement($index)" ng-class="{'selected' : $ctrl.selectedIndex == $index}" ng-repeat="element in $ctrl.elements">
+            <div class="tabs-header-title">
+              <div ng-bind="element.title"></div><div ng-bind="element.title2"></div>
+            </div>
+            <div class="tabs-header-subtitle" ng-bind="element.subtitle"></div>
+          </li>
+        </ul>
+      </td>
+      <td class="tabs-content" >
+        <ng-transclude ng-if="$ctrl.selectedData != null"></ng-transclude>
+      </td>
+    </tr>
+  </table>
+</div>

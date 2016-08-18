@@ -9,6 +9,7 @@ import { NextPreviousNavigationDemo } from './next-previous-navigation/next-prev
 import { SideMenuDemo } from './menus/side-menu/side-menu.demo';
 import { TopMenuDemo } from './menus/top-menu/top-menu.demo';
 import { StartBarDemo } from './start-bar/start-bar.demo';
+import { TabsPaneDemo } from './tabs-pane/tabs-pane.demo';
 
 const module = angular.module('govuk-single-page-pdk.component-demos.navigation', [
   navigation,
@@ -21,6 +22,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.navigation'
   .component('govNextPreviousNavigationDemo', NextPreviousNavigationDemo)
   .component('govSideMenuDemo', SideMenuDemo)
   .component('govTopMenuDemo', TopMenuDemo)
-  .component('govStartBarDemo', StartBarDemo);
+  .component('govStartBarDemo', StartBarDemo)
+  .component('govTabsPaneDemo', TabsPaneDemo);
 
 export default module.name;
