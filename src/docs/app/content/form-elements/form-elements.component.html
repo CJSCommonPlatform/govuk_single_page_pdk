@@ -186,12 +186,12 @@
 
           <legend class="visuallyhidden">Do you already have a personal user account?</legend>
 
-          <label class="block-label" for="radio-inline-1">
-            <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+          <label class="block-label" for="radio-inline-1" ng-class="{'selected': $ctrl.radio_inline}">
+            <input id="radio-inline-1" type="radio" name="radio-inline-group" ng-value="true" ng-model="$ctrl.radio_inline">
             Yes
           </label>
-          <label class="block-label" for="radio-inline-2">
-            <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+          <label class="block-label" for="radio-inline-2" ng-class="{'selected': $ctrl.radio_inline === false}">
+            <input id="radio-inline-2" type="radio" name="radio-inline-group" ng-value="false" ng-model="$ctrl.radio_inline">
             No
           </label>
 
@@ -210,12 +210,12 @@
 
         <legend class="visuallyhidden">Do you already have a personal user account?</legend>
 
-        <label class="block-label" for="radio-inline-1">
-          <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        <label class="block-label" for="radio-inline-1" ng-class="{'selected': $ctrl.radio_inline}">
+          <input id="radio-inline-1" type="radio" name="radio-inline-group" ng-value="true" ng-model="$ctrl.radio_inline">
           Yes
         </label>
-        <label class="block-label" for="radio-inline-2">
-          <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        <label class="block-label" for="radio-inline-2" ng-class="{'selected': $ctrl.radio_inline === false}">
+          <input id="radio-inline-2" type="radio" name="radio-inline-group" ng-value="false" ng-model="$ctrl.radio_inline">
           No
         </label>
 
@@ -233,17 +233,17 @@
 
           <legend class="visuallyhidden">Where do you live?</legend>
 
-          <label class="block-label" for="radio-1">
-            <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+          <label class="block-label" for="radio-1" ng-class="{'selected': $ctrl.whereDoYouLive === 'Northern Ireland'}">
+            <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland" ng-model="$ctrl.whereDoYouLive">
             Northern Ireland
           </label>
-          <label class="block-label" for="radio-2">
-            <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+          <label class="block-label" for="radio-2" ng-class="{'selected': $ctrl.whereDoYouLive === 'Isle of Man or the Channel Islands'}">
+            <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands" ng-model="$ctrl.whereDoYouLive">
             Isle of Man or the Channel Islands
           </label>
           <p class="form-block">or</p>
-          <label class="block-label" for="radio-3">
-            <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
+          <label class="block-label" for="radio-3" ng-class="{'selected': $ctrl.whereDoYouLive === 'I am a British citizen living abroad'}">
+            <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad" ng-model="$ctrl.whereDoYouLive">
             I am a British citizen living abroad
           </label>
 
@@ -260,17 +260,17 @@
 
         <legend class="visuallyhidden">Where do you live?</legend>
 
-        <label class="block-label" for="radio-1">
-          <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland">
+        <label class="block-label" for="radio-1" ng-class="{'selected': $ctrl.whereDoYouLive === 'I am a British citizen living abroad'}">
+          <input id="radio-1" type="radio" name="radio-group" value="Northern Ireland" ng-model="$ctrl.whereDoYouLive">
           Northern Ireland
         </label>
-        <label class="block-label" for="radio-2">
-          <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands">
+        <label class="block-label" for="radio-2" ng-class="{'selected': $ctrl.whereDoYouLive === 'Isle of Man or the Channel Islands'}">
+          <input id="radio-2" type="radio" name="radio-group" value="Isle of Man or the Channel Islands" ng-model="$ctrl.whereDoYouLive">
           Isle of Man or the Channel Islands
         </label>
         <p class="form-block">or</p>
-        <label class="block-label" for="radio-3">
-          <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad">
+        <label class="block-label" for="radio-3" ng-class="{'selected': $ctrl.whereDoYouLive === 'I am a British citizen living abroad'}">
+          <input id="radio-3" type="radio" name="radio-group" value="I am a British citizen living abroad" ng-model="$ctrl.whereDoYouLive">
           I am a British citizen living abroad
         </label>
 
@@ -295,16 +295,16 @@
 
           <legend class="visuallyhidden">Which types of waste do you transport regularly?</legend>
 
-          <label class="block-label" for="waste-type-1">
-            <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+          <label class="block-label" for="waste-type-1" ng-class="{'selected': $ctrl.wasteType.wasteAnimal}">
+            <input id="waste-type-1" name="waste-types" type="checkbox" value="'waste-animal'" ng-model="$ctrl.wasteType.wasteAnimal">
             Waste from animal carcasses
           </label>
-          <label class="block-label" for="waste-type-2">
-            <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+          <label class="block-label" for="waste-type-2" ng-class="{'selected': $ctrl.wasteType.wasteMine}">
+            <input id="waste-type-2" name="waste-types" type="checkbox" value="'waste-mines'" ng-model="$ctrl.wasteType.wasteMine">
             Waste from mines or quarries
           </label>
-          <label class="block-label" for="waste-type-3">
-            <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+          <label class="block-label" for="waste-type-3" ng-class="{'selected': $ctrl.wasteType.wasteFarmAgriculture}">
+            <input id="waste-type-3" name="waste-types" type="checkbox" value="'waste-farm-agricultural'" ng-model="$ctrl.wasteType.wasteFarmAgriculture">
             Farm or agricultural waste
           </label>
 
@@ -322,18 +322,19 @@
 
         <legend class="visuallyhidden">Which types of waste do you transport regularly?</legend>
 
-        <label class="block-label" for="waste-type-1">
-          <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+        <label class="block-label" for="waste-type-1" ng-class="{'selected': $ctrl.wasteType.wasteAnimal}">
+          <input id="waste-type-1" name="waste-types" type="checkbox" value="'waste-animal'" ng-model="$ctrl.wasteType.wasteAnimal">
           Waste from animal carcasses
         </label>
-        <label class="block-label" for="waste-type-2">
-          <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+        <label class="block-label" for="waste-type-2" ng-class="{'selected': $ctrl.wasteType.wasteMine}">
+          <input id="waste-type-2" name="waste-types" type="checkbox" value="'waste-mines'" ng-model="$ctrl.wasteType.wasteMine">
           Waste from mines or quarries
         </label>
-        <label class="block-label" for="waste-type-3">
-          <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+        <label class="block-label" for="waste-type-3" ng-class="{'selected': $ctrl.wasteType.wasteFarmAgriculture}">
+          <input id="waste-type-3" name="waste-types" type="checkbox" value="'waste-farm-agricultural'" ng-model="$ctrl.wasteType.wasteFarmAgriculture">
           Farm or agricultural waste
         </label>
+
 
       </fieldset>
     </form>
@@ -394,28 +395,28 @@
           <div class="form-group">
 
             <label class="block-label" data-target="contact-by-email" for="example-contact-by-email">
-              <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+              <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="email" ng-model="$ctrl.howToBeContacted">
               Email
             </label>
-            <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+            <div class="panel panel-border-narrow" id="contact-by-email" ng-show="$ctrl.howToBeContacted === 'email'">
               <label class="form-label" for="contact-email">Email address</label>
               <input class="form-control" name="contact-email" type="text" id="contact-email">
             </div>
 
             <label class="block-label" data-target="contact-by-phone" for="example-contact-by-phone">
-              <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+              <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="phone" ng-model="$ctrl.howToBeContacted">
               Phone
             </label>
-            <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+            <div class="panel panel-border-narrow js-hidden" id="contact-by-phone" ng-show="$ctrl.howToBeContacted === 'phone'">
               <label class="form-label" for="contact-phone">Phone number</label>
               <input class="form-control" name="contact-phone" type="text" id="contact-phone">
             </div>
 
             <label class="block-label" data-target="contact-by-text" for="example-contact-by-text">
-              <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+              <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="text" ng-model="$ctrl.howToBeContacted">
               Text message
             </label>
-            <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+            <div class="panel panel-border-narrow js-hidden" id="contact-by-text" ng-show="$ctrl.howToBeContacted === 'text'">
               <label class="form-label" for="contact-text-message">Mobile phone number</label>
               <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
             </div>
@@ -457,28 +458,28 @@
         <div class="form-group">
 
           <label class="block-label" data-target="contact-by-email" for="example-contact-by-email">
-            <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+            <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="email" ng-model="$ctrl.howToBeContacted">
             Email
           </label>
-          <div class="panel panel-border-narrow js-hidden" id="contact-by-email">
+          <div class="panel panel-border-narrow" id="contact-by-email" ng-show="$ctrl.howToBeContacted === 'email'">
             <label class="form-label" for="contact-email">Email address</label>
             <input class="form-control" name="contact-email" type="text" id="contact-email">
           </div>
 
           <label class="block-label" data-target="contact-by-phone" for="example-contact-by-phone">
-            <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="No">
+            <input id="example-contact-by-phone" type="radio" name="radio-contact-group" value="phone" ng-model="$ctrl.howToBeContacted">
             Phone
           </label>
-          <div class="panel panel-border-narrow js-hidden" id="contact-by-phone">
+          <div class="panel panel-border-narrow js-hidden" id="contact-by-phone" ng-show="$ctrl.howToBeContacted === 'phone'">
             <label class="form-label" for="contact-phone">Phone number</label>
             <input class="form-control" name="contact-phone" type="text" id="contact-phone">
           </div>
 
           <label class="block-label" data-target="contact-by-text" for="example-contact-by-text">
-            <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+            <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="text" ng-model="$ctrl.howToBeContacted">
             Text message
           </label>
-          <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+          <div class="panel panel-border-narrow js-hidden" id="contact-by-text" ng-show="$ctrl.howToBeContacted === 'text'">
             <label class="form-label" for="contact-text-message">Mobile phone number</label>
             <input class="form-control" name="contact-text-message" type="text" id="contact-text-message">
           </div>
@@ -515,20 +516,20 @@
           <legend class="visuallyhidden">What is your nationality?</legend>
 
           <div class="form-group">
-            <label class="block-label" for="nationalities-british">
-              <input id="nationalities-british" name="nationalities" type="checkbox" value="British">
+            <label class="block-label" for="nationalities-british" ng-class="{'selected': $ctrl.nationality.british}">
+              <input id="nationalities-british" name="nationalities" type="checkbox" value="British" ng-model="$ctrl.nationality.british">
               British (including English, Scottish, Welsh and Northern Irish)
             </label>
-            <label class="block-label" for="nationalities-irish">
-              <input id="nationalities-irish" name="nationalities" type="checkbox" value="Irish">
+            <label class="block-label" for="nationalities-irish" ng-class="{'selected': $ctrl.nationality.irish}">
+              <input id="nationalities-irish" name="nationalities" type="checkbox" value="Irish" ng-model="$ctrl.nationality.irish">
               Irish
             </label>
-            <label class="block-label" for="nationalities-other" data-target="example-different-country">
-              <input id="nationalities-other" name="nationalities" type="checkbox"
+            <label class="block-label" for="nationalities-other" data-target="example-different-country"  ng-class="{'selected': $ctrl.nationality.other}">
+              <input id="nationalities-other" name="nationalities" type="checkbox" ng-model="$ctrl.nationality.other"
                      value="Citizen of a different country">
               Citizen of a different country
             </label>
-            <div class="panel panel-border-narrow js-hidden" id="example-different-country">
+            <div class="panel panel-border-narrow js-hidden" id="example-different-country" ng-show="$ctrl.nationality.other">
               <label class="form-label" for="nationalities-other-country">Country name</label>
               <input class="form-control" type="text" id="nationalities-other-country"
                      name="nationalities-other-country">
@@ -554,21 +555,23 @@
         <legend class="visuallyhidden">What is your nationality?</legend>
 
         <div class="form-group">
-          <label class="block-label" for="nationalities-british">
-            <input id="nationalities-british" name="nationalities" type="checkbox" value="British">
+          <label class="block-label" for="nationalities-british" ng-class="{'selected': $ctrl.nationality.british}">
+            <input id="nationalities-british" name="nationalities" type="checkbox" value="British" ng-model="$ctrl.nationality.british">
             British (including English, Scottish, Welsh and Northern Irish)
           </label>
-          <label class="block-label" for="nationalities-irish">
-            <input id="nationalities-irish" name="nationalities" type="checkbox" value="Irish">
+          <label class="block-label" for="nationalities-irish" ng-class="{'selected': $ctrl.nationality.irish}">
+            <input id="nationalities-irish" name="nationalities" type="checkbox" value="Irish" ng-model="$ctrl.nationality.irish">
             Irish
           </label>
-          <label class="block-label" for="nationalities-other" data-target="example-different-country">
-            <input id="nationalities-other" name="nationalities" type="checkbox" value="Citizen of a different country">
+          <label class="block-label" for="nationalities-other" data-target="example-different-country"  ng-class="{'selected': $ctrl.nationality.other}">
+            <input id="nationalities-other" name="nationalities" type="checkbox" ng-model="$ctrl.nationality.other"
+                   value="Citizen of a different country">
             Citizen of a different country
           </label>
-          <div class="panel panel-border-narrow js-hidden" id="example-different-country">
+          <div class="panel panel-border-narrow js-hidden" id="example-different-country" ng-show="$ctrl.nationality.other">
             <label class="form-label" for="nationalities-other-country">Country name</label>
-            <input class="form-control" type="text" id="nationalities-other-country" name="nationalities-other-country">
+            <input class="form-control" type="text" id="nationalities-other-country"
+                   name="nationalities-other-country">
           </div>
         </div>
 
