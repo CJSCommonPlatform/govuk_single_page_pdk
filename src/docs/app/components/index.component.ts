@@ -18,7 +18,7 @@ export class ComponentsPage {
             state: 'components.navigation',
             components: [
                 'Action-pane', 'Breadcrumbs', 'Next/Previous Navigation', 'Side Menu', 'Start Action Bar',
-                'Completed Action Bar']
+                'Completed Action Bar', 'Tabs-pane']
         },
         {name: 'Timeline', state: 'components.timeline', components: ['Timeline']},
         {
