@@ -4,7 +4,8 @@ import { Component } from '@govuk/angularjs-devtools';
   bindings: {
     defaultIndex: '<',
     elements: '<',
-    selectedData: '='
+    selectedData: '=',
+    onClick: '&'
   },
   transclude: true,
   template: require('./tabs-pane.component.html')
@@ -14,6 +15,7 @@ export class TabsPaneComponent {
   defaultIndex: number;
   elements: { title: string; title2: string, subtitle: string; data: any; }[];
   selectedData: any;
+  onClick: any;
 
   private selectedIndex: number;
 
@@ -26,6 +28,7 @@ export class TabsPaneComponent {
   selectElement(elementIndex: number) {
     this.selectedIndex = elementIndex;
     this.selectedData = this.elements[this.selectedIndex].data;
+    this.onClick();
   }
 
 }

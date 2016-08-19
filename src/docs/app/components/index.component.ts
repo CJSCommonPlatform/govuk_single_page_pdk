@@ -9,7 +9,7 @@ export class ComponentsPage {
         {
             name: 'Data-Visualisation',
             state: 'components.data-visualisation',
-            components: ['Contact-info', 'Personal-details', 'Summary-item', 'Tab', 'Show/Hide Pane']
+            components: ['Contact-info', 'Personal-details', 'Summary-item', 'Tab', 'Tabs-pane', 'Show/Hide Pane']
         },
         {name: 'Headers and Footers', state: 'components.headers', components: ['Govuk header', 'Govuk footer']},
         {name: 'Media', state: 'components.media', components: ['Image', 'statement']},
@@ -18,7 +18,7 @@ export class ComponentsPage {
             state: 'components.navigation',
             components: [
                 'Action-pane', 'Breadcrumbs', 'Next/Previous Navigation', 'Side Menu', 'Start Action Bar',
-                'Completed Action Bar', 'Tabs-pane']
+                'Completed Action Bar']
         },
         {name: 'Timeline', state: 'components.timeline', components: ['Timeline']},
         {
