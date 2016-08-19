@@ -1,0 +1,33 @@
+.gov-dataset {
+  @include clearfix();
+  padding: 1.5em 0;
+  border-bottom: 1px solid $border-colour;
+  &:first-child {
+    border-top: 1px solid $border-colour;
+  }
+
+  .gov-dataset-items {
+    float: left;
+  }
+
+  .gov-dataset-change {
+    float: right;
+  }
+
+  .data-item {
+    margin-bottom: 1em;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      @include bold-19;
+      margin-bottom: 0.25em;
+    }
+
+    .hint {
+      color: $secondary-text-colour;
+      margin-bottom: 0.25em;
+    }
+  }
+}
