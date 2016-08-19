@@ -1,8 +1,5 @@
-require('angular');
+require('../src/docs/vendor.ts');
 require('angular-mocks');
-
-// include jquery for extra matchers in test environment
-require('jquery');
 
 var testContext = require.context('../src', true, /\.spec\.ts/);
 
