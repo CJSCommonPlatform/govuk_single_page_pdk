@@ -4,9 +4,9 @@
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-      <gov-tabs-pane elements="$ctrl.demoElements" selected-data="$ctrl.selectedData" default-index="1">
+      <gov-tabs-pane elements="$ctrl.demoElements" selected-data="$ctrl.selectedData" default-index="1" on-click="$ctrl.doSomething()">
         <div>
-          <h3 class="heading-medium" ng-bind="$ctrl.selectedData.fistName + ' ' + $ctrl.selectedData.lastName"></h3>
+          <div class="bold-medium" ng-bind="$ctrl.selectedData.fistName + ' ' + $ctrl.selectedData.lastName"></div>
           <p>
             <span>Born </span><span ng-bind="$ctrl.selectedData.dateOfBirth | date: 'd MMMM yyyy'"></span>
             <span ng-bind="' (age ' + $ctrl.selectedData.age + ')'"></span>

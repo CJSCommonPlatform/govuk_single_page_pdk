@@ -45,4 +45,8 @@ export class TabsPaneDemo {
       }
     }
   ];
+
+  doSomething() {
+    console.log('Function was triggered');
+  }
 }
