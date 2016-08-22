@@ -1,16 +1,19 @@
-.persist-info{
+.persist-info {
   background-color: $govuk-blue;
   padding:15px;
-
-  .persist-info-label{
-    color:white;
-    opacity:.6;
+  color:white;
+  font-weight: bold;
+  &-label {
     margin-right:10px;
-    font-weight: normal;
   }
-
-  .persist-info-title{
-    color:white;
-    font-weight: bold;
+  &-links {
+    float: right;
+  }
+  &-link {
+    color: $white;
+    margin-left: 10px;
+    &:visited,:active {
+      color: $white;
+    }
   }
 }
