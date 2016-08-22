@@ -17,12 +17,7 @@ export class TabsPaneComponent {
   selectedData: any;
   onClick: any;
 
-  static $inject = ['$timeout'];
-
   private selectedIndex: number;
-
-  constructor(private $timeout: ng.ITimeoutService) {
-  }
 
   selectElement(elementIndex: number) {
     this.selectedIndex = elementIndex;
@@ -31,8 +26,8 @@ export class TabsPaneComponent {
   }
 
   $onChanges(changesObj: any) {
-    if (changesObj !== undefined) {
-      if (changesObj.defaultIndex && changesObj.defaultIndex.currentValue) {
+    if (changesObj) {
+      if (changesObj.defaultIndex && changesObj.defaultIndex.currentValue !== undefined) {
         this.selectedIndex = this.defaultIndex === null ? 0 : this.defaultIndex;
       }
       if (changesObj.elements && changesObj.elements.currentValue) {
