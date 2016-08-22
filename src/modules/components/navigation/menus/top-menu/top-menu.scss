@@ -1,31 +1,44 @@
 .top-menu {
+  border-bottom: 1px solid $border-colour;
+  margin: 10px 0;
   .top-menu {
-    &__item {
-      &:first-of-type {
-        margin-left: 0;
-      }
-      &:last-of-type {
-        margin-right: 0;
-      }
-      @include bold-19;
-      cursor: pointer;
-      padding: 10px 0 5px;
-      margin: 0 10px;
+    &__link {
       display: inline-block;
-      color: $link-colour;
+      color: inherit;
+      text-decoration: none;
+      padding-bottom: 10px;
+      border-bottom: 5px solid transparent;
       &--active {
         cursor: default;
         color: $black;
         border-bottom: 5px solid $black;
       }
+      &:focus {
+        background-color: inherit;
+        outline: none;
+      }
+    }
+    &__item {
+      &:first-of-type {
+        padding-left: 0;
+      }
+      &:last-of-type {
+        padding-right: 0;
+      }
+      @include bold-19();
+      position: relative;
+      padding: 10px 10px 0;
+      display: inline-block;
+      color: $link-colour;
       &--separated {
+        padding-right: 30px;
         &:after {
           content: ' ';
           position: absolute;
-          top: 10px;
-          bottom: 10px;
+          top: 5px;
+          bottom: 20px;
+          right: 10px;
           width: 1px;
-          margin-left: 10px;
           background-color: $border-colour;
         }
       }

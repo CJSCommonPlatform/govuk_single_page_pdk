@@ -4,17 +4,22 @@
 
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
-      <gov-dataset on-change="$ctrl.onChange()">
-        <div class="data-item">
-          <div class="label">Mobile number</div>
-          <div class="hint">This number will be used to send an SMS one-time passcode</div>
-          <div class="value">07700900461</div>
+      <div class="gov-dataset">
+        <div class="gov-dataset-items">
+          <div class="data-item">
+            <div class="label">Mobile number</div>
+            <div class="hint">This number will be used to send an SMS one-time passcode</div>
+            <div class="value">07700900461</div>
+          </div>
+          <div class="data-item">
+            <div class="label">Email</div>
+            <div class="value">jack.smith@gov.uk</div>
+          </div>
         </div>
-        <div class="data-item">
-          <div class="label">Email</div>
-          <div class="value">jack.smith@gov.uk</div>
+        <div class="gov-dataset-change">
+          <a href="#/account/edit">Change</a>
         </div>
-      </gov-dataset>
+      </div>
     </docs-example>
   </gov-tab>
 
@@ -35,3 +40,5 @@
   </gov-tab>
 
 </gov-tabset>
+
+<discuss-component issue="65"></discuss-component>

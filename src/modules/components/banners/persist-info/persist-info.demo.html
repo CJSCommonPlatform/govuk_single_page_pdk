@@ -8,9 +8,11 @@
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
       <div class="persist-info">
-        <div>
-          <span class="persist-info-label">55DP0028116</span>
-          <span class="persist-info-title">Peter James</span>
+        <span class="persist-info-label">55DP0028116</span>
+        <span class="persist-info-title">E. COWAN, E. MICHAELS AND W. PICKUP</span>
+        <div class="persist-info-links">
+          <a class="persist-info-link" href="#" title="Case Options">Case Options</a>
+          <a class="persist-info-link" href="#" title="Notifications">Notifications</a>
         </div>
       </div>
     </docs-example>
@@ -18,14 +20,32 @@
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-      <gov-persist-info-banner label="$ctrl.label" title="$ctrl.title"></gov-persist-info-banner>
+      <gov-persist-info-banner
+        label="$ctrl.label"
+        title="$ctrl.title"
+        links="$ctrl.links">
+      </gov-persist-info-banner>
     </docs-example>
   </gov-tab>
 
   <gov-tab heading="Data">
     <prismify language="javascript">
       label = '55DP0028116';
-      title = 'Peter JAMES';
+      title = 'E. COWAN, E. MICHAELS AND W. PICKUP';
+      links = [
+        {
+          title: 'Case Options',
+          onClick: function () {
+            console.log('Case options');
+          }
+        },
+        {
+          title: 'Notifications',
+          onClick: function () {
+            console.log('Notifications');
+          }
+        }
+      ]
     </docs-example>
   </gov-tab>
 
