@@ -17,18 +17,26 @@ export class TabsPaneComponent {
   selectedData: any;
   onClick: any;
 
+  static $inject = ['$timeout'];
+
   private selectedIndex: number;
 
-  constructor() {
-    if (this.defaultIndex != null) {
-      this.selectElement(this.defaultIndex);
-    }
+  constructor(private $timeout: ng.ITimeoutService) {
   }
 
   selectElement(elementIndex: number) {
     this.selectedIndex = elementIndex;
-    this.selectedData = this.elements[this.selectedIndex].data;
+    this.selectedData = this.elements.length > 0 ? this.elements[this.selectedIndex].data : [];
     this.onClick();
+  }
+
+  $onChanges(changesObj: any) {
+    if (changesObj.defaultIndex && changesObj.defaultIndex.currentValue) {
+      this.selectedIndex = this.defaultIndex === null ? 0 : this.defaultIndex;
+    }
+    if (changesObj.elements && changesObj.elements.currentValue) {
+      this.$timeout(() => this.selectElement(this.selectedIndex));
+    }
   }
 
 }
