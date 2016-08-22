@@ -19,16 +19,21 @@ export class TabsPaneComponent {
 
   private selectedIndex: number;
 
-  constructor() {
-    if (this.defaultIndex != null) {
-      this.selectElement(this.defaultIndex);
-    }
-  }
-
   selectElement(elementIndex: number) {
     this.selectedIndex = elementIndex;
-    this.selectedData = this.elements[this.selectedIndex].data;
+    this.selectedData = this.elements.length > 0 ? this.elements[this.selectedIndex].data : [];
     this.onClick();
+  }
+
+  $onChanges(changesObj: any) {
+    if (changesObj) {
+      if (changesObj.defaultIndex && changesObj.defaultIndex.currentValue !== undefined) {
+        this.selectedIndex = this.defaultIndex === null ? 0 : this.defaultIndex;
+      }
+      if (changesObj.elements && changesObj.elements.currentValue) {
+        this.selectElement(this.selectedIndex);
+      }
+    }
   }
 
 }
