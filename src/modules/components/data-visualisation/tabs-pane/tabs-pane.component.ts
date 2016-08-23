@@ -22,7 +22,7 @@ export class TabsPaneComponent {
   selectElement(elementIndex: number) {
     this.selectedIndex = elementIndex;
     this.selectedData = this.elements.length > 0 ? this.elements[this.selectedIndex].data : [];
-    this.onClick();
+    this.onClick({ focusedData: this.selectedData});
   }
 
   $onChanges(changesObj: any) {

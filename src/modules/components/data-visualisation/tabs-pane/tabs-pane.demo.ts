@@ -46,7 +46,7 @@ export class TabsPaneDemo {
     }
   ];
 
-  doSomething() {
-    console.log('Function was triggered');
+  doSomething(something: any) {
+    console.log(something);
   }
 }
