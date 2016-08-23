@@ -4,7 +4,7 @@
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-      <gov-tabs-pane elements="$ctrl.demoElements" selected-data="$ctrl.selectedData" default-index="1" on-click="$ctrl.doSomething()">
+      <gov-tabs-pane elements="$ctrl.demoElements" selected-data="$ctrl.selectedData" default-index="1" on-click="$ctrl.doSomething(focusedData)">
         <div>
           <div class="bold-medium" ng-bind="$ctrl.selectedData.fistName + ' ' + $ctrl.selectedData.lastName"></div>
           <p>
