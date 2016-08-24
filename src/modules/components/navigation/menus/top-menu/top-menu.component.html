@@ -2,7 +2,7 @@
   <div class="top-menu__item"
     ng-class="{'top-menu__item--separated': item.isSeparated}"
     ng-repeat="item in $ctrl.menu.items">
-    <a class="top-menu__link" href="" title="item.text"
+    <a class="top-menu__link" href="" title="{{item.text}}"
       ng-bind="item.text"
       ng-class="{'top-menu__link--active': item.isActive}"
       ng-click="$ctrl.onMenuItemClick({items: $ctrl.menu.items, currentItem:item})">
