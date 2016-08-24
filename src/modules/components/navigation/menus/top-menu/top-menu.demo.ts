@@ -21,14 +21,14 @@ export class TopMenuDemo {
     ]
   };
 
-  onMenuItemClick = (items, menuItem) => {
-    if (!menuItem.isActive) {
-      this.activateItem(items, menuItem);
+  onMenuItemClick = (items, currentItem) => {
+    if (!currentItem.isActive) {
+      this.activateItem(items, currentItem);
     }
   };
 
-  activateItem = (items, menuItem) => {
-    items.forEach(item => item.isActive = item === menuItem);
+  activateItem = (items, currentItem) => {
+    items.forEach(item => item.isActive = item === currentItem);
   };
 
 };

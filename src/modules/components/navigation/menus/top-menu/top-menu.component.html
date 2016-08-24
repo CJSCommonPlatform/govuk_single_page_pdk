@@ -5,7 +5,7 @@
     <a class="top-menu__link" href="" title="item.text"
       ng-bind="item.text"
       ng-class="{'top-menu__link--active': item.isActive}"
-      ng-click="$ctrl.onMenuItemClick({items: $ctrl.menu.items, menuItem:item})">
+      ng-click="$ctrl.onMenuItemClick({items: $ctrl.menu.items, currentItem:item})">
     </a>
   </div>
 </nav>
