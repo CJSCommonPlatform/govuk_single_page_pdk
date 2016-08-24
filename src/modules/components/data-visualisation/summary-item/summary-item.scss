@@ -4,6 +4,9 @@
   color:$text-colour;
   &.summary-item-link {
     color:$link-color;
+    &:hover {
+      cursor: pointer;
+    }
   }
   a{
     color:$link-color;
@@ -13,7 +16,7 @@
   .summary-item-value{
     display: table-cell;
     max-width: 25px;
-    @include bold-36;
+    @include bold-48;
   }
 
   .summary-item-icon{

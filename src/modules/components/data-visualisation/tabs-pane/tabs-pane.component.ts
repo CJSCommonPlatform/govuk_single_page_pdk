@@ -26,14 +26,21 @@ export class TabsPaneComponent {
   }
 
   $onChanges(changesObj: any) {
-    if (changesObj) {
-      if (changesObj.defaultIndex && changesObj.defaultIndex.currentValue !== undefined) {
-        this.selectedIndex = this.defaultIndex === null ? 0 : this.defaultIndex;
-      }
-      if (changesObj.elements && changesObj.elements.currentValue) {
-        this.selectElement(this.selectedIndex);
-      }
+    if (this.isDefaultIndexReady(changesObj)) {
+      this.selectedIndex = this.defaultIndex;
     }
+    if (this.isSelectElementReady(changesObj)) {
+      this.selectElement(this.selectedIndex);
+    }
+  }
+
+  isDefaultIndexReady(changesObj: any) {
+    return (changesObj.defaultIndex) && (changesObj.defaultIndex.currentValue >= 0);
+  }
+
+  isSelectElementReady(changesObj: any) {
+    return changesObj.elements && Array.isArray(changesObj.elements.currentValue)
+      && changesObj.elements.currentValue.length > 0;
   }
 
 }
