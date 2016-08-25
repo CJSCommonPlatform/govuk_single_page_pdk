@@ -1,6 +1,6 @@
 <div id="skiplink-container">
   <div>
-    <a href="javascript:;" data-ng-click="$ctrl.navigation.mainContent.navigate()" class="skiplink">Skip to main content</a>
+    <a href="javascript:;" data-ng-click="$ctrl.navigation.mainContent.navigate()" data-ng-if="undefined === $ctrl.showSkipLink || $ctrl.showSkipLink" class="skiplink">Skip to main content</a>
   </div>
 </div>
 <div id="global-cookie-message" ng-if="$ctrl.showCookie">
