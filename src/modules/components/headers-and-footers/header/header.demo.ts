@@ -23,6 +23,13 @@ export class GovUkHeaderDemo {
       label: 'Examples'
     }
   ];
+  navigation = {
+    mainContent: {
+      navigate: function () {
+        // navigate to main content
+      }
+    }
+  };
   showCookie = false;
   isBusiness = false;
 }
