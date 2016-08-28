@@ -1,0 +1,239 @@
+"use strict";
+var forms_errors_1 = require('../forms-errors');
+describe('components/forms-and-errors/date-input', function () {
+    var $compile;
+    var $timeout;
+    var $document;
+    var scope;
+    var element;
+    var dayInput;
+    var monthInput;
+    var yearInput;
+    beforeEach(angular.mock.module(forms_errors_1["default"]));
+    beforeEach(inject(function (_$compile_, _$document_, _$timeout_, $rootScope) {
+        $compile = _$compile_;
+        $timeout = _$timeout_;
+        $document = _$document_;
+        scope = $rootScope.$new();
+    }));
+    function compile(html) {
+        element = $compile(html)(scope);
+        $document.find('body').append(element);
+        scope.$digest();
+        dayInput = element.find('[name=dateDay]');
+        monthInput = element.find('[name=dateMonth]');
+        yearInput = element.find('[name=dateYear]');
+    }
+    function setDateValues(vals) {
+        dayInput.val(vals.day);
+        dayInput.triggerHandler('input');
+        monthInput.val(vals.month);
+        monthInput.triggerHandler('input');
+        yearInput.val(vals.year);
+        yearInput.triggerHandler('input');
+    }
+    it('triggers a focus event when any input field receives focus', function () {
+        var focused = false;
+        scope.onFocus = function () { return focused = true; };
+        var tpl = "<gov-date-input ng-focus=\"onFocus()\" ng-model=\"model\"></gov-date-input>";
+        compile(tpl);
+        dayInput.focus();
+        expect(focused).toEqual(true);
+        focused = false;
+        compile(tpl);
+        monthInput.focus();
+        expect(focused).toEqual(true);
+        focused = false;
+        compile(tpl);
+        yearInput.focus();
+        expect(focused).toEqual(true);
+    });
+    it('does not propagate successive focus events without an intervening blur', function () {
+        var focused = false;
+        scope.onFocus = function () { return focused = true; };
+        compile("<gov-date-input ng-focus=\"onFocus()\" ng-model=\"model\"></gov-date-input>");
+        dayInput.focus();
+        expect(focused).toEqual(true);
+        focused = false;
+        dayInput.focus();
+        expect(focused).toEqual(false);
+        dayInput.blur();
+        $timeout.flush();
+        dayInput.focus();
+        expect(focused).toEqual(true);
+    });
+    it('triggers a blur event when all input fields lose focus', function () {
+        var blurred = false;
+        scope.onBlur = function () { return blurred = true; };
+        compile("<gov-date-input ng-blur=\"onBlur()\" ng-model=\"model\"></gov-date-input>");
+        dayInput.focus();
+        dayInput.blur();
+        monthInput.focus();
+        $timeout.flush();
+        expect(blurred).toBe(false);
+        dayInput.focus();
+        dayInput.blur();
+        $timeout.flush();
+        expect(blurred).toBe(true);
+    });
+    it('sets the ng-model as touched when any input field is touched', function () {
+        compile("\n      <form name=\"testForm\">\n        <gov-date-input name=\"govDate\" ng-model=\"model\"></gov-date-input>\n      </form>\n    ");
+        var ngModelCtrl = scope.testForm.govDate;
+        expect(ngModelCtrl.$touched).toEqual(false);
+        dayInput.focus();
+        dayInput.blur();
+        $timeout.flush();
+        expect(ngModelCtrl.$touched).toEqual(true);
+    });
+    it('sets the ng-model model value as a date', function () {
+        compile("<gov-date-input ng-model=\"model\"></gov-date-input>");
+        setDateValues({ day: 10, month: 10, year: 2016 });
+        expect(scope.model instanceof Date).toBe(true);
+        expect(scope.model.getDate()).toEqual(10);
+        expect(scope.model.getMonth()).toEqual(9);
+        expect(scope.model.getFullYear()).toEqual(2016);
+    });
+    it('passes the `required` validation when all three input fields are populated', function () {
+        compile("\n      <form name=\"testForm\">\n        <gov-date-input name=\"govDate\" ng-model=\"model\" required></gov-date-input>\n      </form>\n    ");
+        setDateValues({ day: 'X', month: 'Y' });
+        expect(scope.testForm.govDate.$error.required).toBe(true);
+        setDateValues({ day: 'X', month: 'Y', year: 'Z' });
+        expect(scope.testForm.govDate.$error.required).toBeUndefined();
+    });
+    it('runs the ng-model `dateFormat` validator when a date is set', function () {
+        compile("\n      <form name=\"testForm\">\n        <gov-date-input name=\"govDate\" ng-model=\"model\"></gov-date-input>\n      </form>\n    ");
+        var ngModelCtrl = scope.testForm.govDate;
+        setDateValues({ day: 'A', month: 'X', year: 'Y' });
+        expect(ngModelCtrl.$error.dateFormat).toBeDefined();
+        setDateValues({ day: 290, month: 2, year: 2017 });
+        expect(ngModelCtrl.$error.dateFormat).toBeDefined();
+        setDateValues({ day: 3, month: 100, year: 201 });
+        expect(ngModelCtrl.$error.dateFormat).toBeDefined();
+        setDateValues({ day: 31, month: 4, year: 201 });
+        expect(ngModelCtrl.$error.dateFormat).toBeDefined();
+        setDateValues({ day: 31, month: 4, year: 2016 });
+        expect(ngModelCtrl.$error.dateFormat).toBeUndefined();
+    });
+    it('runs the ng-model `dateExists` validator when a date is set', function () {
+        compile("\n      <form name=\"testForm\">\n        <gov-date-input name=\"govDate\" ng-model=\"model\"></gov-date-input>\n      </form>\n    ");
+        var ngModelCtrl = scope.testForm.govDate;
+        expect(ngModelCtrl.$error.dateExists).toBeUndefined();
+        setDateValues({ day: 29, month: 2, year: 2017 });
+        expect(ngModelCtrl.$error.dateExists).toBeDefined();
+        setDateValues({ day: 31, month: 4, year: 2016 });
+        expect(ngModelCtrl.$error.dateExists).toBeDefined();
+        setDateValues({ day: 29, month: 2, year: 2016 });
+        expect(ngModelCtrl.$error.dateExists).toBeUndefined();
+    });
+    it('runs the ng-model `dateMin` validator when a date is set', function () {
+        compile("\n      <form name=\"testForm\">\n        <gov-date-input name=\"govDate\" date-input-min=\"val\" ng-model=\"model\"></gov-date-input>\n      </form>\n    ");
+        var ngModelCtrl = scope.testForm.govDate;
+        // no error when no date / min value entered
+        expect(ngModelCtrl.$error.dateMin).toBeUndefined();
+        scope.val = new Date(2015, 9, 15);
+        scope.$digest();
+        setDateValues({ day: 14, month: 10, year: 2015 });
+        expect(ngModelCtrl.$error.dateMin).toBeDefined();
+        setDateValues({ day: 15, month: 10, year: 2015 });
+        expect(ngModelCtrl.$error.dateMin).toBeUndefined();
+        scope.val = '2015-10-15';
+        scope.$digest();
+        setDateValues({ day: 14, month: 10, year: 2015 });
+        expect(ngModelCtrl.$error.dateMin).toBeDefined();
+        setDateValues({ day: 15, month: 10, year: 2015 });
+        expect(ngModelCtrl.$error.dateMin).toBeUndefined();
+        // assert bound property changing updates $error
+        scope.val = '2015-10-16';
+        scope.$digest();
+        expect(ngModelCtrl.$error.dateMin).toBeDefined();
+    });
+    it('runs the ng-model `dateMax` validator when a date is set', function () {
+        compile("\n      <form name=\"testForm\">\n        <gov-date-input name=\"govDate\" date-input-max=\"val\" ng-model=\"model\"></gov-date-input>\n      </form>\n    ");
+        var ngModelCtrl = scope.testForm.govDate;
+        // no error when no date / max value entered
+        expect(ngModelCtrl.$error.dateMax).toBeUndefined();
+        scope.val = new Date('2015-10-15');
+        scope.$digest();
+        setDateValues({ day: 16, month: 10, year: 2015 });
+        expect(ngModelCtrl.$error.dateMax).toBeDefined();
+        setDateValues({ day: 15, month: 10, year: 2015 });
+        expect(ngModelCtrl.$error.dateMax).toBeUndefined();
+        scope.val = '2015-10-15';
+        scope.$digest();
+        setDateValues({ day: 16, month: 10, year: 2015 });
+        expect(ngModelCtrl.$error.dateMax).toBeDefined();
+        setDateValues({ day: 15, month: 10, year: 2015 });
+        expect(ngModelCtrl.$error.dateMax).toBeUndefined();
+        // assert bound property changing updates $error
+        scope.val = '2015-10-14';
+        scope.$digest();
+        expect(ngModelCtrl.$error.dateMax).toBeDefined();
+    });
+    it('does not apply internal date validators when the date is empty', function () {
+        compile("\n      <form name=\"testForm\">\n        <gov-date-input name=\"govDate\" ng-model=\"model\"></gov-date-input>\n      </form>\n    ");
+        var ngModelCtrl = scope.testForm.govDate;
+        expect(ngModelCtrl.$error.dateExists).toBeUndefined();
+        expect(ngModelCtrl.$error.dateFormat).toBeUndefined();
+    });
+    it('updates the input fields in the view when the model is changed directly', function () {
+        compile("<gov-date-input ng-model=\"model\"></gov-date-input>");
+        scope.model = new Date(2016, 0, 5);
+        scope.$digest();
+        expect(dayInput.val()).toEqual('5');
+        expect(monthInput.val()).toEqual('1');
+        expect(yearInput.val()).toEqual('2016');
+        scope.model = '2015-10-05';
+        scope.$digest();
+        expect(dayInput.val()).toEqual('5');
+        expect(monthInput.val()).toEqual('10');
+        expect(yearInput.val()).toEqual('2015');
+    });
+    it('removes the internal input fields from consideration by an outer form', function () {
+        compile("\n      <form name=\"testForm\">\n        <gov-date-input name=\"govDate\" ng-model=\"model\"></gov-date-input>\n      </form>\n    ");
+        expect(scope.testForm.dateDay).toBeUndefined();
+        expect(scope.testForm.dateMonth).toBeUndefined();
+        expect(scope.testForm.dateYear).toBeUndefined();
+    });
+    it('formats the model value via the date-input-format property', function () {
+        compile("<gov-date-input data-date-input-format=\"yyyy-MM-dd\" ng-model=\"model\"></gov-date-input>");
+        scope.$digest();
+        setDateValues({ day: 15, month: 7, year: 2016 });
+        expect(scope.model).toEqual('2016-07-15');
+    });
+    it('unsets the ng-model value for an incomplete date', function () {
+        compile("<gov-date-input ng-model=\"model\"></gov-date-input>");
+        setDateValues({ day: 15, month: 7 });
+        expect(scope.model).toBeUndefined();
+        compile("<gov-date-input data-date-input-format=\"yyyy-MM-dd\" ng-model=\"model\"></gov-date-input>");
+        setDateValues({ day: 15, month: 7 });
+        expect(scope.model).toEqual('');
+    });
+    it('renders the model value correctly when a date is set', function () {
+        scope.model = null;
+        compile("<gov-date-input ng-model=\"model\"></gov-date-input>");
+        expect(dayInput.val()).toEqual('');
+        expect(monthInput.val()).toEqual('');
+        expect(yearInput.val()).toEqual('');
+        scope.model = undefined;
+        compile("<gov-date-input ng-model=\"model\"></gov-date-input>");
+        expect(dayInput.val()).toEqual('');
+        expect(monthInput.val()).toEqual('');
+        expect(yearInput.val()).toEqual('');
+        scope.model = 0;
+        compile("<gov-date-input ng-model=\"model\"></gov-date-input>");
+        expect(dayInput.val()).toEqual('1');
+        expect(monthInput.val()).toEqual('1');
+        expect(yearInput.val()).toEqual('1970');
+        scope.model = '2016-08-03';
+        compile("<gov-date-input ng-model=\"model\"></gov-date-input>");
+        expect(dayInput.val()).toEqual('3');
+        expect(monthInput.val()).toEqual('8');
+        expect(yearInput.val()).toEqual('2016');
+        scope.model = new Date(2016, 7, 3);
+        compile("<gov-date-input ng-model=\"model\"></gov-date-input>");
+        expect(dayInput.val()).toEqual('3');
+        expect(monthInput.val()).toEqual('8');
+        expect(yearInput.val()).toEqual('2016');
+    });
+});
+//# sourceMappingURL=date-input.component.spec.js.map
