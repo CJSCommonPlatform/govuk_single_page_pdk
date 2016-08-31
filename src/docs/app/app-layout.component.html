@@ -1,21 +1,18 @@
 <div class="docs--wrapper js-enabled">
-  <div class="docs--inner-wrapper">
-    <gov-header heading="$ctrl.heading" nav-items="$ctrl.navItems"></gov-header>
+  <gov-header heading="$ctrl.heading" nav-items="$ctrl.navItems"></gov-header>
 
-    <main id="content">
-      <gov-phase-banner title="ALPHA" alpha>
-        <span>
-          This is a new service – your
-          <a href="https://designpatterns.hackpad.com/GOV.UK-elements-feedback-sKrDyQxcfA2">feedback</a>
-          will help us to improve it.
-        </span>
-      </gov-phase-banner>
+  <main id="content">
+    <gov-phase-banner title="ALPHA" alpha>
+      <span>
+        This is a new service – your
+        <a href="https://designpatterns.hackpad.com/GOV.UK-elements-feedback-sKrDyQxcfA2">feedback</a>
+        will help us to improve it.
+      </span>
+    </gov-phase-banner>
 
-      <ncy-breadcrumb></ncy-breadcrumb>
-      <ui-view></ui-view>
-    </main>
-  </div>
-
+    <ncy-breadcrumb></ncy-breadcrumb>
+    <ui-view></ui-view>
+  </main>
 </div>
 
 <gov-footer links="$ctrl.myLinks" built-by="$ctrl.builtBy"></gov-footer>
