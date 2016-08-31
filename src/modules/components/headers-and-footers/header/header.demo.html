@@ -53,6 +53,7 @@
           heading="$ctrl.heading"
           nav-items="$ctrl.navItems"
           is-business="$ctrl.isBusiness"
+          show-skip-link="$ctrl.showSkipLink"
           show-cookie="$ctrl.showCookie"></gov-header>
     </docs-example>
   </gov-tab>
@@ -86,6 +87,7 @@
         }
       };
       showCookie = false; // if true will display the cookie message over the header
+      showSkipLink = false, // if true will display 'Skip to main content' link
       isBusiness = false; // if true the width will expand to 1170px
     </prismify>
   </gov-tab>
