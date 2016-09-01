@@ -29,7 +29,7 @@ $pdk-image-path: '/assets/images' !default;
 @import '~govuk-elements-sass/public/sass/govuk-elements';
 
 // pdk domains
-//@import 'modules/layout/layout';
-//@import 'modules/content/content';
-//@import 'modules/components/components';
+@import 'modules/layout/layout';
+@import 'modules/content/content';
+@import 'modules/components/components';
 
