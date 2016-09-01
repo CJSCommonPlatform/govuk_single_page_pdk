@@ -7,6 +7,7 @@ import { InputNumberDirective } from './input-number/input-number.directive';
 import { LazyValidationDirective } from './lazy-validation/lazy-validation.directive';
 import { LazyValidationOnClickDirective } from './lazy-validation/lazy-validation-on-click.directive';
 import { SearchComponent } from './search/search.component';
+import { ActionBarComponent } from './action-bar/action-bar.component';
 
 const module = angular.module('govuk-single-page-pdk.components.forms-errors', [])
 
@@ -15,6 +16,7 @@ const module = angular.module('govuk-single-page-pdk.components.forms-errors', [
   .component('govErrorSummaryItem', ErrorSummaryItemComponent)
   .component('govErrorSummary', ErrorSummaryComponent)
   .component('govSearch', SearchComponent)
+  .component('govActionBar', ActionBarComponent)
   .directive('inputNumber', InputNumberDirective)
   .directive('lazyValidation', LazyValidationDirective)
   .directive('lazyValidationOnClick', LazyValidationOnClickDirective);
