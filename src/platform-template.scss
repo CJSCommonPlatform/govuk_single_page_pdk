@@ -25,11 +25,11 @@ $pdk-image-path: '/assets/images' !default;
   @return url('#{$govuk-frontend-toolkit-image-path}#{$file}');
 }
 
+// provided by peer dependencies
+@import '~govuk-elements-sass/public/sass/govuk-elements';
+
 // pdk domains
 @import 'modules/layout/layout';
 @import 'modules/content/content';
 @import 'modules/components/components';
 
-// provided by peer dependencies
-@import '~govuk-elements-sass/public/sass/govuk-elements';
-@import '~govuk-elements-sass/public/sass/elements/govuk-template-base';
