@@ -1,29 +1,82 @@
-.summary-item{
-  @include bold-19;
-  display: table;
-  color:$text-colour;
-  &.summary-item-link {
-    color:$link-color;
+// Summary item
+// ==========================================================================
+
+$module: 'summary-item';
+
+.#{$module} {
+  overflow: hidden;
+
+  @include media(mobile) {
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
-  a{
-    color:$link-color;
+
+  a {
+    display: inline-block;
+    overflow: hidden;
     text-decoration: none;
+    vertical-align: middle;
+    width: 100%;
   }
 
-  .summary-item-value{
-    display: table-cell;
-    max-width: 25px;
-    @include bold-36;
+  &-number {
+    @include bold-48();
   }
 
-  .summary-item-icon{
+  &-icon {
     display: table-cell;
     max-width: 45px;
   }
 
-  .summary-item-item{
-    display: table-cell;
-    vertical-align: top;
-    padding-left: 10px;
+  &-label {
+    display: block;
   }
+
+  &-inline {
+
+    .#{$module}-number {
+
+      @include media(tablet) {
+        float: left;
+        margin-right: 10px;
+      }
+
+    }
+
+    .#{$module}-icon {
+
+      @include media(tablet) {
+        float: left;
+        max-width: 33px;
+        margin-right: 10px;
+      }
+
+    }
+
+    .#{$module}-label {
+      overflow: hidden;
+    }
+
+  }
+
 }
+
+/*
+  
+HTML Usage
+  
+<div class="summary-item">
+  <span class="summary-item-number">44</span>
+  <span class="summary-item-label">exhibits</span>        
+</div>
+
+OR
+
+<div class="summary-item summary-item-inline">
+  <a href="#">
+    <span class="summary-item-number">44</span>
+    <span class="summary-item-label">exhibits</span> 
+  </a>       
+</div>
+
+*/
