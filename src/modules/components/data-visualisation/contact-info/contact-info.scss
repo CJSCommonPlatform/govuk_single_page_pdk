@@ -1,0 +1,42 @@
+// Contact info
+// ==========================================================================
+
+$module: 'contact-info';
+
+.#{$module} {
+
+  // Reusable classes do all of the work. No need for additional styles yet!
+
+}
+
+/*
+
+HTML Usage
+
+<div class="contact-info">
+  <div>Supervisor officer</div>
+  <div class="bold-xsmall">DC Amelia Hicks</div>
+  <div class="font-xsmall">0151 123 4567</div>
+  <a class="font-xsmall" href="mailto:">hicksa@liverpool.police.uk</a>
+</div>
+
+
+<div class="contact-info">
+
+  <h3 class="bold-xsmall">Your organisation</h3>
+
+  <div itemtype="http://schema.org/LocalBusiness" itemscope>
+
+   <span itemprop="name">Slater and Gordon (UK) LLP</span>
+
+   <div itemtype="http://schema.org/PostalAddress" itemprop="address" itemscope>
+     <div itemprop="streetAddress">Suite 3.1 <br> Third Floor <br> Exchange Court <br> 1 Dale Street</div>
+     <div itemprop="addressLocality">Liverpool</div>
+     <div itemprop="postalCode">L2 2ET</div>
+   </div>
+
+  </div>
+
+</div>
+
+*/
