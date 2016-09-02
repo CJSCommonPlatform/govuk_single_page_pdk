@@ -17,3 +17,38 @@
     }
   }
 }
+
+// Persist information
+// ==========================================================================
+
+$module: 'persist-info';
+
+.#{$module} {
+  @include core-16;
+  background-color: $govuk-blue;
+  color: white; 
+  padding: $gutter-half;
+  
+  &-reference {
+    float: left;
+    margin-right: 10px;
+  }
+  
+  &-title {
+    display: block;
+    overflow: hidden;
+    font-weight: 700;
+  }
+  
+}
+
+/*
+  
+HTML Usage
+  
+<div class="persist-info">
+  <span class="persist-info-reference">12AA3456716</span>
+  <span class="persist-info-title">Joseph BLOGGS</span>
+</div>
+
+*/
