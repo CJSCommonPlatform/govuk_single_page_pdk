@@ -1,17 +1,61 @@
-<h2 class="heading-medium">Phase Banner</h2>
+<h2 class="heading-medium">Phase Banners</h2>
 
 <gov-tabset>
 
   <gov-tab heading="HTML Example">
 
-    <docs-example language="markup">
-      <div class="phase-banner-beta">
-        <p>
-          <strong class="phase-tag">Beta</strong>
-          Welcome to our beta service
-        </p>
+    <section aria-labelledby="phase-banners">
+      
+      <div class="text">
+        <p><strong>You have to use an alpha banner if your thing is in alpha, and a beta banner if it&rsquo;s in beta.</strong></p>
+        <p>Learn about the discovery, alpha, beta, and live <a href="https://www.gov.uk/service-manual/phases" rel="external">phases of service design</a></p>
       </div>
-    </docs-example>
+      
+      <h4 class="heading-small">Alpha banner</h4>
+      
+      <div class="example">
+
+        <div class="phase-banner-alpha">
+          <p>
+            <strong class="phase-tag">ALPHA</strong>
+            <span>This is a new service &ndash; your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+        
+      </div>
+      
+      <h4 class="heading-small">Beta banner</h4>
+      
+      <div class="example">
+
+        <div class="phase-banner-beta">
+          <p>
+            <strong class="phase-tag">BETA</strong>
+            <span>This is a new service &ndash; your <a href="#">feedback</a> will help us to improve it.</span>
+          </p>
+        </div>
+        
+      </div>
+    
+    </section>
+    
+    <div class="code-example" aria-hidden="true" role="presentation"><pre class="prettyprint lang-html"><code>
+    &#x3C;div class=&#x22;phase-banner-alpha&#x22;&#x3E;
+      &#x3C;p&#x3E;
+        &#x3C;strong class=&#x22;phase-tag&#x22;&#x3E;ALPHA&#x3C;/strong&#x3E;
+        &#x3C;span&#x3E;This is a new service &#x26;ndash; your &#x3C;a href=&#x22;#&#x22;&#x3E;feedback&#x3C;/a&#x3E; will help us...&#x3C;/span&#x3E;
+      &#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    
+    &#x3C;div class=&#x22;phase-banner-beta&#x22;&#x3E;
+      &#x3C;p&#x3E;
+        &#x3C;strong class=&#x22;phase-tag&#x22;&#x3E;BETA&#x3C;/strong&#x3E;
+        &#x3C;span&#x3E;This is a new service &#x26;ndash; your &#x3C;a href=&#x22;#&#x22;&#x3E;feedback&#x3C;/a&#x3E; will help us...&#x3C;/span&#x3E;
+      &#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+    </code></pre></div>
+    
+    <p class="font-xsmall"><a href="#toc">Back to the top</a></p>
   </gov-tab>
 
   <gov-tab heading="Angular Markup">

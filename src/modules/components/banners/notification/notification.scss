@@ -1,74 +1,122 @@
-@import '~govuk_frontend_toolkit/stylesheets/conditionals';
+// Notification
+// ==========================================================================
 
-.gov-notification {
-  @include bold-24;
-  box-sizing: border-box;
-  padding: 1em;
-  margin-bottom: 1em;
+$module: 'notification';
+
+.#{$module} {
   display: table;
-  width: 100%;
-  color: $white;
-
-  @include media(tablet) {
-    padding: 30px;
+  margin-bottom: $gutter;
+  padding: $gutter-half;
+  
+  @include media(desktop) {
+    padding: $gutter;  
   }
-
-  // todo: determine icons for those types without them
-
-  > i {
-    @extend .fa;
+  
+  &-message {
+    color: white;
     display: table-cell;
-  }
 
-  &.active   {
-    background: $green;
-    > i {
-      display: none;
+    p {
+      margin: 0;
     }
+    
   }
-  &.inactive {
-    background: $grey-2;
-    > i {
-      display: none;
-    }
-  }
-  &.locked {
-    background: $red;
-    > i {
-      @extend .fa-lock;
-    }
-  }
-  &.success  {
-    background: $turquoise;
-    > i {
-      @extend .fa-check;
-    }
-  }
-  &.pending  {
-    background: $orange;
-    > i {
-      display: none;
-    }
-  }
-  &.invalid, &.error {
-    background: $red;
-    > i {
-      @extend .fa-exclamation-circle;
-    }
-  }
-
-  .gov-notification-body {
+  
+  .icon {
     display: table-cell;
-    width: 100%;
+    vertical-align: top;
+    
+    + .#{$module}-message {
+      padding-left: 10px;
+    }
+    
   }
-
-  i + .gov-notification-body {
-    padding-left: 15px;
+  
+  &-confirmation {
+    background-color: $turquoise;
   }
-
-  a {
-    color: $white !important;
-    font-weight: 400;
-    text-decoration: underline;
+  
+  &-active {
+    background-color: $green;
   }
+  
+  &-pending {
+    background-color: $orange;
+  }
+  
+  &-locked {
+    background-color: $red;
+  }
+  
+  &-deregistered {
+    background-color: $grey-1
+  }
+  
 }
+
+/*
+  
+HTML Usage
+  
+<div class="notification notification-confirmation">
+  
+  <div class="notification-message">
+    <p class="bold-small">Accepted case management information</p>
+  </div>
+  
+</div>
+
+<div class="notification notification-confirmation">
+  
+  <i class="icon icon-tick-white"></i>
+  
+  <div class="notification-message">
+    <p class="bold-small">Accepted case management information</p>
+  </div>
+  
+</div>
+
+*/
+
+// Icons
+// ==========================================================================
+
+$module: 'icon';
+
+.#{$module} {
+
+  &-tick {
+    @include icon(icon-tick, 27, 27);
+  }
+  
+  &-cross {
+    @include icon(icon-cross, 27, 27);
+  }
+  
+  &-important-white {
+    @include icon(icon-important-white, 31, 31);
+  }
+  
+  &-tick-white {
+    @include icon(icon-tick-white, 31, 31);
+  }
+  
+  &-complete {
+    @include icon(icon-complete, 12, 9);
+  }
+  
+}
+
+/*
+  
+HTML Usage
+   
+<i class="icon icon-tick" role="presentation" aria-hidden="true"></i>
+
+<i class="icon icon-cross" role="presentation" aria-hidden="true"></i>
+
+<i class="icon icon-important-white" role="presentation" aria-hidden="true"></i>
+
+<i class="icon icon-tick-white" role="presentation" aria-hidden="true"></i>
+
+*/
