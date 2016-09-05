@@ -38,5 +38,6 @@ $pdk-image-path: '/assets/images' !default;
 }
 
 @import "modules/components/navigation/start-bar/action-bar";
-@import 'util/icons';
+@import "util/icons";
+@import "modules/components/navigation/pagination/pagination.scss";
 
