@@ -1,0 +1,174 @@
+<h2 class="heading-medium">Pagination</h2>
+
+<p class="text">
+  Provides pagination using ui-bootstrap's pagination component with a custom template.
+</p>
+<p class="text">
+  Value passed into the 'current-page' attribute is 2-way bound, allowing the page changes to be detected in the parent scope.
+</p>
+
+<gov-tabset>
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <div class="pagination">
+        <ul class="pagination-numbers">
+          <li class="is-active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">6</a></li>
+          <li><a href="#">7</a></li>
+          <li><a href="#">...</a></li>
+          <li><a href="#">67</a></li>
+        </ul>
+        <div class="pagination-next">
+          <a href="#" rel="next" title="Navigate to next part">
+            <span class="pagination-label">Next</span>
+          </a>
+        </div>
+      </div>
+      <br />
+      <div class="pagination">
+        <div class="pagination-prev">
+          <a href="#" rel="prev" title="Navigate to previous part">
+            <span class="pagination-label">Previous</span>
+          </a>
+        </div>
+        <ul class="pagination-numbers">
+          <li><a href="#">1</a></li>
+          <li><a href="#">...</a></li>
+          <li><a href="#">28</a></li>
+          <li><a href="#">29</a></li>
+          <li class="is-active"><a href="#">30</a></li>
+          <li><a href="#">31</a></li>
+          <li><a href="#">32</a></li>
+          <li><a href="#">...</a></li>
+          <li><a href="#">67</a></li>
+        </ul>
+        <div class="pagination-next">
+          <a href="#" rel="next" title="Navigate to next part">
+            <span class="pagination-label">Next</span>
+          </a>
+        </div>
+      </div>
+      <br />
+      <div class="pagination">
+        <div class="pagination-prev">
+          <a href="#" rel="prev" title="Navigate to previous part">
+            <span class="pagination-label">Previous</span>
+          </a>
+        </div>
+        <ul class="pagination-numbers">
+          <li><a href="#">1</a></li>
+          <li><a href="#">...</a></li>
+          <li><a href="#">61</a></li>
+          <li><a href="#">62</a></li>
+          <li><a href="#">63</a></li>
+          <li><a href="#">64</a></li>
+          <li><a href="#">65</a></li>
+          <li><a href="#">66</a></li>
+          <li class="is-active"><a href="#">67</a></li>
+        </ul>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <!-- With previous and next text default to english,
+        the first and last page numbers are always shown -->
+      <gov-pagination 
+        current-page="$ctrl.currentPage_english"
+        total-items="$ctrl.totalItems_english"
+        on-pagination-change="$ctrl.onPaginationChange_english();">
+      </gov-pagination>
+      <br />
+      <!-- Enter custom (in this case welsh) text for the 
+        next and previous links -->
+      <gov-pagination
+        current-page="$ctrl.currentPage_welsh"
+        total-items="$ctrl.totalItems_welsh"
+        on-pagination-change="$ctrl.onPaginationChange_welsh()"
+        previous-text="Blaenorol"
+        next-text="Nesaf">
+      </gov-pagination>
+      <br />
+      <!-- On the first page, the previous link is not shown -->
+      <gov-pagination
+        current-page="$ctrl.currentPage_onFirstPage"
+        total-items="$ctrl.totalItems_onFirstPage"
+        on-pagination-change="$ctrl.onPaginationChange_onFirstPage()">
+      </gov-pagination>
+      <br />
+      <!-- On the last page, the next link is not shown -->
+      <gov-pagination
+        current-page="$ctrl.currentPage_onLastPage"
+        total-items="$ctrl.totalItems_onLastPage"
+        on-pagination-change="$ctrl.onPaginationChange_onLastPage()">
+      </gov-pagination>
+      <br />
+      <!-- Specify the number of items per page and the 
+        underlying bootstrap component uses this and the total items
+        to calculate the number of pages -->
+      <gov-pagination
+        current-page="$ctrl.currentPage_fewerItemsPerPage"
+        total-items="$ctrl.totalItems_fewerItemsPerPage"
+        on-pagination-change="$ctrl.onPaginationChange_fewerItemsPerPage()"
+        items-per-page="5">
+      </gov-pagination>
+      <br />
+      <!-- The max number of pages showing (not including the first and last
+      pages which always show) can be specified using the 'max-size' attribute.
+      The default is 5. -->
+      <gov-pagination
+        current-page="$ctrl.currentPage_maxSize"
+        total-items="$ctrl.totalItems_maxSize"
+        on-pagination-change="$ctrl.onPaginationChange_maxSize()"
+        max-size="7">
+      </gov-pagination>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      currentPage_english: number = 10;
+      totalItems_english: number = 200;
+      onPaginationChange_english(): void {
+          console.log('changed to page: ' + this.currentPage_english);
+      }
+
+      currentPage_welsh: number = 10;
+      totalItems_welsh: number = 200;
+      onPaginationChange_welsh(): void {
+          console.log('changed to page: ' + this.currentPage_welsh);
+      }
+
+      currentPage_onFirstPage: number = 1;
+      totalItems_onFirstPage: number = 200;
+      onPaginationChange_onFirstPage(): void {
+          console.log('changed to page: ' + this.currentPage_onFirstPage);
+      }
+
+      currentPage_onLastPage: number = 20;
+      totalItems_onLastPage: number = 200;
+      onPaginationChange_onLastPage(): void {
+          console.log('changed to page: ' + this.currentPage_onLastPage);
+      }
+
+      currentPage_fewerItemsPerPage: number = 10;
+      totalItems_fewerItemsPerPage: number = 200;
+      onPaginationChange_fewerItemsPerPage(): void {
+          console.log('changed to page: ' + this.currentPage_fewerItemsPerPage);
+      }
+
+      currentPage_maxSize: number = 10;
+      totalItems_maxSize: number = 200;
+      onPaginationChange_maxSize(): void {
+          console.log('changed to page: ' + this.currentPage_fewerItemsPerPage);
+      }
+    </prismify>
+  </gov-tab>
+</gov-tabset>
+
+<discuss-component issue="10"></discuss-component>

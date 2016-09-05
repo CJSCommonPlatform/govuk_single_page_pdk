@@ -9,6 +9,7 @@ import { ColumnNavigationRelatedMetadataComponent }
                             from './column-navigation/column-navigation-related-metadata.component';
 import { CompletedBarComponent} from './completed-bar/completed-bar.component';
 import { NextPreviousNavigationComponent } from './next-previous-navigation/next-previous-navigation.component';
+import { PaginationComponent } from './pagination/pagination.component';
 import { SideMenuComponent} from './menus/side-menu/side-menu.component';
 import { TopMenuComponent} from './menus/top-menu/top-menu.component';
 import { StartBarComponent} from './start-bar/start-bar.component';
@@ -26,6 +27,7 @@ const module = angular.module('govuk-single-page-pdk.components.navigation', [])
   .component('govCompletedBar', CompletedBarComponent)
   .component('govNextPreviousNavigation', NextPreviousNavigationComponent)
   .component('govSideMenu', SideMenuComponent)
+  .component('govPagination', PaginationComponent)
   .component('govTopMenu', TopMenuComponent)
   .component('govStartBar', StartBarComponent);
 

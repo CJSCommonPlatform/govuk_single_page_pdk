@@ -1,4 +1,5 @@
 import 'angular';
+import 'angular-ui-bootstrap';
 import 'angular-ui-router';
 import 'angular-animate';
 import 'angular-breadcrumb';
