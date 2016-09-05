@@ -8,13 +8,17 @@ $module: 'action-bar';
   // shared style
   &-header {
     box-sizing: border-box;
-    overflow: hidden;
+    padding: em(10);
+  }
+
+  &-content {
+    box-sizing: border-box;
     padding: em(10);
   }
 
   &-title {
     display: block;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   // start
@@ -66,17 +70,23 @@ $module: 'action-bar';
 
   // completed
   &-completed {
+    padding: 0 em(10) em(10);
 
     .#{$module}-header {
       display: table;
+      padding: 0;
       width: 100%;
+    }
+
+    .#{$module}-content {
+      padding: 0;
     }
 
     .#{$module}-title {
       font-weight: normal;
       display: table-cell;
       padding-right: em(20);
-      vertical-align: top;
+      vertical-align: middle;
     }
 
     .#{$module}-options {
@@ -102,11 +112,16 @@ $module: 'action-bar';
       padding: em(3, 16) em(6, 16);
       vertical-align: middle;
 
+      &:before {
+        content: attr(data-status-title);
+      }
+
       &:after {
         background-image: file-url('actionbar-status-done.png');
         content: '';
         display: inline-block;
         height: 11px; // fixed size
+        margin-left: em(5);
         width: 14px; // fixed size
 
         @include device-pixel-ratio() {
@@ -120,13 +135,8 @@ $module: 'action-bar';
         border-color: $turquoise;
         color: $turquoise;
 
-        &:before {
-          content: 'Saved';
-        }
-
         &:after {
           background-image: file-url('actionbar-status-saved.png');
-          margin-left: em(5);
 
           @include device-pixel-ratio() {
             background-image: file-url('actionbar-status-saved-2x.png');
@@ -159,7 +169,7 @@ OR
   <div class="action-bar-header">
     <span class="action-bar-title">ECHR doesn&rsquo;t apply</span>
     <span class="action-bar-options">
-      <span class="action-bar-status action-bar-status-saved">Saved</span><a class="action-bar-action" href="#">Amend</a>
+      <span class="action-bar-status action-bar-status-saved" data-status-title="Saved"></span><a class="action-bar-action" href="#">Amend</a>
     </span>
   </div>
 </div>

@@ -5,23 +5,33 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class CompletedBarDemo {
   items = [
-        {
-          description: 'Provided plea issues',
-          subDescription: 'Acceptable for a guilty plea to s.20 wounding or inflicitng grievous bodily..',
-          action: 'Amend',
-          state: '',
-          click: function () {
-            console.log('clicked');
-          }
-        },
-        {
-          description: 'Proposed charge authorised',
-          subDescription: '',
-          action: 'Amend',
-          state: 'Saved',
-          click: function () {
-            console.log('clicked');
-          }
-        }
-      ];
+    {
+      description: 'ECHR doesn\’t apply',
+      action: 'Amend',
+      state: 'Saved',
+      click: function () {
+        console.log('clicked Amend for \"ECHR doesn\'t apply\"');
+      }
+    },
+    {
+      description: 'Case strategy record',
+      detailTitle: 'View case strategy',
+      detail: 'Some content goes here...',
+      action: 'Amend',
+      state: '',
+      click: function () {
+        console.log('clicked Amend for \"Case strategy record\"');
+      }
+    },
+    {
+      description: 'Applications to court',
+      detailTitle: 'View recommendations',
+      detail: 'Some content goes here...',
+      action: 'Amend',
+      state: '',
+      click: function () {
+        console.log('clicked Amend for \"Applications to court\"');
+      }
+    }
+  ];
 }
