@@ -7,16 +7,18 @@ export class NextPreviousNavigationDemo {
   navigation = {
     previous: {
       name: 'Previous',
-      description: 'Some Description',
-      navigate: function(){
+      description: 'Overview',
+      usageInstructions: 'Navigate to previous part',
+      navigate: function() {
         console.log('Previous');
       }
     },
 
     next: {
       name: 'Next',
-      description: 'Some Description',
-      navigate: function(){
+      description: 'Give away business property or assets',
+      usageInstructions: 'Navigate to next part',
+      navigate: function() {
         console.log('Next');
       }
     }
