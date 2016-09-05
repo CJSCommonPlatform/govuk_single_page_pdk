@@ -1,16 +1,33 @@
-<div class="completed-action">
-  <span class="bold" ng-bind="$ctrl.item.description"></span>
-  <span class="pull-right">
-    <span class="check" ng-show="!$ctrl.item.state"></span>
-    <span class="saved" ng-show="$ctrl.item.state">
-      <span ng-bind="$ctrl.item.state"></span> <i class="fa fa-check"></i>
+<div class="action-bar action-bar-completed">
+  <div class="action-bar-header">
+    <span class="action-bar-title" data-ng-bind="$ctrl.item.description"></span>
+    <span class="action-bar-options">
+      <span class="action-bar-status" 
+        data-ng-class="{ 'action-bar-status-saved': $ctrl.item.state }"
+        data-ng-bind="$ctrl.item.state"></span>
+        <a class="action-bar-action" href="javascript:void(0);" 
+          data-ng-click="$ctrl.item.click()" data-ng-bind="$ctrl.item.action"></a>
     </span>
-    <span class="action-type" ng-click="$ctrl.item.click()">
-      <span ng-bind="$ctrl.item.action"></span>
-    </span>
-  </span>
-  <div class="three-quarter">
-    <span ng-bind="$ctrl.item.subDescription"></span>
+  </div>
+  <div class="action-bar-content" data-ng-if="$ctrl.item.detail || $ctrl.item.subDescription">
+    <details class="font-xsmall" data-ng-if="$ctrl.item.detailTitle">
+      <summary>
+        <span class="summary" data-ng-bind="$ctrl.item.detailTitle"></span>
+      </summary>
+      <div class="panel panel-border-narrow">
+        <p data-ng-bind="$ctrl.item.detail"></p>
+      </div>
+    </details>
+    <!-- Old version of this component is still catered for if the user
+      provides a subDescription rather than a detail and detailTitle, which
+      should meet current usage.
+
+      The new version does't use a subDescription but instead has
+      detailTitle and detail attributes.
+    -->
+    <p class="three-quarter"
+      data-ng-if="$ctrl.item.subDescription" 
+      data-ng-bind="$ctrl.item.subDescription"></p>
   </div>
 </div>
 
