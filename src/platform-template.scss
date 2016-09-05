@@ -37,5 +37,6 @@ $pdk-image-path: '/assets/images' !default;
   @return url('#{$pdk-image-path}#{$file}');
 }
 
+@import "modules/components/navigation/start-bar/action-bar";
 @import 'util/icons';
 
