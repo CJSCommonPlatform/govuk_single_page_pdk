@@ -1,0 +1,32 @@
+<div class="pagination">
+        
+  <div class="pagination-prev" data-ng-class="{disabled: noPrevious()||ngDisabled}"
+    data-ng-if="directionLinks && !noPrevious()">
+    <a href="javascript:void(0);" data-ng-click="selectPage(page - 1, $event)"
+      rel="prev" title="Navigate to previous part">
+      <span class="pagination-label" data-ng-bind="::getText('previous');"></span>
+    </a>
+  </div>
+  
+  <ul class="pagination-numbers">
+    <li data-ng-repeat="page in pages track by $index" 
+        data-ng-class="{'is-active': page.active, disabled: ngDisabled&&!page.active}" 
+        class="pagination-page">
+      <a href="javascript:void(0);" 
+          data-ng-click="selectPage(page.number, $event)" 
+          data-ng-disabled="ngDisabled&&!page.active" 
+          data-uib-tabindex-toggle
+          data-ng-bind="page.text">
+      </a>
+    </li>
+  </ul>
+
+  <div class="pagination-next" data-ng-class="{disabled: noNext()||ngDisabled}"
+    data-ng-if="directionLinks && !noNext()">
+    <a href="javascript:void(0);" data-ng-click="selectPage(page + 1, $event)" 
+      rel="next" title="Navigate to next part">
+      <span class="pagination-label" data-ng-bind="::getText('next');"></span>
+    </a>
+  </div>
+  
+</div>
