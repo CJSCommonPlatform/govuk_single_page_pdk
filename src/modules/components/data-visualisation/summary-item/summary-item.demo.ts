@@ -6,7 +6,7 @@ import { Component } from '@govuk/angularjs-devtools';
 export class SummaryItemDemo {
 
   notInLine = true;
-  
+
   item = {
     value: 3,
     description: 'Statements',
