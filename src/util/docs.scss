@@ -50,24 +50,11 @@
   }
 }
 
-prismify {
-  font-size: 16px !important;
-}
 
 $module: 'code-example';
 
 .#{$module} {
-  // display: none;
   font-size: 16px;
   margin-bottom: em(20);
   overflow: hidden;
-
-  // .prettyprint {
-  //   background: $grey-4;
-  // }
-
-  // @include media(desktop) {
-  //   display: block;
-  // }
-
 }
