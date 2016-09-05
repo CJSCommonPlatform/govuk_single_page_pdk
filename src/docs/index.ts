@@ -33,6 +33,7 @@ angular.module('govuk-single-page-pdk.docs', [
   contentDemos,
   'ncy-angular-breadcrumb',
   'ui.router',
+  'ui.bootstrap',
   'smoothScroll',
   'ngSanitize',
   'ng-clamp'
