@@ -7,31 +7,22 @@
 <gov-tabset>
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
-      <div class="grid-row">
-        <div class="column-one-half">
-          <a class="navigation-arrow">
-            <div class="arrow-previous pull-left">
-              <span class="fa fa-chevron-left fa-2x"></span>
-            </div>
-            <div class="pull-left">
-              <div class="main text">Previous</div>
-              <span class="description">Some Description</span>
-            </div>
-            <div class="clearfix"></div>
+      <div class="pagination">
+        
+        <div class="pagination-prev">
+          <a href="#" rel="prev" title="Navigate to previous part">
+            <span class="pagination-label">Previous</span>
+            <span class="pagination-title">Overview</span>
           </a>
         </div>
-        <div class="column-one-half">
-          <a class="navigation-arrow">
-            <div class="arrow-previous pull-right">
-              <span class="fa fa-chevron-right fa-2x"></span>
-            </div>
-            <div class="pull-right">
-              <div class="main text-right">Next</div>
-              <span class="description">Some Description</span>
-            </div>
-            <div class="clearfix"></div>
+        
+        <div class="pagination-next">
+          <a href="#" rel="next" title="Navigate to next part">
+            <span class="pagination-label">Next</span>
+            <span class="pagination-title">Give away business property or assets</span>
           </a>
         </div>
+        
       </div>
     </docs-example>
   </gov-tab>
@@ -47,14 +38,15 @@
       navigation = {
         previous: {
           name: 'Previous',
-          description: 'Some Description',
+          description: 'Overview',
           navigate: function() {
             console.log('Previous');
           }
         },
+
         next: {
           name: 'Next',
-          description: 'Some Description',
+          description: 'Give away business property or assets',
           navigate: function() {
             console.log('Next');
           }
