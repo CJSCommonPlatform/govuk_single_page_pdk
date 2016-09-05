@@ -1,41 +1,53 @@
-@import '~govuk_frontend_toolkit/stylesheets/colours';
-@import '~govuk_frontend_toolkit/stylesheets/typography';
+// Progress list
+// ==========================================================================
 
-.list-progress {
-  counter-reset: items;
+$module: 'progress-list';
+
+.#{$module} {
+
   li {
-    @include core-14;
-    border: none;
+    @include bold-19;
     border-bottom: 1px solid $grey-2;
     color: $grey-1;
-    padding: 15px 0 20px;
-
-    i {
-      margin-right: 5px;
-      color: $green;
-    }
-
-    &.active {
-      z-index: 2;
-      background: none;
-      border-bottom: 3px solid $black !important;
-      margin-bottom: -1px;
-      color: $grey-1;
-      .bold-small {
-        color: $black;
-      }
-    }
+    list-style: decimal;
+    list-style-position: inside;
+    padding: $gutter-half 0;
   }
 
-  &.list-progress-number li {
-    &:before {
-      @include bold-19;
-      counter-increment: items;
-      content: counter(items) ".\00A0\00A0";
-      float: left;
-    }
-    &.active:before {
-      color: $black;
-    }
+  .is-active {
+    border-bottom: 3px solid $black;
+    color: black;
   }
+
+  &-status {
+    @include core-14;
+    color: $grey-1;
+    display: block;
+    text-transform: capitalize;
+  }
+
 }
+
+/*
+  
+HTML Usage
+  
+<ol class="progress-list">
+        
+  <li>Step one
+    <span class="progress-list-status"><i class="icon icon-complete"></i> complete</span>
+  </li>
+  
+  <li>Step two
+    <span class="progress-list-status"><i class="icon icon-complete"></i> complete</span>
+  </li>
+  
+  <li class="is-active">Step three
+    <span class="progress-list-status">incomplete</span>
+  </li>
+  
+  <li>Step four</li>
+  
+</ol>
+
+*/
