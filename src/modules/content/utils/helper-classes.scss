@@ -1,0 +1,100 @@
+// Helper classes
+// ==========================================================================
+
+@include media(desktop) {
+  .block-wrapper {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 10px;
+    width: 16.6666%;
+  }
+}
+
+.box {
+  background-color: $grey-3;
+  display: block;
+  position: relative;
+  padding: 20px;
+  
+  &-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: perspective(1px) translateY(-50%) translateX(-50%);
+  }
+  
+}
+
+
+// Margin top
+
+.mt-xs  {
+  margin-top: 5px;
+}
+
+.mt-s   {
+  margin-top: 10px;
+  @include media(tablet) {margin-top: 10px;}
+}
+
+.mt-m  {
+  margin-top: 15px;
+  @include media(tablet) {margin-top: 20px;}
+}
+
+.mt-l   {
+  margin-top: 20px;
+  @include media(tablet) {margin-top: 30px;}
+}
+
+.mt-xl  {
+  margin-top: 30px;
+  @include media(tablet) {margin-top: 45px;}
+}
+
+.mt-xxl {
+  margin-top: 45px;
+  @include media(tablet) {margin-top: 60px;}
+}
+
+
+// Margin bottom
+
+.mb-xs  {
+  margin-bottom: 5px;
+}
+
+.mb-s   {
+  margin-bottom: 10px;
+  @include media(tablet) {margin-bottom: 10px;}
+}
+
+.mb-m  {
+  margin-bottom: 15px;
+  @include media(tablet) {margin-bottom: 20px;}
+}
+
+.mb-l   {
+  margin-bottom: 20px;
+  @include media(tablet) {margin-bottom: 30px;}
+}
+
+.mb-xl  {
+  margin-bottom: 30px;
+  @include media(tablet) {margin-bottom: 45px;}
+}
+
+.mb-xxl {
+  margin-bottom: 45px;
+  @include media(tablet) {margin-bottom: 60px;}
+}
+
+
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
