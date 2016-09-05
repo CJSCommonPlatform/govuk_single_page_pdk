@@ -7,6 +7,7 @@ import { NextPreviousNavigationComponent } from './next-previous-navigation/next
 import { SideMenuComponent} from './menus/side-menu/side-menu.component';
 import { TopMenuComponent} from './menus/top-menu/top-menu.component';
 import { StartBarComponent} from './start-bar/start-bar.component';
+import { ActionBarSecondaryStyle } from './start-bar/action-bar-secondary-style.directive';
 
 const module = angular.module('govuk-single-page-pdk.components.navigation', [])
 
@@ -18,6 +19,7 @@ const module = angular.module('govuk-single-page-pdk.components.navigation', [])
   .component('govNextPreviousNavigation', NextPreviousNavigationComponent)
   .component('govSideMenu', SideMenuComponent)
   .component('govTopMenu', TopMenuComponent)
-  .component('govStartBar', StartBarComponent);
+  .component('govStartBar', StartBarComponent)
+  .directive('actionBarSecondaryStyle', ActionBarSecondaryStyle);
 
 export default module.name;
