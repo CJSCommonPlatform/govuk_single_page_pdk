@@ -1,9 +1,10 @@
-<ul class="list list-progress" ng-class="{'list-progress-number': $ctrl.showNumbers}">
-  <li ng-repeat="item in $ctrl.steps" ng-class="{active: item.active}">
-    <div class="bold-small">{{item.label}}</div>
-    <span ng-if="item.complete">
-      <i class="fa fa-check"></i>Complete
+<ol class="progress-list">
+  <li data-ng-repeat="item in $ctrl.steps"
+      data-ng-class="{'is-active': item.active}">
+    {{item.label}}
+    <span class="progress-list-status" data-ng-if="item.complete">
+      <i class="icon icon-complete"></i> complete
     </span>
-    <span ng-if="!item.complete && item.active">Incomplete</span>
+    <span class="progress-list-status" data-ng-if="!item.complete && item.active">incomplete</span>
   </li>
-</ul>
+</ol>

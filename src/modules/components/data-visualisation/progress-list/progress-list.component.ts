@@ -4,11 +4,11 @@ import { Component } from '@govuk/angularjs-devtools';
   template: require('./progress-list.component.html'),
   bindings: {
     steps: '<',
-    showNumbers: '<'
+    showNumbers: '<'  // not in use anymore
   }
 })
 export class ProgressListComponent {
 
   steps: { active: boolean; complete: boolean; label: string }[];
-  showNumbers: boolean;
+  showNumbers: boolean; // not in use anymore
 }

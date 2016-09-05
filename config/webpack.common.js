@@ -37,7 +37,8 @@ module.exports = {
   sassLoader: {
     includePaths: [
       helpers.root('node_modules/govuk_frontend_toolkit/stylesheets')
-      ,'node_modules/govuk-elements-sass/public/sass'
+      ,'node_modules/govuk-elements-sass/public/sass',
+      ,'src/assets'
     ]
   },
   plugins: [
