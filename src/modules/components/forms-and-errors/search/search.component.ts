@@ -4,19 +4,21 @@ import { LazyValidationDirective } from '../lazy-validation/lazy-validation.dire
 @Component({
   template: require('./search.component.html'),
   bindings: {
-    autocomplete:    '@',
-    placeholder:     '@',
-    name:            '@',
-    inputId:         '@',
-    ariaDescribedby: '@',
-    ngModel:         '=',
-    inline:          '<?',
-    ngMinlength:     '@?',
-    required:        '<?',
-    onSearch:        '&'
+    autocomplete:     '@',
+    placeholder:      '@',
+    name:             '@',
+    inputId:          '@',
+    ariaDescribedby:  '@',
+    ngModel:          '=',
+    inline:           '<?',
+    ngMinlength:      '@?',
+    required:         '<?',
+    onSearch:         '&',
+    onCriteriaChange: '&?'
   },
   require: {
     ngModelCtrl: 'ngModel',
+    formCtrl: '^^form',
     lazyValidationController: '^^?lazyValidation'
   }
 })
@@ -25,8 +27,10 @@ export class SearchComponent {
   name: string;
   ngModel: any;
   ngModelCtrl: ng.INgModelController;
+  formCtrl: ng.IFormController;
   lazyValidationController: LazyValidationDirective;
-  onSearch: ($event: {$event: string}) => any;
+  onSearch: ($event: { $criteria: string }) => any;
+  onCriteriaChange: ($event: { $criteria: string, $valid: boolean }) => any;
   inline: boolean;
   required: boolean;
 
@@ -41,7 +45,11 @@ export class SearchComponent {
 
   submit(): void {
     if (this.lazyValidationController) this.lazyValidationController.revalidate();
-    if (this.ngModelCtrl.$valid) this.onSearch({$event: this.ngModel});
+    if (this.onCriteriaChange) this.onCriteriaChange({
+      $criteria: this.formCtrl[this.name].$viewValue,
+      $valid: this.formCtrl.$valid
+    });
+    if (this.ngModelCtrl.$valid) this.onSearch({ $criteria: this.ngModel });
   }
 
   enableSubmitOnEnter(): void {
