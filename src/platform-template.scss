@@ -33,3 +33,9 @@ $pdk-image-path: '/assets/images' !default;
 @import 'modules/content/content';
 @import 'modules/components/components';
 
+@function image-url($file) {
+  @return url('#{$pdk-image-path}#{$file}');
+}
+
+@import 'util/icons';
+
