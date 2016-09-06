@@ -67,16 +67,40 @@
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-      <gov-notification type="success" show-icon="false">
-        A notification without an icon
+      <p>Critical and non–critical notifications</p>
+      <gov-notification 
+        type="confirmation" 
+        show-icon="true">
+        Accepted case management information
       </gov-notification>
-      <gov-notification type="invalid" show-icon="true">
-        Another example with an icon
-      </gov-notification>
-      <gov-notification type="success" show-icon="true">
-        A notification without an icon and link
-        </br>
-        <a href="#">This is a link</a>
+      <gov-notification 
+        type="confirmation" 
+        show-icon="false">
+        Accepted case management information
+      </gov-notification> 
+      <p>Active notifications</p>
+      <gov-notification 
+        type="active" 
+        show-icon="true">
+        With optional tick icon and text wrapping lorem ipsum dolor sit amet, consectetur adipiscing elit sed do tem por incididunt ut labore et dolore magna aliqua
+      </gov-notification>            
+      <p>Pending notifications</p>
+      <gov-notification 
+        type="pending" 
+        show-icon="true">
+        Text only with no icon
+      </gov-notification> 
+      <p>Locked notifications</p>
+      <gov-notification 
+        type="locked" 
+        show-icon="true">
+        This users mobile number has not yet been verified
+      </gov-notification>      
+      <p>Deregistered notifications</p>
+      <gov-notification 
+        type="deregistered" 
+        show-icon="true">
+        Example grey notification
       </gov-notification>
     </docs-example>
   </gov-tab>
