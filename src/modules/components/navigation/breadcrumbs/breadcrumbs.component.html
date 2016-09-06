@@ -1,6 +1,14 @@
 <div class="breadcrumbs">
   <ol>
-    <li><a ui-sref="home">Single Page Platform Development Kit</a></li>
-    <li>Layout</li>
+    <li data-ng-repeat="element in $ctrl.breadcrumbs">
+      <a href="javascript:void(0);"
+        data-ng-if="element.onClick"
+        data-ng-click="element.onClick()" 
+        data-ng-bind="element.text">
+      </a>
+      <span data-ng-if="!element.onClick"
+        data-ng-bind="element.text">
+      </span>
+    </li>
   </ol>
 </div>
