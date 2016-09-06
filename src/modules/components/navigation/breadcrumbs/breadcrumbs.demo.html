@@ -1,7 +1,6 @@
 <h2 class="heading-medium">Breadcrumbs</h2>
-<p>This component is using angular-breadcrumb (<span
-    ng-bind-html="'https://github.com/ncuillery/angular-breadcrumb' | linky:'_blank'"></span>), please refer to the link
-  for more information about how to use breadcrumbs.</p>
+<p>Each element of the breadcrumb has a <code>text</code> attribute that defines the text of links and the final element (current page)</p>
+<p>Each of the link elements has a <code>state</code> attribute that takes the state for the link as defined in the $stateProvider routing. In other words it is the same as you would pass to <code>ui-sref</code>.</p>
 
 <gov-tabset>
 
@@ -9,8 +8,9 @@
     <docs-example language="markup">
       <div class="breadcrumbs">
         <ol>
-          <li><a href="#">Single Page Platform Development Kit</a></li>
-          <li>Layout</li>
+          <li><a href="#">Platform Development Kit</a></li>
+          <li><a href="#">Components</a></li>
+          <li>Navigation</li>
         </ol>
       </div>
     </docs-example>
@@ -18,8 +18,30 @@
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-      <ncy-breadcrumb></ncy-breadcrumb>
+
+      <gov-breadcrumbs breadcrumbs="$ctrl.breadcrumbsData"></gov-breadcrumbs>
+
     </docs-example>
+  </gov-tab>
+  
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+
+      breadcrumbsData = [
+        {
+          state: 'home',
+          text: 'Platform Development Kit',
+        },
+        {
+          state: 'components',
+          text: 'Components'
+        },
+        {
+          text: 'Navigation'
+        }
+      ];
+
+    </prismify>
   </gov-tab>
 
 </gov-tabset>
