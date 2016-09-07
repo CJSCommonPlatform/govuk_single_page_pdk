@@ -6,34 +6,65 @@
 
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
-      <div class="timeline">
-        <div class="top-thick-blue-rule ">
-          <div class="bold-small">Timeline</div>
-        </div>
-        <div class="day-item">
-          <div class="box-outer">
-            <div class="box-no-vertical"></div>
-            <div class="boxed bottom-shadow">
-              <div class="box-it-inner box-padding">
-                <span class="heading-small">Today</span>
+      <div class="grid-row">
+        <div class="column-third">
+          <section class="timeline">
+            <header class="timeline-header">
+              <h2 class="bold-medium">Basic Timeline</h2>
+            </header>
+            <article class="timeline-block">
+              <div class="timeline-block-header">
+                <time datetime="2016-05-10">10 May 2016</time>
               </div>
-              <div class="box-margin line-spacing-10">
-                <div>Charging advice requested</div>
-                <span class="gray">09.15AM</span>
+              <div class="timeline-block-content">
+                <h3 class="bold-small">Charging advice requested</h3>
+                <time class="font-xsmall" datetime="09:30Z">9:30am</time>
               </div>
-              <div class="box-margin line-spacing-10">
-                <span class="gray">Assign to me</span>
-              </div>
-              <div class="box-margin line-spacing-10">
-                <span><a href="">Review case</a></span>
-              </div>
-              <div class="box-margin line-spacing-10">
-                <span class="gray">Enter your analysis and charging decision</span>
-              </div>
-            </div>
-          </div>
+            </article>
+          </section>
         </div>
       </div>
+      
+      <div class="grid-row">
+        <div class="column-third">
+          <section class="timeline">
+            <header class="timeline-header">
+              <h2 class="bold-medium">Advanced Timeline</h2>
+            </header>
+            <article class="timeline-block">
+              <div class="timeline-block-header">
+                <time datetime="2016-05-12">12 May 2016</time>
+              </div>
+              <div class="timeline-block-content">
+                <h3 class="bold-small">Sentence hearing</h3>
+              </div>
+            </article>
+            <article class="timeline-block">
+              <div class="timeline-block-header">
+                <time datetime="2016-05-10">10 May 2016</time>
+              </div>
+              <div class="timeline-block-content">
+                <h3 class="bold-small">Charging advice requested</h3>
+                <time class="font-xsmall" datetime="09:30Z">9:30am</time>
+                <ul class="timeline-block-updates">
+                  <li><a href="#">Assign to me</a></li>
+                  <li>Review full case</li>
+                  <li>Enter your analysis and charging decision</li>
+                </ul>
+              </div>
+            </article>
+            <article class="timeline-block">
+              <div class="timeline-block-header">
+                <time datetime="2016-04-28">28 April 2016</time>
+              </div>
+              <div class="timeline-block-content">
+                <h3 class="bold-small">Remanded in custody</h3>
+                <time class="font-xsmall" datetime="11:45Z">11:45pm</time>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>          
     </docs-example>
   </gov-tab>
 
