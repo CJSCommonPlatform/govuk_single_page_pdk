@@ -1,34 +1,63 @@
-.gov-show-hide-pane {
-  border-top: 4px solid $black;
+// Collapsibles
+// ==========================================================================
 
-  .toggle-button{
-    color: $white;
+$module: 'collapsibles';
+
+.#{$module} {
+
+  [aria-hidden='true'] {
+    display: none;
+  }
+
+  &-header {
+    @extend %clearfix;
+    border-top: 3px solid $black;
+  }
+
+  &-item {
+    padding-bottom: em(25);
+  }
+
+  &-button {
+    @include inline-block;
     background-color: $black;
-    min-width: 80px;
-    padding: 3px 5px;
-    text-align: center;
-    @include bold-19;
+    border: none;
+    color: $white;
+    cursor: pointer;
+    float: right;
+    font-size: 1em; // inherit from parent
+    line-height: 1.25;
+    margin-left: em(20);
+    min-width: em(100);
+    padding: .526315em .789473em; // 10px 15px
+    width: auto;
+
+    &[aria-expanded="false"]:before {
+      content: '▼';
+      padding-right: em(5);
+    }
+
+    &[aria-expanded='true']:before {
+      content: '▲';
+      padding-right: em(5);
+    }
+
+    // fix unwanted button padding in Firefox
+    &:-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    &:focus {
+      outline: 3px solid $focus-colour;
+    }
+
   }
 
-  .gov-show-hide-pane-content{
-    padding:10px;
-    opacity:1;
-
-    /* when hiding the picture */
-    &.ng-hide-add         {
-      -webkit-transition:all linear 0.2s;
-      transition:all linear 0.2s;
-    }
-
-    /* when showing the picture */
-    &.ng-hide-remove      {
-      -webkit-transition:all linear 0.2s;
-      transition:all linear 0.2s;
-    }
-
-    &.ng-hide {
-      line-height:0;
-      opacity:0;
-    }
-  }
 }
+
+/*
+
+HTML Usage
+
+*/
