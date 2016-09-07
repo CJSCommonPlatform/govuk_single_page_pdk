@@ -8,11 +8,11 @@ import { Component } from '@govuk/angularjs-devtools';
   transclude: true,
   template: `
     <div class="notification notification-{{$ctrl.type}}" role="alert">
-      <i ng-if="($ctrl.showIcon === true && $ctrl.type === 'confirmation') 
+      <i data-ng-if="($ctrl.showIcon === true && $ctrl.type === 'confirmation') 
       || ($ctrl.showIcon === true && $ctrl.type === 'active')" 
       class="icon icon-tick-white" role="presentation" 
       aria-hidden="true"></i>
-      <i ng-if="$ctrl.showIcon === true && $ctrl.type === 'locked' " 
+      <i data-ng-if="$ctrl.showIcon === true && $ctrl.type === 'locked' " 
       role="presentation" aria-hidden="true" 
       class="icon icon-important-white"></i>
       <div class="notification-message">
