@@ -1,25 +1,25 @@
 <h3 class="heading-medium">Show/Hide Pane</h3>
 <gov-tabset>
-
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
       <!--with default optiones-->
       <gov-show-hide-pane>
         <always-visible>
-          This content will always be visible
+          <h3 class="heading-medium">This headblock is always visible</h3>
         </always-visible>
         <hideable>
-          this content can bi hidden/shown using the show/hide button
+          <p>Content below the headblock can be hidden. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim quis nostrud ullamco laboris nisi ut aliquip ex ea aute irure dolor in invelit esse cillum dolore.</p>
         </hideable>
       </gov-show-hide-pane>
 
       <!--with custom options-->
       <gov-show-hide-pane show-text="$ctrl.show" hide-text="$ctrl.hide" open="$ctrl.open">
         <always-visible>
-          This content will always be visible
+          <h3 class="heading-medium">This headblock is always visible</h3>
         </always-visible>
         <hideable>
-          this content can bi hidden/shown using the show/hide button
+          <p>The text describing the hide/open button can be customised</p>
+          <p>Content below the headblock can be hidden. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim quis nostrud ullamco laboris nisi ut aliquip ex ea aute irure dolor in invelit esse cillum dolore.</p>
         </hideable>
       </gov-show-hide-pane>
 
