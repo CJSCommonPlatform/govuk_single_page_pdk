@@ -1,9 +1,24 @@
-.gov-digit-box {
+// Digit box
+// ==========================================================================
+
+$module: 'digit-box';
+
+.#{$module} {
+  @include bold-36;
+  background-color: $grey-1;
+  clear: both;
+  color: white;
   display: inline-block;
-  background: $grey-1;
-  color: $white;
-  padding: 15px 20px 10px;
-  margin: 10px 0;
-  @include core-36;
-  font-weight: 600;
+  padding: $gutter-half;
+  vertical-align: top;
 }
+
+/*
+  
+HTML Usage
+  
+<div class="digit-box">
+  <span class="digit-box-number">07700900753</span>
+</div>
+
+*/
