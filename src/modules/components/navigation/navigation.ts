@@ -3,10 +3,6 @@ import { ArrowComponent } from './arrow/arrow.component';
 import { BadgeItemComponent} from './badge-item/badge-item.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { ColumnNavigationComponent } from './column-navigation/column-navigation.component';
-import { ColumnNavigationSectionComponent } from './column-navigation/column-navigation-section.component';
-import { ColumnNavigationLinksComponent } from './column-navigation/column-navigation-links.component';
-import { ColumnNavigationRelatedMetadataComponent }
-                            from './column-navigation/column-navigation-related-metadata.component';
 import { CompletedBarComponent} from './completed-bar/completed-bar.component';
 import { NextPreviousNavigationComponent } from './next-previous-navigation/next-previous-navigation.component';
 import { PaginationComponent } from './pagination/pagination.component';
@@ -22,9 +18,6 @@ const module = angular.module('govuk-single-page-pdk.components.navigation', [])
   .component('govBadgeItem', BadgeItemComponent)
   .component('govBreadcrumbs', BreadcrumbsComponent)
   .component('govColumnNavigation', ColumnNavigationComponent)
-  .component('govColumnNavigationSection', ColumnNavigationSectionComponent)
-  .component('govColumnNavigationLinks', ColumnNavigationLinksComponent)
-  .component('govColumnNavigationRelatedMetadata', ColumnNavigationRelatedMetadataComponent)
   .component('govCompletedBar', CompletedBarComponent)
   .component('govNextPreviousNavigation', NextPreviousNavigationComponent)
   .component('govSideMenu', SideMenuComponent)
