@@ -166,5 +166,13 @@ export const routes: angular.ui.IState[] = [
     ncyBreadcrumb: {
       label: 'Utility Classes'
     }
+  },
+  {
+    state:     'content.data',
+    url:       '/data',
+    template: '<gov-docs-content-data-page></gov-docs-content-data-page>',
+    ncyBreadcrumb: {
+      label: 'Data'
+    }
   }
 ];
