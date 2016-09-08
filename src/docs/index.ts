@@ -26,6 +26,7 @@ import { IconsMediaPage } from './app/content/icons-media/icons-media.component'
 import { ErrorsPage } from './app/content/errors/errors.component';
 import { UtilsPage } from './app/content/utils/utils.component';
 import { FormsAndErrorsPage } from './app/components/forms-and-errors/forms-and-errors.component';
+import { DataPage } from './app/content/data/data.component';
 
 angular.module('govuk-single-page-pdk.docs', [
   config,
@@ -60,4 +61,5 @@ angular.module('govuk-single-page-pdk.docs', [
   .component('govDocsContentErrorsPage', ErrorsPage)
   .component('govDocsContentTypographyPage', TypographyPage)
   .component('govDocsContentUtilsPage', UtilsPage)
-  .component('govDocsComponentsFormsAndErrorsPage', FormsAndErrorsPage);
+  .component('govDocsComponentsFormsAndErrorsPage', FormsAndErrorsPage)
+  .component('govDocsContentDataPage', DataPage);
