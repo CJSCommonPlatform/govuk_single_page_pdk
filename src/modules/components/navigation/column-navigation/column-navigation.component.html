@@ -1,3 +1,23 @@
 <div class="related">
-  <div data-ng-transclude></div>
+  <p class="related-meta" 
+    data-ng-if="$ctrl.metadata.length === 1"
+    data-ng-bind-html="$ctrl.metadata[0].htmlString">
+  </p>
+  <ul class="related-meta"
+    data-ng-if="$ctrl.metadata.length > 1">
+    <li data-ng-repeat="item in $ctrl.metadata" 
+      data-ng-bind-html="item.htmlString"></li>
+  </ul>
+  <div class="related-section" data-ng-repeat="section in $ctrl.sections">
+    <h3 class="related-heading" data-ng-if="section.heading" data-ng-bind="section.heading"></h3>
+    <ul class="related-links">
+      <li data-ng-repeat="link in section.links">
+        <a href="javascript:void(0);"
+          data-ng-click="link.onClick();"
+          data-ng-class="{'bold-xsmall': link.isBold}" 
+          data-ng-bind="link.text">
+        </a>
+      </li>
+    </ul>
+  </div>
 </div>
