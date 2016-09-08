@@ -1,0 +1,9 @@
+<p class="related-meta" 
+  data-ng-if="$ctrl.metadata.length === 1"
+  data-ng-bind="$ctrl.metadata[0].text">
+</p>
+<ul class="related-meta"
+  data-ng-if="$ctrl.metadata.length > 1">
+  <li data-ng-repeat="item in $ctrl.metadata" 
+    data-ng-bind="item.text"></li>
+</ul>
