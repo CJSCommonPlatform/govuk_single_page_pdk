@@ -1,0 +1,69 @@
+// Related
+// ==========================================================================
+
+$module: 'related';
+
+.#{$module} {
+
+  &-links {
+    @include core-16();
+    margin-top: em(5, 16);
+    margin-bottom: em(20, 16);
+
+    li {
+      margin-bottom: em(12, 16);
+    }
+
+  }
+
+  &-meta {
+    margin-top: 0;
+    margin-bottom: em(10);
+
+    li {
+      border-top: 1px solid $grey-2;
+      margin-bottom: em(10);
+      padding-top: em(10);
+
+      &:first-child {
+        border: 0;
+        padding-top: 0;
+      }
+
+    }
+
+  }
+
+  &-section {
+    overflow: hidden;
+
+    &:first-of-type { // ie9+
+      border-top: em(10) solid $govuk-blue;
+      padding-top: em(5);
+    }
+
+  }
+
+  &-heading {
+    @include bold-24();
+    margin-top: em(5, 24);
+    margin-bottom: em(12, 24);
+  }
+
+}
+
+.related-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+gov-column-navigation-section:first-of-type .related-section:first-of-type {
+  border-top: em(10) solid $govuk-blue;
+  padding-top: em(5);
+}
+
+/*
+
+HTML Usage
+
+*/
