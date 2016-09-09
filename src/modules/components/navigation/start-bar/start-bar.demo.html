@@ -6,73 +6,22 @@
 <gov-tabset>
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
-
-      <ul class="list">
-        <li>
-          <div class="action-bar action-bar-start">
-            <a class="action-bar-header" href="#">
-              <span class="action-bar-title">Record case strengths, weaknesses and strategy</span>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="action-bar action-bar-start">
-            <a class="action-bar-header" href="#">
-              <span class="action-bar-title">Consider European Convention on Human Rights</span>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="action-bar action-bar-start">
-            <a class="action-bar-header" href="#">
-              <span class="action-bar-title">Recommend applications to court</span>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="action-bar action-bar-start">
-            <a class="action-bar-header" href="#">
-              <span class="action-bar-title">Where should case be heard?</span>
-            </a>
-          </div>
-        </li>
-        <li>
-          <div class="action-bar action-bar-start">
-            <a class="action-bar-header" href="#">
-              <span class="action-bar-title">Anticipate contested issues</span>
-            </a>
-          </div>
-        </li>
-      </ul>
-
-      <div class="panel panel-border-wide">
-        <p>This pattern is for <b>CCR</b> and <b>IT2</b> only.</p>
+      <div class="start-action">
+          <span class="bold">Give remand advice</span>
+          <span class="pull-right">
+            <span class="action-type">
+              <span>Start</span>
+            </span>
+            <span class="arrow"></span>
+          </span>
       </div>
-
-      <div class="action-bar action-bar-start">
-        <a class="action-bar-header action-bar-header-secondary" href="#">
-          <span class="action-bar-title">Order more information</span>
-        </a>
-      </div>
-
     </docs-example>
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-
-      <ul class="list">
-        <li data-ng-repeat="item in $ctrl.items">
-          <gov-start-bar item="item"></gov-start-bar>
-        </li>
-      </ul>
-
-      <div class="panel panel-border-wide">
-        <p>This pattern is for <b>CCR</b> and <b>IT2</b> only.</p>
-      </div>
-
-      <gov-start-bar item="$ctrl.i2tCcrItem" action-bar-secondary-style></gov-start-bar>
-
+    <gov-start-bar ng-repeat="item in $ctrl.items" item="item">
+    </gov-start-bar>
     </docs-example>
   </gov-tab>
 
@@ -80,43 +29,13 @@
     <prismify language="javascript">
       items = [
         {
-          description: 'Record case strengths, weaknesses and strategy',
+          description: 'Give remand advice',
+          action: 'Start',
           click: function () {
-            console.log('clicked \"Record case strengths, weaknesses and strategy\"');
-          }
-        },
-        {
-          description: 'Consider European Convention on Human Rights',
-          click: function () {
-            console.log('clicked \"Consider European Convention on Human Rights\"');
-          }
-        },
-        {
-          description: 'Recommend applications to court',
-          click: function () {
-            console.log('clicked \"Recommend applications to court\"');
-          }
-        },
-        {
-          description: 'Where should case be heard?',
-          click: function () {
-            console.log('clicked \"Where should case be heard?\"');
-          }
-        },
-        {
-          description: 'Anticipate contested issues',
-          click: function () {
-            console.log('clicked \"Anticipate contested issues\"');
+            console.log('clicked');
           }
         }
-      ];
-
-      i2tCcrItem = {
-        description: 'Order more information',
-        click: function() {
-          console.log('clicked \"Order more information\"');
-        }
-      };
+      ]
     </prismify>
   </gov-tab>
 

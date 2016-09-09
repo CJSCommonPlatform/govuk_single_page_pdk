@@ -1,6 +1,8 @@
-<div class="contact-info" itemtype="http://schema.org/Person" itemscope>
-  <div itemprop="jobTitle" data-ng-if="$ctrl.details.position" data-ng-bind="$ctrl.details.position"></div>
-  <div class="bold-xsmall" itemprop="name" data-ng-bind="$ctrl.details.name"></div>
-  <div class="font-xsmall" data-ng-if="$ctrl.details.phone" itemprop="telephone" data-ng-bind="$ctrl.details.phone"></div>
-  <a class="font-xsmall" data-ng-if="$ctrl.details.email" itemprop="email" href="mailto:{{$ctrl.details.email}}" data-ng-bind="$ctrl.details.email"></a>
+<div class="contact-info">
+  <div class="bold-small" ng-bind="$ctrl.details.position"></div>
+  <div class="bold-xsmall" ng-bind="$ctrl.details.name"></div>
+  <div class="font-xsmall" ng-bind="$ctrl.details.phone"></div>
+  <div>
+    <a href="mailto:{{$ctrl.details.email}}" class="font-xsmall" ng-bind="$ctrl.details.email"></a>
+  </div>
 </div>

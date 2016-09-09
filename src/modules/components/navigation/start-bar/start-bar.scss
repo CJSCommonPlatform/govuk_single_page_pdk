@@ -1,0 +1,29 @@
+.start-action{
+  background-color: $light-blue-25;
+  height: 40px;
+  border-bottom: 2px solid $light-blue-50;
+  padding:10px;
+  margin-bottom:10px;
+  @include core-16;
+
+  .bold{
+    font-weight:bold;
+  }
+
+  .action-type{
+    color: $link-colour;
+  }
+
+  .arrow{
+    font-weight: normal;
+    @extend .fa;
+    @extend .fa-chevron-right;
+    color: $link-colour;
+    margin-left:15px;
+  }
+
+}
+
+.start-action:hover {
+  cursor:pointer;
+}

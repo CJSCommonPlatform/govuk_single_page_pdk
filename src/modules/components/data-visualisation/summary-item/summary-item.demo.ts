@@ -4,9 +4,6 @@ import { Component } from '@govuk/angularjs-devtools';
   template: require('./summary-item.demo.html')
 })
 export class SummaryItemDemo {
-
-  notInLine = true;
-
   item = {
     value: 3,
     description: 'Statements',
