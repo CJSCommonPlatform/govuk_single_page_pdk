@@ -9,7 +9,10 @@ import { ShowHidePaneComponent} from './show-hide-pane/show-hide-pane.component'
 import { ProgressListComponent } from './progress-list/progress-list.component';
 import { DatasetComponent } from './dataset/dataset.component';
 
-const module = angular.module('govuk-single-page-pdk.components.data-visualisation', ['ngAnimate'])
+const module = angular.module('govuk-single-page-pdk.components.data-visualisation', [
+    'ngAnimate',
+    'slugifier'
+])
 
   .component('govPersonalDetails', PersonalDetailsComponent)
   .component('govContactInfo', ContactInfoComponent)

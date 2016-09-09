@@ -7,4 +7,5 @@ import 'angular-sanitize';
 import 'prismjs';
 import 'jquery';
 import 'ngSmoothScroll';
+import 'angular-slugify';
 import 'ng-clamp';
