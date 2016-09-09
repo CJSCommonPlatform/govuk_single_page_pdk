@@ -6,10 +6,8 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   transclude: true,
   template: `
-        <div ng-if="$ctrl.active" class="tabs-panel" id="before-you-start" role="tabpanel">        
-          <div class="tabs-panel-inner" tabindex="0"  ng-transclude>
-          </div>
-        </div>  
+        <section data-ng-show="$ctrl.active" aria-hidden="{{ !$ctrl.active }}" role="tabpanel" id="{{$ctrl.heading | slugify }}" data-ng-transclude>        
+        </section>  
   `,
   require: {
     tabsetCtrl: '^govTabset'
