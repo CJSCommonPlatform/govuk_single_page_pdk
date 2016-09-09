@@ -8,14 +8,7 @@ import { Component } from '@govuk/angularjs-devtools';
     
       <gov-tab heading="HTML Example">
         <docs-example language="markup">
-          <div class="digit-box">
-            <span class="digit-box-number">4637</span>
-          </div>
-          <br />
-          <br />  
-          <div class="digit-box">
-            <span class="digit-box-number">07700900753</span>
-          </div>
+          <div class="gov-digit-box">1234</div>
         </docs-example>
       </gov-tab>
     

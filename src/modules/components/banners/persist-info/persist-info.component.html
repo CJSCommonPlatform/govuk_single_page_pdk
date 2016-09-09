@@ -1,8 +1,8 @@
 <div class="persist-info">
-  <span class="persist-info-reference" data-ng-if="$ctrl.label" data-ng-bind="$ctrl.label"></span>
-  <span class="persist-info-title" data-ng-if="$ctrl.title" data-ng-bind="$ctrl.title"></span>
-  <div class="persist-info-links" data-ng-if="$ctrl.links">
-    <a data-ng-repeat="link in $ctrl.links" class="persist-info-link" href=""
-      data-ng-bind="link.title" title="{{link.title}}" data-ng-click="link.onClick()"></a>
+  <span class="persist-info-label" ng-if="$ctrl.label" ng-bind="$ctrl.label"></span>
+  <span class="persist-info-title" ng-if="$ctrl.title" ng-bind="$ctrl.title"></span>
+  <div class="persist-info-links" ng-if="$ctrl.links">
+    <a ng-repeat="link in $ctrl.links" class="persist-info-link" href=""
+      ng-bind="link.title" title="{{link.title}}" ng-click="link.onClick()"></a>
   </div>
 </div>

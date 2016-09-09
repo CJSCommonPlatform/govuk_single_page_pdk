@@ -4,8 +4,7 @@ import { Component } from '@govuk/angularjs-devtools';
   bindings: {
     value: '<',
     itemDescription: '<',
-    action: '&?',
-    notInLine: '<'
+    action: '&?'
   },
   template: require('./summary-item.component.html')
 })

@@ -1,19 +1,15 @@
-<div class="pagination">
-  
-  <div class="pagination-prev">
-    <a href="javascript:void(0);" rel="prev" title="$ctrl.navigation.previous.usageInstructions"
-      data-ng-click="$ctrl.navigation.previous.navigate();">
-      <span class="pagination-label" data-ng-bind="$ctrl.navigation.previous.name"></span>
-      <span class="pagination-title" data-ng-bind="$ctrl.navigation.previous.description"></span>
-    </a>
+<div class="grid-row clearfix">
+  <div class="column-one-half pull-left" ng-if="$ctrl.navigation.previous">
+    <gov-arrow type="previous"
+               text="{{$ctrl.navigation.previous.name}}"
+               description="{{$ctrl.navigation.previous.description}}"
+               navigate="$ctrl.navigation.previous.navigate"></gov-arrow>
   </div>
-  
-  <div class="pagination-next">
-    <a href="javascript:void(0);" rel="next" title="$ctrl.navigation.next.usageInstructions"
-      data-ng-click="$ctrl.navigation.next.navigate();">
-      <span class="pagination-label" data-ng-bind="$ctrl.navigation.next.name"></span>
-      <span class="pagination-title" data-ng-bind="$ctrl.navigation.next.description"></span>
-    </a>
+
+  <div class="column-one-half pull-right" ng-if="$ctrl.navigation.next">
+    <gov-arrow type="next"
+               text="{{$ctrl.navigation.next.name}}"
+               description="{{$ctrl.navigation.next.description}}"
+               navigate="$ctrl.navigation.next.navigate"></gov-arrow>
   </div>
-  
 </div>
