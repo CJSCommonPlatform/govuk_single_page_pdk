@@ -44,35 +44,28 @@
           </div>
         </li>
       </ul>
-
       <div class="panel panel-border-wide">
         <p>This pattern is for <b>CCR</b> and <b>IT2</b> only.</p>
       </div>
-
       <div class="action-bar action-bar-start">
         <a class="action-bar-header action-bar-header-secondary" href="#">
           <span class="action-bar-title">Order more information</span>
         </a>
       </div>
-
     </docs-example>
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-
       <ul class="list">
-        <li ng-repeat="item in $ctrl.items">
+        <li data-ng-repeat="item in $ctrl.items">
           <gov-start-bar item="item"></gov-start-bar>
         </li>
       </ul>
-
       <div class="panel panel-border-wide">
         <p>This pattern is for <b>CCR</b> and <b>IT2</b> only.</p>
       </div>
-
       <gov-start-bar item="$ctrl.i2tCcrItem" action-bar-secondary-style></gov-start-bar>
-
     </docs-example>
   </gov-tab>
 
