@@ -25,8 +25,8 @@ module.exports = {
       {test: /\.scss$/, loader: 'style!css!postcss!sass'},
       {test: /\.json$/, loader: 'json'},
       {test: /\.html$/, loader: 'html', exclude: [helpers.root('src/index.html')]},
-      {test: /\.(jpg|jpeg|gif|png)$/, loader: 'url?limit=1024&name=assets/images/[name].[ext]'},
-      {test: /\.(woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url?limit=1024&name=assets/fonts/[name].[ext]'}
+      {test: /\.(jpg|jpeg|gif|png)$/, loader: 'url?limit=1&name=assets/images/[name].[ext]'},
+      {test: /\.(woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url?limit=1&name=assets/fonts/[name].[ext]'}
     ]
   },
   postcss: [
@@ -37,6 +37,8 @@ module.exports = {
   sassLoader: {
     includePaths: [
       helpers.root('node_modules/govuk_frontend_toolkit/stylesheets')
+      ,'node_modules/govuk-elements-sass/public/sass',
+      ,'src/assets'
     ]
   },
   plugins: [
@@ -52,6 +54,19 @@ module.exports = {
       {
         context: './src',
         from: 'assets/**'
+      },
+      {
+        context: './node_modules/govuk_template_mustache',
+        from: 'assets/stylesheets/**'
+      },
+      {
+        context: './node_modules/govuk_template_mustache',
+        from: 'assets/images/**'
+      },
+      {
+        context: './node_modules/govuk_frontend_toolkit',
+        from: 'images/**',
+        to: 'assets/'
       }
     ]),
     new webpack.optimize.OccurenceOrderPlugin(true),

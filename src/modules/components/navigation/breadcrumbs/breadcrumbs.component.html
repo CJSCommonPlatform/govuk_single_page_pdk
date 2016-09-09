@@ -1,6 +1,8 @@
 <div class="breadcrumbs">
   <ol>
-    <li><a ui-sref="home">Single Page Platform Development Kit</a></li>
-    <li>Layout</li>
+    <li data-ng-repeat="element in $ctrl.breadcrumbs">
+      <a data-ng-if="element.state" data-ui-sref="{{ element.state }}" data-ng-bind="element.text"></a>
+      <span data-ng-if="!element.state" data-ng-bind="element.text"></span>
+    </li>
   </ol>
 </div>

@@ -1,19 +1,34 @@
-.persist-info {
+// Persist information
+// ==========================================================================
+
+$module: 'persist-info';
+
+.#{$module} {
+  @include core-16;
   background-color: $govuk-blue;
-  padding:15px;
-  color:white;
-  font-weight: bold;
-  &-label {
-    margin-right:10px;
+  color: white; 
+  padding: $gutter-half;
+  
+  &-reference {
+    float: left;
+    margin-right: 10px;
   }
-  &-links {
-    float: right;
+  
+  &-title {
+    display: block;
+    overflow: hidden;
+    font-weight: 700;
   }
-  &-link {
-    color: $white;
-    margin-left: 10px;
-    &:visited,:active {
-      color: $white;
-    }
-  }
+  
 }
+
+/*
+  
+HTML Usage
+  
+<div class="persist-info">
+  <span class="persist-info-reference">12AA3456716</span>
+  <span class="persist-info-title">Joseph BLOGGS</span>
+</div>
+
+*/

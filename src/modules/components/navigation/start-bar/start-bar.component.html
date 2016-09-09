@@ -1,11 +1,5 @@
-<div class="start-action" ng-click="$ctrl.item.click()">
-  <span class="start-action-action">
-    <span class="bold" ng-bind="$ctrl.item.description"></span>
-    <span class="pull-right">
-      <span class="action-type">
-        <span ng-bind="$ctrl.item.action"></span>
-      </span>
-      <span class="arrow"></span>
-    </span>
-  </span>
+<div class="action-bar action-bar-start">
+  <a class="action-bar-header" href="javascript:void(0);" data-ng-click="$ctrl.item.click()">
+    <span class="action-bar-title" data-ng-bind="$ctrl.item.description"></span>
+  </a>
 </div>

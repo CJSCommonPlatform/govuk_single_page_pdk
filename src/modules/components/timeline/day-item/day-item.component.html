@@ -1,16 +1,15 @@
-<div class="day-item">
-    <div ng-class="{'box-black-vertical': $ctrl.dayIndex !== 0, 'box-no-vertical': $ctrl.dayIndex === 0}"></div>
-    <div class="boxed bottom-shadow">
-      <div class="box-it-inner box-padding">
-        <span class="heading-small" ng-bind="$ctrl.dayItem.dateTitle"></span>
-      </div>
-      <div class="box-margin line-spacing-10">
-        <div class="small" ng-bind="$ctrl.dayItem.description"></div>
-        <span class="gray small" ng-bind="$ctrl.dayItem.timestamp"></span>
-      </div>
-      <div class="box-margin line-spacing-10" ng-repeat="action in $ctrl.dayItem.actions">
-        <span class="gray" ng-if="!action.active" ng-bind="action.title"></span>
-        <a ng-if="action.active" ng-click="action.action()" ng-bind="action.title"></a>
-      </div>
-    </div>
-</div>
+<article class="timeline-block">
+  <div class="timeline-block-header">
+    <time datetime="2016-05-10">{{ $ctrl.dayItem.dateTitle }}</time>
+  </div>
+  <div class="timeline-block-content">
+    <h3 class="bold-small">{{$ctrl.dayItem.description}}</h3>
+    <time class="font-xsmall" datetime="{{$ctrl.dayItem.timestamp}}Z">{{$ctrl.dayItem.timestamp}}</time>
+    <ul class="timeline-block-updates">
+      <li><a href="#">Assign to me</a></li>
+      <li>Review full case</li>
+      <li>Enter your analysis and charging decision</li>
+    </ul>
+  </div>
+</article>
+<ng-transclude></ng-transclude>

@@ -2,7 +2,8 @@
 @import "arrow/arrow";
 @import "badge-item/badge-item";
 @import "breadcrumbs/breadcrumbs";
+@import "column-navigation/column-navigation";
 @import "completed-bar/completed-bar";
 @import "menus/side-menu/side-menu";
 @import "menus/top-menu/top-menu";
-@import "start-bar/start-bar";
+//@import "start-bar/action-bar"; // temporarily removed to avoid problems with 2 images path

@@ -25,11 +25,21 @@ $pdk-image-path: '/assets/images' !default;
   @return url('#{$govuk-frontend-toolkit-image-path}#{$file}');
 }
 
+// provided by peer dependencies
+@import '~govuk-elements-sass/public/sass/govuk-elements';
+
 // pdk domains
 @import 'modules/layout/layout';
 @import 'modules/content/content';
 @import 'modules/components/components';
 
-// provided by peer dependencies
-@import '~govuk-elements-sass/public/sass/govuk-elements';
-@import '~govuk-elements-sass/public/sass/elements/govuk-template-base';
+@function image-url($file) {
+  @return url('#{$pdk-image-path}#{$file}');
+}
+
+@import "modules/components/navigation/start-bar/action-bar";
+@import "util/icons";
+@import "modules/components/navigation/pagination/pagination.scss";
+@import 'modules/components/banners/notification/notification';
+@import 'modules/components/banners/persist-info/persist-info';
+
