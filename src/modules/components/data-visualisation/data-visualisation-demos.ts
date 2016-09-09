@@ -3,6 +3,7 @@ import docsUtils from '../../../util/docs';
 
 import { ContactInfoDemo} from './contact-info/contact-info.demo';
 import { DigitBoxDemo } from './digit-box/digit-box.demo';
+import { FiltersDemo } from './filters/filters.demo';
 import { PersonalDetailsDemo } from './personal-details/personal-details.demo';
 import { ProgressListDemo } from './progress-list/progress-list.demo';
 import { ShowHidePaneDemo} from './show-hide-pane/show-hide-pane.demo';
@@ -17,6 +18,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.data-visual
 ])
   .component('govContactInfoDemo', ContactInfoDemo)
   .component('govDigitBoxDemo', DigitBoxDemo)
+  .component('govFiltersDemo', FiltersDemo)
   .component('govPersonalDetailsDemo', PersonalDetailsDemo)
   .component('govProgressListDemo', ProgressListDemo)
   .component('govShowHidePaneDemo', ShowHidePaneDemo)
