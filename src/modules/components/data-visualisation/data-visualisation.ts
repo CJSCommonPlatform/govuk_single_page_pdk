@@ -2,6 +2,7 @@ import { PersonalDetailsComponent } from './personal-details/personal-details.co
 import { ContactInfoComponent} from './contact-info/contact-info.component';
 import { SummaryItemComponent} from './summary-item/summary-item.component';
 import { DigitBoxComponent } from './digit-box/digit-box.component';
+import { FiltersComponent } from './filters/filters.component';
 import { TabComponent } from './tab/tab.component';
 import { TabsPaneComponent} from './tabs-pane/tabs-pane.component';
 import { TabsetComponent} from './tab/tabset.component';
@@ -18,6 +19,7 @@ const module = angular.module('govuk-single-page-pdk.components.data-visualisati
   .component('govContactInfo', ContactInfoComponent)
   .component('govSummaryItem', SummaryItemComponent)
   .component('govDigitBox', DigitBoxComponent)
+  .component('govFilters', FiltersComponent)
   .component('govTab', TabComponent)
   .component('govTabsPane', TabsPaneComponent)
   .component('govTabset', TabsetComponent)

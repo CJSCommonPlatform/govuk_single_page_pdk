@@ -1,0 +1,47 @@
+<div class="filters">
+
+  <div class="filters-menu" role="toolbar" aria-label="Filter options" aria-controls="filters-content">
+    <button data-ng-repeat="filter in $ctrl.filters" 
+      class="filters-button"
+      data-ng-class="{'is-selected': filter.isActive}" 
+      type="button" 
+      data-ng-click="$ctrl.selectFilter($index);"
+      data-ng-keydown="$ctrl.changeFilter($event)"
+      aria-pressed="{{filter.isActive ? true : false}}"
+      data-ng-bind="filter.name">
+    </button>
+  </div>
+  
+  <div id="filters-content">
+  
+    <table class="table table-personal-details">
+      
+      <thead>
+        <tr>
+          <th scope="col"
+            data-ng-repeat="header in $ctrl.tableHeaders"
+            data-ng-bind="header.label">
+          </th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr data-ng-repeat="row in $ctrl.tableData | filter:$ctrl.activeFilter">
+          <td data-ng-repeat="column in $ctrl.tableHeaders">
+            <a href=""
+              data-ng-if="row['onClicks'][column.name]"
+              data-ng-click="row['onClicks'][column.name]()"
+              data-ng-bind="row[column.name]">
+            </a>
+            <span data-ng-if="!row['onClicks'][column.name]"
+              data-ng-bind="row[column.name]">
+            </span>
+          </td>
+        </tr>
+      </tbody>
+      
+    </table>
+  
+  </div>
+
+</div>

@@ -1,0 +1,120 @@
+<h2 class="heading-medium">Filters</h2>
+<p>Displays a table of data and buttons with preset filters to filter the table data.</p>
+<p>The string, object or function used to defined each filter uses the standard Angular filter expression format described in the <a aria-label="Link to Angular filter documentation" href="https://docs.angularjs.org/api/ng/filter/filter">Angular filter docs</a></p>
+<p>Each row of table data is an object where the keys match the column name of the table header <code>name</code> property</p>
+<p>Links can be applied to any table cell. The onclick handler is described separately from the rest of the row data in the <code>onClicks</code> object. The keys of the <code>onClicks</code> object relate to the column names for that row of data.</p>
+<pre>
+  <code>
+    // Object for one table row
+    {
+      name: 'Pending users',
+      email: 'john.smith@gmail.com',
+      status: 'pending',
+      role: 'user',
+      onClicks: {
+        'name': function() {
+          // onClick handler for the name cell of this row
+          // Presence of onClick handler will turn the cell data into a link
+        },
+        'email': function() {
+          // onClick handler for the email cell of this row
+          // Presence of onClick handler will turn the cell data into a link
+        }
+      }
+    }
+  </code>
+</pre>
+
+<gov-tabset>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <gov-filters filters="$ctrl.filters" table-headers="$ctrl.tableHeaders" table-data="$ctrl.tableData"></gov-filters>
+    </docs-example>
+  </gov-tab>
+  
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      filters = [
+        {
+          name: 'All users',
+          filter: '',
+          isActive: 'true'
+        },
+        {
+          name: 'Pending users',
+          filter: {
+            status: 'pending'
+          }
+        },
+        {
+          name: 'Administrators only',
+          filter: {
+            role: 'administrator'
+          }
+        }
+      ];
+
+      tableHeaders = [
+        {
+          label: 'Name',
+          name: 'name'
+        },
+        {
+          label: 'Email address',
+          name: 'email'
+        }
+      ];
+
+      tableData = [
+        {
+          name: 'CHANT, John',
+          email: 'john.chant@gmail.com',
+          status: 'active',
+          role: 'user',
+          onClicks: {
+            'name': function() {
+              console.log('Clicked on \"CHANT, John\"');
+            }
+          }
+        },
+        {
+          name: 'FRANCIS, John',
+          email: 'john.francis@gmail.com',
+          status: 'active',
+          role: 'administrator',
+          onClicks: {
+            'name': function() {
+              console.log('Clicked on \"FRANCIS, John\"');
+            }
+          }
+        },
+        {
+          name: 'SMITH, John',
+          email: 'john.smith@gmail.com',
+          status: 'pending',
+          role: 'administrator',
+          onClicks: {
+            'name': function() {
+              console.log('Clicked on \"SMITH, John\"');
+            }
+          }
+        },
+        {
+          name: 'O\'CARROL, John',
+          email: 'john.ocarrol@gmail.com',
+          status: 'pending',
+          role: 'user',
+          onClicks: {
+            'name': function() {
+              console.log('Clicked on \"O\'CARROL, John\"');
+            }
+          }
+        }
+      ];
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="9"></discuss-component>
