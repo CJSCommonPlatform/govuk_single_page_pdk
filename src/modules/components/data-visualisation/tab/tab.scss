@@ -1,93 +1,140 @@
-// ==========================================================================
 // Tabs
 // ==========================================================================
 
 $module: 'tabs';
 
 .#{$module} {
-  margin-bottom: 1.05263em; // 20px
 
-  // Tab list
-  [role="tablist"] {
-    border-top: 1px solid $grey-2;
-    margin: 0;
+  // shared tab properties
+  [role='tabpanel'] {
 
-    @include media(tablet) {
-      border-top: 0 none;
+    &[aria-hidden='true'] {
+      display: none;
     }
 
-    li {
-      @include core-19;
-      border-bottom: 1px solid $grey-2;
-      margin: 0;
-      list-style: none;
+  }
 
-      @include media(tablet) {
-        border-bottom: 0 none;
-        float: left;
-        margin: 0 0 -1px;
-        padding: 0;
-      }
+  @include media(tablet) {
 
-      a {
-        background-color: $white;
-        display: block;
-        padding: em(9);
-        text-decoration: none;
+    [role='tab'] {
+      background-color: $grey-3;
+      text-decoration: none;
 
-        &:focus {
-          outline: 3px;
-        }
-
-        @include media(tablet) {
-          background-color: $grey-3;
-          border: 0 none;
-          float: left;
-          margin: em(5) em(5) em(5) 0;
-          padding: em(9) em(19);
-          text-align: center;
-        }
-      }
-
-      // Active tab
-      [aria-selected="true"] {
+      &[aria-selected='true'] {
         background-color: $white;
         color: $text-colour;
         cursor: default;
-        text-decoration: none;
 
-        @include media(tablet) {
-          border: 1px solid $grey-2;
-          border-bottom: 1px solid transparent;
-          margin-top: 0;
+        &:focus {
+          border: 0;
+        }
+
+      }
+
+    }
+
+    [role='tablist'],
+    [role='presentation'] {
+      margin: 0;
+    }
+
+    [role='tabpanel'] {
+
+      // targets any first item
+      *:first-of-type {
+        margin-top: 0;
+      }
+
+    }
+
+  }
+
+  @include media(tablet) {
+
+    // tabs horizontal only styles
+    &-horizontal {
+
+      [role='tab'] {
+        float: left;
+        margin: em(5) em(5) em(5) 0;
+        padding: em(9) em(15);
+        text-align: center;
+
+        &[aria-selected='true'] {
+          border-left: 1px solid $grey-2;
+          border-right: 1px solid $grey-2;
+          border-top: 1px solid $grey-2;
           margin-bottom: 0;
-          padding: em(13) em(18) em(14);
+          margin-top: 0;
+          padding: em(12) em(14) em(15);
+          position: relative; bottom: -1px;
+
+          &:focus {
+            padding: em(13) em(15);
+          }
+
+        }
+
+      }
+
+      [role='tabpanel'] {
+        border-top: 1px solid $grey-2;
+        clear: both;
+        padding-top: em(20);
+      }
+
+    }
+
+    // tabs vertical only styles
+    &-vertical {
+
+      [role='presentation'] {
+        margin-top: em(5);
+      }
+
+      [role='tab'] {
+        display: block;
+        margin-right: em(6);
+        padding: em(11) em(10) em(11) em(11);
+
+        &[aria-selected='true'] {
+          border-left: 1px solid $grey-2;
+          border-bottom: 1px solid $grey-2;
+          border-top: 1px solid $grey-2;
+          margin-right: 0;
+          padding: em(10) em(15) em(10) em(10);
+
+          &:focus {
+            padding: em(11) em(10) em(11) em(11);
+          }
+
+        }
+
+      }
+
+      [role='tablist'] {
+        float: left;
+        margin-right: -1px;
+        max-width: 170px;
+        position: relative;
+      }
+
+      [role='presentation'] {
+        margin-top: em(5);
+
+        &:first-child {
+          margin-top: 0;
         }
       }
-    }
-  }
 
-  // Tab content
-  &-content {
-    clear: both;
-
-    [role="tabpanel"] {
-      @include media(tablet) {
-        border-top: 1px solid $grey-2;
+      [role='tabpanel'] {
+        border: 1px solid #bfc1c3;
+        overflow: hidden;
+        padding: em(20);
       }
-      &[aria-hidden="true"] {
-        display: none;
-      }
-    }
-  }
 
-  // Tab panel inner
-  &-panel-inner {
-    &:focus {
-      border: 0;
-      outline: 0;
     }
-  }
 
+  }
 
 }

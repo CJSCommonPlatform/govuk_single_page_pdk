@@ -36,7 +36,8 @@ angular.module('govuk-single-page-pdk.docs', [
   'ui.bootstrap',
   'smoothScroll',
   'ngSanitize',
-  'ng-clamp'
+  'ng-clamp',
+  'slugifier'
 ])
   .component('govDocs', AppLayout)
   .component('govDocsHomePage', HomePage)
