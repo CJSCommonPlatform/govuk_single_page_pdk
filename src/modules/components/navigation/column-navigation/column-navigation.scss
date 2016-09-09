@@ -20,7 +20,7 @@ $module: 'related';
     margin-top: 0;
     margin-bottom: em(10);
 
-    li {\
+    li {
       border-top: 1px solid $grey-2;
       margin-bottom: em(10);
       padding-top: em(10);
@@ -56,6 +56,7 @@ $module: 'related';
   border-top: none;
   padding-top: 0;
 }
+
 /*
 
 HTML Usage
