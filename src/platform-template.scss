@@ -33,6 +33,9 @@ $pdk-image-path: '/assets/images' !default;
 @import 'modules/content/content';
 @import 'modules/components/components';
 
+
+// we override the image-url function to allow to take the images from a different source after the redefinition
+// All scss that need to take images directly from PDK a not for toolkit should be added after here
 @function image-url($file) {
   @return url('#{$pdk-image-path}#{$file}');
 }
