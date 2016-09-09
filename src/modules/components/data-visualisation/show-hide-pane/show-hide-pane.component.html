@@ -1,27 +1,12 @@
-<div class="collapsibles-item" data-ng-class="{'is-open': $ctrl.open}">
-
-  <div class="collapsibles-header">
-    <button class="collapsibles-button"
-            type="button"
-            data-ng-bind="$ctrl.showText"
-            data-ng-if="!$ctrl.open"
-            data-ng-click="$ctrl.toggle()"
-            aria-expanded="{{$ctrl.open}}"
-            aria-controls="collapsibles-0"
-            ></button>
-    <button class="collapsibles-button"
-            type="button"
-            data-ng-bind="$ctrl.hideText"
-            data-ng-if="$ctrl.open"
-            data-ng-click="$ctrl.toggle()"
-            aria-expanded="{{$ctrl.open}}"
-            aria-controls="collapsibles-0"
-    ></button>
-    <div ng-transclude="alwaysVisible"></div>
+<div class="gov-show-hide-pane">
+  <div class="pull-right toggle-button" ng-click="$ctrl.toggle()">
+    <span ng-if="$ctrl.open"><i class="fa fa-chevron-up"></i> <span ng-bind="$ctrl.hideText"></span></span>
+    <span ng-if="!$ctrl.open"><i class="fa fa-chevron-down"></i> <span ng-bind="$ctrl.showText"></span></span>
   </div>
-
-  <div class="collapsibles-content" ng-transclude="hideable" data-ng-if="$ctrl.open">
+  <div class="clearfix gov-show-hide-pane-content" ng-transclude="alwaysVisible">
 
   </div>
+  <div class="clearfix gov-show-hide-pane-content" ng-transclude="hideable" ng-show="$ctrl.open">
 
+  </div>
 </div>

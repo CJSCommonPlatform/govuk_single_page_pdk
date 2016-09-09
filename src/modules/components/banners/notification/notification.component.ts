@@ -7,18 +7,11 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   transclude: true,
   template: `
-    <div class="notification notification-{{$ctrl.type}}" role="alert">
-      <i data-ng-if="($ctrl.showIcon === true && $ctrl.type === 'confirmation') 
-      || ($ctrl.showIcon === true && $ctrl.type === 'active')" 
-      class="icon icon-tick-white" role="presentation" 
-      aria-hidden="true"></i>
-      <i data-ng-if="$ctrl.showIcon === true && $ctrl.type === 'locked' " 
-      role="presentation" aria-hidden="true" 
-      class="icon icon-important-white"></i>
-      <div class="notification-message">
-        <p class="bold-medium"><ng-transclude></ng-transclude></p>
+    <div class="gov-notification {{$ctrl.type}}">
+      <i class="gov-icon" ng-if="$ctrl._showIcon"></i>
+      <div class="gov-notification-body" ng-transclude>
       </div>
-    </div>
+    </div>  
   `
 })
 export class NotificationComponent {
