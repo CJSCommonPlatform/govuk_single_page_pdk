@@ -20,7 +20,7 @@ $module: 'related';
     margin-top: 0;
     margin-bottom: em(10);
 
-    li {
+    li {\
       border-top: 1px solid $grey-2;
       margin-bottom: em(10);
       padding-top: em(10);
@@ -56,12 +56,6 @@ $module: 'related';
   border-top: none;
   padding-top: 0;
 }
-
-gov-column-navigation-section:first-of-type .related-section:first-of-type {
-  border-top: em(10) solid $govuk-blue;
-  padding-top: em(5);
-}
-
 /*
 
 HTML Usage
