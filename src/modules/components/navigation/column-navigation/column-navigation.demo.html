@@ -1,0 +1,102 @@
+<h2 class="heading-medium">Column Navigation</h2>
+<p>Component for a column navigation</p>
+
+<gov-tabset>
+
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+
+      <div class="col-sm-4">
+
+        <!-- related -->
+        <div class="related">
+
+          <div class="related-section">
+
+            <ul class="related-links">
+              <li><a href="#">View this user&rsquo;s details</a></li>
+              <li><a href="#">Search for user in this organisation</a></li>
+              <li><a href="#">Search for another organisation</a></li>
+              <li><a class="bold-xsmall" href="#">More</a></li>
+            </ul>
+
+          </div>
+
+        </div>
+        <!-- end -->
+
+      </div>
+
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <div class="col-sm-4">
+        <gov-column-navigation>
+          <gov-column-navigation-section>
+            <gov-column-navigation-links links="$ctrl.example1.column1.links">
+            </gov-column-navigation-links>
+          </gov-column-navigation-section>
+        </gov-column-navigation>
+      </div>
+    </docs-example>
+
+    <docs-example language="markup">
+      <div class="col-sm-4">
+        <gov-column-navigation>
+          <gov-column-navigation-related-metadata metadata="$ctrl.example2.column1.metadata">
+          </gov-column-navigation-related-metadata>
+          <gov-column-navigation-section>
+            <gov-column-navigation-links links="$ctrl.example2.column1.links">
+            </gov-column-navigation-links>
+          </gov-column-navigation-section>
+        </gov-column-navigation>
+      </div>
+      <div class="col-sm-4">
+        <gov-column-navigation>
+          <gov-column-navigation-related-metadata metadata="$ctrl.example2.column2.metadata">
+          </gov-column-navigation-related-metadata>
+          <gov-column-navigation-section>
+            <gov-column-navigation-links links="$ctrl.example2.column2.links">
+            </gov-column-navigation-links>
+          </gov-column-navigation-section>
+        </gov-column-navigation>
+      </div>
+    </docs-example>
+
+    <docs-example language="markup">
+      <div class="col-sm-4">
+        <gov-column-navigation>
+          <gov-column-navigation-section heading="$ctrl.example3.column1.section1heading">
+            <gov-column-navigation-links links="$ctrl.example3.column1.section1links">
+            </gov-column-navigation-links>
+          </gov-column-navigation-section>
+          <gov-column-navigation-section heading="$ctrl.example3.column1.section2heading">
+            <gov-column-navigation-links links="$ctrl.example3.column1.section2links">
+            </gov-column-navigation-links>
+          </gov-column-navigation-section>
+        </gov-column-navigation>
+      </div>
+      <div class="col-sm-4">
+        <gov-column-navigation>
+          <gov-column-navigation-section heading="$ctrl.example3.column2.section1heading">
+            <gov-column-navigation-links links="$ctrl.example3.column2.section1links">
+            </gov-column-navigation-links>
+          </gov-column-navigation-section>
+        </gov-column-navigation>
+      </div>
+    </docs-example>
+  </gov-tab>
+  
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+
+      
+
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="9"></discuss-component>
