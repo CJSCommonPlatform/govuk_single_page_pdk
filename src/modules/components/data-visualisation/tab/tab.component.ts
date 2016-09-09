@@ -6,7 +6,11 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   transclude: true,
   template: `
-        <section data-ng-show="$ctrl.active" aria-hidden="{{ !$ctrl.active }}" role="tabpanel" id="{{$ctrl.heading | slugify }}" data-ng-transclude>        
+        <section 
+          data-ng-show="$ctrl.active" 
+          aria-hidden="{{ !$ctrl.active }}" 
+          role="tabpanel" id="{{$ctrl.heading | slugify }}" 
+          data-ng-transclude>        
         </section>  
   `,
   require: {
