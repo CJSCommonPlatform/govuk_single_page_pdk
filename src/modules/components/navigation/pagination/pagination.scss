@@ -8,33 +8,44 @@ $module: 'pagination';
   position: relative;
   min-height: 37px;
   width: 100%;
-  
+
   &-numbers {
     display: none;
-    
+
     @include media(desktop) {
       display: block;
       transform: translateY(-50%) translateX(-50%);
       position: absolute;
       left: 50%; top: 50%;
-    
+
       li {
         display: inline-block;
+
+        &.is-active {
+
+          a {
+            color: $black;
+            cursor: default;
+            pointer-events: none;
+          }
+
+        }
+
       }
-      
+
       a {
         display: block;
         padding: 3px 10px;
         text-decoration: none;
       }
-      
-    }  
-  
+
+    }
+
   }
 
   &-prev,
   &-next {
-    
+
     a {
       display: inline-block;
       overflow: hidden;
@@ -42,14 +53,14 @@ $module: 'pagination';
       padding: 9px;
       text-decoration: none;
     }
-    
+
   }
-  
+
   &-label {
     display: block;
     position: relative;
     text-decoration: none;
-    
+
     &:before,
     &:after {
       content: '';
@@ -57,83 +68,83 @@ $module: 'pagination';
       height: 38px;
       width: 22px;
     }
-    
+
   }
-  
+
   &-next {
     float: right;
     text-align: right;
-    
+
     a {padding-right: 32px;}
-    
+
     .#{$module}-label {
-      
+
       &:after {
         background-image: file-url('pagination-next-arrow.png');
         right: -32px;
         transform: translateY(-50%);
-        
+
         @include device-pixel-ratio() {
           background-image: file-url('pagination-next-arrow-2x.png');
           background-size: 100%;
         }
-      
+
       }
-      
+
     }
-    
+
   }
-  
+
   &-prev {
     float: left;
-    
+
     a {padding-left: 32px;}
-    
+
     .#{$module}-label {
-      
+
       &:before {
         background-image: file-url('pagination-previous-arrow.png');
         left: -32px;
         transform: translateY(-50%);
-        
+
         @include device-pixel-ratio() {
           background-image: file-url('pagination-previous-arrow-2x.png');
           background-size: 100%;
         }
-      
+
       }
-      
+
     }
-    
+
   }
 
   &-title {
     @include core-16;
     text-decoration: underline;
   }
-  
+
 }
 
 /*
-  
+
 HTML Usage
-  
+
 <ul class="pagination">
-        
+
   <li class="pagination-prev">
     <a href="#" rel="prev" title="Navigate to previous part">
       <span class="pagination-label">Previous</span>
       <span class="pagination-title">Overview</span>
     </a>
   </li>
-  
+
   <li class="pagination-next">
     <a href="#" rel="next" title="Navigate to next part">
       <span class="pagination-label">Next</span>
       <span class="pagination-title">Give away business property or assets</span>
     </a>
   </li>
-  
+
 </ul>
 
 */
