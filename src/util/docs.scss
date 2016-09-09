@@ -50,11 +50,6 @@
   }
 }
 
-
-$module: 'code-example';
-
-.#{$module} {
-  font-size: 16px;
-  margin-bottom: em(20);
-  overflow: hidden;
+prismify {
+  font-size: 16px !important;
 }

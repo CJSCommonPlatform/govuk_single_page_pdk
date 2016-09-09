@@ -4,10 +4,6 @@ import { Component } from '@govuk/angularjs-devtools';
   bindings: {
     digit: '<'
   },
-  template: `
-    <div class="digit-box">
-      <span class="digit-box-number" data-ng-bind="$ctrl.digit"></span>
-    </div>
-    `
+  template: `<div class="gov-digit-box" ng-bind="$ctrl.digit"></div>`
 })
 export class DigitBoxComponent {}

@@ -1,63 +1,7 @@
-// Timeline
-// ==========================================================================
-
-$module: 'timeline';
-
-.#{$module} {
-  
-  &-header {
-    border-top: em(10) solid $govuk-blue;
+@import '~govuk_frontend_toolkit/stylesheets/colours';
+.timeline{
+  .top-thick-blue-rule {
+    border-top: 8px solid $govuk-blue;
+    padding-top:10px;
   }
-  
-  &-block {
-    border: 1px solid $grey-2;
-    margin-bottom: $gutter;
-    position: relative;
-    
-    &:last-child {
-      margin-bottom: 0;
-      
-      &:after {
-        content: none;
-      }
-      
-    }
-    
-    &:after {
-      background: $grey-2;
-      content: '';
-      height: ($gutter+2);
-      position: absolute;
-      bottom: -($gutter+2); left: ($gutter-half +1);
-      width: 1px;
-    }
-    
-    &-header {
-      background-color: $grey-4;
-      border-bottom: 1px solid $grey-2;
-      padding: $gutter-half;
-    }
-    
-    &-content {
-      padding: $gutter-half;
-    }
-    
-    &-updates {
-      margin-top: $gutter-half;
-      
-      li {
-        border-top: 1px solid $grey-2;
-        padding: 10px 0;
-      }
-      
-    }
-    
-  }
-  
 }
-
-/*
-  
-HTML Usage
-
-*/

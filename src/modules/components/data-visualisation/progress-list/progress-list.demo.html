@@ -5,42 +5,19 @@
 
   <gov-tab heading="HTML">
      <docs-example language="markup">
-       <div class="grid-row">
-
-         <div class="column-one-third">
-
-           <ol class="progress-list">
-             <li class="is-active">Step one <span class="progress-list-status">incomplete</span></li>
-             <li>Step two</li>
-             <li>Step three</li>
-             <li>Step four</li>
-           </ol>
-
-         </div>
-
-         <div class="column-one-third">
-
-           <ol class="progress-list">
-             <li>Step one <span class="progress-list-status"><i class="icon icon-complete"></i> complete</span></li>
-             <li class="is-active">Step two <span class="progress-list-status">incomplete</span></li>
-             <li>Step three</li>
-             <li>Step four</li>
-           </ol>
-
-         </div>
-
-         <div class="column-one-third">
-
-           <ol class="progress-list">
-             <li>Step one <span class="progress-list-status"><i class="icon icon-complete"></i> complete</span></li>
-             <li>Step two <span class="progress-list-status"><i class="icon icon-complete"></i> complete</span></li>
-             <li class="is-active">Step three <span class="progress-list-status">incomplete</span></li>
-             <li>Step four</li>
-           </ol>
-
-         </div>
-
-       </div>
+      <ol class="list list-progress list-progress-number">
+        <li>
+          <div class="bold-small">Step One</div>
+          <i class="fa fa-check"></i>Complete
+        </li>
+        <li class="active">
+          <div class="bold-small">Step Two</div>
+          Incomplete
+        </li>
+        <li>
+          <div class="bold-small">Step Three</div>
+        </li>
+      </ol>
     </docs-example>
   </gov-tab>
 
