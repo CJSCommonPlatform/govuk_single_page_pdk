@@ -60,3 +60,9 @@
   }
 
 }
+
+gov-day-item:last-child() {
+  .timeline-block:after {
+    display: none;
+  }
+}
