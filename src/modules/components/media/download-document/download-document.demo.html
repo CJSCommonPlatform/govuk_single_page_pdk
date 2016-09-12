@@ -1,0 +1,134 @@
+<h2 class="heading-medium">Document Download</h2>
+<p>Component for displaying a document download</p>
+<p>An optional <code>imageSrc</code> attribute will take a url and show the image as a thumbnail instead of an icon.</p>
+<p>An optional <code>smallIcon</code> boolean attribute can be passed to display a smaller icon for smaller screens.</p>
+<p>The title text will be derived from the filename, unless an options <code>title</code> string attribute is passed which will override the filename</p>
+<gov-tabset>
+
+  <gov-tab heading="HTML Example">
+    <docs-example language="markup">
+      <div class="document">
+        <div class="document-thumbnail"></div>
+        <div class="document-content">
+          <p class="document-title"><a href="#">Statement 1 from Linda THOMAS</a></p>
+          <div class="document-meta">
+            <span class="document-meta-taken">Taken:
+              <time datetime="2016-04-13">13 April 2016</time>
+            </span>
+            <span class="document-meta-details">
+              <abbr title="Portable Document Format">PDF</abbr>, 715kb, 18 pages
+            </span>
+          </div>
+        </div>
+      </div>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Angular Markup">
+    <docs-example language="markup">
+      <!-- Thumbnail Image -->
+      <gov-download-document 
+        image-src="$ctrl.thumbnailExample.imageSrc"
+        file-name="$ctrl.thumbnailExample.fileName" 
+        file-size="$ctrl.thumbnailExample.fileSize"
+        datetime="{{$ctrl.thumbnailExample.datetime | date:'dd MMMM yyyy'}}"
+        num-pages="$ctrl.thumbnailExample.numPages"
+        on-select="$ctrl.thumbnailExample.onSelect()">
+      </gov-download-document>
+    </docs-example>
+    <docs-example language="markup">
+      <!-- Large Icon -->
+      <gov-download-document 
+        file-name="$ctrl.iconExample.fileName" 
+        file-size="$ctrl.iconExample.fileSize"
+        datetime="{{$ctrl.iconExample.datetime | date:'dd MMMM yyyy'}}"
+        num-pages="$ctrl.iconExample.numPages"
+        on-select="$ctrl.iconExample.onSelect()">
+      </gov-download-document>
+    </docs-example>
+    <docs-example language="markup">
+      <!-- Small Icon -->
+      <gov-download-document 
+        file-name="$ctrl.smallIconExample.fileName" 
+        file-size="$ctrl.smallIconExample.fileSize"
+        datetime="{{$ctrl.smallIconExample.datetime | date:'dd MMMM yyyy'}}"
+        num-pages="$ctrl.smallIconExample.numPages"
+        on-select="$ctrl.smallIconExample.onSelect()"
+        small-icon="$ctrl.smallIconExample.isSmallIcon">
+      </gov-download-document>
+    </docs-example>
+    <docs-example language="markup">
+      <!-- Use filter to render as datetime -->
+      <gov-download-document 
+        file-name="$ctrl.iconExample.fileName" 
+        file-size="$ctrl.iconExample.fileSize"
+        datetime="{{$ctrl.iconExample.datetime | date:'dd MMMM yyyy hh:mm a'}}"
+        num-pages="$ctrl.iconExample.numPages"
+        on-select="$ctrl.iconExample.onSelect()">
+      </gov-download-document>
+    </docs-example>
+    <docs-example language="markup">
+      <!-- Override the file name with a title -->
+      <gov-download-document 
+        file-name="$ctrl.titleExample.fileName" 
+        file-size="$ctrl.titleExample.fileSize"
+        datetime="{{$ctrl.titleExample.datetime | date:'dd MMMM yyyy'}}"
+        num-pages="$ctrl.titleExample.numPages"
+        on-select="$ctrl.titleExample.onSelect()"
+        title="$ctrl.titleExample.title">
+      </gov-download-document>
+    </docs-example>
+  </gov-tab>
+
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      thumbnailExample = {
+        imageSrc: 'assets/images/document-thumbnail.jpg',
+        datetime: new Date(2016, 4, 16),
+        fileName: 'Statement 1 from Linda THOMAS.pdf',
+        fileSize: 756391,
+        numPages: 18,
+        onSelect: function() {
+          console.log('Clicked to download \"Statement 1 from Linda THOMAS.pdf\"');
+        }
+      }
+
+      iconExample = {
+        datetime: new Date(2016, 4, 16),
+        fileName: 'Statement 1 from Linda THOMAS.pdf',
+        fileSize: 756391,
+        numPages: 18,
+        onSelect: function() {
+          console.log('Clicked to download \"Statement 1 from Linda THOMAS.pdf\"');
+        }
+      };
+
+      smallIconExample = {
+        datetime: new Date(2016, 4, 16),
+        fileName: 'Statement 1 from Linda THOMAS.pdf',
+        fileSize: 756391,
+        numPages: 18,
+        onSelect: function() {
+          console.log('Clicked to download \"Statement 1 from Linda THOMAS.pdf\"');
+        },
+        isSmallIcon: true
+      };
+
+      titleExample = {
+        datetime: new Date(2016, 4, 16),
+        fileName: 'doc_kd99e473hkh23432.pdf',
+        fileSize: 756391,
+        numPages: 18,
+        title: 'Evidence from Linda, THOMAS',
+        onSelect: function() {
+          console.log('Clicked to download \"doc_kd99e473hkh23432.pdf\"');
+        }
+      };
+    </prismify>
+  </gov-tab>
+
+</gov-tabset>
+
+<discuss-component issue="13"></discuss-component>
+
+

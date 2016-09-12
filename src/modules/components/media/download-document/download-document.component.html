@@ -1,0 +1,23 @@
+<div class="document" data-ng-class="{'document-small': $ctrl.smallIcon}">
+  <div class="document-thumbnail" data-ng-if="!$ctrl.smallIcon">
+    <img data-ng-if="$ctrl.imageSrc"
+      data-ng-src="{{$ctrl.imageSrc}}" alt="{{$ctrl.title}}" title="{{$ctrl.title}}">
+  </div>
+  <i class="icon icon-file-download" data-ng-if="$ctrl.smallIcon"></i>
+  <div class="document-content">
+    <p class="document-title">
+      <a href="javascript:void(0);" 
+        data-ng-click="$ctrl.onSelect()"
+        data-ng-bind="$ctrl.title"></a>
+    </p>
+    <div class="document-meta">
+      <span class="document-meta-taken" data-ng-if="!$ctrl.smallIcon">Taken:
+        <time data-ng-bind="$ctrl.datetime"></time>
+      </span>
+      <span class="document-meta-details">
+        <abbr data-ng-bind="$ctrl.fileName | toFileType">
+        </abbr><span data-ng-if="$ctrl.fileSize">, {{ $ctrl.fileSize | toBytes }}</span><span data-ng-if="$ctrl.numPages">, {{ $ctrl.numPages }} pages</span>
+      </span>
+    </div>
+  </div>
+</div>

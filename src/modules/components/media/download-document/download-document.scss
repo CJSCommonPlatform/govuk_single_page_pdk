@@ -1,0 +1,92 @@
+// Downloads
+// ==========================================================================
+
+$module: 'document';
+
+.#{$module} {
+
+  .icon {
+    float: left;
+    margin-right: em(10);
+  }
+
+  &-thumbnail {
+    background-image: file-url('document-thumbnail.png');
+    border: 1px solid $border-colour;
+    float: left;
+    height: 140px;
+    margin-right: em(15);
+    width: 99px;
+
+    @include device-pixel-ratio() {
+      background-image: file-url('document-thumbnail-2x.png');
+      background-size: 100%;
+    }
+
+    // responsive image
+    img {
+      max-width: 100%;
+      width: auto;
+    }
+
+  }
+
+  &-title {
+    margin-top: 0;
+    margin-bottom: em(10);
+  }
+
+  &-content {
+    overflow: hidden;
+  }
+
+  &-meta {
+    @include core-16;
+    display: block;
+
+    &-taken {
+      display: block;
+      margin-bottom: em(5, 16);
+    }
+
+    &-details {
+      display: block;
+    }
+
+  }
+
+  // alternative
+  &-small {
+    @extend %clearfix;
+
+    .#{$module}-title {
+      @include core-16;
+      margin-bottom: em(5, 16);
+    }
+
+  }
+
+}
+
+/*
+
+HTML Usage
+
+<div class="document">
+
+  <div class="document-thumbnail"></div>
+
+  <div class="document-content">
+
+    <p class="document-title"><a href="#">Statement 1 from Linda THOMAS</a></p>
+
+    <div class="document-meta">
+      <span class="document-meta-taken">Taken: <time datetime="2016-04-13">13 April 2016</time></span>
+      <span class="document-meta-details"><abbr title="Portable Document Format">PDF</abbr>, 715kb, 18 pages</span>
+    </div>
+
+  </div>
+
+</div>
+
+*/
