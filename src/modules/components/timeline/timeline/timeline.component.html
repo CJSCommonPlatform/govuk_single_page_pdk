@@ -2,5 +2,18 @@
   <header class="timeline-header">
     <div class="bold-medium" ng-bind="$ctrl.title"></div>
   </header>
-  <gov-day-item day-index="$index" day-item="element" ng-repeat="element in $ctrl.elements"></gov-day-item>
+  <article ng-repeat="element in $ctrl.elements" class="timeline-block">
+    <div class="timeline-block-header">
+      <time datetime="{{ element.dateTitle }}">{{ element.dateTitle }}</time>
+    </div>
+    <div class="timeline-block-content">
+      <h3 class="bold-small">{{element.description}}</h3>
+      <time class="font-xsmall" datetime="{{element.timestamp}}Z">{{element.timestamp}}</time>
+      <ul class="timeline-block-updates">
+        <li data-ng-repeat="action in element.actions">
+          <a ng-click="action.action()" href="javascript:void(0)">{{action.title}}</a>  
+        </li>
+      </ul>
+    </div>
+  </article>  
 </section>
