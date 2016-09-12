@@ -1,5 +1,8 @@
 <h2 class="heading-medium">Right column navigation</h2>
 <p>Component for a column navigation</p>
+<p>Each component has an optional <code>metadata</code> attribute. Metadata is displayed at the top of the component. Metadata can either be passed in as an object (for a single metadata item), or as an array. Metadata can render a string of html (see example).</p>
+<p>Each component has a required <code>sections</code> attribute which takes an array of sections.</p>
+<p>Each section has an optional <code>header</code> string and a required list of <code>links</code>. Links can be made bold by adding an <code>isBold: true</code> property to the particular link object.</p>
 
 <gov-tabset>
 
@@ -7,7 +10,6 @@
     <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
-
           <!-- related -->
           <div class="related">
             <div class="related-section">
@@ -20,10 +22,8 @@
             </div>
           </div>
           <!-- end -->
-
         </div>
       </div>
-
     </docs-example>
   </gov-tab>
 
@@ -31,36 +31,7 @@
     <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
-          <gov-column-navigation>
-            <gov-column-navigation-section>
-              <gov-column-navigation-links links="$ctrl.example1.column1.links">
-              </gov-column-navigation-links>
-            </gov-column-navigation-section>
-          </gov-column-navigation>
-        </div>
-      </div>
-    </docs-example>
-
-    <docs-example language="markup">
-      <div class="col-sm-4">
-        <gov-column-navigation>
-          <gov-column-navigation-related-metadata metadata="$ctrl.example2.column1.metadata">
-          </gov-column-navigation-related-metadata>
-          <gov-column-navigation-section>
-            <gov-column-navigation-links links="$ctrl.example2.column1.links">
-            </gov-column-navigation-links>
-          </gov-column-navigation-section>
-        </gov-column-navigation>
-      </div>
-      <div class="grid-row">
-        <div class="column-third">
-          <gov-column-navigation>
-            <gov-column-navigation-related-metadata metadata="$ctrl.example2.column2.metadata">
-            </gov-column-navigation-related-metadata>
-            <gov-column-navigation-section>
-              <gov-column-navigation-links links="$ctrl.example2.column2.links">
-              </gov-column-navigation-links>
-            </gov-column-navigation-section>
+          <gov-column-navigation sections="$ctrl.example1.sections">
           </gov-column-navigation>
         </div>
       </div>
@@ -69,30 +40,177 @@
     <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
-          <gov-column-navigation>
-            <gov-column-navigation-section heading="$ctrl.example3.column1.section1heading">
-              <gov-column-navigation-links links="$ctrl.example3.column1.section1links">
-              </gov-column-navigation-links>
-            </gov-column-navigation-section>
-            <gov-column-navigation-section heading="$ctrl.example3.column1.section2heading">
-              <gov-column-navigation-links links="$ctrl.example3.column1.section2links">
-              </gov-column-navigation-links>
-            </gov-column-navigation-section>
+          <gov-column-navigation metadata="$ctrl.example2.column1.metadata" sections="$ctrl.example2.column1.sections">
+          </gov-column-navigation>
+        </div>
+        <div class="column-third">
+          <gov-column-navigation metadata="$ctrl.example2.column2.metadata" sections="$ctrl.example2.column2.sections">
           </gov-column-navigation>
         </div>
       </div>
+    </docs-example>
+
+    <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
-          <gov-column-navigation>
-            <gov-column-navigation-section heading="$ctrl.example3.column2.section1heading">
-              <gov-column-navigation-links links="$ctrl.example3.column2.section1links">
-              </gov-column-navigation-links>
-            </gov-column-navigation-section>
+          <gov-column-navigation sections="$ctrl.example3.column1.sections">
+          </gov-column-navigation>
+        </div>
+        <div class="column-third">
+          <gov-column-navigation sections="$ctrl.example3.column2.sections">
           </gov-column-navigation>
         </div>
       </div>
     </docs-example>
   </gov-tab>
+  
+  <gov-tab heading="Data">
+    <prismify language="javascript">
+      example1 = {
+
+        sections: [
+          {
+            links: [
+              {
+                text: 'View this user\'s details',
+                onClick: function() {
+                  console.log('Clicked \"Viewing the user\'s details\"');
+                }
+              },
+              {
+                text: 'Search for user in this organisation',
+                onClick: function() {
+                  console.log('Clicked on \"Search for user in this organisation\"');
+                }
+              },
+              {
+                text: 'Search for another organisation',
+                onClick: function() {
+                  console.log('Clicked on \"Search for another organisation\"');
+                }
+              },
+              {
+                text: 'More',
+                isBold: true,
+                onClick: function() {
+                  console.log('Clicked on \"More\"');
+                }
+              }
+            ]
+          }
+        ]
+      };
+
+      example2 = {
+
+        column1: {
+          metadata: {
+            text: 'This user last signed in on 13 December 2015 at 2:36pm'
+          },
+          sections: [
+            {
+              links: [
+                {
+                  text: 'Search for another user',
+                  onClick: function() {
+                    console.log('Clicked on \"Search for another user\"');
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        column2: {
+          metadata: [
+            {
+              text: 'This user’s account will be suspended on 17 March 2017'
+            },
+            {
+              text: 'This user last signed in on 13 December 2015 at 2:36pm'
+            }
+          ],
+          sections: [
+            {
+              links: [
+                {
+                  text: 'Search for another user',
+                  onClick: function() {
+                    console.log('Clicked on \"Search for another user\"');
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      };
+
+      example3 = {
+
+        column1: {
+          sections: [
+            {
+              heading: 'Actions for this org',
+              links: [
+                {
+                  text: 'View organisation\'s details',
+                  onClick: function() {
+                    console.log('Clicked on \"View organisation\'s details\"');
+                  }
+                }
+              ]
+            },
+            {
+              heading: 'Other actions',
+              links: [
+                {
+                  text: 'Search for another organisation',
+                  onClick: function() {
+                    console.log('Clicked on \"Search for another organisation\"');
+                  }
+                },
+                {
+                  text: 'Search all users',
+                  onClick: function() {
+                    console.log('Clicked on \"Search all users\"');
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        column2: {
+          sections: [
+            {
+              heading: 'To do',
+              links: [
+                {
+                  text: 'View case material',
+                  onClick: function() {
+                    console.log('Clicked on \"View case material\"');
+                  }
+                },
+                {
+                  text: 'Enter analysis and charging decisions',
+                  onClick: function() {
+                    console.log('Clicked on \"Enter analysis and charging decisions\"');
+                  }
+                },
+                {
+                  text: 'Create action plan',
+                  onClick: function() {
+                    console.log('Clicked on \"Create action plan\"');
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      };
+    </prismify>
+  </gov-tab>
+
 </gov-tabset>
 
 <discuss-component issue="9"></discuss-component>
