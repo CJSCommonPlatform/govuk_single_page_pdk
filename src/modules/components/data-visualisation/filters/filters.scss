@@ -1,0 +1,76 @@
+// Filters
+// ==========================================================================
+
+$module: 'filters';
+
+.#{$module} {
+  
+  // shared filter properties
+  [aria-hidden='true'] {
+    display: none;
+  }
+  
+  &-menu {
+    @extend %contain-floats;
+    display: none;
+  }
+  
+  &-button {
+    @include box-sizing (border-box);
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: $panel-colour;
+    border: 1px solid rgba(0,0,0,0); // transparent
+    cursor: pointer;
+    font-size: inherit;
+    display: block;
+    padding: em(10) em(15);
+    text-decoration: none;
+    
+    &:hover {
+      border-color: $black;
+    }
+    
+    &:focus {
+      background-color: white;
+      outline: 3px solid $focus-colour;
+    }
+    
+  }
+  
+  // fix unwanted button padding in Firefox
+  &-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  
+  @at-root {
+    
+      // is javascript enabled?
+    .js-enabled {
+      
+      .#{$module}-menu {
+        display: block;
+      }
+      
+      .#{$module}-button.is-selected {
+        background-color: $white;
+        border-color: $black;
+      }
+      
+      .#{$module}-button.is-focused {
+        outline: 3px solid $focus-colour;
+      }
+      
+    }
+    
+  }
+  
+}
+
+/*
+  
+HTML Usage
+
+*/
