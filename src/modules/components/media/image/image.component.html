@@ -1,9 +1,25 @@
-<div>
-    <h2 class="heading-large" ng-if="$ctrl.image.title">{{$ctrl.image.title}}</h2>
-    <div class="gov-image">
-        <img ng-src="{{$ctrl.image.src}}" alt="{{$ctrl.image.title}}">
-        <div class="gov-image-metadata" ng-repeat="metadataEntry in $ctrl.image.metadata">
-            <strong ng-bind="metadataEntry.key"></strong>:&nbsp;<span ng-bind="metadataEntry.value"></span>
-        </div>
-    </div>
-</div>
+<figure class="media-image">
+
+  <figcaption class="media-image-title" data-ng-if="$ctrl.image.title">
+    <span class="bold-large" data-ng-bind="$ctrl.image.title">Image title</span>
+  </figcaption>
+
+  <div class="media-image-picture">
+    <img data-ng-src="{{$ctrl.image.src}}" alt="{{ $ctrl.image.title || '*' }}">
+  </div>
+
+  <div class="media-image-meta">
+    <ul class="list">
+      <li data-ng-repeat="item in $ctrl.image.metadata">
+        <a href="javascript:void(0);"
+          data-ng-if="item.isDownloadLink"
+          data-ng-click="item.onClick()"
+          data-ng-bind="item.text"></a>
+        <span data-ng-if="!item.isDownloadLink"
+          data-ng-bind="item.value">
+        </span>
+      </li>
+    </ul>
+  </div>
+
+</figure>
