@@ -7,66 +7,96 @@
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
       <div class="grid-row">
-        <h3>Not Inline Examples</h3>
+        <p>Not Inline Examples</p>
         <div class="column-third">
 
           <div class="summary-item">
-            <span class="summary-item-number">8</span>
-            <span class="summary-item-label">statements</span>
-          </div>
-
-        </div>
-
-        <div class="column-third">
-
-          <div class="summary-item">
-            <span class="summary-item-number">44</span>
-            <span class="summary-item-label">exhibits</span>
-          </div>
-
-        </div>
-
-        <div class="column-third">
-          <div class="summary-item summary-item-inline">
-            <a href="javascript:;">
-              <span class="summary-item-number">13</span>
-              <span class="summary-item-label">additional documents</span>
+            <a href="#">
+              <span class="summary-item-number bold-xlarge">18</span>
+              <span class="summary-item-label bold-xsmall">statements</span>
             </a>
           </div>
         </div>
 
+        <div class="column-third">
+
+          <div class="summary-item">
+            <a href="#">
+              <span class="summary-item-number bold-xlarge">18</span>
+              <span class="summary-item-label bold-xsmall">statements</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="column-third">
+          <div class="summary-item">
+            <span class="summary-item-number bold-xlarge">13</span>
+            <span class="summary-item-label bold-xsmall">additional documents</span>
+          </div>
+        </div>
+
       </div>
+    </docs-example>
+    <docs-example language="markup">
       <div class="grid-row">
-        <h3>Inline Examples</h3>
+        <p>Inline Examples</p>
         <div class="column-third">
 
           <div class="summary-item summary-item-inline">
-            <span class="summary-item-number">8</span>
-            <span class="summary-item-label">statements</span>
+            <a href="#">
+              <span class="summary-item-number bold-xlarge">18</span>
+              <span class="summary-item-label bold-xsmall">statements</span>
+            </a>
           </div>
-
         </div>
 
         <div class="column-third">
 
           <div class="summary-item summary-item-inline">
-            <span class="summary-item-number">44</span>
-            <span class="summary-item-label">exhibits</span>
+            <a href="#">
+              <span class="summary-item-number bold-xlarge">18</span>
+              <span class="summary-item-label bold-xsmall">statements</span>
+            </a>
           </div>
+        </div>
 
+        <div class="column-third">
+          <div class="summary-item summary-item-inline">
+            <span class="summary-item-number bold-xlarge">13</span>
+            <span class="summary-item-label bold-xsmall">additional documents</span>
+          </div>
+        </div>
+
+      </div>
+    </docs-example>
+    <docs-example language="markup">
+      <div class="grid-row">
+        <p>Summary items as links and bigger variants</p>
+        <div class="column-third">
+
+          <div class="summary-item">
+            <a href="#">
+              <span class="summary-item-number bold-xxlarge">18</span>
+              <span class="summary-item-label bold-xsmall">statements</span>
+            </a>
+          </div>
         </div>
 
         <div class="column-third">
 
-          <div class="summary-item summary-item-inline">
-            <div class="summary-item summary-item-inline">
-              <a href="javascript:;">
-                <span class="summary-item-number">13</span>
-                <span class="summary-item-label">additional documents</span>
-              </a>
-            </div>
+          <div class="summary-item">
+            <a href="#">
+              <span class="summary-item-number bold-xxlarge">18</span>
+              <span class="summary-item-label bold-xsmall">statements</span>
+            </a>
           </div>
+        </div>
 
+        <div class="column-third">
+          <div class="summary-item">
+            <span class="summary-item-number bold-xxlarge">13</span>
+            <span class="summary-item-label bold-xsmall">additional documents</span>
+          </div>
         </div>
 
       </div>
@@ -74,7 +104,7 @@
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
-    <h3>Inline Example</h3>
+    <p>Inline Example</p>
     <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
@@ -88,7 +118,7 @@
         </div>
       </div>
     </docs-example>
-    <h3>Not Inline Example</h3>
+    <p>Not Inline Example</p>
     <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
@@ -102,6 +132,21 @@
         </div>
       </div>
     </docs-example>
+    <p>Summary items as links and bigger variants</p>
+    <docs-example language="markup">
+      <div class="grid-row">
+        <div class="column-third">
+          <gov-summary-item item-description="$ctrl.item.description" value="$ctrl.item.value" action="$ctrl.item.action()" data-large="true"></gov-summary-item>
+        </div>
+        <div class="column-third">
+          <gov-summary-item item-description="$ctrl.item2.description" value="$ctrl.item2.value" action="$ctrl.item2.action()" data-large="true"></gov-summary-item>
+        </div>
+        <div class="column-third">
+          <gov-summary-item item-description="$ctrl.item3.description" value="$ctrl.item3.value" data-large="true"></gov-summary-item>
+        </div>
+      </div>
+    </docs-example>
+
   </gov-tab>
 
   <gov-tab heading="Data">

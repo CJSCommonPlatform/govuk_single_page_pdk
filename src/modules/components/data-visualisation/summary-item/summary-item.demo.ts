@@ -14,7 +14,7 @@ export class SummaryItemDemo {
   };
 
   item2 = {
-    value: true,
+    value: 24,
     description: 'Supervisor comments provided',
     action: function(){console.log('hello'); }
   };
