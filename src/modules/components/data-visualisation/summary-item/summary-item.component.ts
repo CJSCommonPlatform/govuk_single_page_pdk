@@ -5,12 +5,14 @@ import { Component } from '@govuk/angularjs-devtools';
     value: '<',
     itemDescription: '<',
     action: '&?',
-    notInLine: '<'
+    notInLine: '<',
+    large: '@?'
   },
   template: require('./summary-item.component.html')
 })
 export class SummaryItemComponent {
   value: any;
+  large: string;
 
   isNumber(): boolean {
     return angular.isNumber(this.value);
@@ -18,5 +20,12 @@ export class SummaryItemComponent {
 
   isBoolean(): boolean {
     return typeof(this.value) === 'boolean';
+  }
+
+  isLarge(): boolean {
+    if (this.large && this.large.toLowerCase() === 'true') {
+      return true;
+    }
+    return false;
   }
 }
