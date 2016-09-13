@@ -61,7 +61,7 @@ export class DateInputComponent {
   // $viewValue is undefined when any of the three inner inputs are empty
   get $viewValue(): string {
     if (this.dateControl.$error.required) {
-      return this.$attrs.dateInputFormat ? '' : undefined;
+      return this.$attrs.dateInputFormat || undefined;
     }
     return `${pad(this.dayModel)}-${pad(this.monthModel)}-${this.yearModel}`;
   }

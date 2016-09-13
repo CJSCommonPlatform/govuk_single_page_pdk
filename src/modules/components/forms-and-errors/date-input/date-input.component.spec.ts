@@ -263,9 +263,6 @@ describe('components/forms-and-errors/date-input', () => {
     compile(`<gov-date-input ng-model="model"></gov-date-input>`);
     setDateValues({day: 15, month: 7});
     expect(scope.model).toBeUndefined();
-    compile(`<gov-date-input data-date-input-format="yyyy-MM-dd" ng-model="model"></gov-date-input>`);
-    setDateValues({day: 15, month: 7});
-    expect(scope.model).toEqual('');
   });
 
   it('renders the model value correctly when a date is set', () => {
