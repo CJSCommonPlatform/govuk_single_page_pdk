@@ -79,7 +79,16 @@ describe('components/forms-and-errors/search', () => {
   });
 
   it('invokes `on-criteria-change` callback when the model IS NOT VALID', () => {
-    compile('<form><gov-search name="criteria" ng-minlength="3" ng-model="model" on-criteria-change="callback($criteria, $valid)"></gov-search></form>');
+    compile(`
+      <form>
+        <gov-search
+          name="criteria"
+          ng-minlength="3"
+          ng-model="model"
+          on-criteria-change="callback($criteria, $valid)">
+        </gov-search>
+      </form>
+    `);
     let isValid = undefined, criteria = undefined;
 
     scope.callback = (_criteria, _isValid) => {
@@ -98,7 +107,12 @@ describe('components/forms-and-errors/search', () => {
   });
 
   it('invokes `on-criteria-change` callback when the model IS VALID', () => {
-    compile('<form><gov-search name="criteria" ng-model="model" on-criteria-change="callback($criteria, $valid)"></gov-search></form>');
+    compile(`
+      <form>
+        <gov-search name="criteria" ng-model="model" on-criteria-change="callback($criteria, $valid)">
+        </gov-search>
+      </form>
+    `);
     let isValid = undefined, criteria = undefined;
 
     scope.callback = (_criteria, _isValid) => {
@@ -125,7 +139,11 @@ describe('components/forms-and-errors/search', () => {
   });
 
   it('applies the outer `name`, `placeholder` and `autocomplete` attributes to the inner input', () => {
-    compile(`<form><gov-search name="foo" placeholder="Search" autocomplete="on" ng-model="model"></gov-search></form>`);
+    compile(`
+      <form>
+        <gov-search name="foo" placeholder="Search" autocomplete="on" ng-model="model"></gov-search>
+      </form>
+    `);
     expect(element.find('input').attr('name')).toEqual('foo');
     expect(element.find('input').attr('placeholder')).toEqual('Search');
     expect(element.find('input').attr('autocomplete')).toEqual('on');

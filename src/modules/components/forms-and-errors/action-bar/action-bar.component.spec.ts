@@ -17,7 +17,12 @@ describe('components/forms-and-errors/action-bar', () => {
     }
 
     it('there is a one-way binding to set value provided in button and default in anchor', () => {
-        compile('<gov-action-bar submit-button-text="{{submitButton}}" is-displayed-anchor="isDisplayedAnchor"></gov-action-bar>');
+        compile(`
+          <gov-action-bar
+            submit-button-text="{{submitButton}}"
+            is-displayed-anchor="isDisplayedAnchor">          
+          </gov-action-bar>
+        `);
         scope.submitButton = 'Submit';
         scope.isDisplayedAnchor = false;
         scope.$apply();
@@ -38,7 +43,12 @@ describe('components/forms-and-errors/action-bar', () => {
     });
 
     it('there is a one-way binding to set value provided in button and value provided in anchor', () => {
-        compile('<gov-action-bar submit-button-text="{{submitButton}}" cancel-link-text="{{cancelLinkTest}}"></gov-action-bar>');
+        compile(`
+          <gov-action-bar
+            submit-button-text="{{submitButton}}"
+            cancel-link-text="{{cancelLinkTest}}">            
+          </gov-action-bar>
+        `);
         scope.submitButton = 'Submit';
         scope.cancelLinkTest = 'Jump';
         scope.$apply();
