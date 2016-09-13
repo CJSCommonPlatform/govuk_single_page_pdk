@@ -1,0 +1,55 @@
+<main id="content" role="main">
+  <h1 class="heading-xlarge">
+    <span class="heading-secondary">Content</span>
+    Helper Classes
+  </h1>
+  <p class="lede text">
+    Allows for greater flexibility when building pages.
+  </p>
+  <h2 id="toc" class="heading-small heading-contents">Contents:</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <ul class="list list-contents">
+            <li><a ui-sref="content.data({'#':'margins-vertical-spacing'})" href="#">Margins (Vertical spacing)</a></li>
+        </ul>
+    </div>
+  </div>
+  <h3 class="heading-medium" id="margins-vertical-spacing">Margins (Vertical spacing)</h3>
+  <p class="text">Abstract classes that can handle vertical spacing will <abbr title="Don&rsquo;t Repeat Yourself">DRY</abbr> our code and allow for global consistency with spacing components.</p>
+  <p>Margins are calculated in 5px increments.</p>
+  <docs-example language="markup">
+      <div class="grid-row">
+        <div class="block-wrapper">
+          <div class="block mt-xs">
+            <div class="box"><span class="box-text bold-small">5px</span></div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+            <div class="block mt-s">
+            <div class="box"><span class="box-text bold-small">15px</span></div>
+            </div>
+        </div>
+        <div class="block-wrapper">
+          <div class="block mt-m">
+            <div class="box"><span class="box-text bold-small">20px</span></div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <div class="block mt-l">
+            <div class="box"><span class="box-text bold-small">30px</span></div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <div class="block mt-xl">
+            <div class="box"><span class="box-text bold-small">45px</span></div>
+          </div>
+        </div>
+        <div class="block-wrapper">
+          <div class="block mt-xxl">
+            <div class="box"><span class="box-text bold-small">60px</span></div>
+          </div>
+        </div> 
+      </div>    
+  </docs-example>    
+  <a ui-sref="content.helper-classes({'#':'toc'})" href="#">Back to top</a>    
+</main>
