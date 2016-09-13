@@ -3,7 +3,11 @@ import { TabComponent } from './tab.component';
 
 @Component({
   bindings: {
-    vertical: '<'
+    vertical: '<',
+    /*
+      a default index can be passed so a tab can be preselected by default
+     */
+    defaultIndex: '<?'
   },
   template: `
   <div class="tabs" data-ng-class="{'tabs-horizontal': !$ctrl.vertical, 'tabs-vertical': $ctrl.vertical}">
@@ -28,12 +32,13 @@ export class TabsetComponent {
 
   tabs: TabComponent[] = [];
   selected: TabComponent;
+  defaultIndex: number;
 
   constructor(private $element: ng.IAugmentedJQuery, private $timeout: any) {}
 
   add(tab: TabComponent): void {
     this.tabs.push(tab);
-    if (!this.selected) {
+    if (!this.selected && !this.defaultIndex) {
       this.select(tab, false);
     }
   }
@@ -52,6 +57,9 @@ export class TabsetComponent {
 
   select(tab: TabComponent, focus: boolean = true): void {
     this.selected = tab;
+    if (this.selected.onClick) {
+      this.selected.onClick();
+    }
     if (focus) {
       this.$timeout(() => {
         const elem = <any> this.$element[0].querySelector('a[aria-selected="true"]');
@@ -76,6 +84,13 @@ export class TabsetComponent {
         break;
       default:
         break;
+    }
+  }
+
+  $postLink(): void {
+    this.defaultIndex = this.defaultIndex || 0;
+    if (this.defaultIndex) {
+      this.select(this.tabs[this.defaultIndex], true);
     }
   }
 }

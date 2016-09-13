@@ -2,7 +2,11 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {
-    heading: '@'
+    heading: '@',
+    /*
+     a function that will be invoked when the tab is selected can optionally be passed
+     */
+    onClick: '&?'
   },
   transclude: true,
   template: `
@@ -20,7 +24,7 @@ import { Component } from '@govuk/angularjs-devtools';
 export class TabComponent {
 
   heading: string;
-
+  onClick: Function;
   tabsetCtrl: any;
 
   get active(): boolean {
