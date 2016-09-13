@@ -1,14 +1,98 @@
 <h2 class="heading-medium">Tab</h2>
-<p>Optimise screen area without sacrificing the amount of content.</p>
-
+<p>ARIA attributes are being added and switched using JavaScript.</p>
+<p>This component accepts 2 extra options. A defaultIndex which will by default pre-select the tab desired and
+a onClick method that will be called when the tab is selected, allowing to do aynchronous actions.</p>
 
 <docs-example language="markup">
-  <gov-tabset>
-    <gov-tab heading="test1">test1</gov-tab>
-    <gov-tab heading="test2">test2</gov-tab>
-    <gov-tab heading="test3">test3</gov-tab>
+  <gov-tabset data-default-index="1">
+    <gov-tab heading="Before you start">
+        <h3 class="heading-medium">Before you start</h3>
+        <div class="text">
+          <p>To get your first provisional driving licence online for a car, motorcycle or moped you must:</p>
+          <ul class="list list-bullet">
+            <li>be a resident of Great Britain – there’s a different service in <a href="http://www.nidirect.gov.uk/applying-for-a-provisional-driving-licence" rel="external">Northern Ireland</a></li>
+            <li>meet the minimum age requirement</li>
+            <li>meet the <a href="/driving-eyesight-rules">minimum eyesight requirement</a></li>
+            <li>not be prevented from driving for any reason</li>
+            <li>pay £50 by MasterCard, Visa, Electron, Maestro or Delta debit or credit card</li>
+            <li>have a valid <abbr title="United Kngdom">UK</abbr> passport or <a href="/driving-licence-application-identity-documents">other form of identity</a></li>
+            <li>have your National Insurance number if known</li>
+            <li>provide addresses where you’ve lived for the last 3 years</li>
+          </ul>
+        </div>
+    </gov-tab>
+    <gov-tab heading="Need to know">
+      <h3 class="heading-medium">Need to know</h3>
+      <div class="text">
+        <ul class="list list-bullet">
+          <li>proof of identification required</li>
+          <li>3 years of address details required</li>
+          <li>debit or credit card required</li>
+        </ul>
+      </div>
+    </gov-tab>
+    <gov-tab heading="Ways to apply" data-on-click="$ctrl.test()">
+      <h3 class="heading-medium" tabindex="0">Ways to apply</h3>
+      <div class="text">
+        <p>You can apply by post by completing a D1 application form, which you can get from the <a href="#"><abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> form ordering service</a> or from a Post Office.</p>
+        <p>You’ll also need to include:</p>
+        <ul class="list list-bullet">
+          <li>original documentation confirming your identity</li>
+          <li>a colour <a href="/photos-for-passports">passport–style photograph</a></li>
+          <li>the fee of £50 by cheque or postal order payable to <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> (do not send cash)</li>
+        </ul>
+        <p>Send your completed application and payment to <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr>, Swansea, SA99 1AD.</p>
+        <p>If you’re including non–<abbr title="United Kingdom">UK</abbr> identity documents send your application and payment to <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr>, Swansea, SA99 1AF.</p>
+      </div>
+    </gov-tab>
   </gov-tabset>
 </docs-example>
 
+<p>Tabs can used horizontally by default or vertically adding a flag in the component <code>vertical="true"</code></p>
+
+<docs-example language="markup">
+  <gov-tabset data-vertical="true">
+    <gov-tab heading="Before you start">
+      <h3 class="heading-medium">Before you start</h3>
+      <div class="text">
+        <p>To get your first provisional driving licence online for a car, motorcycle or moped you must:</p>
+        <ul class="list list-bullet">
+          <li>be a resident of Great Britain – there’s a different service in <a href="http://www.nidirect.gov.uk/applying-for-a-provisional-driving-licence" rel="external">Northern Ireland</a></li>
+          <li>meet the minimum age requirement</li>
+          <li>meet the <a href="/driving-eyesight-rules">minimum eyesight requirement</a></li>
+          <li>not be prevented from driving for any reason</li>
+          <li>pay £50 by MasterCard, Visa, Electron, Maestro or Delta debit or credit card</li>
+          <li>have a valid <abbr title="United Kngdom">UK</abbr> passport or <a href="/driving-licence-application-identity-documents">other form of identity</a></li>
+          <li>have your National Insurance number if known</li>
+          <li>provide addresses where you’ve lived for the last 3 years</li>
+        </ul>
+      </div>
+    </gov-tab>
+    <gov-tab heading="Need to know">
+      <h3 class="heading-medium">Need to know</h3>
+      <div class="text">
+        <ul class="list list-bullet">
+          <li>proof of identification required</li>
+          <li>3 years of address details required</li>
+          <li>debit or credit card required</li>
+        </ul>
+      </div>
+    </gov-tab>
+    <gov-tab heading="Ways to apply" data-on-click="$ctrl.test()">
+      <h3 class="heading-medium" tabindex="0">Ways to apply</h3>
+      <div class="text">
+        <p>You can apply by post by completing a D1 application form, which you can get from the <a href="#"><abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> form ordering service</a> or from a Post Office.</p>
+        <p>You’ll also need to include:</p>
+        <ul class="list list-bullet">
+          <li>original documentation confirming your identity</li>
+          <li>a colour <a href="/photos-for-passports">passport–style photograph</a></li>
+          <li>the fee of £50 by cheque or postal order payable to <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr> (do not send cash)</li>
+        </ul>
+        <p>Send your completed application and payment to <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr>, Swansea, SA99 1AD.</p>
+        <p>If you’re including non–<abbr title="United Kingdom">UK</abbr> identity documents send your application and payment to <abbr title="Driver and Vehicle Licensing Agency">DVLA</abbr>, Swansea, SA99 1AF.</p>
+      </div>
+    </gov-tab>
+  </gov-tabset>
+</docs-example>
 
 <discuss-component issue="18"></discuss-component>

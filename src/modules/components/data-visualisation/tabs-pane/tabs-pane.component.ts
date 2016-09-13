@@ -2,9 +2,9 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {
-    defaultIndex: '<',
     elements: '<',
     selectedData: '=',
+    defaultIndex: '<',
     onClick: '&'
   },
   transclude: true,
