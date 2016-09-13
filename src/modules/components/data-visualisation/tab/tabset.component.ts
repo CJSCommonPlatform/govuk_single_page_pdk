@@ -57,7 +57,7 @@ export class TabsetComponent {
 
   select(tab: TabComponent, focus: boolean = true): void {
     this.selected = tab;
-    if (this.selected.onClick) {
+    if (this.selected && this.selected.onClick) {
       this.selected.onClick();
     }
     if (focus) {
