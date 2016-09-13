@@ -7,6 +7,8 @@ $module: 'timeline';
   
   &-header {
     border-top: em(10) solid $govuk-blue;
+    padding-top: $gutter-half;
+    padding-bottom: $gutter-half;
   }
   
   &-block {
