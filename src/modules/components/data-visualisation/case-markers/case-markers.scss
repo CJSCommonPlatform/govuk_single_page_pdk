@@ -1,0 +1,20 @@
+// Case markers
+// ==========================================================================
+
+$module: 'case-marker';
+
+.#{$module} {
+  @include bold-16();
+  background-color: $red;
+  color: $white;
+  display: inline-block;
+  padding: em(5,16) em(10,16);
+}
+
+/*
+
+HTML Usage
+
+<span class="case-marker">Domestic violence</span>
+
+*/
