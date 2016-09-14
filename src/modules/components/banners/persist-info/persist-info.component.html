@@ -1,8 +1,15 @@
 <div class="persist-info">
-  <span class="persist-info-reference" data-ng-if="$ctrl.label" data-ng-bind="$ctrl.label"></span>
-  <span class="persist-info-title" data-ng-if="$ctrl.title" data-ng-bind="$ctrl.title"></span>
-  <div class="persist-info-links" data-ng-if="$ctrl.links">
-    <a data-ng-repeat="link in $ctrl.links" class="persist-info-link" href=""
-      data-ng-bind="link.title" title="{{link.title}}" data-ng-click="link.onClick()"></a>
+
+  <div class="persist-info-content">
+    <span class="persist-info-marker persist-info-marker-sensitive" data-ng-if="$ctrl.warning" data-ng-bind="$ctrl.warning"></span>
+    <span class="persist-info-reference" data-ng-if="$ctrl.label" data-ng-bind="$ctrl.label"></span>
+    <span class="persist-info-title"><b data-ng-if="$ctrl.title" data-ng-bind="$ctrl.title"></b></span>
   </div>
+
+  <ul class="persist-info-links">
+    <li data-ng-repeat="link in $ctrl.links">
+      <a href="" data-ng-bind="link.title"  data-ng-click="link.onClick()"></a>
+    </li>
+  </ul>
+
 </div>

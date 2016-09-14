@@ -5,27 +5,86 @@ $module: 'persist-info';
 
 .#{$module} {
   @include core-16;
+  @extend %clearfix;
   background-color: $govuk-blue;
-  color: white; 
-  padding: $gutter-half;
-  
-  &-reference {
-    float: left;
-    margin-right: 10px;
-  }
-  
-  &-title {
+  color: $white;
+  padding: em(5, 16);
+
+  a {
+    color: $white;
     display: block;
     overflow: hidden;
-    font-weight: 700;
+
+    &:focus {
+      color: $text-colour;
+    }
+
   }
-  
+
+  &-links {
+    overflow: hidden;
+    padding: em(10);
+
+    li {
+      display: inline-block;
+      margin-left: em(15, 16);
+      vertical-align: middle;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+    }
+
+  }
+
+  &-marker {
+    @include core-14;
+    display: inline-block;
+    font-weight: 700;
+    padding: em(10, 14);
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    &-sensitive {
+      background-color: $yellow;
+      color: $text-colour;
+    }
+
+  }
+
+  &-reference {
+    display: inline-block;
+    padding: em(10, 16) 0 em(10, 16) em(10, 16);
+    vertical-align: middle;
+  }
+
+  &-title {
+    display: inline-block;
+    padding: em(10, 16) 0 em(10, 16) em(10, 16);
+    vertical-align: middle;
+  }
+
+  // tablet and up
+  @include media(desktop) {
+
+    &-content {
+      float: left;
+    }
+
+    &-links {
+      margin-top: 0;
+      text-align: right;
+    }
+
+  }
+
 }
 
 /*
-  
+
 HTML Usage
-  
+
 <div class="persist-info">
   <span class="persist-info-reference">12AA3456716</span>
   <span class="persist-info-title">Joseph BLOGGS</span>

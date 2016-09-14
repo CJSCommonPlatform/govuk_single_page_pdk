@@ -4,7 +4,8 @@ import { Component } from '@govuk/angularjs-devtools';
   bindings: {
     label: '<',
     title: '<',
-    links: '<'
+    warning: '<?',
+    links: '<?'
   },
   template: require('./persist-info.component.html')
 })

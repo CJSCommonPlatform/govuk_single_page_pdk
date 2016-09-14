@@ -9,21 +9,55 @@
     <section aria-labelledby="persist-info">
       
       <p>Persist information is a highlighted heading for a page that requires it.</p>
-      
+
+      <h4 class="heading-small">One name with text links (C2I)</h4>
       <docs-example language="markup">
         <div class="persist-info">
-          <span class="persist-info-reference">12AA3456716</span>
-          <span class="persist-info-title">Joseph BLOGGS</span>
+          <div class="persist-info-content">
+            <span class="persist-info-reference">12AA3456716</span>
+            <span class="persist-info-title"><b>J. BLOGGS</b></span>
+          </div>
+          <ul class="persist-info-links">
+            <li><a href="#">Case options</a></li>
+            <li><a href="#">Timelines</a></li>
+          </ul>
         </div>
-        <br>
+      </docs-example>
+
+      <h4 class="heading-small">Multiple names with text links (C2I)</h4>
+      <docs-example language="markup">
         <div class="persist-info">
-          <span class="persist-info-reference">55DP0028116</span>
-          <span class="persist-info-title">Peter JAMES and 1 other</span>
+          <div class="persist-info-content">
+            <span class="persist-info-reference">55DP0028116</span>
+            <span class="persist-info-title"><b>E.COWAN, E.MICHAELS and W.PICKUP</b></span>
+          </div>
+          <ul class="persist-info-links">
+            <li><a href="#">Case options</a></li>
+            <li><a href="#">Timelines</a></li>
+          </ul>
         </div>
-        <br>
+      </docs-example>
+      <h4 class="heading-small">Case marked as &ldquo;sensitive&rdquo; (C2I)</h4>
+      <docs-example language="markup">
         <div class="persist-info">
-          <span class="persist-info-reference">78GQ0618124</span>
-          <span class="persist-info-title">Mary SMITH and 2 others</span>
+          <div class="persist-info-content">
+            <span class="persist-info-marker persist-info-marker-sensitive">Sensitive</span>
+            <span class="persist-info-reference">55DP0028116</span>
+            <span class="persist-info-title"><b>E. TIBBS and C. MOORE</b></span>
+          </div>
+          <ul class="persist-info-links">
+            <li><a href="#">Case options</a></li>
+            <li><a href="#">Timelines</a></li>
+          </ul>
+        </div>
+      </docs-example>
+      <h4 class="heading-small">Multiple names with no text links (I2T)</h4>
+      <docs-example language="markup">
+        <div class="persist-info">
+          <div class="persist-info-content">
+            <span class="persist-info-reference">78GQ0618124</span>
+            <span class="persist-info-title">William <b>DONADSON</b>, Edward <b>HARRISON</b>, Edgar <b>MORENO</b>, Andrew <b>SMITHERS</b></span>
+          </div>
         </div>
       </docs-example>
     </section>
@@ -33,31 +67,62 @@
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
       <gov-persist-info-banner
-        label="$ctrl.label"
-        title="$ctrl.title"
-        links="$ctrl.links">
+        label="$ctrl.demo1.label"
+        title="$ctrl.demo1.title"
+        links="$ctrl.demo1.links">
+      </gov-persist-info-banner>
+      <br>
+      <gov-persist-info-banner
+        label="$ctrl.demo2.label"
+        title="$ctrl.demo2.title"
+        warning="$ctrl.demo2.warning"
+        links="$ctrl.demo2.links">
       </gov-persist-info-banner>
     </docs-example>
   </gov-tab>
 
   <gov-tab heading="Data">
     <prismify language="javascript">
-      label = '55DP0028116';
-      title = 'E. COWAN, E. MICHAELS AND W. PICKUP';
-      links = [
-        {
-          title: 'Case Options',
-          onClick: function () {
-            console.log('Case options');
-          }
-        },
-        {
-          title: 'Notifications',
-          onClick: function () {
-            console.log('Notifications');
-          }
-        }
-      ]
+      demo1 = {
+        label: '55DP0028116',
+        title: 'E. COWAN, E. MICHAELS AND W. PICKUP',
+        links:
+          [
+            {
+              title: 'Case Options',
+              onClick: () => {
+                console.log('Case options');
+              }
+            },
+            {
+              title: 'Notifications',
+              onClick: () => {
+                console.log('Notifications');
+              }
+            }
+          ]
+        };
+
+        demo2 = {
+          label: '55DP0028116',
+          title: 'E. COWAN, E. MICHAELS AND W. PICKUP',
+          warning: 'Sensitive',
+          links:
+            [
+              {
+                title: 'Case Options',
+                onClick: () => {
+                  console.log('Case options');
+                }
+              },
+              {
+                title: 'Notifications',
+                onClick: () => {
+                  console.log('Notifications');
+                }
+              }
+            ]
+        };
     </docs-example>
   </gov-tab>
 
