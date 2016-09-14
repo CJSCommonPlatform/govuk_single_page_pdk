@@ -10,64 +10,18 @@
     <docs-example language="markup">
         <span class="case-marker">Domestic violence</span>
     </docs-example>
-    <docs-example language="markup">
-        <div class="related">
-            <div class="related-section">
-            <h3 class="related-heading">Case markers</h3>
-            <ul class="list list-inline">
-                <li><span class="case-marker">Domestic violence</span></li>
-                <li><span class="case-marker">Offender</span></li>
-            </ul>
-            </div>
-        </div>
-    </docs-example>
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
-    <docs-example language="markup"><gov-case-markers data="$ctrl.caseMarkerSingle"></gov-case-markers></docs-example>
-    <docs-example language="markup"><gov-case-markers data="$ctrl.caseMarkerWithHeading"></gov-case-markers></docs-example>
+    <docs-example language="markup"><gov-case-markers text="$ctrl.text"></gov-case-markers></docs-example>
   </gov-tab>
-
+  
   <gov-tab heading="Data">
-    <h3>Remove heading</h3>
     <prismify language="javascript">
-        //Displays a single marker without a header.
-        caseMarkerSingle = {
-            markers: [
-                'Domestic violence'
-            ]
-        };
-        
-        //You can set heading to false to remove heading
-        caseMarkerSingle = {
-            markers: [
-                'Domestic violence'
-            ],
-            heading: false
-        };
-        
-        // You can also set heading as '' providing flexibility.
-        caseMarkerSingle = {
-            markers: [
-                'Domestic violence'
-            ],
-            heading: ''
-        };
+      text = 'Domestic violence';
     </prismify>
-    
-    <h3>Set heading</h3>
-    <prismify language="javascript">
-        //Displays multiple markers with a related heading.
-        caseMarkerWithHeading = {
-            markers: [
-                'Domestic violence',
-                'Offender'
-            ],
-            heading: 'Case markers'
-        };
-    </prismify>
-  </gov-tab>
-
+  </gov-tab>  
+  
 </gov-tabset>
 
 <discuss-component issue="5"></discuss-component>

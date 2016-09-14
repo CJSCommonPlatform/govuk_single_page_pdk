@@ -2,8 +2,9 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {
-    data: '<'
+    text: '<'
   },
   template: require('./case-markers.component.html')
 })
+
 export class CaseMarkersComponent {}
