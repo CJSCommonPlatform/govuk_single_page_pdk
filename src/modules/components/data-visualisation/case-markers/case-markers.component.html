@@ -1,0 +1,9 @@
+<span data-ng-if="$ctrl.data.heading === '' || $ctrl.data.heading === undefined || $ctrl.data.heading === false" class="case-marker">{{$ctrl.data.markers[0]}}</span>
+<div data-ng-if="$ctrl.data.heading !== '' && $ctrl.data.heading !== undefined && $ctrl.data.heading !== false" class="related">
+    <div class="related-section">
+        <h3 class="related-heading">{{$ctrl.data.heading}}</h3>
+        <ul class="list list-inline">
+            <li data-ng-repeat="marker in $ctrl.data.markers"><span class="case-marker">{{marker}}</span></li>
+        </ul>
+    </div>
+</div>
