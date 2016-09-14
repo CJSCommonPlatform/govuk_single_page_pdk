@@ -4,7 +4,6 @@ import { Component } from '@govuk/angularjs-devtools';
   template: require('./case-markers.demo.html')
 })
 
-
 export class CaseMarkersDemo {
   private text = 'Domestic violence';
 }
