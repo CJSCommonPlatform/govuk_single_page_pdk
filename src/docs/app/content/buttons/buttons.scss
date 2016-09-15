@@ -1,0 +1,26 @@
+// Buttons
+// ==========================================================================
+
+$module: 'button';
+
+.#{$module} {
+  
+  &-secondary {
+    @include button($grey-3); 
+  }
+  
+  &-tertiary {
+    @include button($red);
+  }
+  
+  &-quaternary {
+    @include button($govuk-blue);
+  }
+  
+}
+
+// fix unwanted button padding in Firefox
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
