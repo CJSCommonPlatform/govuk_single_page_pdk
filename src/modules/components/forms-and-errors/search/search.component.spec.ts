@@ -1,3 +1,4 @@
+/* tslint:disable:max-line-length */
 import formsErrors from '../forms-errors';
 
 describe('components/forms-and-errors/search', () => {

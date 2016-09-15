@@ -1,42 +1,78 @@
 <h2 class="heading-medium">Image</h2>
+<p>Image component can be show with or without a title.</p>
+<p>If a user provides a <code>downloadLink</code> object with <code>text</code> and <code>onClick</code> properties, then a download link will be shown below the image, above the metadata</p>
+
 <gov-tabset>
 
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
-      <div>
-        <div class="heading-large">Test image title</div>
-        <div class="gov-image">
-          <img src="../../../../docs/images/justice.jpg" alt="Test image title">
-          <div class="gov-image-metadata">
-            <strong>Date taken</strong>: <span>2016 05 19</span>
-          </div>
-          <div class="gov-image-metadata">
-            <strong>Copyright</strong>: <span>none</span>
-          </div>
+      <p>Without a title.</p>
+      <figure class="media-image">
+        <div class="media-image-picture">
+          <img src="//placehold.it/550x366/DEE0E2/6F777B" alt="*">
         </div>
-      </div>
+        <div class="media-image-meta">
+          <ul class="list">
+            <li><a href="#">Download to your computer</a></li>
+            <li>JPG 256kb</li>
+          </ul>
+        </div>
+      </figure>
     </docs-example>
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-      <gov-image image="$ctrl.image"></gov-image>
+      <p>Without a title.</p>
+      <gov-image image="$ctrl.imageWithoutTitle"></gov-image>
+    </docs-example>
+    <docs-example language="markup">
+      <gov-image image="$ctrl.imageWithTitle"></gov-image>
+    </docs-example>
+    <docs-example language="markup">
+      <p>Without a download link</p>
+      <gov-image image="$ctrl.imageWithoutDownloadLink"></gov-image>
     </docs-example>
   </gov-tab>
 
   <gov-tab heading="Data">
     <prismify language="javascript">
-      image = {
-        src: 'images/justice.jpg',
-        title: 'Test image title',
+      imageWithoutTitle = {
+        src: '//placehold.it/550x366/DEE0E2/6F777B',
+        downloadLink: {
+          text: 'Download to your computer',
+          onClick: function() {
+            console.log('Click on \"Download to your computer\" link');
+          }
+        },
         metadata: [
           {
-            key: 'date taken',
-            value: '2016 05 19'
-          },
+            value: 'JPG 256KB'
+          }
+        ]
+      };
+
+      imageWithTitle = {
+        src: '//placehold.it/550x366/DEE0E2/6F777B',
+        title: 'Test image title',
+        downloadLink: {
+          text: 'Download to your computer',
+          onClick: function() {
+            console.log('Click on \"Download to your computer\" link');
+          }
+        },
+        metadata: [
           {
-            key: 'copyright',
-            value: 'none'
+            value: 'JPG 256KB'
+          }
+        ]
+      };
+
+      imageWithoutDownloadLink = {
+        src: '//placehold.it/550x366/DEE0E2/6F777B',
+        metadata: [
+          {
+            value: 'JPG 256KB'
           }
         ]
       };
