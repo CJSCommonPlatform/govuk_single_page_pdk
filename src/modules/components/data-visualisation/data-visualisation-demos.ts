@@ -11,6 +11,8 @@ import { SummaryItemDemo} from './summary-item/summary-item.demo';
 import { TabDemo } from './tab/tab.demo';
 import { DatasetDemo } from './dataset/dataset.demo';
 import { TabsPaneDemo } from './tabs-pane/tabs-pane.demo';
+import { CaseMarkersDemo } from './case-markers/case-markers.demo';
+
 
 const module = angular.module('govuk-single-page-pdk.component-demos.data-visualisation', [
   dataVisualisation,
@@ -25,6 +27,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.data-visual
   .component('govSummaryItemDemo', SummaryItemDemo)
   .component('govTabDemo', TabDemo)
   .component('govDatasetDemo', DatasetDemo)
-  .component('govTabsPaneDemo', TabsPaneDemo);
+  .component('govTabsPaneDemo', TabsPaneDemo)
+  .component('govCaseMarkersDemo', CaseMarkersDemo);
 
 export default module.name;
