@@ -1,3 +1,4 @@
+import { DownloadDocumentComponent } from './download-document/download-document.component';
 import { ImageComponent } from './image/image.component';
 import { MediaIconComponent } from './media-icon/media-icon.component';
 import { StatementComponent } from './statement/statement.component';
@@ -12,6 +13,7 @@ const module = angular.module('govuk-single-page-pdk.components.media', [])
   .filter('noFileType', noFileType)
   .filter('toFileType', toFileType)
 
+  .component('govDownloadDocument', DownloadDocumentComponent)
   .component('govMediaIcon', MediaIconComponent)
   .component('govImage', ImageComponent)
   .component('govStatement', StatementComponent)
