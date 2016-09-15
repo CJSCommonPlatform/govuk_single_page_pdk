@@ -4,7 +4,6 @@ import { Component } from '@govuk/angularjs-devtools';
   template: require('./top-menu.demo.html')
 })
 export class TopMenuDemo {
-
   menu = {
     items: [
       {
@@ -22,7 +21,7 @@ export class TopMenuDemo {
   };
 
   onMenuItemClick = (items, currentItem) => {
-    if (!currentItem.isActive) {
+    if (currentItem && !currentItem.isActive) {
       this.activateItem(items, currentItem);
     }
   };

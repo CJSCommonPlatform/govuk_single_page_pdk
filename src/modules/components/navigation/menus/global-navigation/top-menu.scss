@@ -1,0 +1,216 @@
+// Global navigation
+// ==========================================================================
+
+$module: 'global-nav';
+
+.#{$module} {
+  @include core-16;
+  @extend %clearfix;
+
+  &-toggle {
+    @extend .link;
+    display: none;
+  }
+
+  &-menu {
+    clear: both;
+  }
+
+  &-list {
+    @extend %clearfix;
+    list-style: none;
+
+    li {
+
+      &.is-active {
+        font-weight: 700;
+
+        a {
+          color: $black;
+          pointer-events: none;
+        }
+
+      }
+
+      a {
+        overflow: hidden;
+        text-decoration: none;
+      }
+
+    }
+
+  }
+
+  // mobile
+  @include media(mobile) {
+
+    &-list {
+
+      a {
+        display: block;
+        padding: 10px 0;
+      }
+
+    }
+
+    &-list {
+
+      + ul { // targets second ul for pre-charge review
+        border-top: 1px solid $border-colour;
+      }
+
+    }
+
+  }
+
+  // tablet
+  @include media(tablet) {
+
+    &-list {
+
+      li {
+        float: left;
+        margin-right: 20px;
+        padding: 10px 0;
+
+        &.is-active {
+          cursor: default;
+          padding-bottom: 5px;
+
+          &:after {
+            background-color: $black;
+            content: '';
+            height: 5px;
+            position: absolute; bottom: 0; left: 0;
+          }
+
+        }
+
+      }
+
+      + ul { // targets second ul for pre-charge review
+        border-top: 1px solid $border-colour;
+        clear: both;
+      }
+
+    }
+
+  }
+
+
+  // desktop
+  @include media(desktop) {
+
+    &-list {
+      float: left;
+
+      li {
+
+        &.is-active {
+          position: relative;
+
+          &:after {
+            background-color: $black;
+            content: '';
+            height: 5px;
+            position: absolute; bottom: -5px;
+            width: 100%;
+          }
+
+        }
+
+      }
+
+      + ul {
+        border-top: 0;
+        border-left: 1px solid $border-colour;
+        clear: none;
+
+        li {
+          margin-left: 20px;
+          margin-right: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// javascript enabled
+.js-enabled {
+
+  .#{$module} {
+
+    @include media(mobile) {
+
+      &-menu {
+        display: none;
+
+        &[aria-expanded="true"] {
+          display: block;
+        }
+
+      }
+
+      &-toggle {
+        border: 0;
+        cursor: pointer;
+        display: block;
+        float: right;
+        font-size: inherit;
+        padding: 10px 0;
+        text-decoration: none;
+
+        &:after {
+          font-size: 10px;
+          padding-left: em(5);
+          vertical-align: middle;
+        }
+
+        &[aria-expanded="false"]:after {
+          content: '▼';
+        }
+
+        &[aria-expanded='true']:after {
+          content: '▲';
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+/*
+
+HTML Usage
+
+<div class="global-navigation">
+
+  <a href="#" class="global-navigation-toggle" aria-expanded="false" aria-controls="global-navigation">Menu</a>
+
+  <nav class="global-navigation-menu" id="global-navigation" role="navigation" aria-label="Global Navigation">
+
+    <h3 class="visuallyhidden">Global navigation</h3>
+
+    <ul class="global-navigation-list">
+      <li><a href="#">Case at a glance</a></li>
+      <li class="is-active"><a href="#" tabindex="-1">Case material</a></li>
+    </ul>
+
+    <ul class="global-navigation-list">
+      <li><a href="#">Analysis and decisions</a></li>
+      <li><a href="#">Action plan</a></li>
+      <li><a href="#">Preview and send</a></li>
+    </ul>
+
+  </nav>
+
+</div>
+
+*/

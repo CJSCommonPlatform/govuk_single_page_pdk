@@ -10,7 +10,7 @@ import { NextPreviousNavigationDemo } from './next-previous-navigation/next-prev
 import { PaginationDemo } from './pagination/pagination.demo';
 import { SideMenuDemo } from './menus/side-menu/side-menu.demo';
 import { StartBarDemo } from './start-bar/start-bar.demo';
-import { TopMenuDemo } from './menus/top-menu/top-menu.demo';
+import { TopMenuDemo } from './menus/global-navigation/top-menu.demo';
 
 const module = angular.module('govuk-single-page-pdk.component-demos.navigation', [
   navigation,
