@@ -7,6 +7,11 @@ require('./docs.scss');
 
 import { DiscussComponent } from './discuss.component';
 
+// Don't want to render code examples when testing with pa11y
+// because there are a lot of colour contrast errors that need
+// to be avoided.
+const RENDER_CODE_EXAMPLES = !process.env.IS_PA11Y;
+
 const module = angular.module('govDocs-utils', [])
   .component('discussComponent', DiscussComponent)
 
@@ -32,7 +37,9 @@ const module = angular.module('govDocs-utils', [])
         if (language === 'scss') html = html.replace(/&amp;/g, '&');
 
         html = prism.highlight(html, prism.languages[language]).trim();
-        elem.html(`<pre class="language-${language}"><code>${html}</code></pre>`);
+        if (RENDER_CODE_EXAMPLES) {
+          elem.html(`<pre class="language-${language}"><code>${html}</code></pre>`);
+        }
       }
     };
   }])
