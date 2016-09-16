@@ -46,7 +46,7 @@ export class TopMenuComponent {
       this.leftList = this.menu.items.slice(0, this.indexOfSeparator(this.menu));
       this.rightList = this.menu.items.slice(this.indexOfSeparator(this.menu), this.menu.items.length);
     } else {
-      this.leftList = this.menu;
+      this.leftList = this.menu.items;
     }
   }
 }
