@@ -6,8 +6,26 @@ import { Component } from '@govuk/angularjs-devtools';
 export class SearchDemo {
 
   model: string;
-
+  private inputId = 'inputSearchId';
+  private name = 'searchName';
+  private autocomplete = true;
+  private ariaDescribedBy = 'Aria description';
+  private ngMinLength = 2;
+  private results = {
+    display: false,
+    data: []
+  };
   onSearch(text: string) {
-    console.log(text);
+    this.resultsHandler();
+  }
+  resultsHandler() {
+    // Some data actions
+    this.results = {
+      display: true,
+      data: [
+        {datum1: 'datum1'},
+        {datum2: 'datum2'}
+      ]
+    };
   }
 }

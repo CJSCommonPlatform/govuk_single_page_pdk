@@ -14,11 +14,12 @@ import { LazyValidationDirective } from '../lazy-validation/lazy-validation.dire
     ngMinlength:      '@?',
     required:         '<?',
     onSearch:         '&',
-    onCriteriaChange: '&?'
+    onCriteriaChange: '&?',
+    results: '='
   },
   require: {
     ngModelCtrl: 'ngModel',
-    formCtrl: '^^form',
+    formCtrl: '^^?form',
     lazyValidationController: '^^?lazyValidation'
   }
 })

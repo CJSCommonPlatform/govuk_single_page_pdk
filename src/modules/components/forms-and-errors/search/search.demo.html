@@ -4,20 +4,19 @@
 
   <gov-tab heading="HTML Example">
     <docs-example language="markup">
-      <div class="gov-search-input">
-        <input type="text" placeholder="Search for...">
-        <div class="gov-search-input__button">
-          <button role="button" type="button"></button>
-        </div>
+      <div class="form-search">
+        <label class="visually-hidden" for="search">Label</label>
+        <input class="form-control" type="search" id="search-1" name="search-1">
+        <button class="form-search-button" type="submit">Search</button>
       </div>
     </docs-example>
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
-      <gov-search
-          name="$ctrl.search" ng-model="$ctrl.model" placeholder="Search"
-          on-search="$ctrl.onSearch($event)" required="required"></gov-search>
+      <gov-search  id="$ctrl.inputId"
+          name="$ctrl.search" autocomplete="true" ng-model="$ctrl.model" aria-describedby="$ctrl.ariaDescribedBy" ng-minlength="$ctrl.ngMinLength" placeholder="Search"
+          on-search="$ctrl.onSearch($ctrl.model)" required="required" results="$ctrl.results"></gov-search>
     </docs-example>
   </gov-tab>
 
