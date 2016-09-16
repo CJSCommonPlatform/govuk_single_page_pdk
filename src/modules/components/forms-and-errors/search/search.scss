@@ -1,50 +1,88 @@
-.gov-search-group, .gov-search-input {
+// Search input
+// ==========================================================================
+
+$module: 'form-search';
+
+.#{$module} {
   position: relative;
 
-  @include media(tablet) {
-    width: 50%;
+  + .panel {
+    margin-top: $gutter-half;
+    margin-bottom: 0;
   }
 
-  &.gov-search-inline {
+  .form-control {
+    @include box-sizing(border-box);
     display: inline-block;
-  }
+    vertical-align: middle;
+    width: calc(100% - 32px);
 
-  > input {
-    @extend .form-control;
-    width: calc(100% - 40px) !important;
-    height: 40px;
-    border-right: none !important;
-  }
-
-  .gov-search-button, &__button {
-    width: 40px;
-    position: absolute;
-    height: 40px;
-    right: 0;
-    top: 0;
-
-    button {
-      box-sizing: border-box;
-      box-shadow: none;
-      font-size: 0;
-      height: 40px;
-      padding: 6px 0 7px;
-      background: $govuk-blue;
-      border: 1px solid $govuk-blue;
-      cursor: pointer;
-      width: 100%;
-      &:hover:enabled {
-        background: #004F8C;
-      }
-      &:after {
-        font-family: FontAwesome, sans-serif;
-        content: '\f002';
-        color: $white;
-        font-size: 18px;
-      }
-      &:focus {
-        padding-top: 5px;
-      }
+    @include media(tablet) {
+      width: calc(50% - 37px);
     }
+
+    &:focus {
+      position: relative;
+    }
+
   }
+
+  &-button {
+    @include box-sizing(border-box);
+    background-color: $govuk-blue;
+    background-image: url('images/icon-search-white.png');
+    border: 2px solid $govuk-blue;
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    overflow: hidden;
+    padding: 4px;
+    text-indent: -999px;
+    vertical-align: middle;
+    width: 32px;
+
+    &:focus,
+    &:hover {
+      background-color: darken($govuk-blue, 5%); //#004F8C
+      border-color: darken($govuk-blue, 5%); //#004F8C
+    }
+
+    @include device-pixel-ratio() {
+      background-image: url('images/icon-search-white-2x.png');
+      background-size: 100%;
+    }
+
+    @include media(tablet) {
+      height: 37px;
+      width: 37px;
+    }
+
+    &:focus {
+      position: relative;
+    }
+
+  }
+
 }
+
+.error {
+
+  .#{$module}-button {
+    border-width: 4px;
+    height: 41px;
+    width: 41px;
+  }
+
+}
+
+/*
+
+HTML Usage
+
+<div class="form-search">
+  <label class="form-label" for="search">Enter part or all of a user&rsquo;s name or email address</label>
+  <input class="form-control" type="search" id="search" name="search" value="BGV"><button class="form-search-button" type="submit">Search</button>
+  <p class="form-search-clear"><a href="#">Clear search</a></p>
+</div>
+
+*/
