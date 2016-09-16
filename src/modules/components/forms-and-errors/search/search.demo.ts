@@ -20,6 +20,7 @@ export class SearchDemo {
   }
   resultsHandler() {
     // Some data actions
+    // Get data from service then add to results object below.
     this.results = {
       display: true,
       data: [
