@@ -1,10 +1,16 @@
 <div id="skiplink-container">
   <div>
-    <a href="javascript:;" data-ng-click="$ctrl.navigation.mainContent.navigate()" data-ng-if="undefined === $ctrl.showSkipLink || $ctrl.showSkipLink" class="skiplink">Skip to main content</a>
+    <a href=""
+       data-ng-click="$ctrl.navigation.mainContent.navigate()"
+       data-ng-if="undefined === $ctrl.showSkipLink || $ctrl.showSkipLink" class="skiplink"
+       data-ng-bind="$ctrl.skipLinkText"></a>
   </div>
 </div>
-<div id="global-cookie-message" ng-if="$ctrl.showCookie">
-  <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a></p>
+<div id="global-cookie-message" ng-if="$ctrl.showCookie" style="display: block">
+  <p ng-transclude="cookies">
+    GOV.UK uses cookies to make the site simpler.
+    <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a>
+  </p>
 </div>
 <header role="banner" id="global-header" class="with-proposition">
 
@@ -12,8 +18,8 @@
 
     <div class="header-global">
       <div class="header-logo">
-        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img src="/assets/images/gov.uk_logotype_crown_invert_trans.png" width="35" height="31" alt=""> GOV.UK
+        <a data-ng-href="{{$ctrl.linkTitle}}" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img data-ng-src="{{$ctrl.logoUrl}}" width="35" height="31" alt=""> <span data-ng-bind="$ctrl.title"></span>
         </a>
       </div>
     </div>

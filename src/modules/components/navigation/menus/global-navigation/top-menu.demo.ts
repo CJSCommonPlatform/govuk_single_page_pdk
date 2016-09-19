@@ -4,7 +4,8 @@ import { Component } from '@govuk/angularjs-devtools';
   template: require('./top-menu.demo.html')
 })
 export class TopMenuDemo {
-  menu = {
+
+  private menu = {
     items: [
       {
         text: 'First page',

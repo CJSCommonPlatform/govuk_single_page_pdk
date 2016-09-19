@@ -27,6 +27,6 @@
 // Examples
 @import "examples/examples";
 
-* {
+.row * {
   @include box-sizing(border-box);
 }

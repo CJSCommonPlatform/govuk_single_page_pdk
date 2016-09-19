@@ -20,9 +20,15 @@ export class TopMenuComponent {
   private open: boolean = false;
 
   $onInit(): void {
-    this.splitMenus();
+    this.splitMenus(this.menu);
     this.menuTitle = this.menuTitle || 'Menu'; // default title for menu link if not defined
     this.globalNavigation = this.globalNavigation || 'Global Navigation'; // default description of the component
+  }
+
+  $onChanges(changesObj): void {
+    if (changesObj.menu && changesObj.menu.currentValue.items) {
+      this.splitMenus(changesObj.menu.currentValue);
+    }
   }
 
   indexOfSeparator(list: any): number {
@@ -40,13 +46,13 @@ export class TopMenuComponent {
     this.open = !this.open;
   }
 
-  splitMenus(): void {
+  splitMenus(menu: any): void {
     // we split the menu options in 2 types if needed
-    if (this.indexOfSeparator(this.menu) > -1) {
-      this.leftList = this.menu.items.slice(0, this.indexOfSeparator(this.menu));
-      this.rightList = this.menu.items.slice(this.indexOfSeparator(this.menu), this.menu.items.length);
+    if (this.indexOfSeparator(menu) > -1) {
+      this.leftList = menu.items.slice(0, this.indexOfSeparator(menu));
+      this.rightList = menu.items.slice(this.indexOfSeparator(menu), menu.items.length);
     } else {
-      this.leftList = this.menu.items;
+      this.leftList = menu.items;
     }
   }
 }

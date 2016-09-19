@@ -5,6 +5,7 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class GovUkHeaderDemo {
   heading: string = 'Single Page Platform Development Kit';
+  logoUrl = '';
   navItems = [
     {
       state: 'layout',
