@@ -2,13 +2,19 @@
   .header-wrapper {
     box-sizing: content-box;
     &.business {
-      max-width: $container-large-desktop;
+      max-width: $container-large-desktop + $grid-gutter-width;
+    }
+  }
+  #logo {
+    background-image: url('#{$govuk-template-image-path}/gov.uk_logotype_crown.png');
+    @include ie-lte(8) {
+      background-image: url('#{$govuk-template-image-path}/gov.uk_logotype_crown-1x.png');
     }
   }
 }
 
 #global-header-bar.business {
-  max-width: $container-large-desktop - $grid-gutter-width;
+  max-width: $container-large-desktop;
 }
 
 #skiplink-container {

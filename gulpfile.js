@@ -35,6 +35,21 @@ gulp.task('release', function() {
   );
 });
 
+gulp.task('release-beta', function() {
+  run(
+      'test',
+      [
+        'build-components',
+        'copy-platform-template'
+      ],
+      'bump-repo',
+      'bump-packages',
+      'commit-changes',
+      'create-new-tag-without-pushing',
+      'publish-beta'
+  );
+});
+
 gulp.task('clean', function() {
   return del('./dist/@govuk');
 });
@@ -85,6 +100,14 @@ gulp.task('commit-changes', function () {
 });
 
 
+gulp.task('create-new-tag-without-pushing', function (done) {
+  git.tag(getVersion(), 'Created Tag for version: ' + getVersion(), function (error) {
+    if (error) {
+      return done(error);
+    }
+  });
+});
+
 gulp.task('create-new-tag', function (done) {
   git.tag(getVersion(), 'Created Tag for version: ' + getVersion(), function (error) {
     if (error) {
@@ -99,6 +122,10 @@ gulp.task('publish', function() {
   spawn('npm', ['publish', 'dist/@govuk/angularjs-components'], {stdio: 'inherit'});
 });
 
+gulp.task('publish-beta', function() {
+  spawn('npm', ['publish', 'dist/@govuk/platform-template', '--tag beta'],    {stdio: 'inherit'});
+  spawn('npm', ['publish', 'dist/@govuk/angularjs-components', '--tag beta'], {stdio: 'inherit'});
+});
 
 gulp.task('pa11y', function () {
   const REPORT_PATH_BASE = './reports/';

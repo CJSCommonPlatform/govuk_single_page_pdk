@@ -1,3 +1,5 @@
+import 'angular-slugify';
+
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { ContactInfoComponent} from './contact-info/contact-info.component';
 import { SummaryItemComponent} from './summary-item/summary-item.component';

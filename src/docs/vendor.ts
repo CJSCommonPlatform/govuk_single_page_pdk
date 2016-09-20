@@ -7,5 +7,4 @@ import 'angular-breadcrumb';
 import 'angular-sanitize';
 import 'prismjs';
 import 'ngSmoothScroll';
-import 'angular-slugify';
 import 'ng-clamp';

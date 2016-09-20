@@ -158,26 +158,26 @@ describe('components/forms-and-errors/search', () => {
 
   it('applies the outer `ng-minlength` attribute to the inner input', () => {
     compile(`<form><gov-search ng-minlength="3" ng-model="model"></gov-search></form>`);
-    expect(element.find('input').attr('ng-minlength')).toEqual('3');
+    expect(element.find('input').attr('data-ng-minlength')).toEqual('3');
   });
 
   it('applies the gov-search-inline class when inline attribute is set', () => {
     compile(`<form><gov-search inline="true" ng-model="model"></gov-search></form>`);
-    expect(element.find('.gov-search-input').hasClass('gov-search-inline')).toBe(true);
+    expect(element.find('.form-search').hasClass('gov-search-inline')).toBe(true);
   });
 
   it(`doesn't apply the gov-search-inline class when inline attribute is not set`, () => {
     compile(`<form><gov-search inline="false" ng-model="model"></gov-search></form>`);
-    expect(element.find('.gov-search-input').hasClass('gov-search-inline')).toBe(false);
+    expect(element.find('.form-search').hasClass('gov-search-inline')).toBe(false);
   });
 
   it(`applies ng-required attribute to the inner input when the required attribute is set`, () => {
     compile(`<form><gov-search required="true" ng-model="model"></gov-search></form>`);
-    expect(element.find('input').attr('ng-required')).toEqual('true');
+    expect(element.find('input').attr('data-ng-required')).toEqual('true');
   });
 
   it(`does not apply required attribute to the inner input when the required attribute is not set`, () => {
     compile(`<form><gov-search ng-model="model"></gov-search></form>`);
-    expect(element.find('input').attr('ng-required')).toEqual('');
+    expect(element.find('input').attr('data-ng-required')).toEqual('');
   });
 });

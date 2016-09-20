@@ -28,7 +28,7 @@ export class GovUkHeaderComponent {
   linkTitle: string;
   skipLinkText: string;
 
-  $onInit(){
+  $onInit() {
     // setting some default values
     this.logoUrl = this.logoUrl || '/assets/images/gov.uk_logotype_crown.png';
     this.title = this.title || 'GOV.UK';

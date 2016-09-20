@@ -2,10 +2,11 @@
   <label class="visually-hidden" for="search">Label</label>
   <input class="form-control" type="text" id="{{$ctrl.inputId}}" placeholder="{{$ctrl.placeholder}}"
          name="{{$ctrl.name}}" autocomplete="{{$ctrl.autocomplete || 'off'}}"
-         aria-describedby="{{$ctrl.ariaDescribedby}}" ng-model="$ctrl.ngModel"
-         ng-minlength="{{$ctrl.ngMinlength}}" ng-required="{{$ctrl.required}}">
-  <button class="form-search-button" type="submit" role="button" type="submit" ng-click="$ctrl.submit()">Search</button>
+         aria-describedby="{{$ctrl.ariaDescribedby}}" data-ng-model="$ctrl.ngModel"
+         data-ng-minlength="{{$ctrl.ngMinlength}}" data-ng-required="{{$ctrl.required}}"
+         data-ng-class="{'gov-search-inline': $ctrl.inline}">
+  <button class="form-search-button" type="submit" role="button" type="submit" data-ng-click="$ctrl.submit()">Search</button>
 </div>
-<div ng-if="$ctrl.results.display === true" class="panel panel-border-wide">
+<div data-ng-if="$ctrl.results.display === true" class="panel panel-border-wide">
   <p>{{$ctrl.results.data.length}} results found</p>
 </div>

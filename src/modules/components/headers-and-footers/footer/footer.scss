@@ -1,29 +1,29 @@
-//#footer .footer-meta {
-//
-//  .footer-meta-inner .open-government-licence .logo a {
-//    background: url('#{$govuk-template-image-path}/open-government-licence.png') 0 0 no-repeat;
-//    @include device-pixel-ratio() {
-//      background-image: url('#{$govuk-template-image-path}/open-government-licence_2x.png');
-//    }
-//  }
-//
-//  .copyright {
-//    a {
-//      background-image: url('#{$govuk-template-image-path}/govuk-crest.png');
-//
-//      @include device-pixel-ratio() {
-//        background-image: url('#{$govuk-template-image-path}/govuk-crest-2x.png');
-//      }
-//
-//      @include ie(6) {
-//        background-image: url('#{$govuk-template-image-path}/govuk-crest-ie.png');
-//      }
-//    }
-//  }
-//}
-//
-//#footer .footer-wrapper {
-//  &.business {
-//    max-width: $container-large-desktop - $grid-gutter-width;
-//  }
-//}
+#footer .footer-meta {
+
+  .footer-meta-inner .open-government-licence .logo a {
+    background: url('#{$govuk-template-image-path}/open-government-licence.png') 0 0 no-repeat;
+    @include device-pixel-ratio() {
+      background-image: url('#{$govuk-template-image-path}/open-government-licence_2x.png');
+    }
+  }
+
+  .copyright {
+    a {
+      background-image: url('#{$govuk-template-image-path}/govuk-crest.png');
+
+      @include device-pixel-ratio() {
+        background-image: url('#{$govuk-template-image-path}/govuk-crest-2x.png');
+      }
+
+      @include ie(6) {
+        background-image: url('#{$govuk-template-image-path}/govuk-crest-ie.png');
+      }
+    }
+  }
+}
+
+#footer .footer-wrapper {
+  &.business {
+    max-width: $container-large-desktop;
+  }
+}

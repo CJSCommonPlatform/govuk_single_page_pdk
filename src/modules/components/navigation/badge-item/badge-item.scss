@@ -1,26 +1,26 @@
-.badge-item{
-  color: $link-color;
-  padding: 15px 10px;
-  &.selected{
-    background-color: $govuk-blue;
-    color: $page-colour;
-
-    .badge-item-badge{
-      border: 1px solid $page-colour;
-    }
-  }
-
-  .badge-item-badge{
-    background-color: $govuk-blue;
-    color: $page-colour;
-    padding: 3px 2px 2px 5px;
-    margin-right: 5px;
-    @include core-14;
-  }
-
-  .arrow{
-    @extend .fa;
-    @extend .fa-chevron-right;
-    padding-top: 2px;
-  }
-}
+//.badge-item{
+//  color: $link-color;
+//  padding: 15px 10px;
+//  &.selected{
+//    background-color: $govuk-blue;
+//    color: $page-colour;
+//
+//    .badge-item-badge{
+//      border: 1px solid $page-colour;
+//    }
+//  }
+//
+//  .badge-item-badge{
+//    background-color: $govuk-blue;
+//    color: $page-colour;
+//    padding: 3px 2px 2px 5px;
+//    margin-right: 5px;
+//    @include core-14;
+//  }
+//
+//  .arrow{
+//    @extend .fa;
+//    @extend .fa-chevron-right;
+//    padding-top: 2px;
+//  }
+//}
