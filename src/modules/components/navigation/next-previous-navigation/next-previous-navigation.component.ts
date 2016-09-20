@@ -18,11 +18,11 @@ export class NextPreviousNavigationComponent {
          * has not been provided by 'usageInstructions', then the text will 
          * default to the relevant description.
          */
-        if (!this.navigation.previous.usageInstructions) {
+        if (this.navigation.previous && !this.navigation.previous.usageInstructions) {
             this.navigation.previous.usageInstructions = this.navigation.previous.description;
         }
 
-        if (!this.navigation.next.usageInstructions) {
+        if (this.navigation.next && !this.navigation.next.usageInstructions) {
             this.navigation.next.usageInstructions = this.navigation.next.description;
         }
     }
