@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.0.102",
+  "version": "0.0.103",
   "scripts": {
     "build": "npm run build:dev",
     "prebuild_dev": "npm run clean",
