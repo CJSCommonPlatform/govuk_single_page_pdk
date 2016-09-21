@@ -4,7 +4,8 @@ import { Component } from '@govuk/angularjs-devtools';
   bindings: {
     title: '<',
     subtitle: '<',
-    info:  '<'
+    info:  '<',
+    isHeading: '<'
   },
   template: require('./personal-details.component.html')
 })

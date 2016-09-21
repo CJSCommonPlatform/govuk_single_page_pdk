@@ -1,5 +1,9 @@
 <div class="personal-details">
-  <h3 class="heading-large">
+  <h1 class="heading-large" data-ng-if="$ctrl.isHeading">
+    <span class="heading-secondary" data-ng-bind="$ctrl.subtitle" data-ng-if="$ctrl.subtitle"></span>
+    {{$ctrl.title}}
+  </h1>
+  <h3 class="heading-large" data-ng-if="!$ctrl.isHeading">
     <span class="heading-secondary" data-ng-bind="$ctrl.subtitle" data-ng-if="$ctrl.subtitle"></span>
     {{$ctrl.title}}
   </h3>
