@@ -1,4 +1,6 @@
-<h2 class="heading-medium">Search Input</h2>
+<h2 class="heading-medium">Search Input & Results</h2>
+<p class="text">This components will display a search input and the number of search results found. The angular example below hides the search results until the user triggers a valid search action. The search result is hard coded to return static data.</p>
+
 
 <gov-tabset>
 
@@ -6,10 +8,15 @@
     <docs-example language="markup">
       <div class="form-search">
         <label class="visually-hidden" for="search">Label</label>
-        <input class="form-control" type="search" id="search-1" name="search-1">
-        <button class="form-search-button" type="submit">Search</button>
+        <input class="form-control" type="text" id="inputId" placeholder="Search"
+              name="inputName" autocomplete="true"
+              aria-describedby="Aria  description" required="true">
+        <button class="form-search-button" type="submit" role="button" type="submit">Search</button>
       </div>
-    </docs-example>
+      <div class="panel panel-border-wide">
+        <p>0 results found</p>
+      </div>       
+    </docs-example>   
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
@@ -22,8 +29,23 @@
 
   <gov-tab heading="Data">
     <prismify language="javascript">
-      this.onSearch = function(text) {
-        console.log(text);
+      private results = {
+        display: false,
+        data: []
+      };
+      onSearch(text: string) {
+        this.resultsHandler();
+      }
+      resultsHandler() {
+        // Some data actions
+        // Get data from service then add to results object below.
+        this.results = {
+          display: true,
+          data: [
+            {datum1: 'datum1'},
+            {datum2: 'datum2'}
+          ]
+        };
       }
     </prismify>
   </gov-tab>
