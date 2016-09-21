@@ -37,6 +37,9 @@ npm-debug.log
 /coverage/
 /reports
 
+# e2e #
+/e2e/reports
+
 # Typing #
 /src/typings/tsd/
 /typings/

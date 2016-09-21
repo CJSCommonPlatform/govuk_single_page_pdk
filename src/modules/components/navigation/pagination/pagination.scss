@@ -19,6 +19,7 @@ $module: 'pagination';
       left: 50%; top: 50%;
 
       li {
+        background: white;
         display: inline-block;
 
         &.is-active {
