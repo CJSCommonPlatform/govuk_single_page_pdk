@@ -1,6 +1,6 @@
 <div class="pagination">
   
-  <div class="pagination-prev">
+  <div class="pagination-prev" data-ng-if="$ctrl.navigation.previous">
     <a href="" rel="prev" title="$ctrl.navigation.previous.usageInstructions"
       data-ng-click="$ctrl.navigation.previous.navigate();">
       <span class="pagination-label" data-ng-bind="$ctrl.navigation.previous.name"></span>
@@ -8,7 +8,7 @@
     </a>
   </div>
   
-  <div class="pagination-next">
+  <div class="pagination-next" data-ng-if="$ctrl.navigation.next">
     <a href="" rel="next" title="$ctrl.navigation.next.usageInstructions"
       data-ng-click="$ctrl.navigation.next.navigate();">
       <span class="pagination-label" data-ng-bind="$ctrl.navigation.next.name"></span>
