@@ -119,9 +119,9 @@ describe('components/forms-and-errors/date-input', () => {
         <gov-date-input name="govDate" ng-model="model" required></gov-date-input>
       </form>
     `);
-    setDateValues({day: 'X', month: 'Y'});
+    setDateValues({day: '1', month: '2'});
     expect(scope.testForm.govDate.$error.required).toBe(true);
-    setDateValues({day: 'X', month: 'Y', year: 'Z'});
+    setDateValues({day: '1', month: '2', year: '1944'});
     expect(scope.testForm.govDate.$error.required).toBeUndefined();
   });
 
@@ -132,11 +132,10 @@ describe('components/forms-and-errors/date-input', () => {
       </form>
     `);
     const ngModelCtrl = scope.testForm.govDate;
-    setDateValues({day: 'A', month: 'X', year: 'Y'});
+    expect(ngModelCtrl.$error.dateFormat).toBeUndefined();
+    setDateValues({day: 31, month: 4, year: 2});
     expect(ngModelCtrl.$error.dateFormat).toBeDefined();
-    setDateValues({day: 290, month: 2, year: 2017});
-    expect(ngModelCtrl.$error.dateFormat).toBeDefined();
-    setDateValues({day: 3, month: 100, year: 201});
+    setDateValues({day: 31, month: 4, year: 20});
     expect(ngModelCtrl.$error.dateFormat).toBeDefined();
     setDateValues({day: 31, month: 4, year: 201});
     expect(ngModelCtrl.$error.dateFormat).toBeDefined();

@@ -161,9 +161,9 @@ export class DateInputComponent {
       const val = this.ngModelCtrl.$modelValue === null ? undefined : this.ngModelCtrl.$modelValue;
       const date = new Date(val);
       if (date) {
-        this.dayModel   = date.getDate();
-        this.monthModel = date.getMonth() + 1;
-        this.yearModel  = date.getFullYear();
+        this.dayModel   = isNaN(date.getDate())  ? undefined : date.getDate();
+        this.monthModel = isNaN(date.getMonth()) ? undefined : date.getMonth() + 1;
+        this.yearModel  = isNaN(date.getFullYear()) ? undefined : date.getFullYear();
       }
     };
   }
