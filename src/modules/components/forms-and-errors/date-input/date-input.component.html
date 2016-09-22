@@ -9,6 +9,8 @@
              name="dateDay"
              required
              autocomplete="off"
+             maxlength="2"
+             data-input-number
              data-ng-model="$ctrl.dayModel"
              data-ng-change="$ctrl.onInputChange()"
              data-ng-focus="$ctrl.onInputFocus()"
@@ -24,7 +26,9 @@
              type="text"
              name="dateMonth"
              required
+             maxlength="2"
              autocomplete="off"
+             data-input-number
              data-ng-model="$ctrl.monthModel"
              data-ng-change="$ctrl.onInputChange()"
              data-ng-focus="$ctrl.onInputFocus()"
@@ -40,7 +44,9 @@
              type="text"
              name="dateYear"
              required
+             maxlength="4"
              autocomplete="off"
+             data-input-number
              data-ng-model="$ctrl.yearModel"
              data-ng-change="$ctrl.onInputChange()"
              data-ng-focus="$ctrl.onInputFocus()"
