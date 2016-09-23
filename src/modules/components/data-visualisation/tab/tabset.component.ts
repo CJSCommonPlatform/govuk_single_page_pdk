@@ -30,6 +30,8 @@ import { TabComponent } from './tab.component';
 })
 export class TabsetComponent {
 
+  static $inject = ['$element', '$timeout'];
+
   tabs: TabComponent[] = [];
   selected: TabComponent;
   defaultIndex: number;
