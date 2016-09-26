@@ -1,12 +1,12 @@
 <div class="form-search">
-  <label class="visually-hidden" for="search">Label</label>
-  <input class="form-control" type="text" id="{{$ctrl.inputId}}" placeholder="{{$ctrl.placeholder}}"
+  <label data-ng-class="{'visually-hidden': !$ctrl.showLabelFlag, 'form-label': $ctrl.showLabelFlag}" for="search" data-ng-bind="$ctrl.label"></label>
+  <input class="form-control" type="search" id="{{$ctrl.inputId}}" placeholder="{{$ctrl.placeholder}}"
          name="{{$ctrl.name}}" autocomplete="{{$ctrl.autocomplete || 'off'}}"
          aria-describedby="{{$ctrl.ariaDescribedby}}" data-ng-model="$ctrl.ngModel"
          data-ng-minlength="{{$ctrl.ngMinlength}}" data-ng-required="{{$ctrl.required}}"
          data-ng-class="{'gov-search-inline': $ctrl.inline}">
-  <button class="form-search-button" type="submit" role="button" type="submit" data-ng-click="$ctrl.submit()">Search</button>
+  <button class="form-search-button" type="submit" role="button" type="submit" data-ng-click="$ctrl.submit()" data-ng-bind="$ctrl.searchStr"></button>
 </div>
 <div data-ng-if="$ctrl.results.display === true" class="panel panel-border-wide">
-  <p>{{$ctrl.results.data.length}} results found</p>
+  <p>{{$ctrl.results.data.length}} {{ $ctrl.resultFoundStr}}</p>
 </div>

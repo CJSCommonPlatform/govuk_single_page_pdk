@@ -5,17 +5,21 @@ import { LazyValidationDirective } from '../lazy-validation/lazy-validation.dire
   template: require('./search.component.html'),
   bindings: {
     autocomplete:     '@',
+    label:            '@',
+    showLabel:        '@',
     placeholder:      '@',
     name:             '@',
     inputId:          '@',
     ariaDescribedby:  '@',
+    resultsFoundStr:  '@',
+    searchStr:        '@',
     ngModel:          '=',
     inline:           '<?',
     ngMinlength:      '@?',
     required:         '<?',
     onSearch:         '&',
     onCriteriaChange: '&?',
-    results: '='
+    results:          '='
   },
   require: {
     ngModelCtrl: 'ngModel',
@@ -27,6 +31,10 @@ export class SearchComponent {
 
   name: string;
   ngModel: any;
+  showLabelFlag: boolean;
+  showLabel: string;
+  resultFoundStr: string;
+  searchStr: string;
   ngModelCtrl: ng.INgModelController;
   formCtrl: ng.IFormController;
   lazyValidationController: LazyValidationDirective;
@@ -38,6 +46,12 @@ export class SearchComponent {
   static $inject = ['$element', '$scope'];
 
   constructor(private $element: ng.IAugmentedJQuery, private $scope: ng.IScope) {}
+
+  $onInit() {
+    this.showLabelFlag = this.showLabel === 'true' ? true : false;
+    this.resultFoundStr = this.resultFoundStr ? this.resultFoundStr : 'Results found';
+    this.searchStr = this.searchStr ? this.searchStr : 'search';
+  }
 
   $postLink(): void {
     this.enableSubmitOnEnter();

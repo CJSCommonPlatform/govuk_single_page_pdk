@@ -10,6 +10,7 @@ export class SearchDemo {
   private name = 'searchName';
   private autocomplete = true;
   private ariaDescribedBy = 'Aria description';
+  private label = 'Enter part or all of a user’s name or email address';
   private ngMinLength = 2;
   private results = {
     display: false,

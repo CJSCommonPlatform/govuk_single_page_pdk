@@ -21,9 +21,13 @@
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
+      asdfadsf
       <gov-search  id="$ctrl.inputId"
           name="$ctrl.search" autocomplete="true" ng-model="$ctrl.model" aria-describedby="$ctrl.ariaDescribedBy" ng-minlength="$ctrl.ngMinLength" placeholder="Search"
-          on-search="$ctrl.onSearch($ctrl.model)" required="required" results="$ctrl.results"></gov-search>
+          label="$ctrl.label" on-search="$ctrl.onSearch($ctrl.model)" required="required" results="$ctrl.results"></gov-search>
+      <gov-search  id="$ctrl.inputId"
+          name="$ctrl.search" autocomplete="true" ng-model="$ctrl.model" aria-describedby="$ctrl.ariaDescribedBy" ng-minlength="$ctrl.ngMinLength" placeholder="Search"
+          label="$ctrl.label" sdata-show-label="true" on-search="$ctrl.onSearch($ctrl.model)" required="required" results="$ctrl.results"></gov-search>
     </docs-example>
   </gov-tab>
 
