@@ -35,7 +35,7 @@ export class TopMenuComponent {
     if (list.items && list.items.length) {
       for (this.cont = 0; this.cont < list.items.length; this.cont++) {
         if (list.items[this.cont].isSeparated) {
-          return this.cont;
+          return this.cont + 1;
         }
       }
     }
