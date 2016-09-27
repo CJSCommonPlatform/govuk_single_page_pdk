@@ -8,7 +8,6 @@ $module: 'persist-info';
   @extend %clearfix;
   background-color: $govuk-blue;
   color: $white;
-  padding: em(5, 16);
 
   a {
     color: $white;
@@ -18,54 +17,42 @@ $module: 'persist-info';
     &:focus {
       color: $text-colour;
     }
-
   }
 
   &-links {
     overflow: hidden;
-    padding: em(10);
 
-    li {
+    > li {
       display: inline-block;
-      margin-left: em(15, 16);
-      vertical-align: middle;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
+      padding: em(5, 16) em(10, 16) em(10, 16);
     }
-
   }
 
   &-marker {
     @include core-14;
     display: inline-block;
     font-weight: 700;
-    padding: em(10, 14);
+    line-height: em(30, 14) !important;
+    padding: 0 em(10, 14);
     text-transform: uppercase;
-    vertical-align: middle;
 
     &-sensitive {
       background-color: $yellow;
       color: $text-colour;
     }
-
   }
 
-  &-reference {
-    display: inline-block;
-    padding: em(10, 16) 0 em(10, 16) em(10, 16);
-    vertical-align: middle;
+  &-content {
+    padding: em(5, 16);
   }
 
+  &-reference,
   &-title {
     display: inline-block;
-    padding: em(10, 16) 0 em(10, 16) em(10, 16);
-    vertical-align: middle;
+    padding: em(5, 16);
   }
 
-  // tablet and up
+  // desktop and up
   @include media(desktop) {
 
     &-content {
@@ -73,12 +60,12 @@ $module: 'persist-info';
     }
 
     &-links {
-      margin-top: 0;
       text-align: right;
+      > li {
+        padding-top: em(10, 16);
+      }
     }
-
   }
-
 }
 
 /*
