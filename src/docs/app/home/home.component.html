@@ -11,12 +11,25 @@
 <div class="grid-row">
   <div class="column-two-thirds">
     <ul class="list list-contents">
+      <li><a href="#pdk-what">What is the PDK?</a></li>
       <li><a href="#pdk-principles">Principles</a></li>
+      <li><a href="#pdk-getting-started">Getting started</a></li>
       <li><a href="#pdk-packages">Packages</a></li>
       <li><a href="#pdk-contribute">Contribute</a></li>
     </ul>
   </div>
 </div>
+
+<h2 class="heading-large" id="pdk-what">What is the PDK?</h2>
+<div class="text">
+  <p>
+    The PDK is a platform used to make single page applications that deliver government services. It consists of two parts, the feature rich “platform components” and the “platform templates” they contain extendable JavaScript modules and a library of styles respectively. The components and templates provide a complete solution to create business and citizen facing services that are; scalable, intuitive, accessibility compliant and provide a robust user experience. The following principles are the driving force behind the PDK; User Driven Experience, Domain Driven Design, Extendable Governance, Automated Assurance, Continuous Improvement and Openness.
+  </p>
+  <br>
+  <p>
+    The functionality and esthetics of the platform are based on Government Digital Services (GDS), who are leading the digital transformation of the UK government. GDS guidelines are used as a blueprint to create each individual element inside the platform, ensuring the final product is consistent and compliments the wider digital transformation. Modern technological solutions have been used to enforce usability and underline capabilities of the PDK.      
+  </p>
+</div>   
 
 <h2 class="heading-large" id="pdk-principles">Principles</h2>
 <div class="text">
@@ -29,8 +42,10 @@
     </summary>
     <div class="panel panel-border-narrow">
       <p>
-        Some copy TBC
+        Providing a good experience for the end user is a priority and is evident throughout the PDK. A user centric approach is demonstrated by the initial efforts of solution designers and user experience (UX) experts guided by valuable user research. This platform has been developed in partnership with design, UX and research teams which has resulted in a user friendly final product. The platform is flexible and can be used to develop business and citizen facing services. Furthermore a tailored user experience can be developed to meet the expectations of various end users especially those accustomed to the GDS guidelines.
       </p>
+      <br>
+      <p>The development team have utilised technological solutions to ensure that the PDK is accessible for all types of users including those that are visually impaired. To solve this challenge the platform facilitates the development of Accessible Rich Internet Applications (ARIA). It’s robust UX capabilities are demonstrated further by multiple platform availability and accessibility across a range of devices via an adaptive responsive layout. So development teams can be assured their services are developed with an optimum user driven experience.</p>
     </div>
   </details>
   <details>
@@ -39,7 +54,7 @@
     </summary>
     <div class="panel panel-border-narrow">
       <p>
-        Some copy TBC
+        It is beneficial to adopt a well structured approach when developing complex software. The PDK adheres to Domain Driven Design (DDD) principles. This is demonstrated in the components section which provides a set of elements organised by domain. One crucial benefit is the creation of a ubiquitous language understood by domain experts, technical teams, solution designers and user experience teams. The later helps promote consolidation and frequent merging of ideas and code sources, reduces the rate of fragmentation during the product lifecycle.
       </p>
     </div>
   </details>
@@ -49,7 +64,7 @@
     </summary>
     <div class="panel panel-border-narrow">
       <p>
-        Some copy TBC
+        To maintain consistency across services it is crucial to have generic reusable, styles, features and components that remain extendable.
       </p>
     </div>
   </details>
@@ -59,8 +74,10 @@
     </summary>
     <div class="panel panel-border-narrow">
       <p>
-        Some copy TBC
+        The PDK contains a suite of automated unit tests and end to end tests validating the front-end data model and user interface. This guarantees a high test coverage of services using the kit as a core library. Each feature must have passing tests before being deployed to a server where Jenkins runs continuous integration tests.
       </p>
+      <br>
+      <p>Automated assurance is one of the main benefits of using the PDK. The technical team conducted a test driven development approach. The positive impact of this reaches quality analysts and end users who have a consistent and positive user experience. It is vital that service users are comfortable and have confidence regarding their expectations.</p>
     </div>
   </details>
   <details>
@@ -69,7 +86,7 @@
     </summary>
     <div class="panel panel-border-narrow">
       <p>
-        Some copy TBC
+        The developers of the PDK follow agile principles and continuously push to make improvements. This is demonstrated by the use of code review tools such as gerrit.
       </p>
     </div>
   </details>
@@ -79,12 +96,135 @@
     </summary>
     <div class="panel panel-border-narrow">
       <p>
-        Some copy TBC
+        Hosted on github and accessible for the public development community to contribute to the project. This promotes collaboration with the wider engineering community resulting in better quality code.
       </p>
     </div>
   </details>
 </div>
 
-<!--<h2 class="heading-large" id="pdk-packages">Packages</h2>-->
 
-<!--<h2 class="heading-large" id="pdk-contribute" >Contribute</h2>-->
+
+<h2 class="heading-large" id="pdk-getting-started">Getting started</h2>
+<div class="text">
+  <details>
+    <summary>
+      <span class="summary bold-small">Prerequisite software</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <ol>
+        <li>
+          Git
+        </li>
+        <li>
+          Node
+        </li>
+      </ol>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <span class="summary bold-small">Installation</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <p><span class="bold-small">npm install</span></p>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <span class="summary bold-small">Serve</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <p><span class="bold-small">npm start</span> - to build your client app and start a webserver.</p>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <span class="summary bold-small">Development</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <p><span class="bold-small">npm start</span> - to allow file changes to update in realtime.</p>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <span class="summary bold-small">Distribute</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <p><span class="bold-small">npm run build_dev</span> - to prepare a distributable bundle.</p>
+    </div>
+  </details>
+</div>
+<h2 class="heading-large" id="pdk-packages">Packages</h2>
+<div class="text">
+  <details>
+    <summary>
+      <span class="summary bold-small">Platform components</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <span class="bold-small">npm i @govuk/angularjs-components</span> - to install the platform components. This includes the core JavaScript modules.
+    </div>
+  </details>
+  <details>
+    <summary>
+      <span class="summary bold-small">Platform templates</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <span class="bold-small">npm i @govuk/platform-template</span> - to install the platform template. This includes the core style library.
+    </div>
+  </details>
+</div>
+<h2 class="heading-large" id="pdk-contribute" >Contribute</h2>
+<div class="text">
+  <details>
+    <summary>
+      <span class="summary bold-small">How can developers contribute?</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <p>
+        Currently the PDK is available for contribution as a whole project including the source code to create this page. Here are some useful folders & files for contributors;
+      </p>
+      <br>
+      <span class="bold-small">pdk_root/modules/components</span>
+      <br>
+      <span class="bold-small"> pdk_root/modules/content</span>
+      <br>
+      <span class="bold-small">pdk_root/index.scss</span>
+    </div>
+  </details> 
+  <details>
+    <summary>
+      <span class="summary bold-small">Download the PDK</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <p>
+        The latest stable version of the project source code can be viewed <a href="https://github.com/CJSCommonPlatform/govuk_single_page_pdk">here</a>.
+      </p>
+      <br>
+      <p>
+        To clone the project please run: <br><span class="bold-small">git clone git@github.com:CJSCommonPlatform/govuk_single_page_pdk.git</span>.
+      </p>
+      <br>
+      <p>
+        The live project is available online and can be viewed <a href="http://cjscommonplatform.github.io/govuk_single_page_pdk/#/">here</a>.       
+      </p>
+      <br>
+      <p>Navigate into the folder entitled govuk_single_page_pdk and run <span class="bold-small">npm install</span>.</p>
+    </div>
+  </details>  
+  <details>
+    <summary>
+      <span class="summary bold-small">Boilerplate coming soon</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <p>The developers behind the PDK are currently creating a boilerplate to help users get projects up and running efficiently.</p>  
+    </div>
+  </details> 
+  <details>
+    <summary>
+      <span class="summary bold-small">Angular 2 & Angular Universal docs</span>
+    </summary>
+    <div class="panel panel-border-narrow">
+      <p>New documentation is currently in the progress to detail services developed using Angular 2 and Angular Universal.</p>  
+    </div>
+  </details>  
+</div>
