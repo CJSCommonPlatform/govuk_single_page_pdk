@@ -101,7 +101,7 @@ $module: 'icon';
     @include icon(icon-tick-white, 31, 31);
   }
   
-  &-complete {
+  &-complete, &-success {
     @include icon(icon-complete, 12, 9);
   }
   
