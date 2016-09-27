@@ -27,12 +27,12 @@ $module: 'notification';
     vertical-align: top;
     
     + .#{$module}-message {
-      padding-left: 10px;
+      padding-left: 15px;
     }
     
   }
   
-  &-confirmation {
+  &-confirmation, &-success  {
     background-color: $turquoise;
   }
   
