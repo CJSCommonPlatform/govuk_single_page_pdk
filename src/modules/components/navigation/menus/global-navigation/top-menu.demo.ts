@@ -12,7 +12,8 @@ export class TopMenuDemo {
         isActive: true
       },
       {
-        text: 'Second page'
+        text: 'Second page',
+        isSeparated: true
       },
       {
         text: 'Third page'

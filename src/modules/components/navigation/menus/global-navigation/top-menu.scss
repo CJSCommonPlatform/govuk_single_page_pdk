@@ -7,38 +7,37 @@ $module: 'global-nav';
   @include core-16;
   @extend %clearfix;
 
+  &-actions {
+    text-align: right;
+  }
+
   &-toggle {
     @extend .link;
     display: none;
   }
 
   &-menu {
-    clear: both;
+    @extend %clearfix;
+    border-bottom: 1px solid $border-colour;
   }
 
   &-list {
     @extend %clearfix;
     list-style: none;
 
-    li {
+    li {  
+      font-weight: 700;
 
-      &.is-active {
-        font-weight: 700;
-
-        a {
-          color: $black;
-          pointer-events: none;
-        }
-
+      &.is-active a {
+        color: $black;
+        pointer-events: none;
       }
 
       a {
         overflow: hidden;
         text-decoration: none;
       }
-
     }
-
   }
 
   // mobile
@@ -50,7 +49,6 @@ $module: 'global-nav';
         display: block;
         padding: 10px 0;
       }
-
     }
 
     &-list {
@@ -58,9 +56,7 @@ $module: 'global-nav';
       + ul { // targets second ul for pre-charge review
         border-top: 1px solid $border-colour;
       }
-
     }
-
   }
 
   // tablet
@@ -83,42 +79,41 @@ $module: 'global-nav';
             height: 5px;
             position: absolute; bottom: 0; left: 0;
           }
-
         }
-
       }
 
       + ul { // targets second ul for pre-charge review
         border-top: 1px solid $border-colour;
         clear: both;
       }
-
     }
-
   }
-
 
   // desktop
   @include media(desktop) {
+
+    &-menu {
+      padding: 15px 0;
+    }
 
     &-list {
       float: left;
 
       li {
+        padding: 0;    
 
         &.is-active {
           position: relative;
-
+          padding: 0;
+          
           &:after {
             background-color: $black;
             content: '';
             height: 5px;
-            position: absolute; bottom: -5px;
+            position: absolute; bottom: -15px;
             width: 100%;
           }
-
         }
-
       }
 
       + ul {
@@ -130,13 +125,9 @@ $module: 'global-nav';
           margin-left: 20px;
           margin-right: 0;
         }
-
       }
-
     }
-
   }
-
 }
 
 // javascript enabled
@@ -152,14 +143,12 @@ $module: 'global-nav';
         &[aria-expanded="true"] {
           display: block;
         }
-
       }
 
       &-toggle {
         border: 0;
         cursor: pointer;
-        display: block;
-        float: right;
+        display: inline-block;
         font-size: inherit;
         padding: 10px 0;
         text-decoration: none;
@@ -177,13 +166,9 @@ $module: 'global-nav';
         &[aria-expanded='true']:after {
           content: '▲';
         }
-
       }
-
     }
-
   }
-
 }
 
 /*

@@ -1,12 +1,14 @@
 <div class="global-nav">
 
-  <a href=""
-     class="global-nav-toggle"
-     aria-controls="global-nav"
-     aria-expanded="{{ $ctrl.open }}"
-     data-ng-bind="$ctrl.menuTitle"
-     data-ng-click="$ctrl.toggle()">
-  </a>
+  <div class="global-nav-actions">
+    <a href=""
+       class="global-nav-toggle"
+       aria-controls="global-nav"
+       aria-expanded="{{ $ctrl.open }}"
+       data-ng-bind="$ctrl.menuTitle"
+       data-ng-click="$ctrl.toggle()">
+    </a>
+  </div>
 
   <nav class="global-nav-menu"
        id="global-nav"
@@ -16,7 +18,7 @@
 
     <h3 class="visuallyhidden" data-ng-bind="$ctrl.globalNavigation"></h3>
 
-    <ul class="global-nav-list">
+    <ul class="global-nav-list" data-ng-if="$ctrl.leftList">
       <li data-ng-repeat="item in $ctrl.leftList" data-ng-class="{'is-active':item.isActive}">
         <a href=""
            data-ng-bind="item.text"
@@ -25,7 +27,7 @@
       </li>
     </ul>
 
-    <ul class="global-nav-list">
+    <ul class="global-nav-list" data-ng-if="$ctrl.rightList">
       <li data-ng-repeat="item in $ctrl.rightList" data-ng-class="{'is-active':item.isActive}">
         <a href=""
            data-ng-bind="item.text"
