@@ -16,15 +16,15 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      {test: /\.ts$/, loader: "tslint"},
-      {test: /\.js$/, loader: 'source-map'}
+      {test: /\.ts$/, loader: "tslint-loader"},
+      {test: /\.js$/, loader: 'source-map-loader'}
     ],
     loaders: [
-      {test: /\.ts$/,   loader: 'awesome-typescript', exclude: [/\.(spec|e2e)\.ts$/]},
-      {test: /\.css$/,  loader: 'style!css'},
-      {test: /\.scss$/, loader: 'style!css!postcss!sass'},
-      {test: /\.json$/, loader: 'json'},
-      {test: /\.html$/, loader: 'html', exclude: [helpers.root('src/index.html')]},
+      {test: /\.ts$/,   loader: 'awesome-typescript-loader', exclude: [/\.(spec|e2e)\.ts$/]},
+      {test: /\.css$/,  loader: 'style-loader!css-loader'},
+      {test: /\.scss$/, loader: 'style-loader!css-loader!postcss-loader!sass-loader'},
+      {test: /\.json$/, loader: 'json-loader'},
+      {test: /\.html$/, loader: 'html-loader', exclude: [helpers.root('src/index.html')]},
       {test: /\.(jpg|jpeg|gif|png)$/, loader: 'url?limit=1&name=assets/images/[name].[ext]'},
       {test: /\.(woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url?limit=1&name=assets/fonts/[name].[ext]'}
     ]

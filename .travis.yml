@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '4.5.0'
+- '4.5'
 install:
 - npm install
 - npm install -g gulp
@@ -15,3 +15,5 @@ env:
 notifications:
   slack:
   - secure: i97YJnkikpmeFDU/V/nuyV31sAG2OsFvxXq4il7S7YHGRRQNBvxOEQNj/eu4bx4cEG8sHoAGaArhbjR8TWlhWgHp/Q2JvaOq5WSAb1H4ujFqsBVjvh7tiqKxWxDxpVnfyO8ylXTw8HpsuIgOGXp+Wo3x7jSfJ+0hxmDppB2ruyfXEWoEmYpywLd8v4srEHUasS00GK8CNRiHtFEF1SlbmMocw7jECkUUvgFOf3auZaL/zkTzfwIzHloS2+0PjDm6iHt4+oUYnfRaGxd6yMGDq3MsIVFPDB15VHypU4HJqt5QPmhOlUWUggImXVmhUTCO2lKaa/n9h6B7W67f1hu+ICigIJkZW0N9fpbwNVomE0OrJbQhxaQEH4I2gJqFnKWykC+EhbtPOTwIEVs5BczaI/TkudKjvhI0JOzAO4QZv5mQMz1hr2G85uWMWDAJmmSzvm1seicck5acWWElqVhSezAyQjqLwiN+4i3tbdZe7mGZ8sXxWz5I4Ed7E2M81OSu353m+JZah4cJ1IkPJDl2N+KG3hyvWTd7sS2eK/9UdWyeMjDw+9wJeIAK0G3TYMawzutBDstysCcFNLx8eb3b2BV5YJR9CSIxIFeXajtL3lOaKQKHb0Z6Bg81KJafQdkShoFNwzakNQ2P7mvr3/BKdQ7hYkNWVeMpuMAq1x+pi/Y=
+before_install:
+  - "npm install -g npm@3"
