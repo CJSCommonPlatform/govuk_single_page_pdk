@@ -33,6 +33,10 @@ $module: 'global-nav';
         pointer-events: none;
       }
 
+      &:not(.is-active) a:visited {
+        color: $govuk-blue;
+      }
+
       a {
         overflow: hidden;
         text-decoration: none;
