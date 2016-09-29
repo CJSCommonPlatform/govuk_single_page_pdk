@@ -30,7 +30,7 @@ $module: 'form-search';
   &-button {
     @include box-sizing(border-box);
     background-color: $govuk-blue;
-    background-image: image_url('icon-search-white.png');
+    background-image: image-url('icon-search-white.png');
     border: 2px solid $govuk-blue;
     cursor: pointer;
     display: inline-block;
@@ -43,12 +43,12 @@ $module: 'form-search';
 
     &:focus,
     &:hover {
-      background-color: darken($govuk-blue, 5%);
-      border-color: darken($govuk-blue, 5%);
+      background-color: darken($govuk-blue, 5%); //#004F8C
+      border-color: darken($govuk-blue, 5%); //#004F8C
     }
 
     @include device-pixel-ratio() {
-      background-image: image_url('icon-search-white-2x.png');
+      background-image: image-url('icon-search-white-2x.png');
       background-size: 100%;
     }
 
