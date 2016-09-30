@@ -12,5 +12,5 @@ export class NotificationDemo {
   private link = {
     url: 'https://direct.gov.uk',
     title: 'Check Gov.uk'
-  }
+  };
 }
