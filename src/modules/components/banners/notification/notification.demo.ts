@@ -10,7 +10,7 @@ export class NotificationDemo {
   ];
 
   private link = {
-    url: 'https://direct.gov.uk',
+    url: 'https://www.gov.uk/',
     title: 'Check Gov.uk'
   };
 }
