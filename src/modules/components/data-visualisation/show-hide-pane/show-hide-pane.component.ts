@@ -1,4 +1,5 @@
 import { Component } from '@govuk/angularjs-devtools';
+import { uuid } from '../../../../util/helpers';
 
 @Component({
   bindings: {
@@ -14,9 +15,14 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class ShowHidePaneComponent {
 
+  id: string;
   open: boolean;
   showText: string;
   hideText: string;
+
+  constructor() {
+    this.id = uuid();
+  }
 
   $onInit() {
     if (this.open === undefined) {

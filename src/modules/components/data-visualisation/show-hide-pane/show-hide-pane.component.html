@@ -1,27 +1,24 @@
 <div class="collapsibles-item" data-ng-class="{'is-open': $ctrl.open}">
 
   <div class="collapsibles-header">
+
     <button class="collapsibles-button"
             type="button"
-            data-ng-bind="$ctrl.showText"
-            data-ng-if="!$ctrl.open"
             data-ng-click="$ctrl.toggle()"
             aria-expanded="{{$ctrl.open}}"
-            aria-controls="collapsibles-0"
-            ></button>
-    <button class="collapsibles-button"
-            type="button"
-            data-ng-bind="$ctrl.hideText"
-            data-ng-if="$ctrl.open"
-            data-ng-click="$ctrl.toggle()"
-            aria-expanded="{{$ctrl.open}}"
-            aria-controls="collapsibles-0"
-    ></button>
-    <div ng-transclude="alwaysVisible"></div>
-  </div>
-
-  <div class="collapsibles-content" ng-transclude="hideable" data-ng-if="$ctrl.open">
+            aria-controls="{{$ctrl.id}}">
+      <i class="collapsibles-toggle" role="presentation"
+         data-ng-class="{'collapsibles-toggle-off': $ctrl.open, 'collapsibles-toggle-on': !$ctrl.open}"></i>
+      <span class="collapsibles-button-text"
+            data-ng-bind="$ctrl.open ? $ctrl.hideText : $ctrl.showText">
+      </span>
+    </button>
 
   </div>
+
+  <div class="collapsibles-static" ng-transclude="alwaysVisible"></div>
+
+  <div id="{{$ctrl.id}}" data-ng-if="$ctrl.open"
+       class="collapsibles-dynamic" ng-transclude="hideable"></div>
 
 </div>
