@@ -1,0 +1,47 @@
+// Warning banner
+// ==========================================================================
+
+$module: 'warning-banner';
+
+.#{$module} {
+  @include core-16;
+  @extend %clearfix;
+  background-color: $mellow-red;
+  color: $white;
+  padding: em(10);
+
+  &-message {
+    color: $white;
+    display: table-cell;
+
+    p {
+      font-weight: 700;
+      margin: 0;
+    }
+
+  }
+
+  .icon {
+    display: table-cell;
+    vertical-align: top;
+
+    + .#{$module}-message {
+      padding-left: em(10, 16);
+    }
+
+  }
+
+}
+
+/*
+
+HTML Usage
+
+<div class="warning-banner" role="alert">
+  <i class="icon icon-alert" role="presentation" aria-hidden="true"></i>
+  <div class="warning-banner-message">
+    <p>Jo Cooper is working on this case &ndash; you must check with them before editing anything</p>
+  </div>
+</div>
+
+*/

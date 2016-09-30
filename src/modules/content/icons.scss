@@ -25,6 +25,10 @@ $module: 'icon';
     @include icon(icon-complete, 12, 9);
   }
 
+  &-alert {
+    @include icon(icon-alert-white, 20, 20);
+  }
+
 }
 
 /*
@@ -38,5 +42,7 @@ HTML Usage
 <i class="icon icon-important-white" role="presentation" aria-hidden="true"></i>
 
 <i class="icon icon-tick-white" role="presentation" aria-hidden="true"></i>
+
+<i class="icon icon-alert" role="presentation" aria-hidden="true"></i>
 
 */

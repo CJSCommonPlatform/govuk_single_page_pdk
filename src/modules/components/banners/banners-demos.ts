@@ -8,6 +8,7 @@ import { NotificationDemo } from './notification/notification.demo';
 import { PageTitleDemo } from './page-title/page-title.demo';
 import { PersistInfoDemo } from './persist-info/persist-info.demo';
 import { PhaseBannerDemo } from './phase-banner/phase-banner.demo';
+import { WarningBannerDemo } from './warning/warning-banner.demo';
 
 const module = angular.module('govuk-single-page-pdk.component-demos.banners', [
   banners,
@@ -19,6 +20,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.banners', [
   .component('govHighlightTextDemo', HighlightTextDemo)
   .component('govAlertDemo', AlertDemo)
   .component('govNotificationDemo', NotificationDemo)
-  .component('govNoticeDemo', NoticeDemo);
+  .component('govNoticeDemo', NoticeDemo)
+  .component('govWarningBannerDemo', WarningBannerDemo);
 
 export default module.name;
