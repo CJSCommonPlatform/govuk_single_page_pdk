@@ -7,116 +7,77 @@ $module: 'notification';
   display: table;
   margin-bottom: $gutter;
   padding: $gutter-half;
-  
+
   @include media(desktop) {
-    padding: $gutter;  
+    padding: $gutter;
   }
-  
+
   &-message {
-    color: white;
+    color: $white;
     display: table-cell;
 
     p {
       margin: 0;
     }
-    
+
+    a {
+      color: $white;
+
+      &:focus {
+        color: $black;
+      }
+
+    }
+
   }
-  
+
   .icon {
     display: table-cell;
     vertical-align: top;
-    
+
     + .#{$module}-message {
       padding-left: 15px;
     }
-    
+
   }
-  
-  &-confirmation, &-success  {
+
+  &-confirmation, &-success {
     background-color: $turquoise;
   }
-  
+
   &-active {
     background-color: $green;
   }
-  
+
   &-pending {
     background-color: $orange;
   }
-  
+
   &-locked {
     background-color: $red;
   }
-  
+
   &-deregistered {
     background-color: $grey-1
   }
-  
+
 }
 
 /*
-  
+
 HTML Usage
-  
-<div class="notification notification-confirmation">
-  
+
+<div class="notification notification-confirmation" role="alert">
+  <i class="icon icon-tick-white" role="presentation" aria-hidden="true"></i>
   <div class="notification-message">
-    <p class="bold-small">Accepted case management information</p>
+    <p class="bold-medium">Accepted case management information</p>
   </div>
-  
 </div>
 
-<div class="notification notification-confirmation">
-  
-  <i class="icon icon-tick-white"></i>
-  
+<div class="notification notification-confirmation" role="alert">
   <div class="notification-message">
-    <p class="bold-small">Accepted case management information</p>
+    <p class="bold-medium">Accepted case management information</p>
   </div>
-  
 </div>
-
-*/
-
-// Icons
-// ==========================================================================
-
-$module: 'icon';
-
-.#{$module} {
-
-  &-tick {
-    @include icon(icon-tick, 27, 27);
-  }
-  
-  &-cross {
-    @include icon(icon-cross, 27, 27);
-  }
-  
-  &-important-white {
-    @include icon(icon-important-white, 31, 31);
-  }
-  
-  &-tick-white {
-    @include icon(icon-tick-white, 31, 31);
-  }
-  
-  &-complete, &-success {
-    @include icon(icon-complete, 12, 9);
-  }
-  
-}
-
-/*
-  
-HTML Usage
-   
-<i class="icon icon-tick" role="presentation" aria-hidden="true"></i>
-
-<i class="icon icon-cross" role="presentation" aria-hidden="true"></i>
-
-<i class="icon icon-important-white" role="presentation" aria-hidden="true"></i>
-
-<i class="icon icon-tick-white" role="presentation" aria-hidden="true"></i>
 
 */

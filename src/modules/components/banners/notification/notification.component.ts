@@ -3,6 +3,7 @@ import { Component } from '@govuk/angularjs-devtools';
 @Component({
   bindings: {
     type:     '@',
+    link: '<',
     showIcon: '<'
   },
   transclude: true,
@@ -17,6 +18,7 @@ import { Component } from '@govuk/angularjs-devtools';
       class="icon icon-important-white"></i>
       <div class="notification-message">
         <p class="bold-medium"><ng-transclude></ng-transclude></p>
+        <p><a data-ng-if="$ctrl.link" data-ng-href="$ctrl.link.url" data-ng-bind="$ctrl.link.title"></a></p>
       </div>
     </div>
   `

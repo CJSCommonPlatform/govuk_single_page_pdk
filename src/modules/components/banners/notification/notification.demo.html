@@ -77,7 +77,14 @@
         type="confirmation" 
         show-icon="false">
         Accepted case management information
-      </gov-notification> 
+      </gov-notification>
+      <gov-notification
+          type="confirmation"
+          link="$ctrl.link"
+          show-icon="true">
+        Accepted case management information
+      </gov-notification>
+
       <p>Active notifications</p>
       <gov-notification 
         type="active" 
@@ -111,6 +118,11 @@
         {showIcon: true,  style: 'success'},
         {showIcon: false, style: 'invalid'}
       ];
+
+      link = {
+        url: 'https://direct.gov.uk',
+        title: 'Check Gov.uk'
+      }
     </docs-example>
   </gov-tab>
 

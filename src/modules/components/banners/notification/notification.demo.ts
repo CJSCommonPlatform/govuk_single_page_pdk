@@ -8,4 +8,9 @@ export class NotificationDemo {
     {showIcon: true, style: 'success'},
     {showIcon: false, style: 'invalid'}
   ];
+
+  private link = {
+    url: 'https://direct.gov.uk',
+    title: 'Check Gov.uk'
+  }
 }
