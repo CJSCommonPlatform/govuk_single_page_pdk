@@ -8,24 +8,23 @@
     <docs-example language="markup">
       <div class="grid-row">
         <p>Not Inline Examples</p>
-        <div class="column-third">
 
-          <div class="summary-item">
-            <a href="#">
+        <div class="column-third">
+          <a href="#">
+            <div class="summary-item">
               <span class="summary-item-number bold-xlarge">18</span>
               <span class="summary-item-label bold-xsmall">statements</span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         <div class="column-third">
-
-          <div class="summary-item">
-            <a href="#">
+          <a href="#">
+            <div class="summary-item">
               <span class="summary-item-number bold-xlarge">18</span>
               <span class="summary-item-label bold-xsmall">statements</span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         <div class="column-third">
@@ -34,30 +33,29 @@
             <span class="summary-item-label bold-xsmall">additional documents</span>
           </div>
         </div>
-
       </div>
     </docs-example>
+
     <docs-example language="markup">
       <div class="grid-row">
         <p>Inline Examples</p>
         <div class="column-third">
 
-          <div class="summary-item summary-item-inline">
-            <a href="#">
+          <a href="#">
+            <div class="summary-item summary-item-inline">
               <span class="summary-item-number bold-xlarge">18</span>
               <span class="summary-item-label bold-xsmall">statements</span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         <div class="column-third">
-
-          <div class="summary-item summary-item-inline">
-            <a href="#">
+          <a href="#">
+            <div class="summary-item summary-item-inline">
               <span class="summary-item-number bold-xlarge">18</span>
               <span class="summary-item-label bold-xsmall">statements</span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         <div class="column-third">
@@ -69,36 +67,37 @@
 
       </div>
     </docs-example>
+
     <docs-example language="markup">
       <div class="grid-row">
         <p>Summary items as links and bigger variants</p>
-        <div class="column-third">
 
-          <div class="summary-item">
-            <a href="#">
+        <div class="column-third">
+          <a href="#">
+            <div class="summary-item">
               <span class="summary-item-number bold-xxlarge">18</span>
               <span class="summary-item-label bold-xsmall">statements</span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         <div class="column-third">
-
-          <div class="summary-item">
-            <a href="#">
+          <a href="#">
+            <div class="summary-item">
               <span class="summary-item-number bold-xxlarge">18</span>
               <span class="summary-item-label bold-xsmall">statements</span>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         <div class="column-third">
-          <div class="summary-item">
-            <span class="summary-item-number bold-xxlarge">13</span>
-            <span class="summary-item-label bold-xsmall">additional documents</span>
-          </div>
+          <a href="#">
+            <div class="summary-item">
+              <span class="summary-item-number bold-xxlarge">13</span>
+              <span class="summary-item-label bold-xsmall">additional documents</span>
+            </div>
+          </a>
         </div>
-
       </div>
     </docs-example>
   </gov-tab>
@@ -108,13 +107,13 @@
     <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item.description" value="$ctrl.item.value" action="$ctrl.item.action()"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[0].count" data-label="$ctrl.items[0].label"></gov-summary-item>
         </div>
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item2.description" value="$ctrl.item2.value" action="$ctrl.item2.action()"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[1].count" data-label="$ctrl.items[1].label"></gov-summary-item>
         </div>
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item3.description" value="$ctrl.item3.value"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[2].count" data-label="$ctrl.items[2].label"></gov-summary-item>
         </div>
       </div>
     </docs-example>
@@ -122,13 +121,13 @@
     <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item.description" value="$ctrl.item.value" action="$ctrl.item.action()" data-not-in-line="$ctrl.notInLine"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[0].count" data-label="$ctrl.items[0].label" data-inline="true"></gov-summary-item>
         </div>
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item2.description" value="$ctrl.item2.value" action="$ctrl.item2.action()" data-not-in-line="$ctrl.notInLine"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[1].count" data-label="$ctrl.items[1].label" data-inline="true"></gov-summary-item>
         </div>
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item3.description" value="$ctrl.item3.value" data-not-in-line="$ctrl.notInLine"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[2].count" data-label="$ctrl.items[2].label" data-inline="true"></gov-summary-item>
         </div>
       </div>
     </docs-example>
@@ -136,13 +135,13 @@
     <docs-example language="markup">
       <div class="grid-row">
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item.description" value="$ctrl.item.value" action="$ctrl.item.action()" data-large="true"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[0].count" data-label="$ctrl.items[0].label" data-hero="true"></gov-summary-item>
         </div>
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item2.description" value="$ctrl.item2.value" action="$ctrl.item2.action()" data-large="true"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[1].count" data-label="$ctrl.items[1].label" data-hero="true"></gov-summary-item>
         </div>
         <div class="column-third">
-          <gov-summary-item item-description="$ctrl.item3.description" value="$ctrl.item3.value" data-large="true"></gov-summary-item>
+          <gov-summary-item data-count="$ctrl.items[2].count" data-label="$ctrl.items[2].label" data-hero="true"></gov-summary-item>
         </div>
       </div>
     </docs-example>

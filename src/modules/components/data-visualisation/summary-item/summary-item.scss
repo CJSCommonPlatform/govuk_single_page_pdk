@@ -4,19 +4,15 @@
 $module: 'summary-item';
 
 .#{$module} {
+  display: inline-block;
   overflow: hidden;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100%;
 
   @include media(mobile) {
     padding-top: 5px;
     padding-bottom: 5px;
-  }
-
-  a {
-    display: inline-block;
-    overflow: hidden;
-    text-decoration: none;
-    vertical-align: middle;
-    width: 100%;
   }
 
   &-number,
@@ -32,15 +28,20 @@ $module: 'summary-item';
         float: left;
         margin-right: 10px;
       }
-
     }
 
     .#{$module}-label {
       overflow: hidden;
     }
-
   }
+}
 
+a:focus .#{$module} {
+  background: $focus-colour;
+}
+
+a:visited:not(:hover) .#{$module} {
+  color: $govuk-blue;
 }
 
 /*

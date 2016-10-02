@@ -4,23 +4,10 @@ import { Component } from '@govuk/angularjs-devtools';
   template: require('./summary-item.demo.html')
 })
 export class SummaryItemDemo {
-
-  notInLine = true;
-
-  item = {
-    value: 3,
-    description: 'Statements',
-    action: function(){console.log('hello'); }
-  };
-
-  item2 = {
-    value: 24,
-    description: 'Supervisor comments provided',
-    action: function(){console.log('hello'); }
-  };
-
-  item3 = {
-      value: 2,
-      description: 'Defendants'
-  };
+  
+  items = [
+    { count: 3,  label: 'Statements' },
+    { count: 24, label: 'Supervisor comments provided' },
+    { count: 2,  label: 'Defendants' }
+  ];
 }
