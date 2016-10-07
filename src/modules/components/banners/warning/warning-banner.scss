@@ -8,7 +8,7 @@ $module: 'warning-banner';
   @extend %clearfix;
   background-color: $mellow-red;
   color: $white;
-  padding: em(10);
+  padding: em(10, 16);
 
   &-message {
     color: $white;
