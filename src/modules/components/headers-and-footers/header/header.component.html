@@ -1,13 +1,13 @@
 <div id="skiplink-container">
   <div>
-    <a href=""
+    <a href="javascript:;"
        data-ng-click="$ctrl.navigation.mainContent.navigate()"
        data-ng-if="undefined === $ctrl.showSkipLink || $ctrl.showSkipLink" class="skiplink"
        data-ng-bind="$ctrl.skipLinkText"></a>
   </div>
 </div>
-<div id="global-cookie-message" ng-if="$ctrl.showCookie" style="display: block">
-  <p ng-transclude="cookies">
+<div id="global-cookie-message" data-ng-if="$ctrl.showCookie" style="display: block">
+  <p data-ng-transclude="cookies">
     GOV.UK uses cookies to make the site simpler.
     <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a>
   </p>
@@ -31,7 +31,7 @@
           <a href="javascript:;" data-ng-click="$ctrl.navigation.home.navigate()" id="proposition-name" data-ng-bind="$ctrl.heading"></a>
           <ul id="proposition-links">
             <li data-ng-repeat="navItem in $ctrl.navItems">
-              <a data-ui-sref="{{navItem.state}}" data-ng-bind="navItem.label"></a>
+              <a href="javascript:;" data-ui-sref="{{navItem.state}}" data-ng-bind="navItem.label"></a>
             </li>
           </ul>
         </nav>
@@ -41,4 +41,4 @@
   </div>
 
 </header>
-<div id="global-header-bar" ng-class="{business: $ctrl.isBusiness}"></div>
+<div id="global-header-bar" data-ng-class="{business: $ctrl.isBusiness}"></div>
