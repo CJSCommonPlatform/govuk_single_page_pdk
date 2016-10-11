@@ -53,7 +53,7 @@ $module: 'notification';
     background-color: $orange;
   }
 
-  &-locked {
+  &-locked, &-invalid {
     background-color: $red;
   }
 
