@@ -43,4 +43,6 @@ export class ImageDemoComponent {
       }
     ]
   };
+
+  onImageLoad = () => console.log('Image loaded');
 }

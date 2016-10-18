@@ -18,7 +18,7 @@ describe('components/media/image', function() {
     it('if exists, should add the download link as the first item of the metadata array', () => {
 
       // Setup
-      let bindings = {
+      const bindings = {
         image: {
           src: '//placehold.it/550x366/DEE0E2/6F777B',
           downloadLink: {
@@ -36,7 +36,7 @@ describe('components/media/image', function() {
       };
 
       // Test
-      controller = $componentController('govImage', undefined, bindings);
+      controller = $componentController('govImage', {$element: null}, bindings);
       controller.$onInit();
 
       // Assert
@@ -45,4 +45,23 @@ describe('components/media/image', function() {
 
     });
   });
+
+  describe('$postLink', () => {
+
+    it(`should attach the provided on load function as a load event listener on the image element,`, () => {
+
+      const bindings = {
+        onImageLoad: () => false
+      }
+      const element = jasmine.createSpyObj('element', ['addEventListener']);
+      const elementMock = {
+        find: () => [element]
+      };
+      controller = $componentController('govImage', {$element: elementMock}, bindings);
+      controller.$postLink();
+
+      expect(element.addEventListener).toHaveBeenCalledWith('load', bindings.onImageLoad);
+
+    });
+  })
 });
