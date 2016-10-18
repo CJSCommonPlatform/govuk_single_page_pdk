@@ -9,13 +9,11 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class ImageComponent {
 
+  static $inject = ['$element'];
   image: any;
-  onImageLoad: Function;
-  $element: any;
+  onImageLoad: EventListenerOrEventListenerObject;
 
-  constructor ($element) {
-    this.$element = $element;
-  }
+  constructor (private $element: ng.IAugmentedJQuery) {}
   /**
    * If there is a download link add it as the first
    * item in the metadata array.

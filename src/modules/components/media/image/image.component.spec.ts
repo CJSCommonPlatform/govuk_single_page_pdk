@@ -52,7 +52,7 @@ describe('components/media/image', function() {
 
       const bindings = {
         onImageLoad: () => false
-      }
+      };
       const element = jasmine.createSpyObj('element', ['addEventListener']);
       const elementMock = {
         find: () => [element]
@@ -63,5 +63,5 @@ describe('components/media/image', function() {
       expect(element.addEventListener).toHaveBeenCalledWith('load', bindings.onImageLoad);
 
     });
-  })
+  });
 });
