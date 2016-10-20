@@ -33,4 +33,5 @@ export class GovUkHeaderDemo {
   };
   showCookie = false;
   isBusiness = false;
+  minimalView = true;
 }

@@ -12,4 +12,5 @@ export class FooterDemo {
 
   builtBy: any = {name: 'Common Platform', url: '#'};
   isBusiness = false;
+  minimalView = true;
 }

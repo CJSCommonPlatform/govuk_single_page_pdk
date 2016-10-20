@@ -5,6 +5,8 @@
       max-width: $container-large-desktop + $grid-gutter-width;
     }
   }
+}
+#wrapper-header {
   #logo {
     background-image: url('#{$govuk-template-image-path}/gov.uk_logotype_crown.png');
     @include ie-lte(8) {
@@ -13,8 +15,24 @@
   }
 }
 
+#header-wrapper.minimal-view {
+  #logo {
+    background-image: none;
+  }
+  #global-header {
+    .header-proposition, .content {
+      float: right;
+    }
+  }
+}
+
+
 #global-header-bar.business {
   max-width: $container-large-desktop;
+}
+
+#global-header-bar.service {
+  background: transparent;
 }
 
 #skiplink-container {

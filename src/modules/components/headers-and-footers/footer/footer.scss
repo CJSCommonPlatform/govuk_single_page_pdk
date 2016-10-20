@@ -22,6 +22,22 @@
   }
 }
 
+#footer {
+  .contact {
+    @include core-16();
+    .value {
+      color: #454a4c;
+    }
+    .label {
+      font-weight: 600;
+    }
+  }
+  .ui-footer-meta {
+    border-top: 1px solid #a1acb2;
+    margin-top: 40px;
+    padding-top: 35px;
+  }
+}
 #footer .footer-wrapper {
   &.business {
     max-width: $container-large-desktop;
