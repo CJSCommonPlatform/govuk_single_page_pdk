@@ -40,7 +40,9 @@ $pdk-image-path: '/assets/images' !default;
   @return url('#{$pdk-image-path}#{$file}');
 }
 
-@import "modules/components/navigation/start-bar/action-bar";
+@import "modules/components/navigation/actions/actions";
+@import "modules/components/data-visualisation/collapsible/collapsible";
+@import "modules/components/data-visualisation/show-hide-pane-deprecated/show-hide-pane";
 @import "modules/content/icons";
 @import "modules/components/navigation/pagination/pagination.scss";
 @import 'modules/components/banners/notification/notification';

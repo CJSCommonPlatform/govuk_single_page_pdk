@@ -23,18 +23,34 @@ $module: 'action-bar';
 
   // start
   &-start {
-    border: 1px solid $panel-colour;
-    border-bottom: 3px solid $panel-colour;
 
-    .#{$module}-header {
-      background-color: $white;
-      text-decoration: none;
+    &:not(.#{$module}-secondary) {
+      border: 1px solid $panel-colour;
+      border-bottom: 3px solid $panel-colour;
+      margin-bottom: em(10);
 
-      &-secondary {
-        background-color: lighten($govuk-blue, 60%);
-        color: $text-colour;
+      a.#{$module}-header {
+        background-color: $white;
+        text-decoration: none;
+
+        &:visited:not(:hover) {
+          color: $govuk-blue;
+        }
       }
+    }
 
+    &.#{$module}-secondary {
+      margin-bottom: em(10);
+
+      a.#{$module}-header {
+        background-color: $light-blue-25;
+        color: $text-colour;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #E6F1F8; // bespoke colour
+        }
+      }
     }
 
     .#{$module}-title {
@@ -62,7 +78,6 @@ $module: 'action-bar';
           background-image: file-url('actionbar-arrow-2x.png');
           background-size: 100%;
         }
-
       }
     }
 
@@ -70,7 +85,8 @@ $module: 'action-bar';
 
   // completed
   &-completed {
-    padding: 0 em(10) em(10);
+    margin-bottom: em(15);
+    padding: 0 em(10);
 
     .#{$module}-header {
       display: table;

@@ -1,9 +1,15 @@
 import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
-  template: require('./summary-item.demo.html')
+  template: require('./summary-item.docs.html')
 })
-export class SummaryItemDemo {
+export class SummaryItemDocs {
+
+  items = [
+    { count: 3,  label: 'Statements' },
+    { count: 24, label: 'Supervisor comments provided' },
+    { count: 2,  label: 'Defendants' }
+  ];
 
   notInLine = true;
 
@@ -20,7 +26,8 @@ export class SummaryItemDemo {
   };
 
   item3 = {
-      value: 2,
-      description: 'Defendants'
+    value: 2,
+    description: 'Defendants'
   };
+
 }

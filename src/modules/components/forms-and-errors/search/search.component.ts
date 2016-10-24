@@ -51,8 +51,6 @@ export class SearchComponent {
     this.showLabelFlag = (this.showLabel && this.showLabel.toLowerCase()) === 'true' ? true : false;
     this.resultFoundStr = this.resultFoundStr ? this.resultFoundStr : 'Results found';
     this.searchStr = this.searchStr ? this.searchStr : 'search';
-    console.log('this.showLabel:', this.showLabel);
-    console.log('this.showLabelFlag:', this.showLabelFlag);
   }
 
   $postLink(): void {

@@ -2,30 +2,19 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {
-    value: '<',
-    itemDescription: '<',
-    action: '&?',
-    notInLine: '<',
-    large: '@?'
+    count:  '<',
+    hero:   '<',
+    inline: '<',
+    label:  '@'
   },
-  template: require('./summary-item.component.html')
+  template: `
+    <div class="summary-item" data-ng-class="{'summary-item-inline': $ctrl.inline}">
+      <span class="summary-item-number"
+            data-ng-class="{'bold-xlarge': !$ctrl.hero, 'bold-xxlarge': $ctrl.hero}"
+            data-ng-bind="$ctrl.count">
+      </span>
+      <span class="summary-item-label bold-small" data-ng-bind="$ctrl.label"></span>  
+    </div>
+  `
 })
-export class SummaryItemComponent {
-  value: any;
-  large: string;
-
-  isNumber(): boolean {
-    return angular.isNumber(this.value);
-  }
-
-  isBoolean(): boolean {
-    return typeof(this.value) === 'boolean';
-  }
-
-  isLarge(): boolean {
-    if (this.large && this.large.toLowerCase() === 'true') {
-      return true;
-    }
-    return false;
-  }
-}
+export class SummaryItemComponent {}

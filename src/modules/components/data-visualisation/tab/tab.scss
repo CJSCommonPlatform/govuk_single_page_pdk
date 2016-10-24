@@ -41,7 +41,7 @@ $module: 'tabs';
     [role='tabpanel'] {
 
       // targets any first item
-      *:first-of-type {
+      *[class^="heading-"]:first-of-type {
         margin-top: 0;
       }
 

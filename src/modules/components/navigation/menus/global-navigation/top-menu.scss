@@ -33,7 +33,7 @@ $module: 'global-nav';
         pointer-events: none;
       }
 
-      &:not(.is-active) a:visited {
+      &:not(.is-active) a:visited:not(:hover) {
         color: $govuk-blue;
       }
 

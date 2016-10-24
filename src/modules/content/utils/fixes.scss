@@ -1,0 +1,8 @@
+// fix for error styles incorrectly being applied to nested controls without errors
+
+.error .form-group:not(.error),
+.error .panel:not(.error) {
+  .form-control {
+    border: 2px solid $grey-1 !important;
+  }
+}

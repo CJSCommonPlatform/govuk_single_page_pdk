@@ -98,3 +98,39 @@
     clear: both;
   }
 }
+
+
+// Grid
+
+.column-three-quarters {
+  @include grid-column(3 / 4); // this is missing from govuk-elements
+}
+
+
+// Typography
+
+// preserve line breaks in rendered text
+.text-formatted {
+  white-space: pre-wrap;
+}
+
+.text-undecorated {
+  text-decoration: none;
+}
+
+// preserve link color despited visited status
+.link-default:visited:not(:hover) {
+  color: $govuk-blue;
+}
+
+.font-xxsmall {
+  @include core-14;
+}
+
+
+// Forms
+
+// force override default 50% width behaviour of form-controls
+.form-control-block {
+  min-width: 100% !important;
+}

@@ -39,16 +39,26 @@ module.exports = function(config, log) {
           'build-components',
           'copy-platform-template'
         ],
-        'bump-repo',
-        'bump-packages',
-        'commit-changes',
-        'create-new-tag-without-pushing',
+        // 'bump-repo',
+        // 'bump-packages',
+        // 'commit-changes',
+        // 'create-new-tag-without-pushing',
         'publish-beta'
     );
   });
 
   gulp.task('clean', function() {
     return del('./dist/@govuk');
+  });
+
+  gulp.task('build-packages', () => {
+    return run(
+      'test', [
+        'build-components',
+        'copy-platform-template'
+      ],
+      'bump-packages'
+    );
   });
 
   gulp.task('build-components', function(done) {
