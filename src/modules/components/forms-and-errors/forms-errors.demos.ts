@@ -1,6 +1,8 @@
 import docsUtils from '../../../util/docs';
 import formsErrors from './forms-errors';
 
+import { DirectivesDocs } from './directives/directives.docs';
+
 import { DateInputDemo } from './date-input/date-input.demo';
 import { ErrorMessageDemo } from './error-message/error-message.demo';
 import { ErrorSummaryDemo } from './error-summary/error-summary.demo';
@@ -11,6 +13,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.forms-error
   formsErrors,
   docsUtils
 ])
+  .component('formDirectivesDocs', DirectivesDocs)
   .component('govDateInputDemo', DateInputDemo)
   .component('govErrorMessageDemo', ErrorMessageDemo)
   .component('govErrorSummaryDemo', ErrorSummaryDemo)

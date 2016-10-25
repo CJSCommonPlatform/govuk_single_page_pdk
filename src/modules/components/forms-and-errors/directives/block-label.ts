@@ -3,7 +3,7 @@ import { Directive } from '@govuk/angularjs-devtools';
 @Directive({
   restrict: 'C'
 })
-export class FocusDirective {
+export class BlockLabelDirective {
 
   static $inject = ['$element'];
 
