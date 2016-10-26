@@ -24,6 +24,11 @@ $module: 'action-bar';
   // start
   &-start {
 
+    &.#{$module}-disabled a.#{$module}-header {
+      @include opacity(0.5);
+      pointer-events: none;
+    }
+
     &:not(.#{$module}-secondary) {
       border: 1px solid $panel-colour;
       border-bottom: 3px solid $panel-colour;
@@ -37,6 +42,10 @@ $module: 'action-bar';
           color: $govuk-blue;
         }
       }
+
+      &.#{$module}-disabled a.#{$module}-header:hover {
+        color: $govuk-blue;
+      }
     }
 
     &.#{$module}-secondary {
@@ -46,10 +55,10 @@ $module: 'action-bar';
         background-color: $light-blue-25;
         color: $text-colour;
         text-decoration: none;
+      }
 
-        &:hover {
-          background-color: #E6F1F8; // bespoke colour
-        }
+      &:not(.#{$module}-disabled) a.#{$module}-header:hover {
+        background-color: #E6F1F8; // bespoke colour
       }
     }
 

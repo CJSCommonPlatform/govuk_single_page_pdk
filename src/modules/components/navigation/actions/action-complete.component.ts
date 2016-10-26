@@ -2,11 +2,11 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {
+    disabled:       '<',
     editLabel:      '@',
     highlight:      '<',
     highlightLabel: '@',
     label:          '@',
-    locked:         '<',
     onEdit:         '&?'
   },
   transclude: true,
@@ -20,9 +20,9 @@ import { Component } from '@govuk/angularjs-devtools';
               data-ng-class="{'action-bar-status-saved': $ctrl.highlight}">
            <span data-ng-if="$ctrl.highlight"
                  data-ng-bind="$ctrl.highlightLabel || 'Saved'"></span>    
-          </span>     
+          </span>
           <a href=""
-             data-ng-if="!$ctrl.locked" 
+             data-ng-if="!$ctrl.disabled" 
              class="action-bar-action link-default" 
              data-ng-click="$ctrl.onEdit({$event: $event})"
              data-ng-bind="$ctrl.editLabel || 'Amend'"></a>
