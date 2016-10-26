@@ -12,33 +12,33 @@
     <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a>
   </p>
 </div>
-<header role="banner" id="global-header" class="with-proposition">
+<div id="header-wrapper" data-ng-class="{'minimal-view': $ctrl.minimalView}">
+  <header role="banner" id="global-header" class="with-proposition">
 
-  <div class="header-wrapper" data-ng-class="{business: $ctrl.isBusiness}">
+    <div class="header-wrapper" data-ng-class="{business: $ctrl.isBusiness}">
 
-    <div class="header-global">
-      <div class="header-logo">
-        <a data-ng-href="{{$ctrl.linkTitle}}" title="Go to the GOV.UK homepage" id="logo" class="content">
-          <img data-ng-src="{{$ctrl.logoUrl}}" width="35" height="31" alt=""> <span data-ng-bind="$ctrl.title"></span>
-        </a>
+      <div class="header-global">
+        <div data-ng-if="!$ctrl.titleDisabled" class="header-logo">
+          <a data-ng-href="{{$ctrl.linkTitle}}" title="Go to the GOV.UK homepage" id="logo">
+            <img data-ng-if="!$ctrl.minimalView" data-ng-src="{{$ctrl.logoUrl}}" width="35" height="31" alt=""> <span data-ng-bind="$ctrl.title"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="header-proposition">
+        <div class="content">
+          <a href="javascript:;" data-ng-click="$ctrl.navigation.propositionLinks.navigate()" class="js-header-toggle menu">Menu</a>
+          <nav id="proposition-menu">
+            <a data-ng-if="!$ctrl.minimalView" href="javascript:;" data-ng-click="$ctrl.navigation.home.navigate()" id="proposition-name" data-ng-bind="$ctrl.heading"></a>
+            <ul id="proposition-links">
+              <li data-ng-repeat="navItem in $ctrl.navItems">
+                <a href="javascript:;" data-ui-sref="{{navItem.state}}" data-ng-bind="navItem.label"></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
-
-    <div class="header-proposition">
-      <div class="content">
-        <a href="javascript:;" data-ng-click="$ctrl.navigation.propositionLinks.navigate()" class="js-header-toggle menu">Menu</a>
-        <nav id="proposition-menu">
-          <a href="javascript:;" data-ng-click="$ctrl.navigation.home.navigate()" id="proposition-name" data-ng-bind="$ctrl.heading"></a>
-          <ul id="proposition-links">
-            <li data-ng-repeat="navItem in $ctrl.navItems">
-              <a href="javascript:;" data-ui-sref="{{navItem.state}}" data-ng-bind="navItem.label"></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
-  </div>
-
-</header>
-<div id="global-header-bar" data-ng-class="{business: $ctrl.isBusiness}"></div>
+  </header>
+  <div id="global-header-bar" data-ng-class="{business: $ctrl.isBusiness, service: $ctrl.titleDisabled}"></div>
+</div>

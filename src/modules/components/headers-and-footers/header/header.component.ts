@@ -10,6 +10,9 @@ import { Component } from '@govuk/angularjs-devtools';
     isBusiness: '<', // if true the width will expand to 1170px,
     logoUrl: '@?',
     title: '@?',
+    titleDisabled: '<', // if true no title will be shown on the header and bottom blue bar disappears.
+    linkTitle: '<',
+    minimalView: '<',  // if true header will be in minimal(non-gov) mode.
     skipLinkText: '@?'
   },
   transclude: {
@@ -26,12 +29,14 @@ export class GovUkHeaderComponent {
   logoUrl: string;
   title: string;
   linkTitle: string;
+  titleDisabled: boolean; // if true no title will be shown on the header and bottom blue bar disappears.
+  minimalView: boolean;
   skipLinkText: string;
 
   $onInit() {
     // setting some default values
     this.logoUrl = this.logoUrl || '/assets/images/gov.uk_logotype_crown.png';
-    this.title = this.title || 'GOV.UK';
+    this.title = (this.minimalView) ? '' : this.title || 'GOV.UK';
     this.linkTitle = this.linkTitle || 'https://www.gov.uk';
     this.skipLinkText = this.skipLinkText || 'Skip to main content';
   }

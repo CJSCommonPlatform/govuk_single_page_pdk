@@ -33,8 +33,17 @@
   </gov-tab>
 
   <gov-tab heading="Angular Markup">
-    <docs-example language="javascript">
+    <docs-example language="markup">
+      1: Default View:
       <gov-footer links="$ctrl.myLinks" built-by="$ctrl.builtBy" is-business="$ctrl.isBusiness"></gov-footer>
+      2: Minimal View:
+      <gov-footer links="$ctrl.myLinks" is-business="$ctrl.isBusiness" minimal-view="$ctrl.minimalView">
+          <div class="data-item">
+            <div class="label">Help desk</div>
+            <div class="value">Telephone:</div>
+            <div class="value">Email:</div>
+          </div>
+      </gov-footer>
     </docs-example>
   </gov-tab>
 
