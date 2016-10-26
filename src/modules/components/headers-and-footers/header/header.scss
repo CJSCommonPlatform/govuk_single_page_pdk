@@ -4,6 +4,9 @@
     &.business {
       max-width: $container-large-desktop + $grid-gutter-width;
     }
+    &.business-x-large {
+      max-width: $container-x-large-desktop + $grid-gutter-width;
+    }
   }
 }
 
@@ -29,9 +32,12 @@
   }
 }
 
-
 #global-header-bar.business {
   max-width: $container-large-desktop;
+}
+
+#global-header-bar.business-x-large {
+    max-width: $container-x-large-desktop;
 }
 
 #global-header-bar.service {

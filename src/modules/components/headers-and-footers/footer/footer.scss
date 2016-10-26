@@ -43,3 +43,9 @@
     max-width: $container-large-desktop;
   }
 }
+
+#footer .footer-wrapper {
+  &.business-x-large {
+    max-width: $container-x-large-desktop;
+  }
+}

@@ -7,7 +7,8 @@ import { Component } from '@govuk/angularjs-devtools';
     navigation: '<',
     showCookie: '<', // if true will display the cookie message over the header
     showSkipLink: '<', // if true will display 'Skip to main content' link
-    isBusiness: '<', // if true the width will expand to 1170px,
+    isBusiness: '<?', // if true the width will expand to 1170px,
+    isBusinessXLarge: '<?', // if true the width will expand to 1370px
     logoUrl: '@?',
     title: '@?',
     titleDisabled: '<', // if true no title will be shown on the header and bottom blue bar disappears.
