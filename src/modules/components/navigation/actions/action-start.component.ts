@@ -21,6 +21,8 @@ export class ActionStartComponent {
 
   disabled: boolean;
 
+  static $inject = ['$element', '$timeout'];
+
   constructor(private $element: ng.IAugmentedJQuery, private $timeout: ng.ITimeoutService) {}
 
   $onChanges(changes) {
