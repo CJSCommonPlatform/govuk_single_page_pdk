@@ -79,6 +79,11 @@ describe('components/forms-and-errors/directives', () => {
       expect(element.hasClass('focused')).toBe(true);
       element.find('input').triggerHandler('blur');
       expect(element.hasClass('focused')).toBe(false);
+
+      element.find('input').triggerHandler('focusin');
+      expect(element.hasClass('focused')).toBe(true);
+      element.find('input').triggerHandler('focusout');
+      expect(element.hasClass('focused')).toBe(false);
     });
   });
 });
