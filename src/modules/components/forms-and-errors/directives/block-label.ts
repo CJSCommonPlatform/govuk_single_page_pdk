@@ -13,7 +13,9 @@ export class BlockLabelDirective {
 
   $postLink() {
     this.input = this.$element.find('input');
-    this.input.on('focus', () => this.$element.addClass('focused'));
-    this.input.on('blur',  () => this.$element.removeClass('focused'));
+    this.input.on('focus',    () => this.$element.addClass('focused'));
+    this.input.on('focusin',  () => this.$element.addClass('focused'));
+    this.input.on('blur',     () => this.$element.removeClass('focused'));
+    this.input.on('focusout', () => this.$element.removeClass('focused'));
   }
 }
