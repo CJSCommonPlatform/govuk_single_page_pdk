@@ -14,7 +14,7 @@ export class WarningBannerComponent {
   onClick: Function;
 
   $onInit() {
-    this.showIcon = this.showIcon === false? false : true;
-    console.log('OnClick:', this.onClick)
+    this.showIcon = this.showIcon === false ? false : true;
+    console.log('OnClick:', this.onClick);
   }
 }
