@@ -8,5 +8,5 @@ export class WarningBannerDemo {
 
   clickExample = function(){
     alert('Just an example of clicking function');
-  }
+  };
 }
