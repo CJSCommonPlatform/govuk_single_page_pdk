@@ -13,8 +13,8 @@ import { ActionBarComponent } from './action-bar/action-bar.component';
 const module = angular.module('govuk-single-page-pdk.components.forms-errors', [])
 
   .directive('blockLabel', BlockLabelDirective)
+  .component('pdkDateInput', DateInputComponent)
 
-  .component('govDateInput', DateInputComponent)
   .component('govErrorMessage', ErrorMessageComponent)
   .component('govErrorSummaryItem', ErrorSummaryItemComponent)
   .component('govErrorSummary', ErrorSummaryComponent)
@@ -22,7 +22,10 @@ const module = angular.module('govuk-single-page-pdk.components.forms-errors', [
   .component('govActionBar', ActionBarComponent)
   .directive('inputNumber', InputNumberDirective)
   .directive('lazyValidation', LazyValidationDirective)
-  .directive('lazyValidationOnClick', LazyValidationOnClickDirective);
+  .directive('lazyValidationOnClick', LazyValidationOnClickDirective)
+
+  // deprecated
+  .component('govDateInput', DateInputComponent);
 
 export default module.name;
 

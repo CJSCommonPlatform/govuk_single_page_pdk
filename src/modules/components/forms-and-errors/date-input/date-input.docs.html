@@ -1,0 +1,51 @@
+<h3 class="heading-medium mb-l">Date Input</h3>
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+    <p class="font-xsmall">
+      The <b>pdk-date-input</b> is a form input component used for the collection
+      and validation of dates in a prescribed format.</p>
+    <docs-example language="markup">
+      <pdk-date-input ng-model="$ctrl.date"></pdk-date-input>
+    </docs-example>
+  </div>
+
+  <div class="column-one-third font-xsmall">
+    <h3 class="heading-small mb-m" style="margin-top: 0">Configuration</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">date-input-format</code>
+        A string format with which to parse the date prior to it being set as
+        the model value. This uses the date notation according to the Angular
+        <a href="https://docs.angularjs.org/api/ng/filter/date">Date</a> filter.
+      </li>
+    </ul>
+
+    <h4 class="mb-m"><i>Core Validators</i></h4>
+    <ul class="list list-docs">
+      <li>
+        The <b>dateFormat</b> error exists when the entered date is incomplete
+        or does not adhere to the expected format.
+      </li>
+      <li>
+        The <b>dateExists</b> error exists when a date of the valid format
+        is not recognised as valid.
+      </li>
+    </ul>
+
+    <h4 class="mb-m"><i>Optional Validators</i></h4>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">date-input-max</code> <ng-badge></ng-badge>
+        A maximum date against which to validate the entered date. This may be a date
+        object or string representation of a date (for example, 2015-10-10).
+      </li>
+      <li>
+        <code class="code">date-input-min</code> <ng-badge></ng-badge>
+        A minimum date against which to validate the entered date. This may be a date
+        object or string representation of a date (for example, 2015-10-10).
+    </ul>
+
+  </div>
+</div>

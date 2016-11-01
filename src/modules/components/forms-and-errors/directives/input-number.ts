@@ -17,6 +17,7 @@ export class InputNumberDirective {
     inputNumberPad?: string;
     inputNumberMin?: string;
     inputNumberMax?: string
+    leadingZerosEnabled?: string
   }) {}
 
   $onInit() {
@@ -27,17 +28,21 @@ export class InputNumberDirective {
     this.ngModelCtrl.$parsers.push(val => {
       val = val.toString();
 
-      const newVal = val.replace(/[^\d]/g, '').replace(/^0+(?=\d\.)/, '');
+      let newVal = val.replace(/[^\d]/g, '');
+
+      if (this.$attrs.leadingZerosEnabled === undefined) {
+        newVal = newVal.replace(/\b0+/g, '');
+      }
       if (newVal !== val) {
         this.ngModelCtrl.$setViewValue(newVal);
         this.ngModelCtrl.$render();
       }
-      return newVal || newVal === '0' ? Number(newVal) : undefined;
+      return newVal || undefined;
     });
 
     // prevent any inputs that are greater than any specified max values
     this.ngModelCtrl.$parsers.unshift(val => {
-      const tooLarge = angular.isDefined(inputMax) && !this.ngModelCtrl.$isEmpty(val) && val > inputMax;
+      const tooLarge = angular.isDefined(inputMax) && !this.ngModelCtrl.$isEmpty(+val) && +val > inputMax;
 
       if (tooLarge) {
         this.ngModelCtrl.$setViewValue(this.lastVal);

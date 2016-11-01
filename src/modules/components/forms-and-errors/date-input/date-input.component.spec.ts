@@ -113,15 +113,14 @@ describe('components/forms-and-errors/date-input', () => {
     expect(scope.model.getFullYear()).toEqual(2016);
   });
 
-  it('passes the `required` validation when all three input fields are populated', () => {
+  it('passes the `required` validation when at least one input field is populated', () => {
     compile(`
       <form name="testForm">
         <gov-date-input name="govDate" ng-model="model" required></gov-date-input>
       </form>
     `);
-    setDateValues({day: '1', month: '2'});
     expect(scope.testForm.govDate.$error.required).toBe(true);
-    setDateValues({day: '1', month: '2', year: '1944'});
+    setDateValues({day: '1'});
     expect(scope.testForm.govDate.$error.required).toBeUndefined();
   });
 

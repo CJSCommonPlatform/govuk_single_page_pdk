@@ -38,20 +38,20 @@ describe('components/forms-and-errors/directives', () => {
     it('parses string inputs to type number', () => {
       compile('<input type="text" ng-model="model" input-number>');
       setValue('1');
-      expect(scope.model).toEqual(1);
+      expect(scope.model).toEqual('1');
     });
 
     it('prevents numbers greater than a nominated max being entered', () => {
       compile('<input type="text" ng-model="model" input-number input-number-max="12">');
       setValue(12);
-      expect(scope.model).toEqual(12);
+      expect(scope.model).toEqual('12');
       expect(element.val()).toEqual('12');
       setValue(13);
-      expect(scope.model).toEqual(12);
+      expect(scope.model).toEqual('12');
       expect(element.val()).toEqual('12');
     });
 
-    it('pads the view value of a number with leading zeroes', () => {
+    it('pads the view value of a number with leading zeros', () => {
       compile('<input type="text" ng-model="model" input-number input-number-pad="3">');
       scope.model = 1;
       scope.$digest();
@@ -67,6 +67,12 @@ describe('components/forms-and-errors/directives', () => {
       expect(element.val()).toEqual('1');
       element.blur();
       expect(element.val()).toEqual('01');
+    });
+
+    it('accepts a `leading-zeros-enabled` flag to preserve leading zeros', () => {
+      compile('<input type="text" ng-model="model" input-number>');
+      setValue('01');
+      expect(element.val()).toEqual('1');
     });
   });
 
