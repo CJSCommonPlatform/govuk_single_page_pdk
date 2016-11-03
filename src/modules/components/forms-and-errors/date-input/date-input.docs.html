@@ -2,15 +2,6 @@
 
 <div class="grid-row">
 
-  <div class="column-two-thirds">
-    <p class="font-xsmall">
-      The <b>pdk-date-input</b> is a form input component used for the collection
-      and validation of dates in a prescribed format.</p>
-    <docs-example language="markup">
-      <pdk-date-input ng-model="$ctrl.date"></pdk-date-input>
-    </docs-example>
-  </div>
-
   <div class="column-one-third font-xsmall">
     <h3 class="heading-small mb-m" style="margin-top: 0">Configuration</h3>
     <ul class="list list-docs">
@@ -39,13 +30,19 @@
       <li>
         <code class="code">date-input-max</code> <ng-badge></ng-badge>
         A maximum date against which to validate the entered date. This may be a date
-        object or string representation of a date (for example, 2015-10-10).
+        object or string representation of a date.
       </li>
       <li>
         <code class="code">date-input-min</code> <ng-badge></ng-badge>
         A minimum date against which to validate the entered date. This may be a date
-        object or string representation of a date (for example, 2015-10-10).
+        object or string representation of a date.
     </ul>
 
+  </div>
+
+  <div class="column-two-thirds">
+    <docs-example language="markup">
+      <pdk-date-input ng-model="$ctrl.date"></pdk-date-input>
+    </docs-example>
   </div>
 </div>

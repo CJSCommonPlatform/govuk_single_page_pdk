@@ -1,66 +1,48 @@
 import { Component } from '@govuk/angularjs-devtools';
 
+import { LanguageService } from '../../../core/language';
+
 @Component({
-    bindings: {
-        inputModel: '<',
-        inputType: '@',
-        customValidation: '<',
-        language: '@'
-    },
-    template: require('./error-message.component.html')
+  bindings: {
+    multipleChoice: '<',
+    ngMessages: '<'
+  },
+  require: 'ngMessages',
+  transclude: true,
+  template: `
+    <span data-ng-if="$ctrl.hasErrors" class="error-message" role="alert">
+      <span data-ng-transclude></span>
+      <span data-ng-message="required"   data-ng-bind="$ctrl.messages.required"></span>
+      <span data-ng-message="dateFormat" data-ng-bind="$ctrl.messages.dateFormat"></span>
+      <span data-ng-message="dateExists" data-ng-bind="$ctrl.messages.dateExists"></span>
+      <span data-ng-message="dateMax"    data-ng-bind="$ctrl.messages.dateMax"></span>    
+    </div>
+  `
 })
 export class ErrorMessageComponent {
 
-    private inputModel: ng.INgModelController;
-    private inputType: string;
-    private customValidation: any;
-    private errorMessages: any = {
-        'en': {
-            'input': {
-                'required': 'Provide this information',
-                'email': 'Email not valid – enter correct address'
-            },
-            'email': {
-                'email': 'Email not valid – enter correct address'
-            },
-            'textarea': {
-                'required': 'Provide this information'
-            },
-            'radio': {
-                'required': 'Choose an answer'
-            },
-            'checkbox': {
-                'required': 'Choose at least one answer'
-            },
-            'date': {
-                'required': 'Provide this information',
-                'past': 'Date can\'t be in future – enter valid date',
-                'future': 'Date can\'t be in past – enter valid date',
-                'minage': 'Age too young – enter valid date of birth',
-                'dateFormat': 'Date not recognised – use format, for example 19 8 2016',
-                'dateExists': 'Date doesn\'t exist – enter again'
-            }
+  static $inject = ['language'];
 
-        }
-    };
+  ngMessages: any;
+  multipleChoice: boolean;
+  messages: {[key: string]: string};
 
-    private language: string;
+  constructor(private language: LanguageService) {}
 
-    $onChanges() {
-      if (this.language === undefined) this.language = 'en';
-      if (this.inputType === undefined) this.inputType = 'input';
-      if (this.customValidation) {
-        angular.merge(this.errorMessages, this.customValidation);
-      }
+  $onInit() {
+    switch (this.language.locale) {
+      default:
+        this.messages = {
+          required:   this.multipleChoice ? `Choose an answer` : `Provide this information`,
+          dateFormat: `Date not recognised – use format, for example 19 8 2016`,
+          dateExists: `Date doesn't exist – enter again`,
+          datePast:   `Date can't be in future – enter valid date`,
+          dateFuture: `Date can't be in past – enter valid date`
+        };
     }
+  }
 
-    getMessage(error: any): string {
-        let response = '';
-
-        if (error && JSON.stringify(error) !== JSON.stringify({})) {
-            let key = Object.keys(error)[0];
-            response =  this.errorMessages[this.language][this.inputType][key];
-        }
-        return response;
-    }
+  get hasErrors(): boolean {
+    return this.ngMessages && Object.keys(this.ngMessages).length > 0;
+  }
 }

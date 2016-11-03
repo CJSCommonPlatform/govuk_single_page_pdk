@@ -3,8 +3,9 @@ import formsErrors from './forms-errors';
 
 import { DirectivesDocs } from './directives/directives.docs';
 
+import { ErrorMessageDocs } from './error-message/error-message.docs';
 import { DateInputDocs } from './date-input/date-input.docs';
-import { ErrorMessageDemo } from './error-message/error-message.demo';
+import { ErrorMessageDemo } from './error-message-deprecated/error-message.demo';
 import { ErrorSummaryDemo } from './error-summary/error-summary.demo';
 import { SearchDemo } from './search/search.demo';
 import { ActionBarDemo } from './action-bar/action-bar.demo';
@@ -14,6 +15,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.forms-error
   docsUtils
 ])
   .component('dateInputDocs', DateInputDocs)
+  .component('errorMessageDocs', ErrorMessageDocs)
 
   .component('formDirectivesDocs', DirectivesDocs)
   .component('govErrorMessageDemo', ErrorMessageDemo)
