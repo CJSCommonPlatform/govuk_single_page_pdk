@@ -4,7 +4,7 @@ import { LanguageService } from '../../../core/language';
 
 @Component({
   bindings: {
-    multipleChoice: '<',
+    type: '@',
     ngMessages: '<'
   },
   require: 'ngMessages',
@@ -13,6 +13,7 @@ import { LanguageService } from '../../../core/language';
     <span data-ng-if="$ctrl.hasErrors" class="error-message" role="alert">
       <span data-ng-transclude></span>
       <span data-ng-message="required"   data-ng-bind="$ctrl.messages.required"></span>
+      <span data-ng-message="email"      data-ng-bind="$ctrl.messages.email"></span>
       <span data-ng-message="dateFormat" data-ng-bind="$ctrl.messages.dateFormat"></span>
       <span data-ng-message="dateExists" data-ng-bind="$ctrl.messages.dateExists"></span>
       <span data-ng-message="dateMax"    data-ng-bind="$ctrl.messages.dateMax"></span>    
@@ -23,9 +24,9 @@ export class ErrorMessageComponent {
 
   static $inject = ['language'];
 
-  ngMessages: any;
-  multipleChoice: boolean;
   messages: {[key: string]: string};
+  ngMessages: any;
+  type: string;
 
   constructor(private language: LanguageService) {}
 
@@ -33,7 +34,10 @@ export class ErrorMessageComponent {
     switch (this.language.locale) {
       default:
         this.messages = {
-          required:   this.multipleChoice ? `Choose an answer` : `Provide this information`,
+          required:   this.type === 'radio'          ? `Choose an answer` :
+                      this.type === 'checkbox-group' ? `Choose at least one answer` :
+                                                       `Provide this information`,
+          email:      `Email not valid – enter correct address`,
           dateFormat: `Date not recognised – use format, for example 19 8 2016`,
           dateExists: `Date doesn't exist – enter again`,
           datePast:   `Date can't be in future – enter valid date`,

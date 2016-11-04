@@ -11,19 +11,22 @@
 
     <p>
       These default messages can be overriden simply by defining a new <b>ng-message</b>
-      for that error key.
+      for an error key.
     </p>
 
     <p class="text-secondary">
-      <em>Note, the angular-messages library must be loaded to use this component.</em>
+      <em>Note, the angular-messages library must be included to use this component.</em>
     </p>
 
     <h3 class="heading-small mb-m" style="margin-top: 0">Configuration</h3>
     <ul class="list list-docs">
       <li>
-        <code class="code">multiple-choice</code> <ng-badge></ng-badge>
-        A boolean value as to whether the message belongs to a multiple choice input
-        (like a checkbox or radio group).
+        <code class="code">type</code>
+        <em class="text-secondary">(Default: text)</em>
+        <br>
+        <p>The type of input belonging to the error, such that messages will be
+          specific to that type.
+        Valid options are <b>text</b>, <b>radio</b> and <b>checkbox-group</b>.</p>
       </li>
     </ul>
   </div>
@@ -32,9 +35,8 @@
     <docs-example language="markup">
       <form name="$ctrl.form1">
         <div data-ng-class="{error: $ctrl.form1.$invalid}">
-          <pdk-error-message ng-messages="$ctrl.form1.prop.$error">
-          </pdk-error-message>
-          <input type="text" name="prop" ng-model="prop1" required>
+          <pdk-error-message ng-messages="$ctrl.form1.prop.$error"></pdk-error-message>
+          <input type="email" name="prop" ng-model="prop1" required>
         </div>
       </form>
     </docs-example>
