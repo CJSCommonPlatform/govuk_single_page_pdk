@@ -32,7 +32,7 @@ module.exports = webpackMerge(commonConfig, {
     }),
     new HtmlWebpackPlugin({
       template:  'src/docs/index.ejs',
-      chunks:   ['vendor', 'main'],
+      chunks:   ['index', 'main'],
       baseUrl:   '/govuk_single_page_pdk/'
     })
   ],

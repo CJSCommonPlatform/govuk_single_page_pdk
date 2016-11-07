@@ -6,7 +6,7 @@ var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 
 module.exports = {
   entry: {
-    'vendor': './src/docs/vendor.ts',
+    'index': './src/docs/vendor.ts',
     'main':   './src/docs/index.ts'
   },
   resolve: {
@@ -71,6 +71,6 @@ module.exports = {
       }
     ]),
     new webpack.optimize.OccurenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'})
+    new webpack.optimize.CommonsChunkPlugin({name: 'index'})
   ]
 };
