@@ -6,9 +6,12 @@
     }
   }
 }
-#wrapper-header {
+
+#header-wrapper {
   #logo {
     background-image: url('#{$govuk-template-image-path}/gov.uk_logotype_crown.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
     @include ie-lte(8) {
       background-image: url('#{$govuk-template-image-path}/gov.uk_logotype_crown-1x.png');
     }
