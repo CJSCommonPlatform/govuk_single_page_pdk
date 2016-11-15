@@ -55,7 +55,6 @@ export class SearchComponent {
 
   $postLink(): void {
     this.enableSubmitOnEnter();
-    if (this.inline) this.makeInline();
   }
 
   submit(): void {
@@ -74,9 +73,5 @@ export class SearchComponent {
         this.$scope.$apply(() => this.submit());
       }
     });
-  }
-
-  makeInline(): void {
-    this.$element.children().eq(0).addClass('gov-search-inline');
   }
 }

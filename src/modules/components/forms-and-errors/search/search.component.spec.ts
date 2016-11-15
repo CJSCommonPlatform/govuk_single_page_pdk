@@ -161,14 +161,14 @@ describe('components/forms-and-errors/search', () => {
     expect(element.find('input').attr('data-ng-minlength')).toEqual('3');
   });
 
-  it('applies the gov-search-inline class when inline attribute is set', () => {
+  it('applies the form-search-inline class when inline attribute is set', () => {
     compile(`<form><gov-search inline="true" ng-model="model"></gov-search></form>`);
-    expect(element.find('.form-search').hasClass('gov-search-inline')).toBe(true);
+    expect(element.find('.form-search').hasClass('form-search-inline')).toBe(true);
   });
 
-  it(`doesn't apply the gov-search-inline class when inline attribute is not set`, () => {
+  it(`doesn't apply the form-search-inline class when inline attribute is not set`, () => {
     compile(`<form><gov-search inline="false" ng-model="model"></gov-search></form>`);
-    expect(element.find('.form-search').hasClass('gov-search-inline')).toBe(false);
+    expect(element.find('.form-search').hasClass('form-search-inline')).toBe(false);
   });
 
   it(`applies ng-required attribute to the inner input when the required attribute is set`, () => {

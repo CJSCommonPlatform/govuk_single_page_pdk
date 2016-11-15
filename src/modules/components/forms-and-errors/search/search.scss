@@ -11,6 +11,15 @@ $module: 'form-search';
     margin-bottom: 0;
   }
 
+  &.form-search-inline {
+      display: inline-block;
+      width: 100%;
+
+      @include media(tablet) {
+          width: 50%;
+      }
+  }
+
   .form-control {
     @include box-sizing(border-box);
     display: inline-block;
@@ -19,12 +28,15 @@ $module: 'form-search';
 
     @include media(tablet) {
       width: calc(50% - 37px);
+
+      &.form-search-inline {
+        width: calc(100% - 37px);
+      }
     }
 
     &:focus {
       position: relative;
     }
-
   }
 
   &-button {
