@@ -5,7 +5,8 @@ import { Component } from '@govuk/angularjs-devtools';
     links: '<',
     builtBy: '<',
     minimalView: '<',
-    isBusiness: '<'
+    isBusiness: '<',
+    isBusinessXLarge: '<' // If true, the footer will expand to 1370px
   },
   transclude: {
     contact: '?contact'

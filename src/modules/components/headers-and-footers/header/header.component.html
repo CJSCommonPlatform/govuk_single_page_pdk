@@ -15,7 +15,9 @@
 <div id="header-wrapper" data-ng-class="{'minimal-view': $ctrl.minimalView}">
   <header role="banner" id="global-header" class="with-proposition">
 
-    <div class="header-wrapper" data-ng-class="{business: $ctrl.isBusiness}">
+  <div class="header-wrapper" data-ng-class="{
+    'business': $ctrl.isBusiness,
+    'business-x-large': $ctrl.isBusinessXLarge }">
 
       <div class="header-global">
         <div data-ng-if="!$ctrl.titleDisabled" class="header-logo">

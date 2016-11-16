@@ -1,6 +1,9 @@
 <footer class="group js-footer" id="footer" role="contentinfo">
 
-  <div class="footer-wrapper" data-ng-class="{ 'business': $ctrl.isBusiness, 'ui-minimal-view': $ctrl.minimalView }">
+  <div class="footer-wrapper" data-ng-class="{ 
+    'business': $ctrl.isBusiness,
+    'business-x-large': $ctrl.isBusinessXLarge, 
+    'ui-minimal-view': $ctrl.minimalView }">
     <div class="contact" data-ng-transclude></div>
     <div class="footer-meta" data-ng-class="{ 'ui-footer-meta': $ctrl.minimalView }">
 
