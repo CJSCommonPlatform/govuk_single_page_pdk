@@ -78,13 +78,28 @@ $module: 'form-search';
 }
 
 .error {
-
   .#{$module}-button {
     border-width: 4px;
-    height: 41px;
-    width: 41px;
+    height: 36px;
+    width: 36px;
+
+    @include media(tablet) {
+      height: 41px;
+      width: 41px;
+    }
   }
 
+  .form-control {
+    width: calc(100% - 36px);
+
+    @include media(tablet) {
+      width: calc(50% - 41px);
+
+      &.form-search-inline {
+        width: calc(100% - 41px);
+      }
+    }
+  }
 }
 
 /*
