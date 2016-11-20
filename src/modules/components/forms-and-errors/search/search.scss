@@ -1,7 +1,7 @@
 // Search input
 // ==========================================================================
 
-$module: 'form-search';
+$module: 'search';
 
 .#{$module} {
   position: relative;
@@ -11,27 +11,14 @@ $module: 'form-search';
     margin-bottom: 0;
   }
 
-  &.form-search-inline {
-      display: inline-block;
-      width: 100%;
-
-      @include media(tablet) {
-          width: 50%;
-      }
-  }
-
   .form-control {
     @include box-sizing(border-box);
     display: inline-block;
     vertical-align: middle;
-    width: calc(100% - 32px);
+    width: calc(100% - 37px);
 
     @include media(tablet) {
       width: calc(50% - 37px);
-
-      &.form-search-inline {
-        width: calc(100% - 37px);
-      }
     }
 
     &:focus {
@@ -72,44 +59,14 @@ $module: 'form-search';
     &:focus {
       position: relative;
     }
-
   }
-
 }
 
 .error {
+
   .#{$module}-button {
     border-width: 4px;
-    height: 36px;
-    width: 36px;
-
-    @include media(tablet) {
-      height: 41px;
-      width: 41px;
-    }
-  }
-
-  .form-control {
-    width: calc(100% - 36px);
-
-    @include media(tablet) {
-      width: calc(50% - 41px);
-
-      &.form-search-inline {
-        width: calc(100% - 41px);
-      }
-    }
+    height: 41px;
+    width: 41px;
   }
 }
-
-/*
-
-HTML Usage
-
-<div class="form-search">
-  <label class="form-label" for="search">Enter part or all of a user&rsquo;s name or email address</label>
-  <input class="form-control" type="search" id="search" name="search" value="BGV"><button class="form-search-button" type="submit">Search</button>
-  <p class="form-search-clear"><a href="#">Clear search</a></p>
-</div>
-
-*/

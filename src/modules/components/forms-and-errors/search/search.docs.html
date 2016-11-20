@@ -1,0 +1,29 @@
+<h3 class="heading-medium mb-l">Search</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <p>
+      The <b>pdk-search</b> component is a container for inputs that
+      perform searches.
+    </p>
+    <h3 class="heading-small mb-m">Configuration</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">on-search</code> <ng-badge></ng-badge>
+        An angular expression to be invoked when the user presses the enter
+        key or clicks the search button. The search text is exposed to
+        the expression via the $event variable.
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds font-xsmall">
+    <docs-example language="markup">
+      <pdk-search ng-model="$ctrl.text" on-search="$ctrl.term = $event"></pdk-search>
+
+      <p>Search text: <span ng-bind="$ctrl.term"></span></p>
+    </docs-example>
+  </div>
+
+</div>

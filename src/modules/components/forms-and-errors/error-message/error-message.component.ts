@@ -17,6 +17,7 @@ import { LanguageService } from '../../../core/language';
       <span data-ng-message="dateFormat" data-ng-bind="$ctrl.messages.dateFormat"></span>
       <span data-ng-message="dateExists" data-ng-bind="$ctrl.messages.dateExists"></span>
       <span data-ng-message="dateMax"    data-ng-bind="$ctrl.messages.dateMax"></span>    
+      <span data-ng-message="currencyFormat" data-ng-bind="$ctrl.messages.currencyFormat"></span>    
     </div>
   `
 })
@@ -41,7 +42,8 @@ export class ErrorMessageComponent {
           dateFormat: `Date not recognised – use format, for example 19 8 2016`,
           dateExists: `Date doesn't exist – enter again`,
           datePast:   `Date can't be in future – enter valid date`,
-          dateFuture: `Date can't be in past – enter valid date`
+          dateFuture: `Date can't be in past – enter valid date`,
+          currencyFormat: `Amount not valid – enter again`
         };
     }
   }

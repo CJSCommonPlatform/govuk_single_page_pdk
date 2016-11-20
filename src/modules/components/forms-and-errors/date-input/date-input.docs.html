@@ -3,6 +3,11 @@
 <div class="grid-row">
 
   <div class="column-one-third font-xsmall">
+    <p>
+      The <b>pdk-date-input</b> component is a form control used for entering
+      dates in a dd/mm/yyyy format.
+    </p>
+
     <h3 class="heading-small mb-m" style="margin-top: 0">Configuration</h3>
     <ul class="list list-docs">
       <li>
@@ -36,6 +41,15 @@
         <code class="code">date-input-min</code> <ng-badge></ng-badge>
         A minimum date against which to validate the entered date. This may be a date
         object or string representation of a date.
+      </li>
+      <li>
+        <code class="code">date-input-future</code> <ng-badge></ng-badge>
+        A boolean expression as to whether the entered date must be in the future.
+      </li>
+      <li>
+        <code class="code">date-input-past</code> <ng-badge></ng-badge>
+        A boolean expression as to whether the entered date must be in the past.
+      </li>
     </ul>
 
   </div>

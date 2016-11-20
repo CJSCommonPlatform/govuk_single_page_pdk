@@ -6,6 +6,8 @@ import { PersistInfoComponent} from './persist-info/persist-info.component';
 import { PhaseBannerComponent } from './phase-banner/phase-banner.component';
 import { WarningBannerComponent } from './warning/warning-banner.component';
 
+import { StatusLabelComponent } from './status-label/status-label.component';
+
 const module = angular.module('govuk-single-page-pdk.components.banners', [])
 
   .component('govHighlightText', HighlightTextComponent)
@@ -14,6 +16,8 @@ const module = angular.module('govuk-single-page-pdk.components.banners', [])
   .component('govPageTitle', PageTitleComponent)
   .component('govPersistInfoBanner', PersistInfoComponent)
   .component('govPhaseBanner', PhaseBannerComponent)
-  .component('govWarningBanner', WarningBannerComponent);
+  .component('govWarningBanner', WarningBannerComponent)
+
+  .component('pdkStatusLabel', StatusLabelComponent);
 
 export default module.name;

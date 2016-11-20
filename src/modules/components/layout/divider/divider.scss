@@ -1,0 +1,21 @@
+$module: 'divider';
+
+.#{$module} {
+  background-color: $border-colour;
+  border: 0;
+  display: block;
+  height: em(1);
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+  padding: 0;
+
+  // modifiers
+  &-border-dark {
+    background-color: $black;
+  }
+
+  &-border-thick {
+    height: em(5);
+  }
+
+}

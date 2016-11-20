@@ -1,0 +1,30 @@
+$module: 'form';
+
+.#{$module} {
+
+  &-duration {
+
+    .#{$module}-group {
+      float: left;
+      clear: none;
+      margin-right: 20px;
+      margin-bottom: 0;
+
+      &-amount {
+        width: 70px;
+      }
+
+      &-timespan {
+        width: auto;
+      }
+
+      input, select {
+        width: 100%;
+      }
+
+      select {
+        height: em(37);
+      }
+    }
+  }
+}

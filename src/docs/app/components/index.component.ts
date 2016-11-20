@@ -12,6 +12,9 @@ export class ComponentsPage {
             components: ['Contact-info', 'Personal-details', 'Summary-item', 'Tab', 'Tabs-pane', 'Show/Hide Pane']
         },
         {name: 'Headers and Footers', state: 'components.headers', components: ['Govuk header', 'Govuk footer']},
+        {name: 'Layout', state: 'components.layout', components: [
+          'The building blocks of the page'
+        ]},
         {name: 'Media', state: 'components.media', components: ['Image', 'statement']},
         {
             name: 'Navigation',

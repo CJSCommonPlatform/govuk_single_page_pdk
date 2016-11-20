@@ -93,10 +93,10 @@ describe('components/forms-and-errors/date-input', () => {
   it('sets the ng-model as touched when any input field is touched', () => {
     compile(`
       <form name="testForm">
-        <gov-date-input name="govDate" ng-model="model"></gov-date-input>
+        <gov-date-input name="pdkDate" ng-model="model"></gov-date-input>
       </form>
     `);
-    const ngModelCtrl = scope.testForm.govDate;
+    const ngModelCtrl = scope.testForm.pdkDate;
     expect(ngModelCtrl.$touched).toEqual(false);
     dayInput.focus();
     dayInput.blur();
@@ -116,21 +116,21 @@ describe('components/forms-and-errors/date-input', () => {
   it('passes the `required` validation when at least one input field is populated', () => {
     compile(`
       <form name="testForm">
-        <gov-date-input name="govDate" ng-model="model" required></gov-date-input>
+        <gov-date-input name="pdkDate" ng-model="model" required></gov-date-input>
       </form>
     `);
-    expect(scope.testForm.govDate.$error.required).toBe(true);
+    expect(scope.testForm.pdkDate.$error.required).toBe(true);
     setDateValues({day: '1'});
-    expect(scope.testForm.govDate.$error.required).toBeUndefined();
+    expect(scope.testForm.pdkDate.$error.required).toBeUndefined();
   });
 
   it('runs the ng-model `dateFormat` validator when a date is set', () => {
     compile(`
       <form name="testForm">
-        <gov-date-input name="govDate" ng-model="model"></gov-date-input>
+        <gov-date-input name="pdkDate" ng-model="model"></gov-date-input>
       </form>
     `);
-    const ngModelCtrl = scope.testForm.govDate;
+    const ngModelCtrl = scope.testForm.pdkDate;
     expect(ngModelCtrl.$error.dateFormat).toBeUndefined();
     setDateValues({day: 31, month: 4, year: 2});
     expect(ngModelCtrl.$error.dateFormat).toBeDefined();
@@ -145,10 +145,10 @@ describe('components/forms-and-errors/date-input', () => {
   it('runs the ng-model `dateExists` validator when a date is set', () => {
     compile(`
       <form name="testForm">
-        <gov-date-input name="govDate" ng-model="model"></gov-date-input>
+        <gov-date-input name="pdkDate" ng-model="model"></gov-date-input>
       </form>
     `);
-    const ngModelCtrl = scope.testForm.govDate;
+    const ngModelCtrl = scope.testForm.pdkDate;
     expect(ngModelCtrl.$error.dateExists).toBeUndefined();
     setDateValues({day: 29, month: 2, year: 2017});
     expect(ngModelCtrl.$error.dateExists).toBeDefined();
@@ -161,10 +161,10 @@ describe('components/forms-and-errors/date-input', () => {
   it('runs the ng-model `dateMin` validator when a date is set', () => {
     compile(`
       <form name="testForm">
-        <gov-date-input name="govDate" date-input-min="val" ng-model="model"></gov-date-input>
+        <gov-date-input name="pdkDate" date-input-min="val" ng-model="model"></gov-date-input>
       </form>
     `);
-    const ngModelCtrl = scope.testForm.govDate;
+    const ngModelCtrl = scope.testForm.pdkDate;
     // no error when no date / min value entered
     expect(ngModelCtrl.$error.dateMin).toBeUndefined();
     scope.val = new Date(2015, 9, 15);
@@ -180,19 +180,54 @@ describe('components/forms-and-errors/date-input', () => {
     expect(ngModelCtrl.$error.dateMin).toBeDefined();
     setDateValues({day: 15, month: 10, year: 2015});
     expect(ngModelCtrl.$error.dateMin).toBeUndefined();
+
     // assert bound property changing updates $error
     scope.val = '2015-10-16';
     scope.$digest();
     expect(ngModelCtrl.$error.dateMin).toBeDefined();
   });
 
+  it('runs the ng-model `dateFuture` validator when a date is set', () => {
+    compile(`
+      <form name="testForm">
+        <gov-date-input name="pdkDate" date-input-future="true" ng-model="model"></gov-date-input>
+      </form>
+    `);
+    const ngModelCtrl = scope.testForm.pdkDate;
+    // no error when no date / max value entered
+    expect(ngModelCtrl.$error.dateFuture).toBeUndefined();
+    const clock = sinon.useFakeTimers(1451606400000); // 01/01/2016
+    setDateValues({day: 1, month: 1, year: 2016});
+    expect(ngModelCtrl.$error.dateFuture).toBeDefined();
+    setDateValues({day: 2, month: 1, year: 2016});
+    expect(ngModelCtrl.$error.dateFuture).toBeUndefined();
+    clock.restore();
+  });
+
+  it('runs the ng-model `datePast` validator when a date is set', () => {
+    compile(`
+      <form name="testForm">
+        <gov-date-input name="pdkDate" date-input-past="true" ng-model="model"></gov-date-input>
+      </form>
+    `);
+    const ngModelCtrl = scope.testForm.pdkDate;
+    // no error when no date / max value entered
+    expect(ngModelCtrl.$error.dateFuture).toBeUndefined();
+    const clock = sinon.useFakeTimers(1451606400000); // 01/01/2016
+    setDateValues({day: 2, month: 1, year: 2016});
+    expect(ngModelCtrl.$error.datePast).toBeDefined();
+    setDateValues({day: 1, month: 1, year: 2016});
+    expect(ngModelCtrl.$error.datePast).toBeUndefined();
+    clock.restore();
+  });
+
   it('runs the ng-model `dateMax` validator when a date is set', () => {
     compile(`
       <form name="testForm">
-        <gov-date-input name="govDate" date-input-max="val" ng-model="model"></gov-date-input>
+        <gov-date-input name="pdkDate" date-input-max="val" ng-model="model"></gov-date-input>
       </form>
     `);
-    const ngModelCtrl = scope.testForm.govDate;
+    const ngModelCtrl = scope.testForm.pdkDate;
     // no error when no date / max value entered
     expect(ngModelCtrl.$error.dateMax).toBeUndefined();
     scope.val = new Date('2015-10-15');
@@ -208,6 +243,7 @@ describe('components/forms-and-errors/date-input', () => {
     expect(ngModelCtrl.$error.dateMax).toBeDefined();
     setDateValues({day: 15, month: 10, year: 2015});
     expect(ngModelCtrl.$error.dateMax).toBeUndefined();
+
     // assert bound property changing updates $error
     scope.val = '2015-10-14';
     scope.$digest();
@@ -217,53 +253,15 @@ describe('components/forms-and-errors/date-input', () => {
   it('does not apply internal date validators when the date is empty', () => {
     compile(`
       <form name="testForm">
-        <gov-date-input name="govDate" ng-model="model"></gov-date-input>
+        <gov-date-input name="pdkDate" ng-model="model"></gov-date-input>
       </form>
     `);
-    const ngModelCtrl = scope.testForm.govDate;
+    const ngModelCtrl = scope.testForm.pdkDate;
     expect(ngModelCtrl.$error.dateExists).toBeUndefined();
     expect(ngModelCtrl.$error.dateFormat).toBeUndefined();
   });
 
   it('updates the input fields in the view when the model is changed directly', () => {
-    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
-    scope.model = new Date(2016, 0, 5);
-    scope.$digest();
-    expect(dayInput.val()).toEqual('5');
-    expect(monthInput.val()).toEqual('1');
-    expect(yearInput.val()).toEqual('2016');
-    scope.model = '2015-10-05';
-    scope.$digest();
-    expect(dayInput.val()).toEqual('5');
-    expect(monthInput.val()).toEqual('10');
-    expect(yearInput.val()).toEqual('2015');
-  });
-
-  it('removes the internal input fields from consideration by an outer form', () => {
-    compile(`
-      <form name="testForm">
-        <gov-date-input name="govDate" ng-model="model"></gov-date-input>
-      </form>
-    `);
-    expect(scope.testForm.dateDay).toBeUndefined();
-    expect(scope.testForm.dateMonth).toBeUndefined();
-    expect(scope.testForm.dateYear).toBeUndefined();
-  });
-
-  it('formats the model value via the date-input-format property', () => {
-    compile(`<gov-date-input data-date-input-format="yyyy-MM-dd" ng-model="model"></gov-date-input>`);
-    scope.$digest();
-    setDateValues({day: 15, month: 7, year: 2016});
-    expect(scope.model).toEqual('2016-07-15');
-  });
-
-  it('unsets the ng-model value for an incomplete date', () => {
-    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
-    setDateValues({day: 15, month: 7});
-    expect(scope.model).toBeUndefined();
-  });
-
-  it('renders the model value correctly when a date is set', () => {
     scope.model = null;
     compile(`<gov-date-input ng-model="model"></gov-date-input>`);
     expect(dayInput.val()).toEqual('');
@@ -289,5 +287,29 @@ describe('components/forms-and-errors/date-input', () => {
     expect(dayInput.val()).toEqual('3');
     expect(monthInput.val()).toEqual('8');
     expect(yearInput.val()).toEqual('2016');
+  });
+
+  it('removes the internal input fields from consideration by an outer form', () => {
+    compile(`
+      <form name="testForm">
+        <gov-date-input name="pdkDate" ng-model="model"></gov-date-input>
+      </form>
+    `);
+    expect(scope.testForm.dateDay).toBeUndefined();
+    expect(scope.testForm.dateMonth).toBeUndefined();
+    expect(scope.testForm.dateYear).toBeUndefined();
+  });
+
+  it('formats the model value via the date-input-format property', () => {
+    compile(`<gov-date-input data-date-input-format="yyyy-MM-dd" ng-model="model"></gov-date-input>`);
+    scope.$digest();
+    setDateValues({day: 15, month: 7, year: 2016});
+    expect(scope.model).toEqual('2016-07-15');
+  });
+
+  it('unsets the ng-model value for an incomplete date', () => {
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
+    setDateValues({day: 15, month: 7});
+    expect(scope.model).toBeUndefined();
   });
 });

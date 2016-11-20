@@ -40,6 +40,14 @@ export const routes: angular.ui.IState[] = [
     }
   },
   {
+    state:    'components.layout',
+    url:      '/layout',
+    template: '<gov-docs-components-layout-page></gov-docs-components-layout-page>',
+    ncyBreadcrumb: {
+      label: 'Layout'
+    }
+  },
+  {
     state:    'components.media',
     url:      '/media',
     template: '<gov-docs-components-media-page></gov-docs-components-media-page>',

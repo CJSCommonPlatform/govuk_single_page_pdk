@@ -6,3 +6,18 @@
     border: 2px solid $grey-1 !important;
   }
 }
+
+// preserve link color despite visited status
+.link-default:visited:not(:hover) {
+  color: $govuk-blue;
+}
+
+// this is missing from govuk-elements
+.column-three-quarters {
+  @include grid-column(3 / 4);
+}
+
+// this is missing from govuk-elements
+hr {
+  clear: both;
+}

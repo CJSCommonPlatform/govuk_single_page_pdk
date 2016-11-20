@@ -1,77 +1,67 @@
 import { Component } from '@govuk/angularjs-devtools';
-import { LazyValidationDirective } from '../lazy-validation/lazy-validation.directive.ts';
 
 @Component({
-  template: require('./search.component.html'),
+  template: `
+    <div class="search">
+      <input id="{{$ctrl.id}}"
+             type="search"
+             aria-label="{{$ctrl.ariaLabel}}" 
+             aria-labelledby="{{$ctrl.ariaLabelledby}}" 
+             aria-describedby="{{$ctrl.ariaDescribedby}}"
+             data-ng-model="$ctrl.term"
+             data-ng-change="$ctrl.setViewValue($ctrl.term)"
+             data-ng-keydown="$ctrl.onKeydown($event)"
+             class="form-control"><button data-ng-click="$ctrl.search()" class="search-button">Search</button>
+    </div>    
+  `,
   bindings: {
-    autocomplete:     '@',
-    label:            '@',
-    showLabel:        '@',
-    placeholder:      '@',
-    name:             '@',
-    inputId:          '@',
-    ariaDescribedby:  '@',
-    resultsFoundStr:  '@',
-    searchStr:        '@',
-    ngModel:          '=',
-    inline:           '<?',
-    ngMinlength:      '@?',
-    required:         '<?',
-    onSearch:         '&',
-    onCriteriaChange: '&?',
-    results:          '='
+    id: '@?',
+    ariaDescribedby: '@?',
+    ariaLabel: '@?',
+    ariaLabelledby: '@?',
+    onSearch: '&'
   },
   require: {
-    ngModelCtrl: 'ngModel',
-    formCtrl: '^^?form',
-    lazyValidationController: '^^?lazyValidation'
+    ngModelCtrl: 'ngModel'
   }
 })
 export class SearchComponent {
 
-  name: string;
-  ngModel: any;
-  showLabelFlag: boolean;
-  showLabel: string;
-  resultFoundStr: string;
-  searchStr: string;
+  static $inject = ['$element', '$timeout'];
+
+  input: any;
   ngModelCtrl: ng.INgModelController;
-  formCtrl: ng.IFormController;
-  lazyValidationController: LazyValidationDirective;
-  onSearch: ($event: { $criteria: string }) => any;
-  onCriteriaChange: ($event: { $criteria: string, $valid: boolean }) => any;
-  inline: boolean;
-  required: boolean;
+  onSearch: (params: {$event: string}) => any;
+  term: string;
 
-  static $inject = ['$element', '$scope'];
+  constructor(private $element: ng.IAugmentedJQuery, private $timeout: ng.ITimeoutService) {}
 
-  constructor(private $element: ng.IAugmentedJQuery, private $scope: ng.IScope) {}
+  $onChanges = c => {
+    if (c.id && c.id.currentValue) {
+      this.$timeout(() => this.$element.removeAttr('id'));
+    }
+  };
 
-  $onInit() {
-    this.showLabelFlag = (this.showLabel && this.showLabel.toLowerCase()) === 'true' ? true : false;
-    this.resultFoundStr = this.resultFoundStr ? this.resultFoundStr : 'Results found';
-    this.searchStr = this.searchStr ? this.searchStr : 'search';
+  $postLink() {
+    this.ngModelCtrl.$render = () => {
+      this.term = this.ngModelCtrl.$viewValue;
+    };
   }
 
-  $postLink(): void {
-    this.enableSubmitOnEnter();
+  onKeydown(e: KeyboardEvent) {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      this.search();
+    }
   }
 
-  submit(): void {
-    if (this.lazyValidationController) this.lazyValidationController.revalidate();
-    if (this.onCriteriaChange) this.onCriteriaChange({
-      $criteria: this.formCtrl[this.name].$viewValue,
-      $valid: this.formCtrl.$valid
-    });
-    if (this.ngModelCtrl.$valid) this.onSearch({ $criteria: this.ngModel });
+  search() {
+    if (this.ngModelCtrl.$valid) {
+      this.onSearch({$event: this.ngModelCtrl.$modelValue});
+    }
   }
 
-  enableSubmitOnEnter(): void {
-    this.$element.find('input').bind('keydown', e => {
-      if (e.keyCode === 13) {
-        e.preventDefault();
-        this.$scope.$apply(() => this.submit());
-      }
-    });
+  setViewValue(val: string) {
+    this.ngModelCtrl.$setViewValue(val);
   }
 }

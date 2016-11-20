@@ -9,9 +9,8 @@ const DATE_EXISTS = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|
   bindings: {
     dateInputMin: '<',
     dateInputMax: '<',
-    dayLabel:     '@',
-    monthLabel:   '@',
-    yearLabel:    '@'
+    dateInputFuture: '<',
+    dateInputPast: '<'
   },
   require: {
     parentFormCtrl: '?^^form',
@@ -24,12 +23,15 @@ export class DateInputComponent {
 
   dateInputMax: any;
   dateInputMin: any;
+  dateInputFuture: boolean;
+  dateInputPast: boolean;
+
   dateControl:  any;
   dayLabel:     string;
   monthLabel:   string;
   yearLabel:    string;
 
-  $$identifier = `date-input-${uuid()}`;
+  identifier = `date-input-${uuid()}`;
 
   private isFocused:  boolean;
   private minDate:    any;
@@ -53,6 +55,8 @@ export class DateInputComponent {
       dateInputFormat: string;
       dateInputMin: string;
       dateInputMax: string;
+      dateInputFuture: string;
+      dateInputPast: string;
     },
     private dateFilter: ng.IFilterDate
   ) {}
@@ -100,8 +104,8 @@ export class DateInputComponent {
   }
 
   $onChanges() {
-    this.maxDate = this.dateInputMax ? new Date(this.dateInputMax) : undefined;
-    this.minDate = this.dateInputMin ? new Date(this.dateInputMin) : undefined;
+    this.maxDate = this.dateInputMax ? toDate(this.dateInputMax) : undefined;
+    this.minDate = this.dateInputMin ? toDate(this.dateInputMin) : undefined;
     this.ngModelCtrl.$validate();
   }
 
@@ -123,13 +127,13 @@ export class DateInputComponent {
     // is not yet a complete date, we return null
     this.ngModelCtrl.$parsers.push(v => {
       if (isDateFormat(v)) {
-        return new Date(v.split('-').reverse().join('-'));
+        return toDate(v.split('-').reverse().join('-'));
       }
       return null;
     });
 
     if (this.$attrs.dateInputFormat) {
-     this.ngModelCtrl.$parsers.push(v => v ? this.dateFilter(v, this.$attrs.dateInputFormat) : v);
+      this.ngModelCtrl.$parsers.push(v => v ? this.dateFilter(v, this.$attrs.dateInputFormat) : v);
     }
 
     // convert model value back to the composite $viewValue (see getter above)
@@ -159,26 +163,40 @@ export class DateInputComponent {
 
     this.ngModelCtrl.$validators['dateExists'] = (m, v) => !m || DATE_EXISTS.test(v);
 
+    this.ngModelCtrl.$validators['datePast'] = m => {
+      if (!m && this.dateInputPast) {
+        return true;
+      }
+      return Boolean((toDate(Date.now()) - toDate(m)) >= 0);
+    };
+
+    this.ngModelCtrl.$validators['dateFuture'] = m => {
+      if (!m || !this.dateInputFuture) {
+        return true;
+      }
+      return Boolean((toDate(m) - toDate(Date.now())) > 0);
+    };
+
     this.ngModelCtrl.$validators['dateMax'] = m => {
       if (!m || !this.maxDate) {
         return true;
       }
-      return Boolean(this.maxDate - <any> new Date(m) >= 0);
+      return Boolean(this.maxDate - toDate(m) >= 0);
     };
 
     this.ngModelCtrl.$validators['dateMin'] = m => {
       if (!m || !this.minDate) {
         return true;
       }
-      return Boolean(<any> new Date(m) - this.minDate >= 0);
+      return Boolean(toDate(m) - this.minDate >= 0);
     };
 
     // update inner inputs when outer ng-model value is set directly
     this.ngModelCtrl.$render = () => {
       const val = this.ngModelCtrl.$modelValue === null ? undefined : this.ngModelCtrl.$modelValue;
-      const date = new Date(val);
+      const date = toDate(val);
       if (date) {
-        this.dayModel   = isNaN(date.getDate())  ? undefined : date.getDate();
+        this.dayModel   = isNaN(date.getDate()) ? undefined : date.getDate();
         this.monthModel = isNaN(date.getMonth()) ? undefined : date.getMonth() + 1;
         this.yearModel  = isNaN(date.getFullYear()) ? undefined : date.getFullYear();
       }
@@ -190,12 +208,18 @@ function isDateFormat(val): boolean {
   return DATE_FORMAT.test(val);
 }
 
+function toDate(timestamp): any {
+  const d = new Date(timestamp);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
 function pad(num: any): string {
   const val = num !== undefined ? num.toString() : '';
   return val.length >= 2 ? val : new Array(2 - val.length + 1).join('0') + val;
 }
 
 function toDateString(val): string {
-  val = new Date(val);
+  val = toDate(val);
   return `${val.getDate()}-${val.getMonth() + 1}-${val.getFullYear()}`;
 }
