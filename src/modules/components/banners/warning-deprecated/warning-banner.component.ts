@@ -9,7 +9,7 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   template: require('./warning-banner.component.html')
 })
-export class WarningBannerComponent {
+export class DeprecatedWarningBannerComponent {
   showIcon: boolean;
   onClick: Function;
 

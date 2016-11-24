@@ -1,0 +1,37 @@
+<h3 class="heading-medium mb-l">Alerts</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <p>The <b>pdk-alert</b> component is used for displaying messages of
+    high importance.</p>
+
+    <h3 class="heading-small mb-m">Configuration</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">banner</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: false)</em>
+        A boolean expression for displaying the alert so that it spans the width of the viewport.
+      </li>
+      <li>
+        <code class="code">banner-class</code>
+        <em class="text-secondary">(Optional)</em>
+        A container class for the banner content. This should be specified when
+        a page's content does not use the conventional GDS width.
+      </li>
+      <li>
+        <code class="code">show-icon</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: true)</em>
+        A boolean value for setting for whether the accompanying icon be displayed.
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds">
+    <docs-example data-language="markup">
+      <pdk-alert>
+        The requested resource could not be found. <a href="">Try again</a>
+      </pdk-alert>
+    </docs-example>
+  </div>
+</div>
