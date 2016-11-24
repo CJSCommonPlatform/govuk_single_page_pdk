@@ -25,7 +25,7 @@
 // Adding a .container-1400 class in addition to the .container class will 
 // result in extra wide views when the viewport width allows it.
 $screen-x-lg-min: 1440px;
-$container-x-large-desktop: 1380px;
+$container-x-large-desktop: 1370px;
 @media (min-width: $screen-x-lg-min) {
   .container.container-1400 {
     width: $container-x-large-desktop;
