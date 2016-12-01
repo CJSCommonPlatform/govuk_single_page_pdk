@@ -1,12 +1,15 @@
 import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
+  transclude: true,
   bindings: {
-    title: '@'
+    heading: '@'
   },
-  transclude: {
-    subtitle: '?subtitle'
-  },
-  template: require('./page-title.component.html')
+  template: `
+    <div class="page-title-banner">
+      <h1 ng-bind="$ctrl.heading"></h1>
+      <div data-ng-transclude></div>
+    </div>
+  `
 })
 export class PageTitleComponent {}

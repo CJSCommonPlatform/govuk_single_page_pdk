@@ -1,11 +1,10 @@
 .page-title-banner {
   background-color: $light-blue;
   color: $white;
-  font-weight: bold;
-  padding: 20px;
+  padding: em(20);
 
   h1 {
-    @include core-19;
+    @include bold-19;
     color: $white;
   }
 }
