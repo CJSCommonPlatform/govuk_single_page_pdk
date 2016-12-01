@@ -10,7 +10,7 @@ const TWENTY_FOUR_HOUR_REGEX = /^(?:\d|[01]\d|2[0-3]):[0-5]\d$/;
   template: `
     <div data-ng-form="$ctrl.timeControl" class="form-time">
       <div class="form-group form-group-hour">
-        <label for="{{::$ctrl.$$identifier-hour"
+        <label for="{{::$ctrl.$$identifier}}-hour"
                class="visuallyhidden" data-ng-bind="$ctrl.locale.hour"></label>
         <input id="{{::$ctrl.$$identifier-hour"
                class="form-control"        

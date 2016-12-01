@@ -31,7 +31,7 @@ export class DateInputComponent {
   monthLabel:   string;
   yearLabel:    string;
 
-  identifier = `date-input-${uuid()}`;
+  $$identifier = `date-input-${uuid()}`;
 
   private isFocused:  boolean;
   private minDate:    any;

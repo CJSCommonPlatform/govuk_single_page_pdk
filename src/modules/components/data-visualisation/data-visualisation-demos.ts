@@ -6,7 +6,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.data-visual
   docsUtils
 ]);
 
-import { ContactInfoDemo} from './contact-info/contact-info.demo';
+import { ContactInfoDemo} from './contact-info-deprecated/contact-info.demo';
 import { DigitBoxDemo } from './digit-box-deprecated/digit-box.demo';
 import { FiltersDemo } from './filters/filters.demo';
 import { PersonalDetailsDemo } from './personal-details/personal-details.demo';
@@ -28,14 +28,15 @@ module
   .component('govCaseMarkersDemo', CaseMarkersDemo);
 
 import { CollapsibleDocs } from './collapsible/collapsible.docs';
-
-import { SummaryItemDocs } from './summary-item/summary-item.docs';
+import { ContactInfoDocs } from './contact-info/contact-info.docs';
 import { DigitBoxDocs } from './digit-box/digit-box.docs';
+import { SummaryItemDocs } from './summary-item/summary-item.docs';
 import { TabsDocs } from './tabs/tabs.docs';
 import { TagDocs } from './tag/tag.docs';
 
 module
   .component('collapsibleDocs', CollapsibleDocs)
+  .component('contactInfoDocs', ContactInfoDocs)
   .component('digitBoxDocs', DigitBoxDocs)
   .component('summaryItemDocs', SummaryItemDocs)
   .component('tabsDocs', TabsDocs)
