@@ -9,7 +9,7 @@ const module = angular.module('govuk-single-page-pdk.components.data-visualisati
 
 import { PersonalDetailsComponent } from './personal-details/personal-details.component';
 import { ContactInfoComponent} from './contact-info/contact-info.component';
-import { DigitBoxComponent } from './digit-box/digit-box.component';
+import { DeprecatedDigitBoxComponent } from './digit-box-deprecated/digit-box.component';
 import { FiltersComponent } from './filters/filters.component';
 import { ProgressListComponent } from './progress-list/progress-list.component';
 import { DatasetComponent } from './dataset/dataset.component';
@@ -17,7 +17,7 @@ import { DatasetComponent } from './dataset/dataset.component';
 module
   .component('govPersonalDetails', PersonalDetailsComponent)
   .component('govContactInfo', ContactInfoComponent)
-  .component('govDigitBox', DigitBoxComponent)
+  .component('govDigitBox', DeprecatedDigitBoxComponent)
   .component('govFilters', FiltersComponent)
   .component('govProgressList', ProgressListComponent)
   .component('govDataset', DatasetComponent);
@@ -43,6 +43,7 @@ module
 
 import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { CollapseDirective } from './collapsible/collapse.directive';
+import { DigitBoxComponent } from './digit-box/digit-box.component';
 import { SummaryItemComponent } from './summary-item/summary-item.component';
 import { TabComponent, TranscludeTabHeadingDirective } from './tabs/tab.component';
 import { TabsetComponent } from './tabs/tabset.component';
@@ -50,6 +51,7 @@ import { TagComponent } from './tag/tag.component';
 
 module
   .component('pdkCollapsible', CollapsibleComponent)
+  .component('pdkDigitBox', DigitBoxComponent)
   .component('pdkSummaryItem', SummaryItemComponent)
   .component('pdkTab', TabComponent)
   .component('pdkTabset', TabsetComponent)
