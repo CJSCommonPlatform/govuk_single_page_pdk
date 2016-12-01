@@ -7,10 +7,11 @@ import { NoticeDemo } from './notice/notice.demo';
 import { NotificationDemo } from './notification-deprecated/notification.demo';
 import { PageTitleDemo } from './page-title/page-title.demo';
 import { PersistInfoDemo } from './persist-info/persist-info.demo';
-import { PhaseBannerDemo } from './phase-banner/phase-banner.demo';
+import { PhaseBannerDemo } from './phase-banner-deprecated/phase-banner.demo';
 import { WarningBannerDemo } from './warning-deprecated/warning-banner.demo';
 import { NotificationDocs } from './notification/notification.docs';
 import { StatusLabelDocs } from './status-label/status-label.docs';
+import { PhaseBannerDocs } from './phase-banner/phase-banner.docs';
 
 
 const module = angular.module('govuk-single-page-pdk.component-demos.banners', [
@@ -27,6 +28,7 @@ const module = angular.module('govuk-single-page-pdk.component-demos.banners', [
 
   .component('alertDocs', AlertDocs)
   .component('notificationDocs', NotificationDocs)
+  .component('phaseBannerDocs', PhaseBannerDocs)
   .component('statusLabelDocs', StatusLabelDocs);
 
 export default module.name;

@@ -2,18 +2,38 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {
-    title: '@'
+    title: '@',
+    type: '@'
   },
   transclude: true,
-  template: require('./phase-banner.component.html')
+  template: `
+    <div class="phase-banner-{{$ctrl.type}}">
+      <p>
+        <strong class="phase-tag" ng-bind="$ctrl.titleText"></strong>
+        <span data-ng-transclude></span>
+      </p>
+    </div>
+  `
 })
 export class PhaseBannerComponent {
 
   type: string;
+  title: string;
 
-  static $inject = ['$attrs'];
+  get titleText(): string {
+    if (this.title) {
+      return this.title;
+    }
 
-  constructor($attrs: any) {
-    this.type = $attrs.hasOwnProperty('beta') ? 'beta' : $attrs.hasOwnProperty('alpha') && 'alpha';
+    switch (this.type) {
+      case 'alpha':
+        return 'Alpha';
+
+      case 'beta':
+        return 'Beta';
+
+      default:
+        return '';
+    }
   }
 }

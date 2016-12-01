@@ -4,9 +4,10 @@ import { AlertComponent, AlertContainerComponent, AlertContentComponent } from '
 import { DeprecatedNotificationComponent } from './notification-deprecated/notification.component';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { PersistInfoComponent} from './persist-info/persist-info.component';
-import { PhaseBannerComponent } from './phase-banner/phase-banner.component';
+import { DeprecatedPhaseBannerComponent } from './phase-banner-deprecated/phase-banner.component';
 import { DeprecatedWarningBannerComponent } from './warning-deprecated/warning-banner.component';
 import { NotificationComponent } from './notification/notification.component';
+import { PhaseBannerComponent } from './phase-banner/phase-banner.component';
 import { StatusLabelComponent } from './status-label/status-label.component';
 
 const module = angular.module('govuk-single-page-pdk.components.banners', [])
@@ -16,12 +17,13 @@ const module = angular.module('govuk-single-page-pdk.components.banners', [])
   .component('govNotification', DeprecatedNotificationComponent)
   .component('govPageTitle', PageTitleComponent)
   .component('govPersistInfoBanner', PersistInfoComponent)
-  .component('govPhaseBanner', PhaseBannerComponent)
+  .component('govPhaseBanner', DeprecatedPhaseBannerComponent)
   .component('govWarningBanner', DeprecatedWarningBannerComponent)
 
   .component('pdkAlert', AlertComponent)
   .component('pdkAlertContainer', AlertContainerComponent)
   .component('pdkAlertContent', AlertContentComponent)
+  .component('pdkPhaseBanner', PhaseBannerComponent)
   .component('pdkNotification', NotificationComponent)
   .component('pdkStatusLabel', StatusLabelComponent);
 
