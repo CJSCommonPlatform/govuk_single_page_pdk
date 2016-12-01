@@ -45,6 +45,7 @@ $pdk-image-path: '/assets/images' !default;
 @import "modules/components/data-visualisation/show-hide-pane-deprecated/show-hide-pane";
 @import "modules/content/icons";
 @import "modules/components/navigation/pagination/pagination.scss";
+@import 'modules/components/banners/notification-deprecated/notification';
 @import 'modules/components/banners/notification/notification';
 @import 'modules/components/banners/persist-info/persist-info';
 @import 'modules/components/media/download-document/download-document';

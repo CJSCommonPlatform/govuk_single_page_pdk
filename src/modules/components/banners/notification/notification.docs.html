@@ -1,0 +1,51 @@
+<h3 class="heading-medium mb-l">Notifications</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <p>The <b>pdk-notification</b> component is used for displaying messages of
+      high importance.</p>
+
+    <h3 class="heading-small mb-m">Configuration</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">show-icon</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: true)</em>
+        <p>A boolean value for setting for whether the accompanying icon be displayed.</p>
+      </li>
+      <li>
+        <p><code class="code">type</code> The context of the notification:</p>
+        <ul class="list">
+          <li>
+            <span class="docs-swatch swatch-green"></span>
+            <span class="docs-swatch-label">active</span>
+          </li>
+          <li>
+            <span class="docs-swatch swatch-turquoise"></span>
+            <span class="docs-swatch-label">confirmation / success</span>
+          </li>
+          <li>
+            <span class="docs-swatch swatch-grey-1"></span>
+            <span class="docs-swatch-label">deregistered</span>
+          </li>
+          <li>
+            <span class="docs-swatch swatch-red"></span>
+            <span class="docs-swatch-label">locked / invalid</span>
+          </li>
+          <li>
+            <span class="docs-swatch swatch-orange"></span>
+            <span class="docs-swatch-label">pending</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds">
+    <docs-example data-language="markup">
+      <pdk-notification type="locked">
+        The requested resource is not available. <a href="">Try again</a>
+      </pdk-notification>
+    </docs-example>
+  </div>
+</div>

@@ -28,6 +28,7 @@ module
   .component('govCaseMarkersDemo', CaseMarkersDemo);
 
 import { CollapsibleDocs } from './collapsible/collapsible.docs';
+
 import { SummaryItemDocs } from './summary-item/summary-item.docs';
 import { TabsDocs } from './tabs/tabs.docs';
 import { TagDocs } from './tag/tag.docs';
