@@ -10,7 +10,7 @@ import { Component } from '@govuk/angularjs-devtools';
   transclude: true,
   template: require('./tabs-pane.component.html')
 })
-export class TabsPaneComponent {
+export class DeprecatedTabsPaneComponent {
 
   defaultIndex: number;
   elements: { title: string; title2: string, subtitle: string; data: any; }[];

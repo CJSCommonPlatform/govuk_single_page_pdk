@@ -1,0 +1,67 @@
+<h3 class="heading-medium mb-l">Tabs</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <h3 class="bold-small mb-m">pdk-tabset</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">vertical</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: false)</em>
+        A boolean value as to whether the tabs be displayed vertically
+        instead of their horizontal default.
+      </li>
+    </ul>
+
+    <h3 class="heading-small mb-m">pdk-tab</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">heading</code>
+        The text to be displayed as the navigation label for the tab.
+      </li>
+      <li>
+        <code class="code">selected</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Optional)</em>
+        A boolean value for setting the tab as selected. This can be used to set
+        the default starting tab, or manually set it at a future point. When not
+        provided, the first tab will be selected.
+      </li>
+    </ul>
+
+    <h3 class="heading-small mb-m">pdk-tab-heading</h3>
+    <ul class="list list-docs">
+      <li>
+        As an alternative to the <code class="code">heading</code> text on
+        a tab, this component can instead be used within a <b>pdk-tab</b>
+        to define HTML content for the heading.
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds">
+    <docs-example data-language="markup">
+      <pdk-tabset>
+
+        <pdk-tab heading="My Tab">
+          <h3 class="heading-small">My Tab</h3>
+          <p>Cras ultricies ligula sed magna dictum porta. Mauris blandit
+            aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit.</p>
+        </pdk-tab>
+
+        <pdk-tab selected="true">
+          <pdk-tab-heading>
+            My <b>HTML</b> tab
+          </pdk-tab-heading>
+          <h3 class="heading-small">My HTML Tab</h3>
+          <p>Praesent sapien massa, convallis a pellentesque nec, egestas
+            non nisi. Curabitur arcu erat, accumsan id imperdiet et, port
+            at sem.</p>
+        </pdk-tab>
+
+      </pdk-tabset>
+    </docs-example>
+  </div>
+</div>
+
+

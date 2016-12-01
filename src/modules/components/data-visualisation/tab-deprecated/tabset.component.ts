@@ -1,17 +1,18 @@
 import { Component } from '@govuk/angularjs-devtools';
-import { TabComponent } from './tab.component';
+import { DeprecatedTabComponent } from './tab.component';
 
 @Component({
   bindings: {
     vertical: '<',
     /*
-      a default index can be passed so a tab can be preselected by default
+     a default index can be passed so a tab can be preselected by default
      */
     defaultIndex: '<?'
   },
   template: `
-  <div class="tabs" data-ng-class="{'tabs-horizontal': !$ctrl.vertical, 'tabs-vertical': $ctrl.vertical}">
-    <div class="tabs-header">
+  <div class="tabs-deprecated"
+  data-ng-class="{'tabs-deprecated-horizontal': !$ctrl.vertical, 'tabs-deprecated-vertical': $ctrl.vertical}">
+    <div class="tabs-deprecated-header">
       <ul class="list" role="tablist" data-ng-keydown="$ctrl.changeTab($event)">
         <li data-ng-repeat="tab in $ctrl.tabs" role="presentation">
           <a href="" 
@@ -24,32 +25,32 @@ import { TabComponent } from './tab.component';
         </li>    
       </ul>
     </div>
-    <div class="tabs-content" data-ng-transclude></div>
+    <div class="tabs-deprecated-content" data-ng-transclude></div>
   </div>`,
   transclude: true
 })
-export class TabsetComponent {
+export class DeprecatedTabsetComponent {
 
   static $inject = ['$element', '$timeout'];
 
-  tabs: TabComponent[] = [];
-  selected: TabComponent;
+  tabs: DeprecatedTabComponent[] = [];
+  selected: DeprecatedTabComponent;
   defaultIndex: number;
 
   constructor(private $element: ng.IAugmentedJQuery, private $timeout: any) {}
 
-  add(tab: TabComponent): void {
+  add(tab: DeprecatedTabComponent): void {
     this.tabs.push(tab);
     if (!this.selected && !this.defaultIndex) {
       this.select(tab, false);
     }
   }
 
-  isActive(tab: TabComponent): boolean {
+  isActive(tab: DeprecatedTabComponent): boolean {
     return tab === this.selected;
   }
 
-  remove(tab: TabComponent): void {
+  remove(tab: DeprecatedTabComponent): void {
     const idx = this.tabs.indexOf(tab);
     if (idx > -1) {
       this.tabs.splice(idx, 1);
@@ -57,7 +58,7 @@ export class TabsetComponent {
     this.select(this.tabs[0], false);
   }
 
-  select(tab: TabComponent, focus: boolean = true): void {
+  select(tab: DeprecatedTabComponent, focus: boolean = true): void {
     this.selected = tab;
     if (this.selected && this.selected.onClick) {
       this.selected.onClick();

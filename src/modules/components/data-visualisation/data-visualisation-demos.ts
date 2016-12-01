@@ -11,9 +11,9 @@ import { DigitBoxDemo } from './digit-box/digit-box.demo';
 import { FiltersDemo } from './filters/filters.demo';
 import { PersonalDetailsDemo } from './personal-details/personal-details.demo';
 import { ProgressListDemo } from './progress-list/progress-list.demo';
-import { TabDemo } from './tab/tab.demo';
+import { TabDemo } from './tab-deprecated/tab.demo';
 import { DatasetDemo } from './dataset/dataset.demo';
-import { TabsPaneDemo } from './tabs-pane/tabs-pane.demo';
+import { TabsPaneDemo } from './tabs-pane-deprecated/tabs-pane.demo';
 import { CaseMarkersDemo } from './case-markers/case-markers.demo';
 
 module
@@ -29,9 +29,11 @@ module
 
 import { CollapsibleDocs } from './collapsible/collapsible.docs';
 import { SummaryItemDocs } from './summary-item/summary-item.docs';
+import { TabsDocs } from './tabs/tabs.docs';
 
 module
   .component('collapsibleDocs', CollapsibleDocs)
-  .component('summaryItemDocs', SummaryItemDocs);
+  .component('summaryItemDocs', SummaryItemDocs)
+  .component('tabsDocs', TabsDocs);
 
 export default module.name;

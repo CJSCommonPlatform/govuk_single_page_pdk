@@ -1,4 +1,4 @@
-.tabs-pane {
+.deprecated-tabs-pane {
   overflow: auto;
 
   td {
@@ -7,7 +7,7 @@
     vertical-align: top;
   }
 
-  .tabs-header {
+  .deprecated-tabs-header {
     border: 1px solid $grey-2;
     width: 170px;
     position: relative;
@@ -21,11 +21,11 @@
 
       &.selected {
         background-color: $govuk-blue;
-        .tabs-header-title, .tabs-header-subtitle {
+        .deprecated-tabs-header-title, .deprecated-tabs-header-subtitle {
           color: $grey-4;
         }
 
-        .tabs-header-title {
+        .deprecated-tabs-header-title {
           font-weight: 600;
         }
       }
@@ -38,16 +38,16 @@
         border-top: 0;
       }
 
-      .tabs-header-title {
+      .deprecated-tabs-header-title {
         color: $govuk-blue;
       }
-      .tabs-header-subtitle {
+      .deprecated-tabs-header-subtitle {
         color: $grey-1;
       }
     }
   }
 
-  .tabs-content {
+  .deprecated-tabs-content {
     border: 2px solid #bfc1c3;
     width: 1800px;
     padding: 20px;

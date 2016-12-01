@@ -21,7 +21,7 @@ import { Component } from '@govuk/angularjs-devtools';
     tabsetCtrl: '^govTabset'
   }
 })
-export class TabComponent {
+export class DeprecatedTabComponent {
 
   heading: string;
   onClick: Function;
