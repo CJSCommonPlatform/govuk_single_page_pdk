@@ -1,0 +1,9 @@
+$module: 'inline-tag';
+
+.#{$module} {
+  @include bold-14();
+  background-color: $red;
+  color: $white;
+  display: inline-block;
+  padding: em(5,16) em(10,16);
+}

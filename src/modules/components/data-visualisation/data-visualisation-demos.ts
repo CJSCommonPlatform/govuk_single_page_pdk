@@ -14,7 +14,7 @@ import { ProgressListDemo } from './progress-list/progress-list.demo';
 import { TabDemo } from './tab-deprecated/tab.demo';
 import { DatasetDemo } from './dataset/dataset.demo';
 import { TabsPaneDemo } from './tabs-pane-deprecated/tabs-pane.demo';
-import { CaseMarkersDemo } from './case-markers/case-markers.demo';
+import { CaseMarkersDemo } from './case-markers-deprecated/case-markers.demo';
 
 module
   .component('govContactInfoDemo', ContactInfoDemo)
@@ -30,10 +30,12 @@ module
 import { CollapsibleDocs } from './collapsible/collapsible.docs';
 import { SummaryItemDocs } from './summary-item/summary-item.docs';
 import { TabsDocs } from './tabs/tabs.docs';
+import { TagDocs } from './tag/tag.docs';
 
 module
   .component('collapsibleDocs', CollapsibleDocs)
   .component('summaryItemDocs', SummaryItemDocs)
-  .component('tabsDocs', TabsDocs);
+  .component('tabsDocs', TabsDocs)
+  .component('tagDocs', TagDocs);
 
 export default module.name;
