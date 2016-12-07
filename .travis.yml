@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - '6.9.2'
 install:
-- npm install@3
+- npm install
 - npm install -g gulp
 script:
 - npm run build_prod
