@@ -24,6 +24,7 @@
 
 #footer {
    z-index: 10000;
+   position: relative;
 
   .contact {
     @include core-16();
