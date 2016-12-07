@@ -7,7 +7,7 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   transclude: true,
   template: `
-    <div class="phase-banner-{{$ctrl.type}}">
+    <div class="phase-banner">
       <p>
         <strong class="phase-tag" ng-bind="$ctrl.titleText"></strong>
         <span data-ng-transclude></span>

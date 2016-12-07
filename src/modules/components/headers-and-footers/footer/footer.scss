@@ -23,6 +23,8 @@
 }
 
 #footer {
+   z-index: 10000;
+
   .contact {
     @include core-16();
     .value {

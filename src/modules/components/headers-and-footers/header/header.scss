@@ -1,4 +1,7 @@
 #global-header {
+
+   z-index: 10000;
+
   .header-wrapper {
     box-sizing: content-box;
     &.business {
@@ -32,8 +35,13 @@
   }
 }
 
-#global-header-bar.business {
-  max-width: $container-large-desktop;
+#global-header-bar{
+  
+  z-index: 10000;
+  
+  &.business {
+    max-width: $container-large-desktop;
+  }
 }
 
 #global-header-bar.business-x-large {

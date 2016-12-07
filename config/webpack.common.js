@@ -36,9 +36,9 @@ module.exports = {
   ],
   sassLoader: {
     includePaths: [
-      helpers.root('node_modules/govuk_frontend_toolkit/stylesheets')
-      ,'node_modules/govuk-elements-sass/public/sass',
-      ,'src/assets'
+      'node_modules/govuk-elements-sass/node_modules/govuk_frontend_toolkit/stylesheets',
+      'node_modules/govuk-elements-sass/public/sass',
+      'src/assets'
     ]
   },
   plugins: [
@@ -65,7 +65,7 @@ module.exports = {
         from: 'assets/images/**'
       },
       {
-        context: './node_modules/govuk_frontend_toolkit',
+        context: './node_modukes/govuk-elements-sass/node_modules/govuk_frontend_toolkit',
         from: 'images/**',
         to: 'assets/'
       }
