@@ -4,7 +4,7 @@
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
     "font-awesome": "^4.6.1",
-    "govuk-elements-sass": "2.2.1",
+    "govuk-elements-sass": "^2.2.1",
     "govuk_template_mustache": "^0.17.0"
   },
   "repository" : {
