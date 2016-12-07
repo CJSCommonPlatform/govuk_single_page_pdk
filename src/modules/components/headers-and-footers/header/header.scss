@@ -1,6 +1,7 @@
 #global-header {
 
-   z-index: 10000;
+  position: relative;
+  z-index: 10000;
 
   .header-wrapper {
     box-sizing: content-box;
@@ -36,8 +37,9 @@
 }
 
 #global-header-bar{
-  
+  position: relative;
   z-index: 10000;
+  
   
   &.business {
     max-width: $container-large-desktop;
