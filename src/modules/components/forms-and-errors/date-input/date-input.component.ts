@@ -155,6 +155,8 @@ export class DateInputComponent {
     // `dateExists` ensures that the date itself exists (days in month, leap years etc)
     // `dateMax`    ensures that the date is less than or equal to the evaluated date
     // `dateMin`    ensures that the date is greater than or equal to the evaluated date
+    // `datePast`   ensures that the date is today or earlier
+    // `dateFuture` ensures that the date is today or later
 
     // always perform dateFormat validator when one or more inputs being entered, despite
     // the fact a $viewValue may not exist, as this can be considered to be as having
@@ -164,7 +166,7 @@ export class DateInputComponent {
     this.ngModelCtrl.$validators['dateExists'] = (m, v) => !m || DATE_EXISTS.test(v);
 
     this.ngModelCtrl.$validators['datePast'] = m => {
-      if (!m && this.dateInputPast) {
+      if (!m || !this.dateInputPast) {
         return true;
       }
       return Boolean((toDate(Date.now()) - toDate(m)) >= 0);
@@ -174,7 +176,7 @@ export class DateInputComponent {
       if (!m || !this.dateInputFuture) {
         return true;
       }
-      return Boolean((toDate(m) - toDate(Date.now())) > 0);
+      return Boolean((toDate(m) - toDate(Date.now())) >= 0);
     };
 
     this.ngModelCtrl.$validators['dateMax'] = m => {

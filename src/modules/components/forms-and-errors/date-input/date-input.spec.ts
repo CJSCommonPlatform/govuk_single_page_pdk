@@ -197,9 +197,9 @@ describe('components/forms-and-errors/date-input', () => {
     // no error when no date / max value entered
     expect(ngModelCtrl.$error.dateFuture).toBeUndefined();
     const clock = sinon.useFakeTimers(1451606400000); // 01/01/2016
-    setDateValues({day: 1, month: 1, year: 2016});
+    setDateValues({day: 31, month: 12, year: 2015});
     expect(ngModelCtrl.$error.dateFuture).toBeDefined();
-    setDateValues({day: 2, month: 1, year: 2016});
+    setDateValues({day: 1, month: 1, year: 2016});
     expect(ngModelCtrl.$error.dateFuture).toBeUndefined();
     clock.restore();
   });
