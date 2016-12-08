@@ -5,8 +5,8 @@ import { Component } from '@govuk/angularjs-devtools';
     digit: '<'
   },
   template: `
-    <div class="digit-box">
-      <span class="digit-box-number" data-ng-bind="$ctrl.digit"></span>
+    <div class="pdk-digit-box">
+      <span class="pdk-digit-box-number" data-ng-bind="$ctrl.digit"></span>
     </div>
   `
 })
