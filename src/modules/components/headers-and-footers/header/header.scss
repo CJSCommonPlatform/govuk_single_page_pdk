@@ -3,6 +3,12 @@
   position: relative;
   z-index: 10000;
 
+  .header-proposition {
+    a.menu.open:after {
+      content: " \25b2" !important;
+    }
+  }  
+
   .header-wrapper {
     box-sizing: content-box;
     &.business {

@@ -33,6 +33,7 @@ export class GovUkHeaderComponent {
   titleDisabled: boolean; // if true no title will be shown on the header and bottom blue bar disappears.
   minimalView: boolean;
   skipLinkText: string;
+  menuOpen: boolean;
 
   $onInit() {
     // setting some default values
@@ -40,5 +41,10 @@ export class GovUkHeaderComponent {
     this.title = (this.minimalView) ? '' : this.title || 'GOV.UK';
     this.linkTitle = this.linkTitle || 'https://www.gov.uk';
     this.skipLinkText = this.skipLinkText || 'Skip to main content';
+  }
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+    console.log('menuOpen');
   }
 }
