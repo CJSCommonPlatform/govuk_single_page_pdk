@@ -27,12 +27,12 @@
         </div>
       </div>
 
-      <div class="header-proposition">
+      <div class="header-proposition" data-ng-if="$ctrl.navItems">
         <div class="content">
-          <a href="javascript:;" data-ng-click="$ctrl.navigation.propositionLinks.navigate()" class="js-header-toggle menu">Menu</a>
+          <a href="javascript:;" data-ng-click="$ctrl.toggleMenu()" class="js-header-toggle menu" data-ng-class="{'open': $ctrl.menuOpen}">Menu</a>
           <nav id="proposition-menu">
             <a data-ng-if="!$ctrl.minimalView" href="javascript:;" data-ng-click="$ctrl.navigation.home.navigate()" id="proposition-name" data-ng-bind="$ctrl.heading"></a>
-            <ul id="proposition-links">
+            <ul id="proposition-links" data-ng-class="{'js-visible': $ctrl.menuOpen}">
               <li data-ng-repeat="navItem in $ctrl.navItems">
                 <a href="javascript:;" data-ui-sref="{{navItem.state}}" data-ng-bind="navItem.label"></a>
               </li>
