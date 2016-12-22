@@ -2,12 +2,13 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   bindings: {
-    disabled:       '<',
-    editLabel:      '@',
-    highlight:      '<',
-    highlightLabel: '@',
-    label:          '@',
-    onEdit:         '&?'
+    disabled:        '<',
+    editLabel:       '@',
+    editDescription: '@',
+    highlight:       '<',
+    highlightLabel:  '@',
+    label:           '@',
+    onEdit:          '&?'
   },
   transclude: true,
   $$tlb: true,
@@ -25,6 +26,7 @@ import { Component } from '@govuk/angularjs-devtools';
              data-ng-if="!$ctrl.disabled" 
              class="action-bar-action link-default" 
              data-ng-click="$ctrl.onEdit({$event: $event})"
+             aria-label="$ctrl.editDescription"
              data-ng-bind="$ctrl.editLabel || 'Amend'"></a>
         </span>
       </div>

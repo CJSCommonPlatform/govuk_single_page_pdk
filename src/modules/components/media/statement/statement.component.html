@@ -4,7 +4,8 @@
      ng-if="!$ctrl.preview"
      ng-click="$ctrl.onClick()"></div>
   <div class="gov-media-info">
-    <a href="" ng-click="$ctrl.onClick()" ng-bind="$ctrl.fileName | noFileType"></a>
+    <a href="" aria-label="Download {{$ctrl.fileName}}"
+       ng-click="$ctrl.onClick()" ng-bind="$ctrl.fileName | noFileType"></a>
     <ul class="gov-media-metadata">
       <li ng-bind="$ctrl.statementDate"></li>
     </ul>
