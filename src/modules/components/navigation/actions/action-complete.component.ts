@@ -26,7 +26,7 @@ import { Component } from '@govuk/angularjs-devtools';
              data-ng-if="!$ctrl.disabled" 
              class="action-bar-action link-default" 
              data-ng-click="$ctrl.onEdit({$event: $event})"
-             aria-label="$ctrl.editDescription"
+             aria-label="{{$ctrl.editDescription}}"
              data-ng-bind="$ctrl.editLabel || 'Amend'"></a>
         </span>
       </div>
