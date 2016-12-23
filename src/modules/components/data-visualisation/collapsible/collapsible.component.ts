@@ -1,11 +1,11 @@
 import { Component } from '@govuk/angularjs-devtools';
-import { uuid } from '../../../../util/helpers';
 
 @Component({
   bindings: {
     collapsed: '<',
     collapsedLabel: '@',
-    openLabel: '@'
+    openLabel: '@',
+    description: '@'
   },
   transclude: true,
   template:  `
@@ -15,8 +15,8 @@ import { uuid } from '../../../../util/helpers';
         <button class="collapsibles-button"
                 type="button"
                 data-ng-click="$ctrl.collapsed = !$ctrl.collapsed"
-                aria-expanded="{{!$ctrl.collapsed}}"
-                aria-controls="{{::$ctrl.id}}">
+                aria-label="{{$ctrl.description}}"
+                aria-pressed="{{!$ctrl.collapsed}}">
           <i class="collapsibles-toggle" role="presentation"
              data-ng-class="{'collapsibles-toggle-off': !$ctrl.collapsed,
                              'collapsibles-toggle-on': $ctrl.collapsed}">
@@ -28,12 +28,11 @@ import { uuid } from '../../../../util/helpers';
         </button>    
       </div>
       
-      <div id="{{::$ctrl.id}}" data-ng-transclude></div>
+      <div data-ng-transclude></div>
     </div>
   `
 })
 export class CollapsibleComponent {
 
-  id: string = uuid();
   collapsed: boolean;
 }

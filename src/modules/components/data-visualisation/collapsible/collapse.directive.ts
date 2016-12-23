@@ -6,7 +6,7 @@ export function CollapseDirective(ngIfDirective) {
   return {
     restrict: 'A',
     transclude: 'element',
-    priority: 600,
+    priority: 601,
     terminal: true,
     $$tlb: true,
     require: '^pdkCollapsible',
