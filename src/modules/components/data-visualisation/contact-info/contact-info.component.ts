@@ -9,21 +9,22 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   template: `
     <div class="contact-info" itemtype="http://schema.org/Person" itemscope>
-      <div itemprop="jobTitle"
-           data-ng-if="$ctrl.position"
-           data-ng-bind="$ctrl.position"></div>
-      <div class="bold-xsmall"
-           itemprop="name"
-           data-ng-bind="$ctrl.name"></div>
-      <div class="font-xsmall"
-           itemprop="telephone"
-           data-ng-if="$ctrl.telephone"
-           data-ng-bind="$ctrl.telephone"></div>
-      <a class="font-xsmall"
-         itemprop="email"
-         data-ng-if="$ctrl.email"
-         data-ng-bind="$ctrl.email"
-         href="mailto:{{$ctrl.email}}"></a>
+      <div data-ng-if="$ctrl.position">
+        <span class="visuallyhidden">Position</span>
+        <span itemprop="jobTitle" data-ng-bind="$ctrl.position"></span>
+      </div>      
+      <div class="bold-xsmall">
+        <span class="visuallyhidden">Name</span>
+        <span itemprop="name" data-ng-bind="$ctrl.name"></span>
+      </div>
+      <div data-ng-if="$ctrl.telephone" class="font-xsmall">
+        <span class="visuallyhidden">Telephone</span>
+        <span itemprop="telephone" data-ng-bind="$ctrl.telephone"></span>
+      </div>
+      <div data-ng-if="$ctrl.email" class="font-xsmall">
+        <span class="visuallyhidden">Email address</span>
+        <a href="mailto:{{$ctrl.email}}" itemprop="email" data-ng-bind="$ctrl.email"></a>
+      </div>  
     </div>
   `
 })
