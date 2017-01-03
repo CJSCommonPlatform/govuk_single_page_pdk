@@ -7,4 +7,9 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   template: require('./side-menu.component.html')
 })
-export class SideMenuComponent {}
+export class SideMenuComponent {
+
+  // default message for visually hidden menu
+  defaultMenuHeading: string = 'Side navigation menu';
+
+}

@@ -1,10 +1,10 @@
 <div class="side-menu">
-  <div class="side-menu__group-heading" data-ng-if="$ctrl.menuGroup.heading">
-    <div data-ng-bind="$ctrl.menuGroup.heading"></div>
+  <div class="side-menu__group-heading" data-ng-class="{'visuallyhidden': !$ctrl.menuGroup.heading}">
+    <h1 data-ng-bind="$ctrl.menuGroup.heading || $ctrl.defaultMenuHeading"></h1>
     <div class="side-menu__group-subheading" data-ng-if="$ctrl.menuGroup.subheading" data-ng-bind="$ctrl.menuGroup.subheading"></div>
   </div>
   <div data-ng-repeat="menu in $ctrl.menuGroup.menus">
-    <div class="side-menu__heading" data-ng-if="menu.heading" data-ng-bind="menu.heading"></div>
+    <h2 class="side-menu__heading" data-ng-if="menu.heading" data-ng-bind="menu.heading"></h2>
     <div data-ng-repeat="item in menu.items">
         <a class="side-menu__item" href=""
           data-ng-class="{
