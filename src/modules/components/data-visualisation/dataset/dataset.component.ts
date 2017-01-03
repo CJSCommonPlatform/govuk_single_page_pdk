@@ -3,7 +3,8 @@ import { Component } from '@govuk/angularjs-devtools';
 @Component({
   template: require('./dataset.component.html'),
   bindings: {
-    onChange: '&?'
+    onChange: '&?',
+    description: '@'
   },
   transclude: true
 })
