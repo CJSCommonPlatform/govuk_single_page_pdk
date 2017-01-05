@@ -157,8 +157,8 @@ $module: 'action-bar';
       }
 
       &-saved {
-        border-color: $turquoise;
-        color: $turquoise;
+        border-color: $green;
+        color: $green;
 
         &:after {
           background-image: file-url('actionbar-status-saved.png');
