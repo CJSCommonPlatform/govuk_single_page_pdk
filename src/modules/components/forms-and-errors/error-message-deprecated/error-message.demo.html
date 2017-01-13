@@ -16,7 +16,6 @@
         <form data-lazy-validation="$ctrl.form" novalidate>
           <h2>Your personal details</h2>
           <div class="form-group" data-ng-class="{'error': $ctrl.form.name.$invalid }">
-
             <label for="name" id="error-name">
 
               <span class="form-label-bold">Full name</span>
@@ -34,7 +33,27 @@
                    required
                    ng-minlength="5"
                    ng-maxlength="10">
+
+            <label for="surname" id="error-surname">
+
+              <span class="form-label-bold">Surname</span>
+              <span class="form-hint">As shown on your birth certificate or passport</span>
+              <gov-error-message id="error-message-surname" input-model="$ctrl.form.surname" custom-validation="$ctrl.customValidation"></gov-error-message>
+
+            </label>
+
+            <input class="form-control"
+                   id="surname"
+                   type="text" name="surname"
+                   data-ng-model="$ctrl.surname"
+                   value=""
+                   aria-describedby="error-message-surname"
+                   required
+                   ng-minlength="5"
+                   ng-maxlength="10">
+
           </div>
+
           <input class="button" type="submit" value="Continue" data-lazy-validation-on-click="$ctrl.submitForm()">
         </form>
       </div>

@@ -14,7 +14,8 @@ export class ErrorMessageDemo {
     };
 
     private fields = [
-        { name: 'name', label: 'Full name'}
+        { name: 'name', label: 'Full name'},
+        { name: 'surname', label: 'Last name'}
     ];
 
     submitForm(): void {

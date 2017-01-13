@@ -2,7 +2,7 @@
     class="error-summary"
     id="error-summary"
     role="group"
-    tabindex="-1"
+    tabindex="1"
     aria-labelledby="error-summary-heading"
     ng-show="$ctrl.form.$invalid">
 
@@ -10,7 +10,7 @@
       class="heading-medium error-summary-heading"
       id="error-summary-heading">
 
-    Fix the following
+    {{ $ctrl.title }}
   </h2>
 
   <ul
