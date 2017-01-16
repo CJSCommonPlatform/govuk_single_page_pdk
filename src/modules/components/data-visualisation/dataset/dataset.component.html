@@ -1,6 +1,6 @@
 <div class="gov-dataset">
   <div class="gov-dataset-items" ng-transclude></div>
   <div class="gov-dataset-change" ng-if="::$ctrl.onChange">
-    <a href="" ng-click="::$ctrl.onChange()">Change<span ng-if="$ctrl.description" class="visuallyhidden"> {{$ctrl.description}}</span></a>
+    <a href="" ng-click="::$ctrl.onChange()">{{$ctrl.textLink}}<span ng-if="$ctrl.description" class="visuallyhidden"> {{$ctrl.description}}</span></a>
   </div>
 </div>
