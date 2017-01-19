@@ -1,0 +1,106 @@
+<h3 class="heading-medium mb-l">Action bars</h3>
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+    <docs-example language="markup">
+      <pdk-action-start on-start="$ctrl.goToPage()" label="Record Decision"></pdk-action-start>
+
+      <pdk-action-complete
+        on-edit="$ctrl.goToPage()"
+        label="Contested issues exist">
+        <pdk-action-details label="Issues">
+          <p>Toggled details of contested issues.</p>
+        </pdk-action-details>
+      </pdk-action-complete>
+
+      <pdk-action-complete on-edit="$ctrl.goToPage()" label="Action recorded.">
+        Details of action.
+      </pdk-action-complete>
+
+      <pdk-action-complete on-edit="$ctrl.goToPage()"
+                           label="Decision Recorded"
+                           highlight="true"></pdk-action-complete></pdk-action>
+    </docs-example>
+  </div>
+
+  <div class="column-one-third font-xsmall">
+    The <b>pdk-action</b> components are used for displaying the state of
+    a workflow that has one or more possible outcomes.
+
+    <h3 class="heading-small mb-m">pdk-action-start</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">label</code>
+        The text to be displayed on the action bar.
+      </li>
+      <li>
+        <code class="code">on-start</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Optional)</em>
+        An expression to be invoked when the component is clicked.
+      </li>
+      <li>
+        <code class="code">disabled</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Optional)</em>
+        An expression to determine whether the <code class="code">on-start</code>
+        functionality be disabled.
+      </li>
+      <li>
+        <code class="code">invert</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: false)</em>
+        A boolean value for using the component's darker design.
+      </li>
+    </ul>
+
+    <h3 class="heading-small mb-m">pdk-action-complete</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">label</code>
+        The text to be displayed on the completed action bar.
+      </li>
+      <li>
+        <code class="code">edit-label</code>
+        <em class="text-secondary">(Default: Amend)</em>
+        The text to be displayed on edit link..
+      </li>
+      <li>
+        <code class="code">on-edit</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Optional)</em>
+        An expression to be invoked when the component is clicked. Note
+        that this will override any default action defined on the <b>pdk-action</b>.
+      </li>
+      <li>
+        <code class="code">highlight</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: false)</em>
+        A boolean value for setting whether the status flag be displayed
+        for the completed action. Note that this will override any default
+        defined on the <b>pdk-action</b>.
+      </li>
+      <li>
+        <code class="code">locked</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: false)</em>
+        A boolean value for setting whether the action can be amended.
+      </li>
+      <li>
+        <code class="code">highlight-label</code>
+        <em class="text-secondary">(Default: Saved)</em>
+        The text to be displayed when the <code class="code">highlight</code> flag
+        is true.
+      </li>
+      <li>
+        <code class="code">disabled</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Optional)</em>
+        An expression to determine whether the <code class="code">on-edit</code>
+        functionality be disabled.
+      </li>
+    </ul>
+
+    <h3 class="heading-small mb-m">pdk-action-details</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">label</code>
+        The text to be displayed on the summary label.
+      </li>
+    </ul>
+  </div>
+</div>

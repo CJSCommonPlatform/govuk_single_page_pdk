@@ -1,0 +1,11 @@
+$module: 'status-label';
+
+.#{$module} {
+  @include core-16;
+  border: em(2) solid $black;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1 !important; // prevent media over-rides by core-16
+  padding: em(10, 16);
+  text-transform: uppercase;
+}

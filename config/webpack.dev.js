@@ -32,7 +32,7 @@ module.exports = webpackMerge(commonConfig, {
   plugins: [
     new HtmlWebpackPlugin({
       template:  'src/docs/index.ejs',
-      chunks:   ['vendor', 'main'],
+      chunks:   ['index', 'main'],
       baseUrl:   '/'
     })
   ]

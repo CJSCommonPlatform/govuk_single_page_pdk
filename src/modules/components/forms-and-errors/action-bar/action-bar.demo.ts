@@ -12,7 +12,7 @@ import { Component } from '@govuk/angularjs-devtools';
     
       <gov-tab heading="HTML Example">
         <docs-example language="markup">
-          <div class="action-bar">
+          <div class="form-actions">
               <button class="button" ng-click="$ctrl.onSubmit()">Submit</button>
               <a href="" ng-if="true" ng-click="$ctrl.onCancel()">Cancel</a>
           </div>

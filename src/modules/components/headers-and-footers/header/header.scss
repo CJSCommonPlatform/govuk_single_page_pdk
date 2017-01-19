@@ -1,20 +1,63 @@
 #global-header {
+
+  position: relative;
+  z-index: 10000;
+
+  .header-proposition {
+    a.menu.open:after {
+      content: " \25b2" !important;
+    }
+  }  
+
   .header-wrapper {
     box-sizing: content-box;
     &.business {
       max-width: $container-large-desktop + $grid-gutter-width;
     }
+    &.business-x-large {
+      max-width: $container-x-large-desktop + $grid-gutter-width;
+    }
   }
+}
+
+#header-wrapper {
   #logo {
     background-image: url('#{$govuk-template-image-path}/gov.uk_logotype_crown.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
     @include ie-lte(8) {
       background-image: url('#{$govuk-template-image-path}/gov.uk_logotype_crown-1x.png');
     }
   }
 }
 
-#global-header-bar.business {
-  max-width: $container-large-desktop;
+#header-wrapper.minimal-view {
+  #logo {
+    background-image: none;
+  }
+  #global-header {
+    .header-proposition, .content {
+      float: right;
+    }
+  }
+}
+
+#global-header-bar{
+  position: relative;
+  z-index: 10000;
+  
+  
+  &.business {
+    max-width: $container-large-desktop;
+  }
+}
+
+#global-header-bar.business-x-large {
+    max-width: $container-x-large-desktop;
+}
+
+#global-header-bar.service {
+  background: transparent;
 }
 
 #skiplink-container {

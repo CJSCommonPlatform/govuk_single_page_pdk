@@ -1,0 +1,54 @@
+<h3 class="heading-medium mb-l">Error Message</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <p>
+      The <b>pdk-error-message</b> component works in conjunction with
+      <a href="https://docs.angularjs.org/api/ngMessages/directive/ngMessages">ngMessages</a>
+      to style errors and provide default messages for a range of ngModel validators.
+    </p>
+
+    <p>
+      These default messages can be overriden simply by defining a new <b>ng-message</b>
+      for an error key.
+    </p>
+
+    <h3 class="heading-small mb-m" style="margin-top: 0">Configuration</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">type</code>
+        <em class="text-secondary">(Default: text)</em>
+        <br>
+        <p>The type of input belonging to the error, such that messages will be
+          specific to that type.
+          Valid options are <b>text</b>, <b>radio</b> and <b>checkbox-group</b>.</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds">
+    <docs-example language="markup">
+      <form name="$ctrl.form1">
+        <div data-ng-class="{error: $ctrl.form1.$invalid}">
+          <pdk-error-message ng-messages="$ctrl.form1.prop.$error"></pdk-error-message>
+          <input type="email" name="prop" ng-model="prop1" required>
+        </div>
+      </form>
+    </docs-example>
+
+    <br>
+
+    <docs-example language="markup">
+      <form name="$ctrl.form2">
+        <div data-ng-class="{error: $ctrl.form2.$invalid}">
+          <pdk-error-message ng-messages="$ctrl.form2.prop.$error">
+            <ng-message data-when="required">Provide a surname</ng-message>
+          </pdk-error-message>
+          <input type="text" name="prop" ng-model="prop2" required>
+        </div>
+      </form>
+    </docs-example>
+  </div>
+
+</div>

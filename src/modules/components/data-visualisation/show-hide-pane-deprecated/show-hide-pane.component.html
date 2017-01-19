@@ -1,0 +1,27 @@
+<div class="collapsible-deprecated-item" data-ng-class="{'is-open': $ctrl.open}">
+
+  <div class="collapsible-deprecated-header">
+    <button class="collapsible-deprecated-button"
+            type="button"
+            data-ng-bind="$ctrl.showText"
+            data-ng-if="!$ctrl.open"
+            data-ng-click="$ctrl.toggle()"
+            aria-expanded="{{$ctrl.open}}"
+            aria-controls="collapsible-0"
+            ></button>
+    <button class="collapsible-deprecated-button"
+            type="button"
+            data-ng-bind="$ctrl.hideText"
+            data-ng-if="$ctrl.open"
+            data-ng-click="$ctrl.toggle()"
+            aria-expanded="{{$ctrl.open}}"
+            aria-controls="collapsible-0"
+    ></button>
+    <div ng-transclude="alwaysVisible"></div>
+  </div>
+
+  <div class="collapsible-deprecated-content" ng-transclude="hideable" data-ng-if="$ctrl.open">
+
+  </div>
+
+</div>

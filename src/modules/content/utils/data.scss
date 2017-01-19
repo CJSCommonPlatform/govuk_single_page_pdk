@@ -1,0 +1,106 @@
+// Meta data
+// ==========================================================================
+
+$module: 'meta';
+
+.#{$module} {
+  margin-top: em(20);
+
+  dt {
+    margin-bottom: em(5);
+  }
+
+  dd {
+    margin-bottom: em(20);
+
+    // may contain document downloads
+    .document {
+      margin-top: em(20);
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+
+  // inline
+  &-inline {
+    overflow: hidden;
+
+    @include media(tablet) {
+
+      dt, dd {
+        float: left;
+      }
+
+      dt {
+        clear: both;
+        margin-bottom: em(20);
+        width: 40%;
+      }
+
+      dd {
+        width: 60%;
+      }
+
+    }
+
+  }
+
+
+  // small
+  &-small {
+    @include core-16;
+
+    dt {
+      margin-bottom: em(10,16);
+      width: 30%;
+    }
+
+    dd {
+      margin-bottom: em(10,16);
+      width: 70%;
+    }
+
+  }
+
+
+  // bold terms
+  &-boldterms {
+
+    dt {
+      font-weight: 700;
+    }
+
+  }
+
+
+}
+
+/*
+HTML Usage
+<dl class="meta meta-inline meta-boldterms">
+  <dt>Age</dt>
+  <dd>21</dd>
+  <dt>Date of birth</dt>
+  <dd><time datetime="1985-06-08">8 June 1985</time></dd>
+  <dt>Nationality</dt>
+  <dd>British <br> Self&ndash;defined as White British</dd>
+  <dt>Address</dt>
+  <dd>14 Tottenham Court Road, Fitzrovia, <br> London W1T 1JY</dd>
+  <dt>Email</dt>
+  <dd>peter.james@gmail.com</dd>
+  <dt>National Insurance</dt>
+  <dd>PC 12 34 56 78</dd>
+</dl>
+OR
+<dl class="meta meta-small">
+  <dt>Case status</dt>
+  <dd>Awaiting plea</dd>
+  <dt>Prosecutor</dt>
+  <dd>Transport for London</dd>
+  <dt>Notice served</dt>
+  <dd><time datetime="2016-02-02">2 February 2016</time></dd>
+</dl>
+*/

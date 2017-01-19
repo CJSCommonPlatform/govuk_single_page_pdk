@@ -1,0 +1,83 @@
+// Notification
+// ==========================================================================
+
+$module: 'notification';
+
+.#{$module} {
+  display: table;
+  margin-bottom: $gutter;
+  padding: $gutter-half;
+
+  @include media(desktop) {
+    padding: $gutter;
+  }
+
+  &-message {
+    color: $white;
+    display: table-cell;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: $white;
+
+      &:focus {
+        color: $black;
+      }
+
+    }
+
+  }
+
+  .icon {
+    display: table-cell;
+    vertical-align: top;
+
+    + .#{$module}-message {
+      padding-left: 15px;
+    }
+
+  }
+
+  &-confirmation, &-success {
+    background-color: $turquoise;
+  }
+
+  &-active {
+    background-color: $green;
+  }
+
+  &-pending {
+    background-color: $orange;
+  }
+
+  &-locked, &-invalid {
+    background-color: $red;
+  }
+
+  &-deregistered {
+    background-color: $grey-1
+  }
+
+}
+
+/*
+
+HTML Usage
+
+<div class="notification notification-confirmation" role="alert">
+  <i class="icon icon-tick-white" role="presentation" aria-hidden="true"></i>
+  <div class="notification-message">
+    <p class="bold-medium">Accepted case management information</p>
+  </div>
+</div>
+
+<div class="notification notification-confirmation" role="alert">
+  <div class="notification-message">
+    <p class="bold-medium">Accepted case management information</p>
+  </div>
+</div>
+
+*/

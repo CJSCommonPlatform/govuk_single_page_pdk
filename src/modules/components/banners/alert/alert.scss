@@ -1,8 +1,39 @@
-.gov-alert {
-  margin: 20px 0;
-  border-left: 5px solid $orange;
-  background-color: lighten($orange, 35%);
-  padding: 10px 16px;
-  @include core-24;
-  font-weight: 900;
+// Warning banner
+// ==========================================================================
+
+$module: 'alert';
+
+.#{$module} {
+  @include core-16;
+  @extend %clearfix;
+  color: $white;
+  padding: em(10, 16);
+
+  &-container {
+    @extend %site-width-container;
+  }
+
+  &-warning {
+    background-color: $mellow-red;
+  }
+
+  &-message {
+    color: $white;
+    display: table-cell;
+    font-weight: 700;
+
+    a, a:visited {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  .icon {
+    display: table-cell;
+    vertical-align: top;
+
+    + .#{$module}-message {
+      padding-left: em(10, 16);
+    }
+  }
 }

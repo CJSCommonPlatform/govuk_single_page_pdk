@@ -6,7 +6,6 @@ var matchers              = require('./matchers');
 var SpecReporter          = require('jasmine-spec-reporter');
 var proxy                 = process.env.proxy === 'true' || false;
 var req                   = require('./util/request');
-var consoleReporter       = require('./reporters/console');
 var testing               = require('./util/framework/testing');
 var fs                    = require('fs');
 var path                  = require('path');
@@ -72,7 +71,6 @@ var config = {
 
     // add jasmine spec reporter
     jasmine.getEnv().addReporter(new SpecReporter({ displayStacktrace: 'all' }));
-    // jasmine.getEnv().addReporter(consoleReporter);
 
     if (browser.params.screenshots) {
       jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({

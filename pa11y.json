@@ -2,16 +2,12 @@
   "ignore": [
     "notice",
     "warning",
-    "WCAG2AAA.Principle3.Guideline3_1.3_1_1.H57.2",
-    "WCAG2AAA.Principle2.Guideline2_4.2_4_2.H25.1.NoTitleEl",
-    "WCAG2AAA.Principle2.Guideline2_4.2_4_9.H30",
-    "WCAG2AAA.Principle4.Guideline4_1.4_1_2.H91.A.Placeholder",
-    "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID",
-    "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77"
+    "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID"
   ],
   "standard": "WCAG2AA",
   "timeout": "120000",
   "phantom": {
     "path": "./node_modules/phantomjs-prebuilt/bin/phantomjs"
-  }
+  },
+  "hideElements": ".visuallyhidden, .visually-hidden"
 }

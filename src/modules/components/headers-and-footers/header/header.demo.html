@@ -49,12 +49,38 @@
 
   <gov-tab heading="Angular Markup">
     <docs-example language="markup">
+      Default View
       <gov-header
           heading="$ctrl.heading"
           nav-items="$ctrl.navItems"
           is-business="$ctrl.isBusiness"
           show-skip-link="$ctrl.showSkipLink"
           show-cookie="$ctrl.showCookie"></gov-header>
+
+      2: MinimalView
+      <gov-header
+          heading="$ctrl.heading"
+          nav-items="$ctrl.navItems"
+          is-business="$ctrl.isBusiness"
+          show-skip-link="$ctrl.showSkipLink"
+          show-cookie="$ctrl.showCookie"
+          title="Prosecute cases"
+          minimal-view="$ctrl.minimalView"></gov-header>
+
+      3: MinimalView (when user is on service home page)
+      <gov-header
+          heading="$ctrl.heading"
+          nav-items="$ctrl.navItems"
+          is-business="$ctrl.isBusiness"
+          show-skip-link="$ctrl.showSkipLink"
+          show-cookie="$ctrl.showCookie"
+          title="Prosecute cases"
+          minimal-view="$ctrl.minimalView"
+          title-disabled="true"></gov-header>
+
+      4: MinimalView (when the user is not signed in)
+      <gov-header minimal-view="$ctrl.minimalView"></gov-header>
+
     </docs-example>
   </gov-tab>
 
@@ -89,6 +115,8 @@
       showCookie = false; // if true will display the cookie message over the header
       showSkipLink = false, // if true will display 'Skip to main content' link
       isBusiness = false; // if true the width will expand to 1170px
+      minimalView = true; if true will show the header in minimal view.
+      titleDisabled = true; if true will show the header in disabled mode.
     </prismify>
   </gov-tab>
 

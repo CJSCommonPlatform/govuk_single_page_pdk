@@ -6,6 +6,7 @@ require('../../node_modules/prismjs/themes/prism.css');
 require('./docs.scss');
 
 import { DiscussComponent } from './discuss.component';
+import { NgBadgeComponent } from './ng-badge.component';
 
 // Don't want to render code examples when testing with pa11y
 // because there are a lot of colour contrast errors that need
@@ -14,6 +15,7 @@ const RENDER_CODE_EXAMPLES = !process.env.IS_PA11Y;
 
 const module = angular.module('govDocs-utils', [])
   .component('discussComponent', DiscussComponent)
+  .component('ngBadge', NgBadgeComponent)
 
   .factory('prism', ['$window', ($window) => $window.Prism])
 
@@ -29,7 +31,8 @@ const module = angular.module('govDocs-utils', [])
           let parts = html.split('\n');
           html = parts
             .map((part: string) => part.replace(indent, ''))
-            .join('\n');
+            .join('\n')
+            .replace(`=""`, '');
         }
         if (language === 'html') language = 'markup';
 
@@ -38,7 +41,7 @@ const module = angular.module('govDocs-utils', [])
 
         html = prism.highlight(html, prism.languages[language]).trim();
         if (RENDER_CODE_EXAMPLES) {
-          elem.html(`<pre class="language-${language}"><code>${html}</code></pre>`);
+          elem.html(`<pre class="code-example language-${language}"><code>${html}</code></pre>`);
         }
       }
     };

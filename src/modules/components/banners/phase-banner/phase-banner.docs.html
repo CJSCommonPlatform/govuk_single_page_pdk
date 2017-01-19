@@ -1,0 +1,31 @@
+<h3 class="heading-medium mb-l">Phase Banner</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <p>
+      The <b>pdk-phase-banner</b> <em>must</em> be used when a project is in either the alpha or beta
+      <a href="https://www.gov.uk/service-manual/phases" rel="external">phase of service design</a>
+    </p>
+
+    <h3 class="heading-small mb-m">Configuration</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">type</code>
+        The phase of service design to be used, either <b>alpha</b> or <b>beta<b>.
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds">
+    <docs-example data-language="markup">
+      <pdk-phase-banner type="alpha">
+        <span>This is a new service &ndash; your <a href="">feedback</a> will help us to improve it.</span>
+      </pdk-phase-banner>
+
+      <pdk-phase-banner type="beta">
+        This service is currently in beta.
+      </pdk-phase-banner>
+    </docs-example>
+  </div>
+</div>

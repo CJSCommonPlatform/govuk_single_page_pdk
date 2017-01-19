@@ -7,9 +7,13 @@ import { Component } from '@govuk/angularjs-devtools';
     navigation: '<',
     showCookie: '<', // if true will display the cookie message over the header
     showSkipLink: '<', // if true will display 'Skip to main content' link
-    isBusiness: '<', // if true the width will expand to 1170px,
+    isBusiness: '<?', // if true the width will expand to 1170px,
+    isBusinessXLarge: '<?', // if true the width will expand to 1370px
     logoUrl: '@?',
     title: '@?',
+    titleDisabled: '<', // if true no title will be shown on the header and bottom blue bar disappears.
+    linkTitle: '<',
+    minimalView: '<',  // if true header will be in minimal(non-gov) mode.
     skipLinkText: '@?'
   },
   transclude: {
@@ -26,13 +30,21 @@ export class GovUkHeaderComponent {
   logoUrl: string;
   title: string;
   linkTitle: string;
+  titleDisabled: boolean; // if true no title will be shown on the header and bottom blue bar disappears.
+  minimalView: boolean;
   skipLinkText: string;
+  menuOpen: boolean;
 
   $onInit() {
     // setting some default values
     this.logoUrl = this.logoUrl || '/assets/images/gov.uk_logotype_crown.png';
-    this.title = this.title || 'GOV.UK';
+    this.title = (this.minimalView) ? '' : this.title || 'GOV.UK';
     this.linkTitle = this.linkTitle || 'https://www.gov.uk';
     this.skipLinkText = this.skipLinkText || 'Skip to main content';
+  }
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+    console.log('menuOpen');
   }
 }

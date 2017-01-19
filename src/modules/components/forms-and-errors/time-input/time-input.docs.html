@@ -1,0 +1,30 @@
+<h3 class="heading-medium mb-l">Time input</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <p>
+      The <b>pdk-time-input</b> component is a form control for entering an HH:MM time
+      using the twenty-four clock format.
+    </p>
+
+    <h4 class="mb-m"><i>Core Validators</i></h4>
+    <ul class="list list-docs">
+      <li>
+        The <b>timeFormat</b> error exists when the entered time is incomplete
+        or does not adhere to the expected format.
+      </li>
+      <li>
+        The <b>timeExists</b> error exists when a time of the valid format
+        is not recognised as valid.
+      </li>
+      <li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds">
+    <docs-example language="markup">
+      <pdk-time-input ng-model="$ctrl.time"></pdk-time-input>
+    </docs-example>
+  </div>
+</div>

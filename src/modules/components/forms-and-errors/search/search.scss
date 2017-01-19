@@ -1,7 +1,7 @@
 // Search input
 // ==========================================================================
 
-$module: 'form-search';
+$module: 'search';
 
 .#{$module} {
   position: relative;
@@ -15,7 +15,7 @@ $module: 'form-search';
     @include box-sizing(border-box);
     display: inline-block;
     vertical-align: middle;
-    width: calc(100% - 32px);
+    width: calc(100% - 37px);
 
     @include media(tablet) {
       width: calc(50% - 37px);
@@ -24,7 +24,6 @@ $module: 'form-search';
     &:focus {
       position: relative;
     }
-
   }
 
   &-button {
@@ -60,9 +59,7 @@ $module: 'form-search';
     &:focus {
       position: relative;
     }
-
   }
-
 }
 
 .error {
@@ -72,17 +69,4 @@ $module: 'form-search';
     height: 41px;
     width: 41px;
   }
-
 }
-
-/*
-
-HTML Usage
-
-<div class="form-search">
-  <label class="form-label" for="search">Enter part or all of a user&rsquo;s name or email address</label>
-  <input class="form-control" type="search" id="search" name="search" value="BGV"><button class="form-search-button" type="submit">Search</button>
-  <p class="form-search-clear"><a href="#">Clear search</a></p>
-</div>
-
-*/

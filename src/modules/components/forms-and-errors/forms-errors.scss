@@ -1,2 +1,43 @@
-@import 'date-input/date-input';
 @import 'action-bar/action-bar';
+@import 'currency-input/currency-input';
+@import 'date-input/date-input';
+@import 'duration-input/duration-input';
+@import 'time-input/time-input';
+
+// force override default 50% width behaviour of form-controls
+
+$module: 'form';
+
+.#{$module} {
+
+  &-control-block, &-control-wide {
+    min-width: 100% !important;
+  }
+
+  &-group-actions {
+    p {
+      margin-top: em(10);
+
+      @include media(tablet) {
+        margin: em(10) 0 0 em(20);
+        display: inline-block;
+      }
+    }
+  }
+
+  &-group-last {
+    margin-bottom: $gutter;
+
+    @include media(tablet) {
+      margin-bottom: $gutter*2;
+    }
+  }
+
+  &-control-select {
+    padding: 1px;
+
+    @include media(tablet) {
+      padding: 2px;
+    }
+  }
+}

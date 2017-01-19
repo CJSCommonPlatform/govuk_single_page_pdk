@@ -1,7 +1,7 @@
 // Notification
 // ==========================================================================
 
-$module: 'notification';
+$module: 'pdk-notification';
 
 .#{$module} {
   display: table;
@@ -26,9 +26,7 @@ $module: 'notification';
       &:focus {
         color: $black;
       }
-
     }
-
   }
 
   .icon {
@@ -38,7 +36,6 @@ $module: 'notification';
     + .#{$module}-message {
       padding-left: 15px;
     }
-
   }
 
   &-confirmation, &-success {
@@ -60,24 +57,4 @@ $module: 'notification';
   &-deregistered {
     background-color: $grey-1
   }
-
 }
-
-/*
-
-HTML Usage
-
-<div class="notification notification-confirmation" role="alert">
-  <i class="icon icon-tick-white" role="presentation" aria-hidden="true"></i>
-  <div class="notification-message">
-    <p class="bold-medium">Accepted case management information</p>
-  </div>
-</div>
-
-<div class="notification notification-confirmation" role="alert">
-  <div class="notification-message">
-    <p class="bold-medium">Accepted case management information</p>
-  </div>
-</div>
-
-*/

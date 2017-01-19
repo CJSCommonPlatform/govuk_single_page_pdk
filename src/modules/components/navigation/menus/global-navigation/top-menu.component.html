@@ -22,7 +22,6 @@
       <li data-ng-repeat="item in $ctrl.leftList" data-ng-class="{'is-active':item.isActive}">
         <a href=""
            data-ng-bind="item.text"
-           tabindex="{{ item.isActive ? '-1': '0' }}"
            data-ng-click="$ctrl.onMenuItemClick({items: $ctrl.menu.items, currentItem: item})"></a>
       </li>
     </ul>
@@ -31,7 +30,6 @@
       <li data-ng-repeat="item in $ctrl.rightList" data-ng-class="{'is-active':item.isActive}">
         <a href=""
            data-ng-bind="item.text"
-           tabindex="{{ item.isActive ? '-1': '0' }}"
            data-ng-click="$ctrl.onMenuItemClick({items: $ctrl.menu.items, currentItem: item})"></a>
       </li>
 

@@ -33,6 +33,10 @@
       <p>Without a download link</p>
       <gov-image image="$ctrl.imageWithoutDownloadLink"></gov-image>
     </docs-example>
+    <docs-example language="markup">
+      <p>With an on image load hook</p>
+      <gov-image image="$ctrl.imageWithoutDownloadLink" on-image-load="$ctrl.onImageLoad()"></gov-image>
+    </docs-example>
   </gov-tab>
 
   <gov-tab heading="Data">
@@ -75,6 +79,10 @@
             value: 'JPG 256KB'
           }
         ]
+      };
+
+      onImageLoad = function() {
+        console.log('Image loaded');
       };
     </prismify>
   </gov-tab>

@@ -1,0 +1,52 @@
+<h3 class="heading-medium mb-l">Summary Item</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    The <b>pdk-summary-item</b> component is used for displaying data as featured content.
+
+    <h3 class="heading-small mb-m">Configuration</h3>
+
+    <ul class="list list-docs">
+      <li>
+        <code class="code">hero</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: false)</em>
+        A boolean value for displaying a large version of the data.
+      </li>
+      <li>
+        <code class="code">inline</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: false)</em>
+        A boolean value for displaying the label alongside the count
+        rather than below it.
+      </li>
+      <li>
+        <code class="code">count</code> <ng-badge></ng-badge>
+        The count of the items of being summarized.
+      </li>
+      <li>
+        <code class="code">label</code> <ng-badge></ng-badge>
+        The label for the items being summarized.
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds">
+    <docs-example data-language="markup">
+      <div class="grid-row">
+        <div class="column-third">
+          <a href="">
+            <pdk-summary-item count="5" label="Statements"></pdk-summary-item>
+          </a>
+        </div>
+        <div class="column-third">
+          <pdk-summary-item hero="true" count="8" inline="true" label="Files">
+          </pdk-summary-item>
+        </div>
+        <div class="column-third">
+          <pdk-summary-item count="22" inline="true" label="Exhibits">
+          </pdk-summary-item>
+        </div>
+      </div>
+    </docs-example>
+  </div>
+</div>

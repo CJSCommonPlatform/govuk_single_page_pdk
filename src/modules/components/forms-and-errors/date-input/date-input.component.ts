@@ -1,13 +1,16 @@
 import { Component } from '@govuk/angularjs-devtools';
+import { uuid } from '../../../../util/helpers';
+
+const DATE_FORMAT = /^\d{1,2}[\/\-]\d{1,2}[\/\-]\d{4}$/;
+const DATE_EXISTS = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/; // tslint:disable-line:max-line-length
 
 @Component({
   template: require('./date-input.component.html'),
   bindings: {
     dateInputMin: '<',
     dateInputMax: '<',
-    dayLabel:     '@',
-    monthLabel:   '@',
-    yearLabel:    '@'
+    dateInputFuture: '<',
+    dateInputPast: '<'
   },
   require: {
     parentFormCtrl: '?^^form',
@@ -16,18 +19,19 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class DateInputComponent {
 
-  static $inject = ['$element', '$scope', '$timeout', '$attrs', 'dateFilter'];
-
-  DATE_FORMAT = /^\d{1,2}[\/\-]\d{1,2}[\/\-]\d{4}$/;
-  DATE_EXISTS = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/; // tslint:disable-line:max-line-length
+  static $inject = ['$element', '$timeout', '$attrs', 'dateFilter'];
 
   dateInputMax: any;
   dateInputMin: any;
-  identifier:   string;
+  dateInputFuture: boolean;
+  dateInputPast: boolean;
+
   dateControl:  any;
   dayLabel:     string;
   monthLabel:   string;
   yearLabel:    string;
+
+  $$identifier = `date-input-${uuid()}`;
 
   private isFocused:  boolean;
   private minDate:    any;
@@ -46,30 +50,35 @@ export class DateInputComponent {
 
   constructor(
     private $element: ng.IAugmentedJQuery,
-    private $scope: ng.IScope,
     private $timeout: ng.ITimeoutService,
     private $attrs: {
       dateInputFormat: string;
       dateInputMin: string;
       dateInputMax: string;
+      dateInputFuture: string;
+      dateInputPast: string;
     },
     private dateFilter: ng.IFilterDate
   ) {}
 
   // getter for obtaining the composite view value from the three inner inputs
   // in order to simulate a date being typed in a single field as a single value, the
-  // $viewValue is undefined when any of the three inner inputs are empty
+  // $viewValue is considered to exist when any of the three inner inputs are set
   get $viewValue(): string {
-    if (this.dateControl.$error.required) {
-      return undefined;
+    if (this.dayModel || this.monthModel || this.yearModel) {
+      return [
+        this.dayModel ? pad(this.dayModel) : '',
+        this.monthModel ? pad(this.monthModel) : '',
+        this.yearModel || ''
+      ].join('-');
     }
-    return `${pad(this.dayModel)}-${pad(this.monthModel)}-${this.yearModel}`;
+    return undefined;
   }
 
   // propagate a blur effect to the container element so as to allow the component to
   // behave as if it were a regular input – we observe the next process tick such
-  // that blur is triggered only when focus is lost from any inner input is not being
-  // transferred to another inner input, thereby preventing an event flicker
+  // that blur is triggered only when focus is lost from any inner input and not just
+  // beingtransferred to another inner input (thereby preventing an event flicker)
   onInputBlur() {
     this.$timeout(() => {
       if ([this.dayInput, this.monthInput, this.yearInput].indexOf(document.activeElement) === -1) {
@@ -95,14 +104,12 @@ export class DateInputComponent {
   }
 
   $onChanges() {
-    this.maxDate = this.dateInputMax ? new Date(this.dateInputMax) : undefined;
-    this.minDate = this.dateInputMin ? new Date(this.dateInputMin) : undefined;
+    this.maxDate = this.dateInputMax ? toDate(this.dateInputMax) : undefined;
+    this.minDate = this.dateInputMin ? toDate(this.dateInputMin) : undefined;
     this.ngModelCtrl.$validate();
   }
 
   $postLink() {
-    this.identifier = `date-input-${this.$scope.$id}`;
-
     // when a parent form exists, remove the inner ng-form as a control such that the
     // inner inputs are hidden from the parent form
     if (this.parentFormCtrl) {
@@ -115,10 +122,18 @@ export class DateInputComponent {
 
     // store valid values as a date object, so that they can be universally consumed
     // and offer a predictable type for additional validators
-    this.ngModelCtrl.$parsers.push(v => v ? new Date(v.split('-').reverse().join('-')) : v);
+
+    // in instances where a view value exists to trigger the validators pipeline, but
+    // is not yet a complete date, we return null
+    this.ngModelCtrl.$parsers.push(v => {
+      if (isDateFormat(v)) {
+        return toDate(v.split('-').reverse().join('-'));
+      }
+      return null;
+    });
 
     if (this.$attrs.dateInputFormat) {
-     this.ngModelCtrl.$parsers.push(v => v ? this.dateFilter(v, this.$attrs.dateInputFormat) : v);
+      this.ngModelCtrl.$parsers.push(v => v ? this.dateFilter(v, this.$attrs.dateInputFormat) : v);
     }
 
     // convert model value back to the composite $viewValue (see getter above)
@@ -140,28 +155,50 @@ export class DateInputComponent {
     // `dateExists` ensures that the date itself exists (days in month, leap years etc)
     // `dateMax`    ensures that the date is less than or equal to the evaluated date
     // `dateMin`    ensures that the date is greater than or equal to the evaluated date
+    // `datePast`   ensures that the date is today or earlier
+    // `dateFuture` ensures that the date is today or later
 
-    this.ngModelCtrl.$validators['dateFormat'] = (m, v) => !v || this.DATE_FORMAT.test(v);
-    this.ngModelCtrl.$validators['dateExists'] = (m, v) => !v || this.DATE_EXISTS.test(v);
+    // always perform dateFormat validator when one or more inputs being entered, despite
+    // the fact a $viewValue may not exist, as this can be considered to be as having
+    // *some* input
+    this.ngModelCtrl.$validators['dateFormat'] = (m, v) => !v || isDateFormat(v);
+
+    this.ngModelCtrl.$validators['dateExists'] = (m, v) => !m || DATE_EXISTS.test(v);
+
+    this.ngModelCtrl.$validators['datePast'] = m => {
+      if (!m || !this.dateInputPast) {
+        return true;
+      }
+      return Boolean((toDate(Date.now()) - toDate(m)) >= 0);
+    };
+
+    this.ngModelCtrl.$validators['dateFuture'] = m => {
+      if (!m || !this.dateInputFuture) {
+        return true;
+      }
+      return Boolean((toDate(m) - toDate(Date.now())) >= 0);
+    };
+
     this.ngModelCtrl.$validators['dateMax'] = m => {
       if (!m || !this.maxDate) {
         return true;
       }
-      return Boolean(this.maxDate - <any> new Date(m) >= 0);
+      return Boolean(this.maxDate - toDate(m) >= 0);
     };
+
     this.ngModelCtrl.$validators['dateMin'] = m => {
       if (!m || !this.minDate) {
         return true;
       }
-      return Boolean(<any> new Date(m) - this.minDate >= 0);
+      return Boolean(toDate(m) - this.minDate >= 0);
     };
 
     // update inner inputs when outer ng-model value is set directly
     this.ngModelCtrl.$render = () => {
       const val = this.ngModelCtrl.$modelValue === null ? undefined : this.ngModelCtrl.$modelValue;
-      const date = new Date(val);
+      const date = toDate(val);
       if (date) {
-        this.dayModel   = isNaN(date.getDate())  ? undefined : date.getDate();
+        this.dayModel   = isNaN(date.getDate()) ? undefined : date.getDate();
         this.monthModel = isNaN(date.getMonth()) ? undefined : date.getMonth() + 1;
         this.yearModel  = isNaN(date.getFullYear()) ? undefined : date.getFullYear();
       }
@@ -169,12 +206,22 @@ export class DateInputComponent {
   }
 }
 
-function toDateString(val) {
-  val = new Date(val);
-  return `${val.getDate()}-${val.getMonth() + 1}-${val.getFullYear()}`;
+function isDateFormat(val): boolean {
+  return DATE_FORMAT.test(val);
+}
+
+function toDate(timestamp): any {
+  const d = new Date(timestamp);
+  d.setHours(0, 0, 0, 0);
+  return d;
 }
 
 function pad(num: any): string {
   const val = num !== undefined ? num.toString() : '';
   return val.length >= 2 ? val : new Array(2 - val.length + 1).join('0') + val;
+}
+
+function toDateString(val): string {
+  val = toDate(val);
+  return `${val.getDate()}-${val.getMonth() + 1}-${val.getFullYear()}`;
 }

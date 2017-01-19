@@ -1,10 +1,23 @@
-// todo: source this from somewhere
+@import '~govuk_frontend_toolkit/stylesheets/colours';
+
+.docs-swatch {
+  display: inline-block;
+  height: 30px;
+  margin-right: 6px;
+  vertical-align: middle;
+  width: 30px;
+}
+
+.docs-swatch-label {
+  display: inline-block;
+  vertical-align: middle;
+}
 
 .example {
   position: relative;
   overflow: hidden;
   border: 1px solid #bfc1c3;
-  margin-top: 15px;
+  margin-top: 0px;
   margin-bottom: 15px;
   padding-top: 30px;
   padding-right: 15px;
@@ -54,7 +67,26 @@
 $module: 'code-example';
 
 .#{$module} {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: em(20);
   overflow: hidden;
+}
+
+$module: 'ng-badge';
+
+.#{$module} {
+  background: $govuk-blue;
+  border-radius: 50%;
+  color: $white;
+  display: inline-block;
+  font-size: 13px;
+  height: 1.538em;
+  line-height: 1.6em;
+  text-align: center;
+  vertical-align: top;
+  width: 1.538em
+}
+
+.list-docs li {
+  margin-bottom: 12px;
 }

@@ -1,0 +1,29 @@
+$module: 'form';
+
+.#{$module} {
+
+  &-time {
+
+    .#{$module}-group {
+      position: relative;
+      clear: none;
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 0;
+      width: 50px;
+
+      &-hour {
+
+        &:after {
+          position: absolute; bottom: 6px;
+          right: -12px;
+          content: ":";
+        }
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+}

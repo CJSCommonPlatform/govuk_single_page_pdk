@@ -89,6 +89,20 @@
 }
 
 
+// flush
+$module: 'flush';
+
+.#{$module} {
+
+  &-top {
+    margin-top: 0;
+  }
+
+  &-bottom {
+    margin-bottom: 0;
+  }
+}
+
 // Clearfix
 
 %clearfix {

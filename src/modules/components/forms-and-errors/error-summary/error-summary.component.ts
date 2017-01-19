@@ -3,7 +3,8 @@ import { Component } from '@govuk/angularjs-devtools';
 @Component({
     bindings: {
         form: '<',
-        fields: '<'
+        fields: '<',
+        title: '<?'
     },
     template: require('./error-summary.component.html')
 })
@@ -11,8 +12,11 @@ export class ErrorSummaryComponent {
 
     private fields: Array<any>;
     private form: ng.IFormController;
+    private title: String;
 
-    constructor() {}
+    constructor() {
+        this.title = this.title || 'Fix the following';
+    }
 
     invalidFields(): Array<any> {
 

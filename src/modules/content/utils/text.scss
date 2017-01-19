@@ -1,0 +1,36 @@
+// Typography
+
+$module: 'text';
+
+.#{$module} {
+
+  &-left {
+    text-align: left;
+  }
+
+  &-right {
+    text-align: right;
+  }
+
+  &-center {
+    text-align: center;
+  }
+
+  &-formatted {
+    // preserve line breaks in rendered text
+    white-space: pre-wrap;
+  }
+
+  &-undecorated {
+    text-decoration: none;
+  }
+
+  &-error {
+    color: $error-colour;
+    font-weight: 700;
+  }
+}
+
+.font-xxsmall {
+  @include core-14;
+}
