@@ -1,0 +1,9 @@
+.table-noborders {
+    tbody {
+        tr:not(:last-child) {
+            td {
+                border-bottom: 0 none;
+            }
+        }
+    }
+}
