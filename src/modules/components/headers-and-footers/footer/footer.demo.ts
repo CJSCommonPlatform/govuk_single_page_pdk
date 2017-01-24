@@ -6,7 +6,7 @@ import { Component } from '@govuk/angularjs-devtools';
 export class FooterDemo {
   myLinks = [
     {name: 'Help', url: '#'},
-    {name: 'Cookies', url: '#', target:"_blank"},
+    {name: 'Cookies', url: '#', target: '_blank'},
     {name: 'Contact', url: '#'}
   ];
 
