@@ -5,9 +5,9 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class FooterDemo {
   myLinks = [
-    {name: 'Help', url: '#'},
+    {name: 'Help', url: '#', target: '_self'},
     {name: 'Cookies', url: '#', target: '_blank'},
-    {name: 'Contact', url: '#'}
+    {name: 'Contact', url: '#', target: '_self'}
   ];
 
   builtBy: any = {name: 'Common Platform', url: '#'};
