@@ -16,5 +16,5 @@ import { Component } from '@govuk/angularjs-devtools';
 export class FooterComponent {
   isBusiness: boolean;
   minimalView: boolean;
-  links: {name: string; url: string}[];
+  links: {name: string; url: string, target: string}[];
 }

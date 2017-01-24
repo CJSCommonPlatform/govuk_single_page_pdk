@@ -12,7 +12,7 @@
         <h2 class="visuallyhidden">Support links</h2>
 
         <ul>
-          <li data-ng-repeat="link in $ctrl.links"><a href="{{ link.url }}" data-ng-bind="link.name"></a></li>
+          <li data-ng-repeat="link in $ctrl.links"><a href="{{ link.url }}" data-ng-bind="link.name" ng-attr-target="{{link.target}}"></a></li>
           <li data-ng-if="$ctrl.builtBy">Built by <a href="{{ $ctrl.builtBy.url }}">{{ $ctrl.builtBy.name }}</a></li>
         </ul>
 
