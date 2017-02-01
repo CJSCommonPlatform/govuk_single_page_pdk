@@ -1,5 +1,5 @@
 <div class="form-search" data-ng-class="{'form-search-inline': $ctrl.inline}">
-  <label data-ng-class="{'visually-hidden': !$ctrl.showLabelFlag, 'form-label': $ctrl.showLabelFlag}" for="search" data-ng-bind="$ctrl.label"></label>
+  <label data-ng-class="{'visually-hidden': !$ctrl.showLabelFlag, 'form-label': $ctrl.showLabelFlag}" for="{{$ctrl.inputId}}" data-ng-bind="$ctrl.label"></label>
   <input class="form-control" type="search" id="{{$ctrl.inputId}}" placeholder="{{$ctrl.placeholder}}"
          name="{{$ctrl.name}}" autocomplete="{{$ctrl.autocomplete || 'off'}}"
          aria-describedby="{{$ctrl.ariaDescribedby}}" data-ng-model="$ctrl.ngModel"
