@@ -8,11 +8,13 @@ import { Directive } from '@govuk/angularjs-devtools';
   bindToController: true,
   controllerAs: '$ctrl',
   scope: {
-    validation: '=lazyValidation'
+    validation: '=lazyValidation',
+    afterValidate: '&'
   }
 })
 export class LazyValidationDirective {
 
+  private afterValidate: Function;
   private validation: ng.IFormController;
   private angularFormController: ng.IFormController;
 
@@ -20,8 +22,11 @@ export class LazyValidationDirective {
     return angular.copy(validationData);
   }
 
-  revalidate(): void {
+  revalidate(invokeCallbacks = true): void {
     this.validation = this.createDeepCopy(this.angularFormController);
+    if (invokeCallbacks) {
+      this.afterValidate({ $event: this.angularFormController.$error });
+    }
   };
 
   isValid(): boolean {
@@ -29,6 +34,6 @@ export class LazyValidationDirective {
   };
 
   $postLink(): void {
-    this.revalidate();
+    this.revalidate(false);
   }
 }
