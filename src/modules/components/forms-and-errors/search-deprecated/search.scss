@@ -24,13 +24,13 @@ $module: 'form-search';
     @include box-sizing(border-box);
     display: inline-block;
     vertical-align: middle;
-    width: calc(100% - 32px);
+    width: calc(100% - 33px);
 
     @include media(tablet) {
-      width: calc(50% - 37px);
+      width: calc(50% - 38px);
 
       &.form-search-inline {
-        width: calc(100% - 37px);
+        width: calc(100% - 38px);
       }
     }
 
@@ -46,12 +46,12 @@ $module: 'form-search';
     border: 2px solid $govuk-blue;
     cursor: pointer;
     display: inline-block;
-    height: 32px;
+    height: 33px;
     overflow: hidden;
     padding: 4px;
     text-indent: -999px;
     vertical-align: middle;
-    width: 32px;
+    width: 33px;
 
     &:focus,
     &:hover {
@@ -65,8 +65,8 @@ $module: 'form-search';
     }
 
     @include media(tablet) {
-      height: 37px;
-      width: 37px;
+      height: 38px;
+      width: 38px;
     }
 
     &:focus {

@@ -15,10 +15,10 @@ $module: 'search';
     @include box-sizing(border-box);
     display: inline-block;
     vertical-align: middle;
-    width: calc(100% - 37px);
+    width: calc(100% - 38px);
 
     @include media(tablet) {
-      width: calc(50% - 37px);
+      width: calc(50% - 38px);
     }
 
     &:focus {
@@ -33,12 +33,12 @@ $module: 'search';
     border: 2px solid $govuk-blue;
     cursor: pointer;
     display: inline-block;
-    height: 32px;
+    height: 33px;
     overflow: hidden;
     padding: 4px;
     text-indent: -999px;
     vertical-align: middle;
-    width: 32px;
+    width: 33px;
 
     &:focus,
     &:hover {
@@ -52,8 +52,8 @@ $module: 'search';
     }
 
     @include media(tablet) {
-      height: 37px;
-      width: 37px;
+      height: 38px;
+      width: 38px;
     }
 
     &:focus {
