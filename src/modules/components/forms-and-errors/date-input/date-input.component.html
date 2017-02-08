@@ -1,12 +1,14 @@
-<div data-ng-form="$ctrl.dateControl">
+<div class="form-date" data-ng-form="$ctrl.dateControl">
 
-  <!-- Date day -->
-  <div class="date-input__block">
-    <label for="{{$ctrl.$$identifier + '-day'}}" data-ng-bind="dayLabel || 'Day'"></label>
+  <div class="form-group form-group-day">
+    <label class="form-label"
+           for="{{$ctrl.$$identifier + '-day'}}"
+           data-ng-bind="dayLabel || 'Day'"></label>
     <input id="{{$ctrl.$$identifier + '-day'}}"
-           class="form-control form-control--span-2"
+           class="form-control"
            type="text"
            name="dateDay"
+           aria-describedby="{{$ctrl.ariaDescribedBy}}"
            required
            autocomplete="off"
            maxlength="2"
@@ -19,11 +21,12 @@
            data-ng-class="{error: $ctrl.dateForm.dateDay.$valid}">
   </div>
 
-  <!-- Date month -->
-  <div class="date-input__block">
-    <label for="{{$ctrl.$$identifier + '-month'}}" data-ng-bind="monthLabel || 'Month'"></label>
+  <div class="form-group form-group-month">
+    <label class="form-label"
+           for="{{$ctrl.$$identifier + '-month'}}"
+           data-ng-bind="monthLabel || 'Month'"></label>
     <input id="{{$ctrl.$$identifier + '-month'}}"
-           class="form-control form-control--span-2"
+           class="form-control"
            type="text"
            name="dateMonth"
            required
@@ -38,11 +41,12 @@
            data-ng-class="{error: $ctrl.dateForm.dateMonth.$valid}">
   </div>
 
-  <!-- Date yyyy -->
-  <div class="date-input__block">
-    <label for="{{$ctrl.$$identifier + '-year'}}" data-ng-bind="yearLabel || 'Year'"></label>
+  <div class="form-group form-group-year">
+    <label class="form-label"
+           for="{{$ctrl.$$identifier + '-year'}}"
+           data-ng-bind="yearLabel || 'Year'"></label>
     <input id="{{$ctrl.$$identifier + '-year'}}"
-           class="form-control form-control--span-4"
+           class="form-control"
            type="text"
            name="dateYear"
            required

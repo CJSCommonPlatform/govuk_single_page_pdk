@@ -312,4 +312,11 @@ describe('components/forms-and-errors/date-input', () => {
     setDateValues({day: 15, month: 7});
     expect(scope.model).toBeUndefined();
   });
+
+  it('focuses the day input when the containing element receives focus', () => {
+    compile(`<gov-date-input ng-model="model"></gov-date-input>`);
+    sinon.spy(dayInput[0], 'focus');
+    element.focus();
+    expect(dayInput[0].focus.callCount).toEqual(1);
+  });
 });

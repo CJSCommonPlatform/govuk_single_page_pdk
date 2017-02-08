@@ -7,6 +7,7 @@ const DATE_EXISTS = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|
 @Component({
   template: require('./date-input.component.html'),
   bindings: {
+    ariaDescribedyBy: '@',
     dateInputMin: '<',
     dateInputMax: '<',
     dateInputFuture: '<',
@@ -98,8 +99,8 @@ export class DateInputComponent {
   // to behave as if it were a regular input
   onInputFocus() {
     if (!this.isFocused) {
-      this.$element.triggerHandler('focus');
       this.isFocused = true;
+      this.$element.triggerHandler('focus');
     }
   }
 
@@ -119,6 +120,16 @@ export class DateInputComponent {
     this.dayInput   = this.$element[0].querySelector('[name=dateDay]');
     this.monthInput = this.$element[0].querySelector('[name=dateMonth]');
     this.yearInput  = this.$element[0].querySelector('[name=dateYear]');
+
+    // so that the date input acts as a "single" input, we focus the day input when
+    // the date input itself is focused – a tabindex of 0 is required so that focus
+    // can be received before it's then forwarded
+    this.$element.attr('tabindex', '0');
+    this.$element.on('focus', () => {
+      if (!this.isFocused) {
+        this.dayInput.focus();
+      }
+    });
 
     // store valid values as a date object, so that they can be universally consumed
     // and offer a predictable type for additional validators
