@@ -17,12 +17,14 @@ import { TimeInputComponent } from './time-input/time-input.component';
 import { DurationInputComponent } from './duration-input/duration-input.component';
 import { ContainerComponent, LabelComponent } from './components/form-components';
 import { DeprecatedSearchComponent } from './search-deprecated/search.component';
+import { ResizeDirective } from './textarea/resize.directive';
 
 
 const module = angular.module('govuk-single-page-pdk.components.forms-errors', [
   coreModule,
   'ngMessages'
 ])
+  .directive('pdkResize', ResizeDirective)
   .component('pdkFormGroup', ContainerComponent)
   .component('pdkLabel', LabelComponent)
   .component('pdkSearch', SearchComponent)

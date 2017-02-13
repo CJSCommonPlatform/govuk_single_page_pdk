@@ -1,0 +1,34 @@
+<h3 class="heading-medium mb-l">Textarea resize</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <p>
+      The <b>pdk-resize</b> directive enables textareas to grow and shrink according to their content.
+    </p>
+    <h3 class="heading-small mb-m">Configuration</h3>
+    <ul class="list list-docs">
+      <li>
+        <code class="code">min-rows / rows</code>
+        <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: 4)</em>
+        <br>
+        The number of rows below which the textarea will not shrink.
+      </li>
+      <li>
+        <code class="code">max-rows</code>
+        <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: 16)</em>
+        <br>
+        The maximum number of rows to grow to before the textarea's overflow scroll behaviour is applied.
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds font-xsmall">
+    <docs-example language="markup">      
+      <textarea pdk-resize class="form-control form-control-block"></textarea>
+    </docs-example>
+  </div>
+  
+</div>
