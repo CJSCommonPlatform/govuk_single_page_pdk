@@ -24,12 +24,25 @@
         <em class="text-secondary">(Default: true)</em>
         A boolean value for setting for whether the accompanying icon be displayed.
       </li>
+      <li>
+        <p><code class="code">type</code> The context of the notification:</p>
+        <ul class="list">
+          <li>
+            <span class="docs-swatch swatch-red"></span>
+            <span class="docs-swatch-label">warning</span>
+          </li>
+          <li>
+            <span class="docs-swatch swatch-turquoise"></span>
+            <span class="docs-swatch-label">confirmation / success</span>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 
   <div class="column-two-thirds">
     <docs-example data-language="markup">
-      <pdk-alert>
+      <pdk-alert type="warning">
         The requested resource could not be found. <a href="">Try again</a>
       </pdk-alert>
     </docs-example>

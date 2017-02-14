@@ -6,7 +6,7 @@ import { Component } from '@govuk/angularjs-devtools';
     type: '@'
   },
   transclude: true,
-  template: `<div class="alert alert-{{type || 'warning'}}" role="alert" data-ng-transclude></div>`
+  template: `<div class="alert alert-{{ $ctrl.type || 'warning' }}" role="alert" data-ng-transclude></div>`
 })
 export class AlertContainerComponent {}
 
@@ -18,18 +18,31 @@ export class AlertContainerComponent {}
   },
   transclude: true,
   template: `
-    <i class="icon icon-alert" role="presentation" aria-hidden="true" data-ng-if="$ctrl.icon"></i>
+    <i class="icon icon-{{ $ctrl.iconType }}" role="presentation" aria-hidden="true" data-ng-if="$ctrl.icon"></i>
     <div class="alert-message" data-ng-transclude></div>
   `
 })
 export class AlertContentComponent {
 
   icon: boolean = true;
+  iconType: string;
+  type: string;
   showIcon: boolean;
 
   $onChanges = changes => {
     if (this.showIcon !== undefined) {
       this.icon = this.showIcon;
+    }
+    switch (this.type) {
+      case 'success':
+      case 'confirmation':
+        this.iconType = 'tick';
+        break;
+
+      case 'warning':
+
+      default:
+        this.iconType = 'alert';
     }
   }
 }
@@ -44,9 +57,9 @@ export class AlertContentComponent {
   },
   transclude: true,
   template: `
-    <pdk-alert-container data-type="$ctrl.type">
+    <pdk-alert-container data-type="{{ $ctrl.type }}">
       <div class="{{!$ctrl.banner ? '' : $ctrl.bannerClass ? $ctrl.bannerClass : 'alert-container'}}">
-        <pdk-alert-content data-show-icon="$ctrl.showIcon">
+        <pdk-alert-content data-show-icon="$ctrl.showIcon" data-type="{{ $ctrl.type }}">
           <div data-ng-transclude></div>
         </pdk-alert-content>       
       </div>  

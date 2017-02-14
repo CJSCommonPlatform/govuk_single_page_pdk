@@ -17,6 +17,17 @@ $module: 'alert';
     background-color: $mellow-red;
   }
 
+  &-success, &-confirmation {
+    background-color: $turquoise;
+    
+    // corrects icon-tick dimensions from original 27px x 27px
+    .icon-tick {
+      height: 20px;
+      width: 20px;
+      background-size: cover;
+    }
+  }
+
   &-message {
     color: $white;
     display: table-cell;
