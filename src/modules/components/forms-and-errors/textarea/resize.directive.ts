@@ -16,6 +16,8 @@ let i = 0;
 })
 export class ResizeDirective {
 
+  static $inject = ['$element', '$scope'];
+
   private id: number = i++;
   private minRows: number;
   private maxRows: number;
