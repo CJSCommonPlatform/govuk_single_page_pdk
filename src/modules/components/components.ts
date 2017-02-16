@@ -6,6 +6,7 @@ import layout from './layout/layout';
 import media from './media/media';
 import navigation from './navigation/navigation';
 import timeline from './timeline/timeline';
+import polyfills from './polyfills/polyfills';
 
 const module = angular.module('govuk-single-page-pdk.components', [
   banners,
@@ -15,6 +16,7 @@ const module = angular.module('govuk-single-page-pdk.components', [
   layout,
   media,
   navigation,
+  polyfills,
   timeline
 ]);
 
