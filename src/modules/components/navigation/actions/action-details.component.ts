@@ -20,6 +20,8 @@ import { Component } from '@govuk/angularjs-devtools';
 })
 export class ActionDetailsComponent {
 
+  static $inject = ['$element'];
+
   open: boolean = false;
 
   constructor(private $element: ng.IAugmentedJQuery) {}
