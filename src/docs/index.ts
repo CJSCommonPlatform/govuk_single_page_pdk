@@ -3,6 +3,7 @@ require('index.scss');
 import componentsDemos from '../modules/components/demos';
 import contentDemos from '../modules/content/demos';
 import config from './config';
+import polyfills from '../modules/components/polyfills/polyfills';
 
 import { AppLayout } from './app/app-layout.component';
 import { ComponentsPage } from './app/components/index.component';
@@ -34,6 +35,7 @@ angular.module('govuk-single-page-pdk.docs', [
   config,
   componentsDemos,
   contentDemos,
+  polyfills,
   'ncy-angular-breadcrumb',
   'ui.router',
   'ui.bootstrap',

@@ -13,32 +13,40 @@ export class DetailsComponent {
   static $inject = ['$element', '$scope', '$transclude'];
 
   content: ng.IAugmentedJQuery;
-  expanded = false;
   id = `$$details-${id++}`;
+  summary: SummaryComponent;
 
   constructor(
     private $element: ng.IAugmentedJQuery,
     private $scope: ng.IScope,
     private $transclude
-  ) {}
+  ) {
+    this.content = this.$element.find('section');
 
-  render() {
-    this.content.attr('aria-hidden', String(!this.expanded));
-    this.content.attr('aria-expanded', String(this.expanded));
-    this.content.attr('style', this.expanded ? '' : 'display: none');
+    const setAttribute = this.$element[0].setAttribute;
+    const removeAttribute = this.$element[0].removeAttribute;
+    const self = this;
+
+    this.$element[0].removeAttribute = function () {
+      removeAttribute.apply(this, arguments);
+      self.render();
+    };
+
+    this.$element[0].setAttribute = function () {
+      setAttribute.apply(this, arguments);
+      self.render();
+    };
   }
 
-  toggleDetails() {
-    this.expanded = !this.expanded;
+  get open(): boolean {
+    return this.$element[0].hasAttribute('open');
+  }
+
+  $onChanges() {
     this.render();
   }
 
   $postLink() {
-    const $details = this.$element;
-    const summary = this.$element[0].querySelector('span');
-
-    this.content = this.$element.find('section');
-
     this.$transclude(this.$scope.$parent, contents => {
       angular.forEach(contents, (node: HTMLElement) => {
         if (node.tagName && node.tagName.toLowerCase() === 'summary') {
@@ -50,6 +58,26 @@ export class DetailsComponent {
     });
 
     this.render();
+  }
+
+  registerControl(summary: SummaryComponent) {
+    this.summary = summary;
+    this.summary.render();
+  }
+
+  render() {
+    this.content.attr('style', this.open ? '' : 'display: none');
+    if (this.summary) {
+      this.summary.render();
+    }
+  }
+
+  toggleDetails() {
+    if (this.open) {
+      this.$element[0].removeAttribute('open');
+    } else {
+      this.$element[0].setAttribute('open', 'open');
+    }
   }
 }
 
@@ -69,13 +97,12 @@ export class SummaryComponent {
 
   $arrow: ng.IAugmentedJQuery;
   detailsCtrl: DetailsComponent;
-  expanded = false;
   id = `$$details-${id++}`;
 
   constructor(private $element: ng.IAugmentedJQuery, private $scope: ng.IScope) {}
 
   render() {
-    if (this.detailsCtrl.expanded) {
+    if (this.detailsCtrl.open) {
       this.$element.attr('aria-expanded', 'true');
       this.$element.addClass('arrow-open');
       this.$element.removeClass('arrow-closed');
@@ -88,20 +115,14 @@ export class SummaryComponent {
     }
   }
 
-  toggle() {
-    this.detailsCtrl.toggleDetails();
-    this.render();
-  }
-
   $postLink() {
     this.$arrow = this.$element.find('i');
 
     this.$element.attr('aria-controls', this.detailsCtrl.id);
-    this.$element.attr('aria-expanded', String(this.detailsCtrl.expanded));
     this.$element.attr('role', 'button');
     this.$element.attr('tabIndex', '0');
 
-    this.render();
+    this.detailsCtrl.registerControl(this);
 
     this.$element.on('keypress', e => {
       if (e.keyCode === 32) {
@@ -111,12 +132,12 @@ export class SummaryComponent {
 
     this.$element.on('keyup', e => {
       if (e.keyCode === 13 || e.keyCode === 32) {
-        this.toggle();
+        this.detailsCtrl.toggleDetails();
       }
     });
 
     this.$element.on('mouseup', e => {
-      this.toggle();
+      this.detailsCtrl.toggleDetails();
     });
   }
 }

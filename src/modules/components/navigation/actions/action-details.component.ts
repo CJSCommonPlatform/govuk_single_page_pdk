@@ -3,6 +3,7 @@ import { Component } from '@govuk/angularjs-devtools';
 @Component({
   bindings: {
     disabled: '<',
+    open: '<',
     label: '@'
   },
   transclude: true,
@@ -17,4 +18,20 @@ import { Component } from '@govuk/angularjs-devtools';
     </div>
   `
 })
-export class ActionDetailsComponent {}
+export class ActionDetailsComponent {
+
+  open: boolean = false;
+
+  constructor(private $element: ng.IAugmentedJQuery) {}
+
+  $onChanges(c) {
+    if (c.open) {
+      const details = this.$element.find('details')[0];
+      if (this.open) {
+        details.setAttribute('open', 'open');
+      } else {
+        details.removeAttribute('open');
+      }
+    }
+  }
+}
