@@ -221,10 +221,12 @@ function isDateFormat(val): boolean {
   return DATE_FORMAT.test(val);
 }
 
-function toDate(timestamp): any {
-  const d = new Date(timestamp);
-  d.setHours(0, 0, 0, 0);
-  return d;
+function toDate(date): any {
+  if (typeof date === 'string') {
+    const [ year, month, day ] = date.split('-');
+    date = Date.UTC(+year, +month - 1, +day);
+  }
+  return new Date(date);
 }
 
 function pad(num: any): string {

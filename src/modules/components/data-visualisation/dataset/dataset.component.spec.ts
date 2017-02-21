@@ -5,7 +5,7 @@ describe('components/data-visualisation/dataset', () => {
   let scope: any;
   let element: any;
 
-  function template(options = {}) {
+  function template(options: any = {}) {
     const onChange = options.changeLink ? 'on-change="callback()"' : '';
     const description = options.description ? 'description="test desc"' : '';
     const textLink = options.textLink ? 'text-link="' + options.textLink + '"' : '';
