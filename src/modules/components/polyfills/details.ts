@@ -12,7 +12,7 @@ export class DetailsComponent {
 
   static $inject = ['$element', '$scope', '$transclude'];
 
-  content: ng.IAugmentedJQuery;
+  content: any; // ng.IAugmentedJQuery;
   id = `$$details-${id++}`;
   summary: SummaryComponent;
 
@@ -21,7 +21,7 @@ export class DetailsComponent {
     private $scope: ng.IScope,
     private $transclude
   ) {
-    this.content = this.$element.find('section');
+    this.content = this.$element.children()[0];
 
     const setAttribute = this.$element[0].setAttribute;
     const removeAttribute = this.$element[0].removeAttribute;
@@ -52,7 +52,7 @@ export class DetailsComponent {
         if (node.tagName && node.tagName.toLowerCase() === 'summary') {
           this.$element.prepend(node);
         } else {
-          this.content.append(node);
+          this.content.appendChild(node);
         }
       });
     });
@@ -66,7 +66,11 @@ export class DetailsComponent {
   }
 
   render() {
-    this.content.attr('style', this.open ? '' : 'display: none');
+    if (this.open) {
+      this.content.removeAttribute('style');
+    } else {
+      this.content.style = 'display: none';
+    }
     if (this.summary) {
       this.summary.render();
     }
