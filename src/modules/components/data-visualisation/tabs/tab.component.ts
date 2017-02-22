@@ -55,6 +55,8 @@ export class TabComponent {
   }
 
   $postLink() {
+    const section = this.$element.children()[0];
+
     this.$transclude(this.$scope.$parent, contents => {
       angular.forEach(contents, node => {
         if (node.tagName && (
@@ -64,7 +66,7 @@ export class TabComponent {
         )) {
           this.tabHeadingNode = node;
         } else {
-          this.$element.find('section').append(node);
+          section.appendChild(node);
         }
       });
     });
