@@ -69,7 +69,7 @@ export class DetailsComponent {
     if (this.open) {
       this.content.removeAttribute('style');
     } else {
-      this.content.style = 'display: none';
+      this.content.setAttribute('style', 'display: none');
     }
     if (this.summary) {
       this.summary.render();
