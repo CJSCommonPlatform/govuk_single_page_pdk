@@ -11,7 +11,7 @@ import { Component } from '@govuk/angularjs-devtools';
     <div class="action-bar-content">
       <details class="font-xsmall">
         <summary>
-          <span class="summary" data-ng-bind="$ctrl.label || 'View Details'"</span>
+          <span class="summary" data-ng-bind="$ctrl.label || 'View Details'"></span>
         </summary>
         <div class="panel panel-border-narrow" data-ng-transclude></div>
       </details>
@@ -29,7 +29,7 @@ export class ActionDetailsComponent {
   $onChanges(c) {
     if (c.open) {
       const details = this.$element.find('details')[0];
-      if (this.open) {
+      if (c.open.currentValue) {
         details.setAttribute('open', 'open');
       } else {
         details.removeAttribute('open');
