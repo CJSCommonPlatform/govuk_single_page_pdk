@@ -1,0 +1,14 @@
+
+$module: 'masthead';
+
+.#{$module} {
+  background-color: $govuk-blue;
+  color: $white;
+  margin-left: -100%;
+  margin-right: -100%;
+  padding: $gutter 100%;
+}
+
+html, body {
+  overflow-x: hidden; // Prevent scrollbars on x-axis
+}
