@@ -2,7 +2,7 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   template: `
-    <div class="search">
+    <div class="search" data-ng-class="{'search-secondary': $ctrl.invert}">
       <input id="{{$ctrl.id}}"
              type="search"
              aria-label="{{$ctrl.ariaLabel}}" 
@@ -19,6 +19,7 @@ import { Component } from '@govuk/angularjs-devtools';
     ariaDescribedby: '@?',
     ariaLabel: '@?',
     ariaLabelledby: '@?',
+    invert: '<',
     onSearch: '&'
   },
   require: {

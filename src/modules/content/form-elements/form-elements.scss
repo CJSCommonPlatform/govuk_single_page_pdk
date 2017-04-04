@@ -2,4 +2,10 @@
   outline: none;
   box-shadow: none !important;
   border: 3px solid $focus-colour;
+  outline-offset: 0;
+}
+
+// TODO: remove after updating govuk-elements
+input:focus, textarea:focus, select:focus, button:focus {  
+  outline-offset: 0;
 }

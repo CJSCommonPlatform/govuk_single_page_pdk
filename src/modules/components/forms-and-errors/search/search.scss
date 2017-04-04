@@ -30,12 +30,13 @@ $module: 'search';
     @include box-sizing(border-box);
     background-color: $govuk-blue;
     background-image: image-url('icon-search-white.png');
+    background-position: 1px 1px;
     border: 2px solid $govuk-blue;
     cursor: pointer;
     display: inline-block;
     height: 33px;
     overflow: hidden;
-    padding: 4px;
+    padding: 5px 4px 4px;
     text-indent: -999px;
     vertical-align: middle;
     width: 33px;
@@ -58,6 +59,22 @@ $module: 'search';
 
     &:focus {
       position: relative;
+    }
+  }
+
+  &-secondary {
+    input {
+      background: white;
+    }
+    
+    .form-control {
+      border-color: $white;
+      color: $black;
+    }
+
+    .#{$module}-button {
+      background-color: $black;
+      border-color: $black;
     }
   }
 }

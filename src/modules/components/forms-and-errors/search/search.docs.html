@@ -15,14 +15,19 @@
         key or clicks the search button. The search text is exposed to
         the expression via the $event variable.
       </li>
+      <li>
+        <code class="code">invert</code> <ng-badge></ng-badge>
+        A boolean expression for using the component's inverted colour scheme. This
+        is typically used on non-white backgrounds.
+      </li>  
     </ul>
   </div>
 
   <div class="column-two-thirds font-xsmall">
-    <docs-example language="markup">
-      <pdk-search ng-model="$ctrl.text" on-search="$ctrl.term = $event"></pdk-search>
+    <docs-example language="markup">      
+<pdk-search ng-model="$ctrl.text" on-search="$ctrl.term = $event"></pdk-search>
 
-      <p>Search text: <span ng-bind="$ctrl.term"></span></p>
+<p>Search text: <span ng-bind="$ctrl.term"></span></p>     
     </docs-example>
   </div>
 
