@@ -1,0 +1,40 @@
+<h3 class="heading-medium mb-l">Header</h3>
+
+<div class="grid-row">
+
+  <div class="column-one-third font-xsmall">
+    <p>
+      The <b>pdk-header</b> component is used as the primary navigation bar within an application.
+    </p>
+    <h3 class="heading-small mb-m">Inner components</h3>
+    <ul class="list list-docs">
+      <li>
+        <h4><b>header-name</b></h4>
+        The content to serve as the main heading.
+      </li>
+      <li>
+        <h4><b>header-nav / header-nav-item</b></h4>
+        The navigation menu of a header.
+      </li>
+    </ul>
+  </div>
+
+  <div class="column-two-thirds font-xsmall">
+    <docs-example language="markup">
+      <pdk-header>
+        <header-name>
+          <a href="/">Platform Development Kit</a>
+        </header-name>
+        <header-nav>
+          <header-nav-item>
+            <a href="/account">Your account</a>
+          </header-nav-item>
+          <header-nav-item>
+            <a href="/sign-out">Sign out</a>
+          </header-nav-item>
+        </header-nav>
+      </pdk-header>
+    </docs-example>
+  </div>
+
+</div>
