@@ -13,7 +13,7 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   template: require('./footer.component.html')
 })
-export class FooterComponent {
+export class DeprecatedFooterComponent {
   isBusiness: boolean;
   minimalView: boolean;
   links: {name: string; url: string, target: string}[];
