@@ -57,9 +57,7 @@ export class SearchComponent {
   }
 
   search() {
-    if (this.ngModelCtrl.$valid) {
-      this.onSearch({$event: this.ngModelCtrl.$modelValue});
-    }
+    this.onSearch({$event: this.ngModelCtrl.$modelValue});
   }
 
   setViewValue(val: string) {
