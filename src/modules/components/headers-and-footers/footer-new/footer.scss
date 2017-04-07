@@ -6,6 +6,7 @@ $module: 'footer';
 .#{$module} {
   background-color: $grey-3;
   border-top: 1px solid #a1acb2;
+  padding: $gutter*2 0;
 
   // colours do not exist in GOV palette (copied GOV footer)
   a {
@@ -14,14 +15,13 @@ $module: 'footer';
     &:hover {
       color: #171819;
     }
-
   }
 
   &-wrapper {
     @extend %contain-floats;
     margin: 0 auto;
     max-width: 960px;
-    padding: $gutter*2 $gutter-half;
+    padding: 0 $gutter-half;
 
     @include media(tablet) {
       padding-left: $gutter;

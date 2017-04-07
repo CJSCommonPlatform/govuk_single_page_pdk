@@ -4,9 +4,12 @@ import { Component, Directive } from '@govuk/angularjs-devtools';
   transclude: {
     footerContent: '?footerContent'
   },
+  bindings: {
+    containerClass: '@'
+  },
   template: `
     <footer class="footer" role="contentinfo">
-      <div class="footer-wrapper">
+      <div class="{{ !$ctrl.containerClass ? 'footer-wrapper' : $ctrl.containerClass }}">
         <div class="footer-content" ng-transclude="footerContent"></div>
         <ng-transclude></ng-transclude>
       </div>

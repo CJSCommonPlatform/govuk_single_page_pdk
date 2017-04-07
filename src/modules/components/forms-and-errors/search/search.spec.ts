@@ -70,16 +70,6 @@ describe('components/forms-and-errors/search', () => {
     expect(text).toEqual('foo');
   });
 
-  it('disables the `on-search` callback when the model is invalid', () => {
-    compile('<pdk-search required ng-model="model" on-search="callback($event)"></pdk-search>');
-    let called = false;
-    scope.callback = str => called = true;
-    element.find('button').triggerHandler('click');
-    expect(called).toBe(false);
-    enterKeydown();
-    expect(called).toBe(false);
-  });
-
   it('moves the outer `id` property to the inner input', () => {
     scope.id = 'foo';
     compile('<pdk-search id="{{id}}" ng-model="model"></pdk-search>');

@@ -2,9 +2,12 @@ import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
   transclude: true,
+  bindings: {
+    containerClass: '@'
+  },
   template: `
     <header class="header" role="banner">
-      <div class="header-wrapper">
+      <div class="{{ !$ctrl.containerClass ? 'header-wrapper' : $ctrl.containerClass }}">
         <nav class="header-nav">
           <ng-transclude></ng-transclude>
         </nav>
