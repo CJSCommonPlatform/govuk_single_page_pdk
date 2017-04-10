@@ -15,10 +15,13 @@ $module: 'search';
     @include box-sizing(border-box);
     display: inline-block;
     vertical-align: middle;
+    min-width: auto !important;
     width: calc(100% - 38px);
 
-    @include media(tablet) {
-      width: calc(50% - 38px);
+    &:not(.form-control-wide) {
+      @include media(tablet) {
+        width: calc(50% - 38px);
+      }
     }
 
     &:focus {

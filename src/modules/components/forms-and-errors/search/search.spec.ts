@@ -81,4 +81,13 @@ describe('components/forms-and-errors/search', () => {
     expect(element.attr('id')).toBeUndefined();
     expect(input.attr('id')).toEqual('bar');
   });
+
+  it('submits an outer form when the `search-type` is set to submit', () => {
+    scope.submitted = false;
+    compile('<form ng-submit="submitted = true"><pdk-search id="{{id}}" search-type="submit" ng-model="model"></pdk-search></form>');
+    element.find('button').click();
+    expect(scope.submitted).toEqual(true);
+    const event = enterKeydown();
+    expect(event.preventDefault.callCount).toEqual(0);
+  });
 });
