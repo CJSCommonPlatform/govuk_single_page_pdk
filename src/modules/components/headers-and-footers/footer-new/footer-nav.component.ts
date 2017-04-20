@@ -16,7 +16,7 @@ export class FooterNavComponent { }
 @Component({
   require: '^footerNav',
   transclude: true,
-  template: '<a ng-transclude></a>'
+  template: '<ng-transclude></ng-transclude>'
 })
 export class FooterNavItemComponent {
 
