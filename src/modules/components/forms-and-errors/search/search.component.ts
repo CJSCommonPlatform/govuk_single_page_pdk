@@ -37,7 +37,6 @@ export class SearchComponent {
   static $inject = ['$element', '$timeout'];
 
   input: any;
-  inline = true;
   ngModelCtrl: ng.INgModelController;
   onSearch: (params: {$event: string}) => any;
   searchType: string;
