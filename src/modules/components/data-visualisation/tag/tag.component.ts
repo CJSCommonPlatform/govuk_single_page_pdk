@@ -1,11 +1,9 @@
 import { Component } from '@govuk/angularjs-devtools';
 
 @Component({
-  bindings: {
-    tag: '@'
-  },
+  transclude: true,
   template: `
-    <span class="inline-tag" data-ng-bind="$ctrl.tag"</span>
+    <div class="inline-tag" data-ng-transclude></div>
   `
 })
 export class TagComponent {}
