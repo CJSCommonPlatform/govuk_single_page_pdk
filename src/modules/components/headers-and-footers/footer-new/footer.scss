@@ -28,6 +28,13 @@ $module: 'footer';
       padding-right: $gutter;
     }
 
+    &.business {
+      max-width: $container-large-desktop;
+    }
+
+    &.business-x-large {
+      max-width: $container-x-large-desktop;
+    }
   }
 
   &-support {
