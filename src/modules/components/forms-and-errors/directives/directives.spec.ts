@@ -41,6 +41,12 @@ describe('components/forms-and-errors/directives', () => {
       expect(scope.model).toEqual('1');
     });
 
+    it('returns a null value when an empty string is parsed', () => {
+      compile('<input type="text" ng-model="model" input-number>');
+      setValue('');
+      expect(scope.model).toEqual(null);
+    });
+
     it('prevents numbers greater than a nominated max being entered', () => {
       compile('<input type="text" ng-model="model" input-number input-number-max="12">');
       setValue(12);

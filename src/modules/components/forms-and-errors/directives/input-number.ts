@@ -18,7 +18,7 @@ export class InputNumberDirective {
     inputNumberMin?: string;
     inputNumberMax?: string
     leadingZerosEnabled?: string
-  }) {}
+  }) { }
 
   $onInit() {
     const pad = parseInt(this.$attrs.inputNumberPad, 10);
@@ -26,18 +26,20 @@ export class InputNumberDirective {
 
     // prevent input from containing any non-numeric characters
     this.ngModelCtrl.$parsers.push(val => {
-      val = val.toString();
+      if (val !== null) {
+        val = val.toString();
 
-      let newVal = val.replace(/[^\d]/g, '');
+        let newVal = val.replace(/[^\d]/g, '');
 
-      if (this.$attrs.leadingZerosEnabled === undefined) {
-        newVal = newVal.replace(/\b0+/g, '');
+        if (this.$attrs.leadingZerosEnabled === undefined) {
+          newVal = newVal.replace(/\b0+/g, '');
+        }
+        if (newVal !== val) {
+          this.ngModelCtrl.$setViewValue(newVal);
+          this.ngModelCtrl.$render();
+        }
+        return newVal || null;
       }
-      if (newVal !== val) {
-        this.ngModelCtrl.$setViewValue(newVal);
-        this.ngModelCtrl.$render();
-      }
-      return newVal || undefined;
     });
 
     // prevent any inputs that are greater than any specified max values
