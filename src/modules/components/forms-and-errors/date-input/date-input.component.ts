@@ -7,7 +7,7 @@ const DATE_EXISTS = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|
 @Component({
   template: require('./date-input.component.html'),
   bindings: {
-    ariaDescribedyBy: '@',
+    ariaDescribedby: '@',
     dateInputMin: '<',
     dateInputMax: '<',
     dateInputFuture: '<',
