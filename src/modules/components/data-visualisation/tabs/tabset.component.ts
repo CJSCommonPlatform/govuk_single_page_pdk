@@ -3,6 +3,7 @@ import { TabComponent } from './tab.component';
 
 @Component({
   bindings: {
+    onTabSelected: '&',
     vertical: '<'
   },
   template: `
@@ -34,6 +35,7 @@ export class TabsetComponent {
   tabs: TabComponent[] = [];
   selected: TabComponent;
   defaultIndex: number;
+  onTabSelected: Function;
 
   constructor(private $element: ng.IAugmentedJQuery, private $timeout: any) {}
 
@@ -57,13 +59,19 @@ export class TabsetComponent {
   }
 
   select(tab: TabComponent, focus: boolean = true): void {
-    this.selected = tab;
-
     if (focus) {
+      const previousIndex = this.tabs.indexOf(this.selected);
+      const currentIndex = this.tabs.indexOf(tab);
+
+      this.selected = tab;
+      this.onTabSelected({ $event: { currentIndex, previousIndex } });
+
       this.$timeout(() => {
         const elem = <any> this.$element[0].querySelector('a[aria-selected="true"]');
         elem.focus();
       });
+    } else {
+      this.selected = tab;
     }
   }
 

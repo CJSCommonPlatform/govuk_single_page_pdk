@@ -11,6 +11,12 @@
         A boolean value as to whether the tabs be displayed vertically
         instead of their horizontal default.
       </li>
+      <li>
+        <code class="code">on-tab-selected</code>
+        <ng-badge></ng-badge>
+        An angular expression to be invoked when the focused tab changes. The
+        tab change information is exposed to the expression via the $event variable.
+      </li>
     </ul>
 
     <h3 class="heading-small mb-m">pdk-tab</h3>
@@ -39,6 +45,7 @@
   </div>
 
   <div class="column-two-thirds">
+
     <docs-example data-language="markup">
       <pdk-tabset>
 
