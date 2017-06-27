@@ -151,6 +151,10 @@ function calculateNodeHeight(uiTextNode, id, minRows = null, maxRows = null): {
     document.body.appendChild(hiddenTextarea);
   }
 
+  // evaluate the width of the original node in case it has been changed externally
+  // such as through css style rule inheritance
+  const HIDDEN_WIDTH_STYLE = `width: ${uiTextNode.clientWidth}px;`;
+
   // Copy all CSS properties that have an impact on the height of the content in
   // the textbox
   const {
@@ -163,7 +167,7 @@ function calculateNodeHeight(uiTextNode, id, minRows = null, maxRows = null): {
   // Need to have the overflow attribute to hide the scrollbar otherwise
   // text-lines will not calculated properly as the shadow will technically be
   // narrower for content
-  hiddenTextarea.setAttribute('style', sizingStyle + ';' + HIDDEN_TEXTAREA_STYLE);
+  hiddenTextarea.setAttribute('style', [sizingStyle, HIDDEN_TEXTAREA_STYLE, HIDDEN_WIDTH_STYLE].join(';'));
   hiddenTextarea.value = uiTextNode.value || uiTextNode.placeholder || 'x';
 
   let minHeight = -Infinity;
