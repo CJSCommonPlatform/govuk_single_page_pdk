@@ -8,7 +8,7 @@ $module: 'pdk-notification';
   margin-bottom: $gutter;
   padding: $gutter-half;
 
-  .flow {
+  &.flow {
     width: 100%;
   }
 
