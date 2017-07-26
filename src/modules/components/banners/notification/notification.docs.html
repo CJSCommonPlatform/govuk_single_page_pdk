@@ -14,6 +14,11 @@
         <p>A boolean value for setting for whether the accompanying icon be displayed.</p>
       </li>
       <li>
+        <code class="code">flow</code> <ng-badge></ng-badge>
+        <em class="text-secondary">(Default: false)</em>
+        <p>A boolean value to allow the element fit the full width of the parent.</p>
+      </li>
+      <li>
         <p><code class="code">type</code> The context of the notification:</p>
         <ul class="list">
           <li>
@@ -45,6 +50,10 @@
     <docs-example data-language="markup">
       <pdk-notification type="locked">
         The requested resource is not available. <a href="">Try again</a>
+      </pdk-notification>
+
+      <pdk-notification type="confirmation" flow="true">
+        Example with flow="true"
       </pdk-notification>
     </docs-example>
   </div>

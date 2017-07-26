@@ -8,6 +8,10 @@ $module: 'pdk-notification';
   margin-bottom: $gutter;
   padding: $gutter-half;
 
+  &.flow {
+    width: 100%;
+  }
+
   @include media(desktop) {
     padding: $gutter;
   }
