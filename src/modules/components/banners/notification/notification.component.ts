@@ -8,7 +8,7 @@ import { Component } from '@govuk/angularjs-devtools';
   },
   transclude: true,
   template: `
-    <div class="pdk-notification pdk-notification-{{$ctrl.type}} {{$ctrl.flow ? 'flow' : ''}}" role="alert">
+    <div class="pdk-notification pdk-notification-{{$ctrl.type}}" ng-class="{'flow': $ctrl.flow}" role="alert">
       <i data-ng-if="($ctrl._showIcon === true && $ctrl.type === 'confirmation') 
                   || ($ctrl._showIcon === true && $ctrl.type === 'active')" 
       class="icon icon-tick-white" role="presentation" 
