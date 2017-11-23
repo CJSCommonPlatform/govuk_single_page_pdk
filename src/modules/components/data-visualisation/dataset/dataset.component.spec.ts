@@ -31,13 +31,11 @@ describe('components/data-visualisation/dataset', () => {
 
   it('shows `Change` link when the showLink is not provided', () => {
     compile(template());
-    console.log(element);
     expect(element.find('a').text()).toBe('Change');
   });
 
   it('does not show `Change` link when showLink is provided', () => {
     compile(template({ showLink: true }));
-    console.log(element);
     expect(element.find('a')[0]).toBeUndefined();
   });
 
