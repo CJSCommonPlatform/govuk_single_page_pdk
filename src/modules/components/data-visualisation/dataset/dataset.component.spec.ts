@@ -9,8 +9,9 @@ describe('components/data-visualisation/dataset', () => {
     const onChange = options.changeLink ? 'on-change="callback()"' : '';
     const description = options.description ? 'description="test desc"' : '';
     const textLink = options.textLink ? 'text-link="' + options.textLink + '"' : '';
+    const showLink = options.showLink ? 'show-link=false' : '';
     return `
-      <gov-dataset ${onChange} ${description} ${textLink}>
+      <gov-dataset ${onChange} ${description} ${textLink} ${showLink}>
         <div class="data-item">
           <div class="label">Email</div>
           <div class="value">jack.smith@gov.uk</div>
@@ -28,13 +29,15 @@ describe('components/data-visualisation/dataset', () => {
     });
   }
 
-  it('shows `Change` link when the on-change callback is provided', () => {
-    compile(template({ changeLink: true }));
+  it('shows `Change` link when the showLink is not provided', () => {
+    compile(template());
+    console.log(element);
     expect(element.find('a').text()).toBe('Change');
   });
 
-  it('does not show `Change` link when the on-change callback is not provided', () => {
-    compile(template());
+  it('does not show `Change` link when showLink is provided', () => {
+    compile(template({ showLink: true }));
+    console.log(element);
     expect(element.find('a')[0]).toBeUndefined();
   });
 
