@@ -5,10 +5,13 @@ import { Component } from '@govuk/angularjs-devtools';
   bindings: {
     onChange: '&?',
     description: '@',
-    textLink: '@?'
+    textLink: '@?',
+    showLink: '<?'
   },
   transclude: true
 })
+
 export class DatasetComponent {
+  showLink: boolean = true;
   textLink: string = 'Change';
 };
