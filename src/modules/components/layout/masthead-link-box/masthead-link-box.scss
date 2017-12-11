@@ -1,0 +1,8 @@
+$module: 'masthead-link-box';
+
+.#{$module} {
+  height: 215px;
+  background-color: $black-midnight;
+  margin-bottom: -$gutter;
+  padding: 20px;
+}
