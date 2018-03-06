@@ -1,4 +1,4 @@
-import { Component, Directive } from '@govuk/angularjs-devtools';
+import { Component, Directive } from '@cppui/angularjs-devtools';
 
 @Component({
   transclude: {

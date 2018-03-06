@@ -1,4 +1,4 @@
-import { Directive } from '@govuk/angularjs-devtools';
+import { Directive } from '@cppui/angularjs-devtools';
 
 let i = 0;
 

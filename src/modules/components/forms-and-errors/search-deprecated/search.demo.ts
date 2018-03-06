@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import { Component } from '@cppui/angularjs-devtools';
 
 @Component({
   template: require('./search.demo.html')

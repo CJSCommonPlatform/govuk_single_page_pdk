@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import { Component } from '@cppui/angularjs-devtools';
 
 import { ContainerComponent } from '../components/form-components';
 import { uuid } from '../../../../util/helpers';

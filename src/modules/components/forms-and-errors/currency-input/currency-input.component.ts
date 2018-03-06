@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import { Component } from '@cppui/angularjs-devtools';
 
 const CURRENCY_REGEX = /^\s*-?[1-9]\d*(\.\d{2})?\s*$/;
 
