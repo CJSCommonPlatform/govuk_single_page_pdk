@@ -1,4 +1,4 @@
-import { Component } from '../../../../util/angular-utils';
+import { Component } from './angular-utils';
 
 @Component({
   template: `
