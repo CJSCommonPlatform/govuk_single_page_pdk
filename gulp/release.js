@@ -25,10 +25,10 @@ module.exports = function(config, log) {
         'copy-platform-template'
       ],
       'bump-repo',
-      'bump-packages',
-      'commit-changes',
-      'create-new-tag',
-      'publish'
+      'bump-packages'
+      // 'commit-changes',
+      // 'create-new-tag-without-pushing',
+      // 'publish'
     );
   });
 
