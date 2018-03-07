@@ -1,4 +1,4 @@
-import { Component } from '@cppui/angularjs-devtools';
+import { Component } from '../../../../util/angular-utils';
 import { LazyValidationDirective } from '../lazy-validation/lazy-validation.directive.ts';
 
 @Component({

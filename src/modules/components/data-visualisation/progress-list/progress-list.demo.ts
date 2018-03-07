@@ -1,4 +1,4 @@
-import { Component } from '@cppui/angularjs-devtools';
+import { Component } from '../../../../util/angular-utils';
 
 @Component({
   template: require('./progress-list.demo.html')

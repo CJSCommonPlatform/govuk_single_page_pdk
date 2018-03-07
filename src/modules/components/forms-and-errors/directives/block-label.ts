@@ -1,4 +1,4 @@
-import { Directive } from '@cppui/angularjs-devtools';
+import { Directive } from '../../../../util/angular-utils';
 
 @Directive({
   restrict: 'C'

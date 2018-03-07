@@ -1,4 +1,4 @@
-import { Component, Directive } from '@cppui/angularjs-devtools';
+import { Component, Directive } from '../../../../util/angular-utils';
 
 @Component({
   transclude: {

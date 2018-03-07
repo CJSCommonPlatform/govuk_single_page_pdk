@@ -1,4 +1,4 @@
-import { Component } from '@cppui/angularjs-devtools';
+import { Component } from '../../../../util/angular-utils';
 
 import { LanguageService } from '../../../core/language';
 import { ContainerComponent } from '../components/form-components';
