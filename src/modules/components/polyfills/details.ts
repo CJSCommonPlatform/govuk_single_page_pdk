@@ -1,4 +1,4 @@
-import { Component, Directive } from '../../../../util/angular-utils';
+import { Component, Directive } from '../../../util/angular-utils';
 
 export const browserHasDetails = typeof document.createElement('details')['open'] === 'boolean';
 
