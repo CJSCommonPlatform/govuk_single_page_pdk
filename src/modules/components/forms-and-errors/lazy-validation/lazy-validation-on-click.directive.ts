@@ -1,4 +1,4 @@
-import { Directive } from '@govuk/angularjs-devtools';
+import { Directive } from '../../../../util/angular-utils';
 import { LazyValidationDirective } from './lazy-validation.directive.ts';
 
 @Directive({

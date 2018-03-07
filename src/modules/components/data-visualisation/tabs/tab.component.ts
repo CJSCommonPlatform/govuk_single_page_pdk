@@ -1,4 +1,4 @@
-import { Component, Directive } from '@govuk/angularjs-devtools';
+import { Component, Directive } from '../../../../util/angular-utils';
 
 import { uuid } from '../../../../util/helpers';
 

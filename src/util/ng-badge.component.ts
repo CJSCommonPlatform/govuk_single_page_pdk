@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import { Component } from './angular-utils';
 
 @Component({
   template: `

@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import { Component } from '../../../../util/angular-utils';
 import { noFileType } from '../filters/noFileType.filter';
 
 @Component({
