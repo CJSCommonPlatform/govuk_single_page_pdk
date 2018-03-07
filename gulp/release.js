@@ -48,7 +48,7 @@ module.exports = function(config, log) {
   });
 
   gulp.task('clean', function() {
-    return del('./dist/@govuk');
+    return del('./dist/@cppui');
   });
 
   gulp.task('build-packages', () => {
@@ -83,7 +83,7 @@ module.exports = function(config, log) {
       gulp.src('fonts/**', {base: 'src', cwd: 'src/assets'}),
       gulp.src('images/**', {base: 'src', cwd: 'src/assets'})
     )
-      .pipe(gulp.dest('dist/@govuk/platform-template'));
+      .pipe(gulp.dest('dist/@cppui/platform-template'));
   });
 
   gulp.task('bump-repo', function() {
@@ -123,12 +123,12 @@ module.exports = function(config, log) {
   });
 
   gulp.task('publish', function() {
-    spawn('npm', ['publish', 'dist/@govuk/platform-template'],    {stdio: 'inherit'});
-    spawn('npm', ['publish', 'dist/@govuk/angularjs-components'], {stdio: 'inherit'});
+    spawn('npm', ['publish', 'dist/@cppui/platform-template'],    {stdio: 'inherit'});
+    spawn('npm', ['publish', 'dist/@cppui/angularjs-components'], {stdio: 'inherit'});
   });
 
   gulp.task('publish-beta', function() {
-    spawn('npm', ['publish', 'dist/@govuk/platform-template', '--tag beta'],    {stdio: 'inherit'});
-    spawn('npm', ['publish', 'dist/@govuk/angularjs-components', '--tag beta'], {stdio: 'inherit'});
+    spawn('npm', ['publish', 'dist/@cppui/platform-template', '--tag beta'],    {stdio: 'inherit'});
+    spawn('npm', ['publish', 'dist/@cppui/angularjs-components', '--tag beta'], {stdio: 'inherit'});
   });
 };

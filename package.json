@@ -9,7 +9,7 @@
     "prebuild_prod": "npm run clean",
     "build_prod": "webpack --config config/webpack.prod.js  --progress --profile --colors --display-error-details --display-cached --bail",
     "clean": "rimraf -- dist",
-    "prebuild_components": "rimraf -- dist/@govuk/angularjs-components",
+    "prebuild_components": "rimraf -- dist/@cppui/angularjs-components",
     "postinstall": "typings install",
     "publish": "gulp release",
     "serve": "http-server dist --cors",
