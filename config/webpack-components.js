@@ -14,7 +14,7 @@ module.exports = {
     modulesDirectories: ['node_modules']
   },
   output: {
-    path: helpers.root('dist/@govuk/angularjs-components'),
+    path: helpers.root('dist/@cppui/angularjs-components'),
     filename: '[name].js',
     libraryTarget: 'umd'
   },

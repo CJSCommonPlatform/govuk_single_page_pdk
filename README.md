@@ -32,8 +32,8 @@ Please install the following software.
 `npm run build_dev` to prepare a distributable bundle
 
 ## Packages
-Platform components - `npm i @govuk/angularjs-components`
-Platform templates - `npm i @govuk/platform-template`
+Platform components - `npm i @cppui/angularjs-components`
+Platform templates - `npm i @cppui/platform-template`
 
 ## How can developers contribute?
 Currently the PDK is available for contribution as a whole project including the source code to create this page. Here are some useful folders & files for contributors;
