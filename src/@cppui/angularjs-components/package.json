@@ -1,9 +1,9 @@
 {
   "version": "0.0.0-PLACEHOLDER",
-  "name": "@govuk/angularjs-components",
+  "name": "@cppui/angularjs-components",
   "main": "./angularjs-components.js",
   "dependencies": {
-    "@govuk/platform-template": "0.0.0-PLACEHOLDER"
+    "@cppui/platform-template": "0.0.0-PLACEHOLDER"
   },
   "peerDependencies": {
     "angular": "^1.5.0"
