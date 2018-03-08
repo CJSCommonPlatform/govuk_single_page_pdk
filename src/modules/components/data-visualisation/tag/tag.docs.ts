@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import { Component } from '../../../../util/angular-utils';
 
 @Component({
   template: require('./tag.docs.html')

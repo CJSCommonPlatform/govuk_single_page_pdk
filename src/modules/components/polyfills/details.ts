@@ -1,4 +1,4 @@
-import { Component, Directive } from '@govuk/angularjs-devtools';
+import { Component, Directive } from '../../../util/angular-utils';
 
 export const browserHasDetails = typeof document.createElement('details')['open'] === 'boolean';
 

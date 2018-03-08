@@ -1,4 +1,4 @@
-import { Component } from '@govuk/angularjs-devtools';
+import { Component } from '../../../../util/angular-utils';
 
 @Component({
   template: `<div class="masthead-link-box" ng-transclude></div>`,
