@@ -1,5 +1,4 @@
 {
-  "private": true,
   "version": "0.1.87",
   "scripts": {
     "build": "npm run build:dev",
