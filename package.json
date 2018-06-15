@@ -1,5 +1,6 @@
 {
-  "version": "0.1.88",
+  "private": true,
+  "version": "0.1.89",
   "scripts": {
     "gulp": "gulp",
     "build": "npm run build_dev",
