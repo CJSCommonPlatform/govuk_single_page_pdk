@@ -1,6 +1,7 @@
 {
   "version": "0.1.88",
   "scripts": {
+    "gulp": "gulp",
     "build": "npm run build_dev",
     "prebuild_dev": "npm run clean",
     "build_dev": "webpack --config config/webpack.dev.js --progress --profile --colors --display-error-details --display-cached",
