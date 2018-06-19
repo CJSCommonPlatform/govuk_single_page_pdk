@@ -13,6 +13,7 @@
     "prebuild_components": "rimraf -- dist/@cppui/angularjs-components",
     "postinstall": "typings install",
     "publish": "gulp release",
+    "ci:publish": "gulp ci-release",
     "serve": "http-server dist --cors",
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached",
     "test": "node --max-old-space-size=4096 node_modules/karma/bin/karma start"

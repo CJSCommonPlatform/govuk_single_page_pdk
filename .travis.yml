@@ -1,22 +1,30 @@
----
 sudo: false
 dist: trusty
 language: node_js
 node_js:
-- 'lts/boron'
+- lts/boron
+before_install:
+- npm install -g npm@latest
 install:
 - npm ci
 script:
 - npm test
 - npm run build_prod
-after_success:
-- bash ./deploy_gh_pages_on_tag.sh
+deploy:
+- provider: pages
+  skip_cleanup: true
+  github-token: "$GITHUB_TOKEN"
+  verbose: true
+  committer-from-gh: true
+  on:
+    branch: master
+  local-dir: dist/govuk_single_page_pdk
+- provider: script
+  script: npm run ci:publish
+  skip_cleanup: true
+  on:
+    tags: true
 env:
   global:
-  - GH_REF: github.com/CJSCommonPlatform/govuk_single_page_pdk.git
-  - secure: mlk2c9x0vQHuCEZRA4Xt8KAt6J+MOkX+druC6CY5fOsY+W+p2+QvQ8gCvblT3VF6Vz+vUj+6L1PllFZ33X3GGfM8mlxWswcKPueC3dO/Ksm9i2cT2dM/kQeekF9ctG0pzEQm3mdfaDrewD8nDaqdL/Q6k+yKx5tPraDYkQrL5A3vXaB0uichUOen3+/bLCh/Q0c/uNEdrzyL5PVf3fkt5PLudOSr/UuEiI1GXO75o0pc9SN6TB9UvAHB+C1OZUww7Vq2gILi1irqFnrZK1LCSZj0BtBUQ7ZR9WhcN+BPaYC/tNgZORLfpETseglNnRPkjQ73jEJ9dI1YMEYvBP59juQmOjXfBrgTqhgqVsEA/ecEW9YXp+rxY5VvCH49i/fXrWDrezDZSedOnMw3oZnpu7eSECwA4c8gZMr10Mm2s+fj/dok0846yVmGq8AYKA2DHl/nWEECusI9WyqxqwUmgny3vjZtRgDlix9lUQedn+78Mjo1B4SY7RtiRWlXwdTIdUvQoT9gd8c8P50j5ibfjr1F5ZIjSiDSdLwys4S0FInzyMAuZhHWLofEzSRt47mZFmbIKTyCYD99fCgIflmN7A+5otDbN8kHKNuBRbTuMEctH+UKdv4x2a/7gfUUD0IfQHvHJ2GhP1NY0R95sZgKDAmpbGBbZbDvzl6mYLlNgug=
-notifications:
-  slack:
-  - secure: i97YJnkikpmeFDU/V/nuyV31sAG2OsFvxXq4il7S7YHGRRQNBvxOEQNj/eu4bx4cEG8sHoAGaArhbjR8TWlhWgHp/Q2JvaOq5WSAb1H4ujFqsBVjvh7tiqKxWxDxpVnfyO8ylXTw8HpsuIgOGXp+Wo3x7jSfJ+0hxmDppB2ruyfXEWoEmYpywLd8v4srEHUasS00GK8CNRiHtFEF1SlbmMocw7jECkUUvgFOf3auZaL/zkTzfwIzHloS2+0PjDm6iHt4+oUYnfRaGxd6yMGDq3MsIVFPDB15VHypU4HJqt5QPmhOlUWUggImXVmhUTCO2lKaa/n9h6B7W67f1hu+ICigIJkZW0N9fpbwNVomE0OrJbQhxaQEH4I2gJqFnKWykC+EhbtPOTwIEVs5BczaI/TkudKjvhI0JOzAO4QZv5mQMz1hr2G85uWMWDAJmmSzvm1seicck5acWWElqVhSezAyQjqLwiN+4i3tbdZe7mGZ8sXxWz5I4Ed7E2M81OSu353m+JZah4cJ1IkPJDl2N+KG3hyvWTd7sS2eK/9UdWyeMjDw+9wJeIAK0G3TYMawzutBDstysCcFNLx8eb3b2BV5YJR9CSIxIFeXajtL3lOaKQKHb0Z6Bg81KJafQdkShoFNwzakNQ2P7mvr3/BKdQ7hYkNWVeMpuMAq1x+pi/Y=
-before_install:
-- npm install -g npm@6.1.0
+  - secure: Wh1DPmetpAgcMw46h0CgU+quk04Kx5Zr385YuPQqPgSHeht4Z5vnyct9bJRVpeYHT4RV24vLV3BLBojFt8rxfktgglmgfy+Im/QS4axxA/JXFWAHnDAHPDQeqr/Sq/uFI06zW03sntrIvWGY2p1mxjb6AVg4OHFnHdVVVCxN9Ws3qkII6LJt63N/rsnt7QJ+BNVKeQO67mkx6bQnmumSad/D8hkMgfIQ9EaZpjUaSFHb0bxXSoP85cpt6JRerx3pWGl2O/HJ/pS0h/Fw6eAnn8AYk6YaQ0HU/l4V74YOrWXxfvL3S18iLegY9+5X4DL0Y/Bo5oAGoKpBzRUE7jELVnCVkF4GsD2B2Cz312BC/ZTd0AfDtE9xtrL/KgFePm2WQj7vBJfiBe3XFF8FmUEiJZSdiNXE9d/YfeHYVJZIyEczvZplMbZ9ZsYcOLNBPGztncEKqWWt9sOyImCLr8eCVsUTwrQ0mEzb8wbUZhfrHHyT8iwm8EpwTcv2usXZPARprc7nAkOZ059DHM9GmRyOoPoXrYxIRc1vtf5aRlRTeFgNqcx44sxtbKOb5fAfKgYNXZKLV/OFLXQDmPCyPQqxzcFqU+7B8HqV6wDVQRr9KPKs6Z56YEvjeaVrlS/yHMYaLnwYkwHgoC6cJ6KgtStaCumu8X5W2h7bIA1eOAvg6u4=
+  - secure: tutBarIlaaF4KCrImeQU9tkEeAyY8rQkxhITikq5GG+qmlk06ppzVForMntiQoRWDUC37IIw1661MkCbvHfbD4BWIz9UUqFhW+rUrSOimSRsVl3xVPGIZmwefMti19D/eQi1+jp+kLqxtHcHE/zo/gFVNYTLEqn7K8LdqoSsglPCGUZmX+G8wQzGvM71TQy50XqqhnlD/QUb3CYEOmISZMoq81bqtYlfvJU5ehiJGzlzoNJhGTkTbAn5jdm757scJZMIyRdDERG5y5hvrEHW6eJYNOW4+IrfloPj3TJ8uLE59PnVWwq95go2HAI8ntWfyntZDudp3uU6DykxRC8YlMflA5/3xg3a9o0KzrzvP19sHrIDAZjzi+tHAd7odCPN5k4utbnKihbiK5Af2HwDbS3MwgGCCw0PsvqFSRn4yihngvnstGFzbYQJgcZMiolZ4g3S+wgfQ5w6nrYObu2wIVyA8NP3MSliCTWiEzUKN/biTgXvR711KgEB88byrUKh2N9OgTr/d1rxRFMvD8dwoNUJ/0wkvwiKc1vKY6wlgpfL9ZXTE0z7Qhb7MbIaZ+RHIOaCd3YMBW4JEXVDWmV+XCgz15rOhCL3HIEIKd+9I7RQVk58edp0KnfmwvLvCl5QsbxEkH/v1ZKw2mGgsDdK43yx20YOtKPAFdf3L3H8Ax0=

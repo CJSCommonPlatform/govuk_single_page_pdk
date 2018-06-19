@@ -47,6 +47,18 @@ module.exports = function(config, log) {
     );
   });
 
+  // CI builds from a tag - versions are taken from the tag
+  gulp.task('ci-release', function() {
+    run(
+      [
+        'build-components',
+        'copy-platform-template'
+      ],
+      'bump-packages',
+      'publish'
+    );
+  });
+
   gulp.task('clean', function() {
     return del('./dist/@cppui');
   });
@@ -87,9 +99,7 @@ module.exports = function(config, log) {
   });
 
   gulp.task('bump-repo', function() {
-    return gulp.src('./package.json')
-      .pipe(bump({type: argv.major ? 'major' : argv.minor ? 'minor' : 'patch'}))
-      .pipe(gulp.dest('./'));
+    spawn('npm', ['version', '--no-git-tag-version', argv.major ? 'major' : argv.minor ? 'minor' : 'patch'], {stdio: 'inherit'});
   });
 
 
