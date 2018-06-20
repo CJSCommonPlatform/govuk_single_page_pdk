@@ -20,7 +20,7 @@ deploy:
     branch: master
   local-dir: dist/govuk_single_page_pdk
 - provider: script
-  script: npm run ci:publish
+  script: bash travis-deploy.sh
   skip_cleanup: true
   on:
     tags: true
